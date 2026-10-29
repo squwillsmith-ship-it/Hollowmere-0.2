@@ -1,0 +1,157 @@
+name: Hollowmere — one-time nonvisual QA (29 Oct 2026)
+
+# A single explicitly requested run, isolated from canonical main.
+# Only a push to this dedicated disposable branch can start this workflow.
+on:
+  push:
+    branches:
+      - qa/nonvisual-20261029
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hollowmere-nonvisual-20261029
+  cancel-in-progress: false
+
+jobs:
+  linux-headless:
+    name: Linux — pinned Godot + complete Python / gameplay / physics / save QA
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install test dependencies
+        run: |
+          python -m pip install --quiet numpy Pillow trimesh
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends mesa-vulkan-drivers libvulkan1 libasound2t64 libpulse0 libfontconfig1 unzip
+      - name: Regenerate materials and GLB references required by data tests
+        run: |
+          python tools/generate_step21_materials.py
+          python tools/generate_step21_glb.py
+          python tools/generate_phase_b_surfaces.py
+          python tools/generate_phase_b_reference_glb.py
+      - name: Verify Python source compiles
+        run: python -m compileall -q tools tests
+      - name: Install checksum-pinned Godot 4.7.2 Standard
+        run: python tools/test_environment.py doctor --install
+      - name: Run all nonvisual engine, gameplay, physics, persistence and Python tests
+        run: python tools/test_environment.py check --godot .qa-tools/Godot_v4.7.2-stable_linux.x86_64
+      - name: Save Linux test logs (no renders or source history)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nonvisual-linux-headless
+          path: |
+            build/qa-*.log
+            build/qa-environment.json
+          if-no-files-found: warn
+
+  windows-headless:
+    name: Windows — pinned Godot + complete headless game regression
+    runs-on: windows-2022
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Regenerate source art needed for automated tests
+        shell: pwsh
+        run: |
+          py -3 -m pip install --quiet numpy Pillow trimesh
+          py -3 tools/generate_step21_materials.py
+          py -3 tools/generate_step21_glb.py
+          py -3 tools/generate_phase_b_surfaces.py
+          py -3 tools/generate_phase_b_reference_glb.py
+          py -3 -m compileall -q tools tests
+      - name: Install checksum-pinned Windows Godot 4.7.2 Standard
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force '.qa-tools' | Out-Null
+          $file = '.qa-tools/Godot_v4.7.2-stable_win64.exe.zip'
+          Invoke-WebRequest 'https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_win64.exe.zip' -OutFile $file
+          $hash = (Get-FileHash $file -Algorithm SHA256).Hash.ToLowerInvariant()
+          if ($hash -ne '731980f9608d61333e5baf54a2ef17210acc7a538446c0cb9969f002aca1e953') { throw 'Pinned editor checksum mismatch' }
+          Expand-Archive $file -DestinationPath .qa-tools -Force
+      - name: Run all nonvisual Windows engine, gameplay and save tests
+        shell: pwsh
+        run: py -3 tools/test_environment.py check --godot .qa-tools/Godot_v4.7.2-stable_win64.exe
+      - name: Save Windows test logs (no renders or source history)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nonvisual-windows-headless
+          path: |
+            build/qa-*.log
+            build/qa-environment.json
+          if-no-files-found: warn
+
+  windows-export:
+    name: Windows — reproducible native game export / packaging verification
+    runs-on: windows-2022
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Restore reproducible generated source art
+        shell: pwsh
+        run: |
+          py -3 -m pip install --quiet numpy Pillow trimesh
+          py -3 tools/generate_step21_materials.py
+          py -3 tools/generate_step21_glb.py
+          py -3 tools/generate_phase_b_surfaces.py
+          py -3 tools/generate_phase_b_reference_glb.py
+      - name: Download and verify official Windows Godot editor
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force '.qa-tools' | Out-Null
+          $file = '.qa-tools/Godot_v4.7.2-stable_win64.exe.zip'
+          Invoke-WebRequest 'https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_win64.exe.zip' -OutFile $file
+          $hash = (Get-FileHash $file -Algorithm SHA256).Hash.ToLowerInvariant()
+          if ($hash -ne '731980f9608d61333e5baf54a2ef17210acc7a538446c0cb9969f002aca1e953') { throw 'Pinned Windows editor checksum mismatch' }
+          Expand-Archive $file -DestinationPath .qa-tools -Force
+      - name: Download and verify pinned Windows export templates
+        shell: pwsh
+        run: |
+          $file = '.qa-tools/Godot_v4.7.2-stable_export_templates.tpz'
+          Invoke-WebRequest 'https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_export_templates.tpz' -OutFile $file
+          $hash = (Get-FileHash $file -Algorithm SHA512).Hash.ToLowerInvariant()
+          if ($hash -ne 'ca4d71c4d7b81dfc15d1a98baa07534aa95b03fdda78a0075b06672e1648d2e5f40980c9adc28d23e1b92e732ee7bf3461997aa804af74ec2fcd7a93ccb84079') { throw 'Pinned export templates checksum mismatch' }
+          Copy-Item $file '.qa-tools/templates.zip'
+          Expand-Archive '.qa-tools/templates.zip' -DestinationPath '.qa-tools/unpacked' -Force
+          $dest = Join-Path $env:APPDATA 'Godot/export_templates/4.7.2.stable'
+          New-Item -ItemType Directory -Force $dest | Out-Null
+          Copy-Item '.qa-tools/unpacked/templates/*' $dest -Recurse -Force
+      - name: Build native Windows x86-64 candidate (not GUI playtested)
+        shell: pwsh
+        run: py -3 tools/build.py windows --godot .qa-tools/Godot_v4.7.2-stable_win64.exe
+      - name: Save packaged candidate and build manifest (no full source history)
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nonvisual-windows-export-candidate
+          path: |
+            build/Hollowmere-Windows-Brinewick-Engineering.zip
+            build/windows/build-manifest.json
+            build/export-windows.log
+          if-no-files-found: error
+      - name: Save build failures if present
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nonvisual-windows-export-errors
+          path: build/*.log
+          if-no-files-found: warn
