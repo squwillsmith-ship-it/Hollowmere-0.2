@@ -71,6 +71,48 @@ func _run() -> void:
     require(village.site_nodes.size() == 21,"Original 21 location anchors remain")
     require(village.campaign_sites.finale_nodes.size() == 2,
         "Both mutually exclusive ending targets remain")
+    # Regression for the observed central undercroft occluder: visual
+    # "wall" ribs must now live against physical walls, not at desk height.
+    var protected_room: Node3D = underground.get_node_or_null(
+        "UndercroftBellAndContainment") as Node3D
+    require(protected_room != null,"Undercroft and bell share protected world group")
+    if protected_room != null:
+        var wall_ribs: int = 0
+        var bell_lamps: int = 0
+        var bell_at: Vector3 = underground.locations["bell_house"]
+        for detail: Node in protected_room.get_children():
+            if String(detail.name).begins_with("UndercroftWallRib_"):
+                wall_ribs += 1
+                require(detail is MeshInstance3D,
+                    "Wall rib is visual-only, never new opaque interaction collision")
+                if detail is MeshInstance3D:
+                    var world_x: float = (detail as MeshInstance3D).position.x
+                    require(absf(world_x-position.x) >= 3.9,
+                        "Undercroft rib stays outside central player sightline")
+            if detail is OmniLight3D and String(detail.name).begins_with(
+                    "ShieldedOilLantern"):
+                var lamp: OmniLight3D = detail as OmniLight3D
+                if lamp.position.distance_to(bell_at) < 7.0:
+                    bell_lamps += 1
+                    require(lamp.light_energy <= 0.9 and lamp.omni_range <= 7.0,
+                        "Bell side lamp no longer floods the entire overhead frame")
+        require(wall_ribs == 4,"Four restrained wall-margin undercroft ribs")
+        require(bell_lamps == 1,"One local protected bell sconce is present")
+        require(protected_room.get_node_or_null("CastBellClapper") is MeshInstance3D,
+            "Protected bell has an actual visible clapper")
+        var mount: StaticBody3D = protected_room.get_node_or_null("BellMount") as StaticBody3D
+        require(mount != null and mount.collision_layer == 1,
+            "Original protected physical bell mount still exists")
+        # The centre of the open square is unobstructed by the eaves and
+        # piers when looking to the mounted protected bell from normal height.
+        var bell_ray: Dictionary = space.intersect_ray(
+            PhysicsRayQueryParameters3D.create(
+                bell_at+Vector3(0,1.60,6.0),
+                bell_at+Vector3(0,4.45,0),1))
+        require(not bell_ray.is_empty(),"Protected bell mount is ray-visible from square")
+        if not bell_ray.is_empty():
+            require(bell_ray.get("collider") == mount,
+                "No front lintel, roof slab or hidden collider masks the bell mount")
     village.free()
     await process_frame
     if failures.is_empty():
