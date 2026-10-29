@@ -133,9 +133,9 @@ func _decorative_box(parent: Node3D,title: String,size:Vector3,at:Vector3,tone:C
     parent.add_child(geometry)
 
 func _lantern(parent: Node3D, at: Vector3, warmth: float = 1.0,
-        reach: float = 11.0) -> void:
+        reach: float = 11.0, unique_name: String = "ShieldedOilLantern") -> void:
     var lamp := OmniLight3D.new()
-    lamp.name = "ShieldedOilLantern"
+    lamp.name = unique_name
     lamp.position = at
     lamp.light_color = Color("efbd79")
     lamp.light_energy = 3.1 * warmth
@@ -266,4 +266,5 @@ func _bell(underground: HMUndergroundSites) -> void:
     # Light source is visibly mounted at the side, away from the bell.
     _decorative_box(parent,"BellLanternWallBracket",Vector3(0.43,0.10,0.24),
         at+Vector3(2.78,-0.97,2.40),WOOD_BASE.darkened(0.18))
-    _lantern(parent,at+Vector3(2.96,-0.90,2.40),0.26,6.5)
+    _lantern(parent,at+Vector3(2.96,-0.90,2.40),0.26,6.5,
+        "BellHouseWallSconce")
