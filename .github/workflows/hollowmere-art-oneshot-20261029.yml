@@ -41,7 +41,10 @@ jobs:
       # Companion to the first run's full Godot/Python suite. This second
       # workflow-only revision captures 66 1280x720 actual frames. The game
       # source blobs must be exactly identical to the tested earlier SHA.
-      - name: Full 10-view / 42-site / teardown Vulkan capture matrix
+      - name: Verify final lighting-source Godot and Python regression suites
+        run: |
+          python tools/test_environment.py check --godot .qa-tools/Godot_v4.7.2-stable_linux.x86_64
+      - name: Full exact-source 66-frame Forward+/Vulkan visual matrix
         run: |
           python tools/visual_capture_matrix.py --godot .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --mode forward_plus
       - name: Preserve machine-readable QA and genuine screenshots
