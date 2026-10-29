@@ -1,0 +1,93 @@
+name: Hollowmere 0.2 — manual Godot 4.7.2 QA
+
+# Explicit manual-only policy: NO push, pull_request, schedule, or automatic trigger.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hollowmere-02-qa-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  godot-linux-qa:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - name: Checkout mirror
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Verify exact source package and extract
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib, json, zipfile
+          archive = Path("source/Hollowmere-0.2-Batch03-public-QA-source.zip")
+          expected = "7e56e54ab196e2d17773d1f209a6fc65218f5d3d4614ba0df0eebfc8a8f1a8c9"
+          actual = hashlib.sha256(archive.read_bytes()).hexdigest()
+          if actual != expected:
+              raise SystemExit("Source ZIP hash mismatch")
+          with zipfile.ZipFile(archive) as z:
+              bad = z.testzip()
+              if bad is not None: raise SystemExit("Corrupt ZIP entry: " + bad)
+              manifest = json.loads(z.read("PUBLIC-QA-SOURCE-MANIFEST.json"))
+              files = manifest["files"]
+              if len(files) != manifest["file_count"]: raise SystemExit("Manifest size mismatch")
+              if set(z.namelist()) != set(files) | {"PUBLIC-QA-SOURCE-MANIFEST.json"}:
+                  raise SystemExit("Source inventory mismatch")
+              for name, digest in files.items():
+                  if Path(name).is_absolute() or ".." in Path(name).parts:
+                      raise SystemExit("Unsafe source path")
+                  if hashlib.sha256(z.read(name)).hexdigest() != digest:
+                      raise SystemExit("Source file hash mismatch: " + name)
+              z.extractall(".")
+          print("Verified source archive and", len(files), "source files")
+          PY
+
+      - name: Install material-generation dependencies
+        run: python -m pip install --quiet numpy Pillow trimesh
+
+      - name: Rebuild deterministic material library
+        shell: bash
+        run: |
+          python tools/generate_step21_materials.py
+          python tools/generate_step21_glb.py
+          python tools/generate_phase_b_surfaces.py
+          python tools/generate_phase_b_reference_glb.py
+
+      - name: Install Linux display and Vulkan/OpenGL software dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends xvfb mesa-vulkan-drivers libvulkan1 libasound2t64 libpulse0 libfontconfig1 unzip
+
+      - name: Fetch pinned official Godot Standard editor
+        run: |
+          python tools/test_environment.py doctor --install
+          test -x .qa-tools/Godot_v4.7.2-stable_linux.x86_64
+
+      - name: Run real Godot and Python QA on this exact archive
+        run: python tools/test_environment.py check
+
+      - name: Attempt genuine render capture (renderer must be verified from logs)
+        run: python tools/test_environment.py render
+
+      - name: Archive logs and screenshots even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hollowmere-02-manual-qa
+          path: |
+            build/qa-*.log
+            build/qa-environment.json
+            build/*.png
+            build/reference-*.png
+            build/phase-*.png
+          if-no-files-found: warn
