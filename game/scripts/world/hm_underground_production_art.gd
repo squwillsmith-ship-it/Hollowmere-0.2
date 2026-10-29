@@ -112,10 +112,10 @@ func _listening_gallery(at: Vector3) -> void:
                 Vector3(x,4.25,z),Vector3(x,7.55,z),0.31,0.25,n)
             _timber("ListeningKneeBrace_%d_%d"%[n,int(side)],
                 Vector3(x,6.50,z),Vector3(x-side*0.95,7.63,z),
-                0.18,0.18,n)
+                0.15,0.16,n)
             _stone("SaltWornPilaster_%d_%d"%[n,int(side)],
                 Vector3(at.x+side*3.82,5.1,z-0.37),
-                Vector3(at.x+side*3.82,6.72,z-0.37),0.27,0.12,n)
+                Vector3(at.x+side*3.82,6.72,z-0.37),0.20,0.12,n)
         _timber("ListeningCeilingTie_%d"%n,
             Vector3(at.x-3.69,7.66,z),Vector3(at.x+3.69,7.66,z),
             0.30,0.28,n)
@@ -147,13 +147,13 @@ func _mine_gallery(seal: Vector3) -> void:
         _timber("GalleryHewnTie_%d"%n,Vector3(x,9.35,z-1.94),
             Vector3(x,9.35,z+1.94),0.32,0.29,n)
     for n: int in range(9):
-        var x: float = 191.2+float(n)*3.15
+        var x: float = 191.2+float(n)*3.15+0.17*sin(float(n)*2.31)
         # Bare mining face, not regular laid masonry.
         for side: float in [-1.0,1.0]:
             _stone("GalleryToolScars_%d_%d"%[n,int(side)],
                 Vector3(x,7.9,z+side*1.95),
-                Vector3(x+0.42,8.36,z+side*1.95),
-                0.13,0.055,n)
+                Vector3(x+0.30+0.07*float(n%3),8.36,z+side*1.95),
+                0.10,0.045,n)
 
 func _undercroft(at: Vector3) -> void:
     for n: int in range(3):
@@ -170,8 +170,8 @@ func _undercroft(at: Vector3) -> void:
         # creating a false low beam even when the collision roof was fixed.
         for side: int in [-1,1]:
             _stone("UndercroftRakedRib_%d_%d"%[n,side],
-                Vector3(at.x+float(side)*3.80,11.76,z),
-                Vector3(at.x,12.55,z),0.27,0.21,n)
+                Vector3(at.x+float(side)*3.92,11.74,z),
+                Vector3(at.x,12.43,z),0.17,0.15,n)
     # Suggest an intentionally emptied book chest, not an invented person.
     _timber("StudyChestLid",at+Vector3(-3.15,0.4,1.8),
         at+Vector3(-2.08,0.4,1.8),0.12,0.56)

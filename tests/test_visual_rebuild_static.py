@@ -57,7 +57,7 @@ class VisualRebuildSourceContract(unittest.TestCase):
         s = self.read('game/scripts/world/hm_underground_production_art.gd')
         self.assertIn('"UndercroftRakedRib_%d_%d"', s)
         self.assertNotIn('"UndercroftRoofRib_%d"', s)
-        self.assertIn('Vector3(at.x,12.55,z)', s)
+        self.assertIn('Vector3(at.x,12.43,z)', s)
 
     def test_cottage_three_stripping_states_are_engine_checked(self):
         s = self.read('game/tests/test_phase_b_visual.gd')

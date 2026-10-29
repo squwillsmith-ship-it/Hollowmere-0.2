@@ -52,9 +52,10 @@ static func roof_course(size: Vector3, key: String) -> ArrayMesh:
 		for col: int in range(columns):
 			var k: int = phase + row * 7 + col * 11
 			var dx: float = (float(k % 5) - 2.0) * 0.014
-			var x0: float = -size.x * 0.5 + float(col) * cell_x + dx
+			var stagger: float = 0.30 * cell_x if row % 2 == 1 else 0.0
+			var x0: float = maxf(-size.x * 0.5, -size.x * 0.5 + float(col) * cell_x + dx - stagger)
 			var z0: float = -size.z * 0.5 + float(row) * cell_z
-			var x1: float = minf(size.x * 0.5, x0 + cell_x * 1.025)
+			var x1: float = minf(size.x * 0.5, x0 + cell_x * 1.035)
 			var z1: float = minf(size.z * 0.5, z0 + cell_z * 1.17)
 			var y: float = 0.018 * float(row % 2) + float(k % 4) * 0.006
 			var tint: float = 0.77 + float(k % 7) * 0.026

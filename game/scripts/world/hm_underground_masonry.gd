@@ -55,8 +55,8 @@ func _build_courses(dims: Vector3, name: String, stone_tone: Color) -> ArrayMesh
 	var along_x: bool = dims.x >= dims.z
 	var surface_width: float = dims.x if along_x else dims.z
 	var surface_height: float = dims.y
-	var columns: int = clampi(ceili(surface_width / 0.82), 1, 48)
-	var rows: int = clampi(ceili(surface_height / 0.44), 1, 16)
+	var columns: int = clampi(ceili(surface_width / 1.16), 1, 48)
+	var rows: int = clampi(ceili(surface_height / 0.72), 1, 16)
 	var cell_w: float = surface_width / float(columns)
 	var cell_h: float = surface_height / float(rows)
 	var rng := RandomNumberGenerator.new()
@@ -84,7 +84,7 @@ func _build_courses(dims: Vector3, name: String, stone_tone: Color) -> ArrayMesh
 				var v1: float = top - mortar - h
 				if u1 <= u0 or v1 <= v0:
 					continue
-				var elevation: float = rng.randf_range(0.025,0.095)
+				var elevation: float = rng.randf_range(0.018,0.055)
 				var panel: float = (dims.z if along_x else dims.x) * 0.5
 				var back: float = float(side) * (panel + 0.005)
 				var front: float = float(side) * (panel + elevation)

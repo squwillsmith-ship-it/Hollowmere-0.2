@@ -39,13 +39,13 @@ func build(sites: Dictionary) -> void:
         var z_cursor: float = -8.5 + float(course % 2)*0.47
         var block: int = 0
         while z_cursor < 8.4:
-            var length: float = rng.randf_range(0.63,1.67)
-            var stone: Color = Color("696b62").lerp(Color("918a75"),rng.randf_range(0.08,0.55))
+            var length: float = rng.randf_range(0.95,2.05)
+            var stone: Color = Color("626860").lerp(Color("878779"),rng.randf_range(0.13,0.54))
             var position := origin + Vector3(-9.25-rng.randf_range(0.0,0.42),
                 -1.78+float(course)*0.45 + rng.randf_range(-0.08,0.06),z_cursor+length*0.5)
-            _box(st,position,Vector3(rng.randf_range(0.43,0.77),
-                rng.randf_range(0.40,0.51),length-0.07),stone)
-            z_cursor += length + rng.randf_range(0.06,0.18)
+            _box(st,position,Vector3(rng.randf_range(0.50,0.78),
+                rng.randf_range(0.38,0.53),length-0.08),stone)
+            z_cursor += length + rng.randf_range(0.09,0.22)
             block += 1
     _mesh(st,"OutboardMooringsAndClinker",true)
     quay_batches = 1

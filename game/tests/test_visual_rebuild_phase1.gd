@@ -58,14 +58,14 @@ func _run() -> void:
             "Standing capsule clears ceiling/rock at offset " + str(x))
     # Eye ray should reach the protected desk; no phantom, solid ceiling
     # collider may hide the recorded story location from normal stance.
-    var eye: Vector3 = position + Vector3(-1.6,1.43,2.55)
-    var focus: Vector3 = position + Vector3(0.0,0.50,1.0)
+    var eye: Vector3 = position + Vector3(0.4,1.43,2.55)
+    var focus: Vector3 = position + Vector3(2.08,0.64,0.75)
     var ray: Dictionary = space.intersect_ray(
         PhysicsRayQueryParameters3D.create(eye,focus,1))
-    require(not ray.is_empty(),"A real scene surface is visible from player-eye height")
+    require(not ray.is_empty(),"The protected writing table is visible from standing-eye height")
     if not ray.is_empty():
-        require(not String(ray["collider"].name).begins_with("UndercroftVaultSlope"),
-            "No ceiling is the first hit on the player-eye story line")
+        require(String(ray["collider"].name) == "StoneWritingTable",
+            "The first player-eye hit is the writing table rather than the roof")
     # All 21 sites, 345 normal-world removable IDs and protected finale
     # machinery must still exist in this exact same world.
     require(village.site_nodes.size() == 21,"Original 21 location anchors remain")
