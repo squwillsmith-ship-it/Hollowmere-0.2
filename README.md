@@ -4,7 +4,7 @@ This is a **clean-history testing copy** of the Godot Hollowmere/Brinewick proje
 
 The working source is based on the Visual Rebuild Batch03 offline source archive (SHA-256 `38b1cf84de4a553ac44c0de8d1513734f41813b17cb9563ef8c4126287271729`, 29 October 2026). The original Git history, historical PRs, private design records, and archived workflow artifacts are intentionally excluded.
 
-**Testing status:** no tests or GitHub Actions have been run on this public mirror. The previous Godot Batch02 verification does not certify new Batch03 changes.
+**Testing status:** Visual Rebuild Batch03 nonvisual headless QA passed on a corrected, isolated test branch (Linux and Windows Godot 4.7.2, 68/68 QA stages on each, 159 Python regressions, Windows x86-64 export). Exact tested game-code commit `849fcda0f2efa6dd90e2f8f3e82fc90942bd7794`. This does not certify the unmodified public `main` or the private canonical source. No gameplay GUI, visual, audio or performance signoff. See [test evidence](docs/NONVISUAL-QA-20261029.md).
 
 All project-original code, art and assets remain copyright the project owner, all rights reserved; third-party licences and notices are preserved separately. Public visibility does not grant a licence to reuse original work.
 
