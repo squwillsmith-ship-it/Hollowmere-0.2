@@ -238,6 +238,7 @@ static func _box(parent: Node3D, name: String, size: Vector3, at: Vector3,
 	mesh.material_override = material
 	solid.add_child(mesh)
 	var shape := CollisionShape3D.new()
+	shape.name = "CollisionShape3D"
 	var cuboid := BoxShape3D.new()
 	cuboid.size = size
 	shape.shape = cuboid
