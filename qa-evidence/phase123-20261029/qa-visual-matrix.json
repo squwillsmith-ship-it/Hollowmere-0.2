@@ -1,0 +1,935 @@
+{
+  "all_passed": true,
+  "captures": {
+    "blockout": {
+      "expected": 2,
+      "found": 2,
+      "passed": true,
+      "process_exit": 0,
+      "seconds": 11.51,
+      "success_marker": true
+    },
+    "materials": {
+      "expected": 2,
+      "found": 2,
+      "passed": true,
+      "process_exit": 0,
+      "seconds": 2.7,
+      "success_marker": true
+    },
+    "reference": {
+      "expected": 2,
+      "found": 2,
+      "passed": true,
+      "process_exit": 0,
+      "seconds": 11.66,
+      "success_marker": true
+    },
+    "sites": {
+      "expected": 42,
+      "found": 42,
+      "passed": true,
+      "process_exit": 0,
+      "seconds": 64.8,
+      "success_marker": true
+    },
+    "smoke": {
+      "expected": 1,
+      "found": 1,
+      "passed": true,
+      "process_exit": 0,
+      "seconds": 4.18,
+      "success_marker": true
+    },
+    "teardown": {
+      "expected": 6,
+      "found": 6,
+      "passed": true,
+      "process_exit": 0,
+      "seconds": 19.39,
+      "success_marker": true
+    },
+    "ten_views": {
+      "expected": 11,
+      "found": 11,
+      "passed": true,
+      "process_exit": 0,
+      "seconds": 22.36,
+      "success_marker": true
+    }
+  },
+  "driver_requested": "vulkan",
+  "engine": "/home/runner/work/Hollowmere-0.2/Hollowmere-0.2/.qa-tools/Godot_v4.7.2-stable_linux.x86_64",
+  "failures": [],
+  "frames": {
+    "phase-e-bell.png": {
+      "bytes": 335392,
+      "height": 720,
+      "mean_rgb": [
+        104.25,
+        110.65,
+        95.25
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 918,
+      "sha256": "f47c8919aa0f251892113f07fca6902af0e1414d2f47c15be0af4902a72e3e8c",
+      "width": 1280
+    },
+    "phase-e-chapel.png": {
+      "bytes": 188749,
+      "height": 720,
+      "mean_rgb": [
+        122.74,
+        137.05,
+        125.67
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 381,
+      "sha256": "40c07ccbfd20929c85a6ac39afbfcccce9fb3443368ff53e32f8fc8dbd43ba40",
+      "width": 1280
+    },
+    "phase-e-harbour.png": {
+      "bytes": 129469,
+      "height": 720,
+      "mean_rgb": [
+        116.5,
+        129.35,
+        118.01
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 488,
+      "sha256": "d5ab02bb8a4a2fa940ff96a0322f00d49c4a3015f486fc76a0b46fa86612636f",
+      "width": 1280
+    },
+    "phase-e-headland.png": {
+      "bytes": 228704,
+      "height": 720,
+      "mean_rgb": [
+        115.09,
+        127.51,
+        115.71
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 544,
+      "sha256": "4e7051affd03f160746ee6146a7ac4c7c707b34a79430368b7dfb8b75149890e",
+      "width": 1280
+    },
+    "phase-e-inn.png": {
+      "bytes": 146598,
+      "height": 720,
+      "mean_rgb": [
+        121.75,
+        134.62,
+        122.31
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 443,
+      "sha256": "5b5fddaad0dcd8c2afc84975bb693526471c91b1705f118d1024524424c676ca",
+      "width": 1280
+    },
+    "phase-e-mine.png": {
+      "bytes": 596918,
+      "height": 720,
+      "mean_rgb": [
+        124.82,
+        125.61,
+        106.88
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 822,
+      "sha256": "3ebc1419f24bb9198e1fa6d11378f519b2de96ab7a4c84e92eb02372c17b45b2",
+      "width": 1280
+    },
+    "phase-e-mine_office.png": {
+      "bytes": 156150,
+      "height": 720,
+      "mean_rgb": [
+        123.5,
+        135.77,
+        123.93
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 526,
+      "sha256": "302aa5c2d28fc14b1dd10f4d38e7dcd1e30116ed3ad7346567fbd04670fe52ee",
+      "width": 1280
+    },
+    "phase-e-shore.png": {
+      "bytes": 156471,
+      "height": 720,
+      "mean_rgb": [
+        119.59,
+        138.09,
+        126.26
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 675,
+      "sha256": "2a431647ee153dc0bcad16a3e6db2c29fc2d53f42c83150392295bdfc2ace2bd",
+      "width": 1280
+    },
+    "phase-e-undercroft-legacy-pose.png": {
+      "bytes": 452549,
+      "height": 720,
+      "mean_rgb": [
+        93.76,
+        96.63,
+        81.05
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 714,
+      "sha256": "71d02f3b99154f619aadfac8524d842fae250fa4cd03f81c90c466d5713f429d",
+      "width": 1280
+    },
+    "phase-e-undercroft.png": {
+      "bytes": 466848,
+      "height": 720,
+      "mean_rgb": [
+        93.02,
+        96.2,
+        80.62
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 706,
+      "sha256": "3feb65a5215667f07d9cf7c24f9fd48140b43b6259760e3fea1f137c6f4f3ccf",
+      "width": 1280
+    },
+    "phase-e-well.png": {
+      "bytes": 580758,
+      "height": 720,
+      "mean_rgb": [
+        107.7,
+        108.52,
+        90.85
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 1012,
+      "sha256": "82f602824f147559cb3ea02924c3cd337ae70c7a9d44df5246eea09eb4512d9b",
+      "width": 1280
+    },
+    "reference-cottage.png": {
+      "bytes": 141554,
+      "height": 720,
+      "mean_rgb": [
+        109.99,
+        121.19,
+        109.31
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 514,
+      "sha256": "b2babd39635dd4685a041506afd042fd7f94572c100778fc560e22cb73a39bda",
+      "width": 1280
+    },
+    "reference-warehouse.png": {
+      "bytes": 172962,
+      "height": 720,
+      "mean_rgb": [
+        117.68,
+        129.83,
+        117.79
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 566,
+      "sha256": "ee08163ce1100dfc235b45de1d0ee688af89a1d36f71f9e9f24253d1163a16b5",
+      "width": 1280
+    },
+    "site-01-near.png": {
+      "bytes": 51268,
+      "height": 720,
+      "mean_rgb": [
+        123.72,
+        135.62,
+        122.87
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 288,
+      "sha256": "0597dc431ee3fd6e4d8a8f8d267f6eaee8e918e4f280e7c7a0982f3353fa4e21",
+      "width": 1280
+    },
+    "site-01-wide.png": {
+      "bytes": 171263,
+      "height": 720,
+      "mean_rgb": [
+        116.41,
+        130.18,
+        118.81
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 547,
+      "sha256": "65110345ea47e4a1ce95423767bfa994b192c15aefad450e4a103b838507898b",
+      "width": 1280
+    },
+    "site-02-near.png": {
+      "bytes": 137747,
+      "height": 720,
+      "mean_rgb": [
+        112.33,
+        124.02,
+        112.44
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 588,
+      "sha256": "6b37355aa0191d1d6b4b6053c9cffe92303576733306c00a75411d63b5b85e8b",
+      "width": 1280
+    },
+    "site-02-wide.png": {
+      "bytes": 133208,
+      "height": 720,
+      "mean_rgb": [
+        116.57,
+        130.31,
+        118.65
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 417,
+      "sha256": "a357172dfb597c8d276977fa99dd5115c9dd4178267b46a56f8d4df7d97245ba",
+      "width": 1280
+    },
+    "site-03-near.png": {
+      "bytes": 189522,
+      "height": 720,
+      "mean_rgb": [
+        111.95,
+        122.75,
+        110.8
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 548,
+      "sha256": "6ac0696c7ecc3168bea8bdb2b9cb32b713c46d602cf87fbfcc7a89840e379129",
+      "width": 1280
+    },
+    "site-03-wide.png": {
+      "bytes": 292382,
+      "height": 720,
+      "mean_rgb": [
+        116.04,
+        125.87,
+        113.31
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 844,
+      "sha256": "01216791a8442aa8fb86b18416ac7901275e37e630c8f69a7e0df4b063107bfe",
+      "width": 1280
+    },
+    "site-04-near.png": {
+      "bytes": 142277,
+      "height": 720,
+      "mean_rgb": [
+        105.73,
+        104.68,
+        87.66
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 904,
+      "sha256": "d10953ee9fa667232e68fad13b9a933cf7599b6ea6d6b30ee9ba958356e1ed5c",
+      "width": 1280
+    },
+    "site-04-wide.png": {
+      "bytes": 176608,
+      "height": 720,
+      "mean_rgb": [
+        115.64,
+        127.76,
+        115.73
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 577,
+      "sha256": "1d4d2d8bf3f18f96ea6d2204e8a7eaa3488813927052d52ee00936a8e6ad4fd8",
+      "width": 1280
+    },
+    "site-05-near.png": {
+      "bytes": 97907,
+      "height": 720,
+      "mean_rgb": [
+        111.15,
+        96.5,
+        72.41
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 768,
+      "sha256": "6144825f870a774f3513bf13c030aa15bd29d462c6112655506b2de1a4314f8a",
+      "width": 1280
+    },
+    "site-05-wide.png": {
+      "bytes": 237295,
+      "height": 720,
+      "mean_rgb": [
+        117.08,
+        129.4,
+        118.04
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 542,
+      "sha256": "e26d47b34ece5f4d166bd05bc0d3e7bb7caf786625d5c955040d50db6269b955",
+      "width": 1280
+    },
+    "site-06-near.png": {
+      "bytes": 154421,
+      "height": 720,
+      "mean_rgb": [
+        110.68,
+        121.82,
+        110.31
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 482,
+      "sha256": "654ad85f930ddc4a3be40b8c738cf7c855b17170c76d5c2a311ab443fd4c64c6",
+      "width": 1280
+    },
+    "site-06-wide.png": {
+      "bytes": 116859,
+      "height": 720,
+      "mean_rgb": [
+        117.38,
+        131.4,
+        119.87
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 329,
+      "sha256": "7e89a8ba93359c3904cfdff6dcdebfd1eb28983d4466d63bf4cddcd6a53a5fff",
+      "width": 1280
+    },
+    "site-07-near.png": {
+      "bytes": 125764,
+      "height": 720,
+      "mean_rgb": [
+        111.81,
+        122.16,
+        109.79
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 577,
+      "sha256": "a18efb0e27740e19b30cc5bf9a457a7740c549198dab51a908ae038c336fca31",
+      "width": 1280
+    },
+    "site-07-wide.png": {
+      "bytes": 153533,
+      "height": 720,
+      "mean_rgb": [
+        113.09,
+        125.48,
+        113.78
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 482,
+      "sha256": "bd443584cff9dd0fadb97ccdda9fd0912124df55ee8c19d53d1a2308f03d516f",
+      "width": 1280
+    },
+    "site-08-near.png": {
+      "bytes": 202829,
+      "height": 720,
+      "mean_rgb": [
+        110.67,
+        121.14,
+        109.29
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 535,
+      "sha256": "ce0576ddcf0f296bd7dc58d70600c70ec341d817cfc1706164cf9bb7bc162328",
+      "width": 1280
+    },
+    "site-08-wide.png": {
+      "bytes": 146145,
+      "height": 720,
+      "mean_rgb": [
+        115.23,
+        128.21,
+        116.68
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 455,
+      "sha256": "a031c1761355f09c8b1639e38ec5dd41d6dd82818d2a1a0d5a54a6cf4a4c1869",
+      "width": 1280
+    },
+    "site-09-near.png": {
+      "bytes": 85730,
+      "height": 720,
+      "mean_rgb": [
+        121.81,
+        134.56,
+        121.81
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 285,
+      "sha256": "1416a72145a42a97daa11c39243a7871cb7bae58227c384245f50e47258892be",
+      "width": 1280
+    },
+    "site-09-wide.png": {
+      "bytes": 151805,
+      "height": 720,
+      "mean_rgb": [
+        120.46,
+        133.48,
+        121.19
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 488,
+      "sha256": "146f81a63de5df4d2de849c4da83646d93655e3180c67c04b34ddeddf9e52063",
+      "width": 1280
+    },
+    "site-10-near.png": {
+      "bytes": 221513,
+      "height": 720,
+      "mean_rgb": [
+        109.51,
+        117.89,
+        104.11
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 658,
+      "sha256": "87ded22d851994a0b7a9d0b59caa60cfd0b1aa25aaa944275c6958854f9c2fef",
+      "width": 1280
+    },
+    "site-10-wide.png": {
+      "bytes": 194213,
+      "height": 720,
+      "mean_rgb": [
+        118.22,
+        130.75,
+        118.24
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 516,
+      "sha256": "adee1e077fae9e8f07496567b4abed16d30acf58feb150892ae21108af4d7632",
+      "width": 1280
+    },
+    "site-11-near.png": {
+      "bytes": 267016,
+      "height": 720,
+      "mean_rgb": [
+        106.55,
+        115.72,
+        103.13
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 622,
+      "sha256": "dcee81dae384d2dec58f9af653f71fb97f1c2d1c592d12b6d0483d68d2010b63",
+      "width": 1280
+    },
+    "site-11-wide.png": {
+      "bytes": 198614,
+      "height": 720,
+      "mean_rgb": [
+        117.37,
+        129.64,
+        117.06
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 473,
+      "sha256": "ca8081f4a4e2a09f75429712647e10af40cbd04691621b954fe75603d11345af",
+      "width": 1280
+    },
+    "site-12-near.png": {
+      "bytes": 152906,
+      "height": 720,
+      "mean_rgb": [
+        115.64,
+        126.76,
+        114.03
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 475,
+      "sha256": "d6fdbd418ce961860775aa6c5e5faeb2fe6cc86ffa616dfa3de0fe19cb636dc1",
+      "width": 1280
+    },
+    "site-12-wide.png": {
+      "bytes": 139241,
+      "height": 720,
+      "mean_rgb": [
+        119.87,
+        133.18,
+        120.94
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 379,
+      "sha256": "f70d21d91d03f3461e13d158195ea6629e6f696ae4bef8d45221d2b3f1e60f06",
+      "width": 1280
+    },
+    "site-13-near.png": {
+      "bytes": 257298,
+      "height": 720,
+      "mean_rgb": [
+        90.29,
+        96.74,
+        84.62
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 343,
+      "sha256": "6996fa374d50d926730f5d23bbdaa742726a01a0f53e970eeb71de25b7b61ba7",
+      "width": 1280
+    },
+    "site-13-wide.png": {
+      "bytes": 254942,
+      "height": 720,
+      "mean_rgb": [
+        116.82,
+        129.94,
+        118.52
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 541,
+      "sha256": "e181ca05064c9cd7f3dddf1ffed47d48887ff1ac2a82b642c54f8d656131e98c",
+      "width": 1280
+    },
+    "site-14-near.png": {
+      "bytes": 268984,
+      "height": 720,
+      "mean_rgb": [
+        114.85,
+        125.02,
+        112.31
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 741,
+      "sha256": "51b6389f22d48ca521b766b2ea8cfb5ef01bf90429a27d848c953fe35cc2ad78",
+      "width": 1280
+    },
+    "site-14-wide.png": {
+      "bytes": 293214,
+      "height": 720,
+      "mean_rgb": [
+        124.01,
+        134.71,
+        121.19
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 804,
+      "sha256": "c911e34f25006067f7a52814e1f10290d95cf11eadbd78366a4dd94f41b66dd8",
+      "width": 1280
+    },
+    "site-15-near.png": {
+      "bytes": 292985,
+      "height": 720,
+      "mean_rgb": [
+        119.65,
+        127.86,
+        112.73
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 835,
+      "sha256": "bb04252a4a2bc5bfb7226e8759ab7b258990d056ee391bd8fd2fe0df9f4217b6",
+      "width": 1280
+    },
+    "site-15-wide.png": {
+      "bytes": 176032,
+      "height": 720,
+      "mean_rgb": [
+        115.26,
+        127.3,
+        114.34
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 493,
+      "sha256": "1531319d30fdb17182205569610c10f3d0a294abda1c8a708cb90a9fd8a444d0",
+      "width": 1280
+    },
+    "site-16-near.png": {
+      "bytes": 157338,
+      "height": 720,
+      "mean_rgb": [
+        113.85,
+        125.9,
+        113.52
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 502,
+      "sha256": "d5ef7e9fad19b822faed6d962aca42e7b829e253f404bbab19340c6dd931a09d",
+      "width": 1280
+    },
+    "site-16-wide.png": {
+      "bytes": 182557,
+      "height": 720,
+      "mean_rgb": [
+        122.99,
+        136.99,
+        124.96
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 496,
+      "sha256": "0a472237f3c9c191acdfb70b4b5385076059150a6091e12ace01d507a94f41d6",
+      "width": 1280
+    },
+    "site-17-near.png": {
+      "bytes": 151243,
+      "height": 720,
+      "mean_rgb": [
+        116.79,
+        129.1,
+        116.29
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 488,
+      "sha256": "74f5c66b85fbe4c37f33b82869095bdb827aab5998c296eeca9b02dadece4385",
+      "width": 1280
+    },
+    "site-17-wide.png": {
+      "bytes": 187361,
+      "height": 720,
+      "mean_rgb": [
+        121.1,
+        135.09,
+        123.11
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 527,
+      "sha256": "5adac601fa40bfe66ac59ee8341b17d4794bb62087352f99a6651d8c1da1637b",
+      "width": 1280
+    },
+    "site-18-near.png": {
+      "bytes": 135328,
+      "height": 720,
+      "mean_rgb": [
+        114.2,
+        127.11,
+        115.25
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 331,
+      "sha256": "285ecccaebfa3dc8350202a7c019f61f5b3328e82846d2864ea53906f99fa6f7",
+      "width": 1280
+    },
+    "site-18-wide.png": {
+      "bytes": 239234,
+      "height": 720,
+      "mean_rgb": [
+        124.06,
+        138.53,
+        127.44
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 527,
+      "sha256": "928fe2494013747e731424794fd2419a695c37005797bb5909a99d450b2daf51",
+      "width": 1280
+    },
+    "site-19-near.png": {
+      "bytes": 175860,
+      "height": 720,
+      "mean_rgb": [
+        113.79,
+        124.58,
+        112.52
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 667,
+      "sha256": "d53455c5da6485243e4e3f4569cf4a42fdb3e93e849fb188b2542eea24680207",
+      "width": 1280
+    },
+    "site-19-wide.png": {
+      "bytes": 179092,
+      "height": 720,
+      "mean_rgb": [
+        130.69,
+        144.44,
+        132.83
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 528,
+      "sha256": "f4bcaa239c87095b1831680412d52da27022ea0432ac13e2bd9b78883c3cbcfe",
+      "width": 1280
+    },
+    "site-20-near.png": {
+      "bytes": 61932,
+      "height": 720,
+      "mean_rgb": [
+        119.33,
+        132.76,
+        121.18
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 250,
+      "sha256": "b7f04fa4c7d8b027ea3c69836cc10b8429979981fb26f4604283306baec42699",
+      "width": 1280
+    },
+    "site-20-wide.png": {
+      "bytes": 147146,
+      "height": 720,
+      "mean_rgb": [
+        116.93,
+        131.36,
+        120.07
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 438,
+      "sha256": "060f734a8aa205e55aba37e99c2d8091b823e5867ac2ec52eca8cb6e2a297222",
+      "width": 1280
+    },
+    "site-21-near.png": {
+      "bytes": 86982,
+      "height": 720,
+      "mean_rgb": [
+        119.56,
+        132.98,
+        121.11
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 379,
+      "sha256": "7bca379e14daf0c534ae09b33f1dac492bea75423c510203fec9551e9541cb15",
+      "width": 1280
+    },
+    "site-21-wide.png": {
+      "bytes": 122001,
+      "height": 720,
+      "mean_rgb": [
+        117.26,
+        132.86,
+        120.97
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 472,
+      "sha256": "1795fae66c94138b3c9dabe6b50fc0aaa40c456334e49afbbf267b08ec5d0375",
+      "width": 1280
+    },
+    "step06-engine-frame.png": {
+      "bytes": 130095,
+      "height": 720,
+      "mean_rgb": [
+        104.92,
+        104.15,
+        85.43
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 888,
+      "sha256": "af4bce89a9ce95ae74cf6f7b67cb79589ecb4ac860e6ff1772f90f1d934daeab",
+      "width": 1280
+    },
+    "step21-materials-coastal.png": {
+      "bytes": 74767,
+      "height": 720,
+      "mean_rgb": [
+        134.78,
+        141.69,
+        146.43
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 373,
+      "sha256": "81f8ce3132e3126ae0c9f7d0b0d93507de260ca5db557a3b6fb6b9010d8cca89",
+      "width": 1280
+    },
+    "step21-materials-neutral.png": {
+      "bytes": 88338,
+      "height": 720,
+      "mean_rgb": [
+        183.08,
+        182.14,
+        176.98
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 443,
+      "sha256": "28d9d6eb5a5cf097b3eb02910e1d07775226f38df202274f542db4314abe21ca",
+      "width": 1280
+    },
+    "step25-brinewick-aerial.png": {
+      "bytes": 127906,
+      "height": 720,
+      "mean_rgb": [
+        142.18,
+        160.57,
+        150.08
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 192,
+      "sha256": "32f84372082ff52e7b7cf14c779004b7a06e5c3588dfceaefd88c44c8f0b1066",
+      "width": 1280
+    },
+    "step25-brinewick-harbour.png": {
+      "bytes": 135371,
+      "height": 720,
+      "mean_rgb": [
+        138.6,
+        156.51,
+        145.82
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 359,
+      "sha256": "f6396647ada0e8afdbc5e62b360074653af5d25835f95f96ffeb15218d6a53fb",
+      "width": 1280
+    },
+    "teardown-cottage-half.png": {
+      "bytes": 132913,
+      "height": 720,
+      "mean_rgb": [
+        110.76,
+        122.15,
+        110.23
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 497,
+      "sha256": "1a5edcb4dae36424355039a03dfa090b8e1aa9258ced9e6a85431fe8b35f8dc6",
+      "width": 1280
+    },
+    "teardown-cottage-heavy.png": {
+      "bytes": 124668,
+      "height": 720,
+      "mean_rgb": [
+        110.25,
+        121.96,
+        110.27
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 436,
+      "sha256": "1cb1b9c7650cc4a1f36553e2910a1675b1c2c65788642fdb97de7e5b93297bac",
+      "width": 1280
+    },
+    "teardown-cottage-intact.png": {
+      "bytes": 140832,
+      "height": 720,
+      "mean_rgb": [
+        110.15,
+        121.45,
+        109.62
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 496,
+      "sha256": "adce9bb7785ba8282958cdb07ea49c75e5916e00b8ce9c7f96c84b382b11acb7",
+      "width": 1280
+    },
+    "teardown-warehouse-half.png": {
+      "bytes": 181947,
+      "height": 720,
+      "mean_rgb": [
+        117.92,
+        130.41,
+        118.46
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 577,
+      "sha256": "886f967f311b9b8064641e39c6b7662e2bff89ef689173e336236c0a7dffd908",
+      "width": 1280
+    },
+    "teardown-warehouse-heavy.png": {
+      "bytes": 178097,
+      "height": 720,
+      "mean_rgb": [
+        118.2,
+        130.91,
+        118.99
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 543,
+      "sha256": "7df0cd99b8bf6d0adeed4a89df413d1f5cb5fa5e51bd9d6d28a064e73a5e6b59",
+      "width": 1280
+    },
+    "teardown-warehouse-intact.png": {
+      "bytes": 173484,
+      "height": 720,
+      "mean_rgb": [
+        117.98,
+        130.24,
+        118.22
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sampled_colors": 565,
+      "sha256": "3cc42b6288f449dec7a6c006d1db1523e2decf76a3d9324c59c138a4996b01fb",
+      "width": 1280
+    }
+  },
+  "hardware_gpu_accepted": false,
+  "human_visual_signoff": false,
+  "measured_gameplay_fps": null,
+  "mode": "forward_plus",
+  "native_windows_graphics_tested": false,
+  "overview": "contact-10-canonical-views.png",
+  "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+  "sites_near": "contact-21-site-near.png",
+  "sites_overview": "contact-21-site-wide.png",
+  "source": "05c73a0b4098eec4c5e4a1eef320c51c464834e5",
+  "teardown_overview": "contact-6-teardown-states.png"
+}
