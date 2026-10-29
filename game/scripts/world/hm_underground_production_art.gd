@@ -170,8 +170,8 @@ func _undercroft(at: Vector3) -> void:
         # creating a false low beam even when the collision roof was fixed.
         for side: int in [-1,1]:
             _stone("UndercroftRakedRib_%d_%d"%[n,side],
-                Vector3(at.x+float(side)*3.80,11.76,z),
-                Vector3(at.x,12.55,z),0.27,0.21,n)
+                Vector3(at.x+float(side)*3.92,11.74,z),
+                Vector3(at.x,12.43,z),0.17,0.15,n)
     # Suggest an intentionally emptied book chest, not an invented person.
     _timber("StudyChestLid",at+Vector3(-3.15,0.4,1.8),
         at+Vector3(-2.08,0.4,1.8),0.12,0.56)

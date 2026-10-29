@@ -116,8 +116,8 @@ func _build_undercroft(study: Vector3, bell: Vector3) -> void:
 		Vector3(study.x + 3.58, 10.70, 1.25), CUT_STONE)
 	for side: float in [-0.6, 0.6]:
 		_solid(node, "StudyTableStoneLeg_%d" % int(side * 10.0),
-			Vector3(0.21, 0.57, 0.62),
-			Vector3(study.x + 3.58 + side, 10.35, 1.25), ROCK)
+			Vector3(0.21, 0.74, 0.62),
+			Vector3(study.x + 3.58 + side, 10.32, 1.25), ROCK)
 	_solid(node, "EmptyChair", Vector3(0.64, 0.68, 0.54),
 		Vector3(study.x + 2.05, 10.32, 2.20), TIMBER)
 	# The surviving bell-house is a roofless, salt-scoured stone frame.
@@ -125,27 +125,27 @@ func _build_undercroft(study: Vector3, bell: Vector3) -> void:
 	for side_x: float in [-3.35,3.35]:
 		for side_z: float in [-3.35,3.35]:
 			_solid(node, "BellHouseWeatheredPier_%d_%d" % [int(side_x),int(side_z)],
-				Vector3(0.85,4.65,0.86),bell+Vector3(side_x,2.34,side_z),CUT_STONE)
+				Vector3(0.74,4.52,0.76),bell+Vector3(side_x,2.30,side_z),CUT_STONE)
 			_solid(node, "BellHouseBrokenCap_%d_%d" % [int(side_x),int(side_z)],
-				Vector3(1.10,0.31,1.10),
-				bell+Vector3(side_x,4.82,side_z),ROCK)
+				Vector3(0.84,0.19,0.87),
+				bell+Vector3(side_x,4.67,side_z),ROCK)
 	for side_x: float in [-3.35,3.35]:
 		_solid(node,"BellHouseSideLintel_%d"%int(side_x),
-			Vector3(0.58,0.62,7.0),bell+Vector3(side_x,4.59,0),CUT_STONE)
-	_solid(node,"BellHouseRearLintel",Vector3(6.9,0.67,0.54),
-		bell+Vector3(0,4.65,-3.35),CUT_STONE)
+			Vector3(0.48,0.43,6.9),bell+Vector3(side_x,4.58,0),CUT_STONE)
+	_solid(node,"BellHouseRearLintel",Vector3(6.82,0.43,0.45),
+		bell+Vector3(0,4.61,-3.35),CUT_STONE)
 	# A broken eaves line, rather than a solid slate ceiling, leaves the
 	# working bronze bell legible from the square and produces true shade.
-	for roof_x: float in [-2.85,2.85]:
+	for roof_x: float in [-3.04,3.04]:
 		_solid(node,"BellHouseRoofRemnant_%d"%int(roof_x),
-			Vector3(1.05,0.24,7.4),
-			bell+Vector3(roof_x,5.26,0.0),SLATE)
+			Vector3(0.44,0.17,2.2),
+			bell+Vector3(roof_x,4.98,-2.26),SLATE)
 	# Bell and mechanism remain intact and protected; mechanical signalling
 	# is a story puzzle, NOT a passive resource processing machine.
-	_solid(node, "BellTimberCrossbar", Vector3(4.0, 0.5, 0.55),
-		bell + Vector3(0, 5.3, 0), TIMBER)
-	_solid(node, "BellMount", Vector3(1.1, 1.1, 1.1),
-		bell + Vector3(0, 4.45, 0), SLATE)
+	_solid(node, "BellTimberCrossbar", Vector3(6.82, 0.35, 0.47),
+		bell + Vector3(0, 5.01, 0), TIMBER)
+	_solid(node, "BellMount", Vector3(0.72, 0.72, 0.64),
+		bell + Vector3(0, 4.53, 0), SLATE)
 	locations["undercroft"] = Vector3(study.x + 1.5, 10.1, 0.5)
 	locations["bell_house"] = bell
 

@@ -36,7 +36,8 @@ func decorate(underground: HMUndergroundSites) -> void:
         var tone: Color = material.albedo_color if material != null else ROCK_BASE
         var replacement := MeshInstance3D.new()
         replacement.name = "WeatheredLowPolySkin"
-        replacement.mesh = _facet_box(size, String(body.name).hash(), tone)
+        var calm_vault: bool = String(body.name).begins_with("UndercroftVaultSlope_")
+        replacement.mesh = _facet_box(size, String(body.name).hash(), tone, calm_vault)
         var finish := StandardMaterial3D.new()
         finish.vertex_color_use_as_albedo = true
         finish.roughness = 0.94
@@ -77,7 +78,8 @@ func decorate(underground: HMUndergroundSites) -> void:
     set_meta("production_iron",architectural.iron_count)
     set_meta("production_stone",architectural.stone_count)
 
-static func _facet_box(size: Vector3, seed: int, tone: Color) -> ArrayMesh:
+static func _facet_box(size: Vector3, seed: int, tone: Color,
+        broad_stone: bool = false) -> ArrayMesh:
     var rng := RandomNumberGenerator.new()
     rng.seed = absi(seed) + 4513
     var builder := SurfaceTool.new()
@@ -87,18 +89,18 @@ static func _facet_box(size: Vector3, seed: int, tone: Color) -> ArrayMesh:
     for face: int in range(6):
         var width: float = size.x if face < 2 else (size.z if face < 4 else size.x)
         var height: float = size.y if face < 4 else size.z
-        var cols: int = clampi(ceili(width / 1.25), 1, 24)
-        var rows: int = clampi(ceili(height / 0.95), 1, 14)
+        var cols: int = (2 if broad_stone else clampi(ceili(width / 1.25), 1, 24))
+        var rows: int = (1 if broad_stone else clampi(ceili(height / 0.95), 1, 14))
         for j: int in range(rows):
             for i: int in range(cols):
                 var x0: float = float(i) / float(cols) - 0.5
                 var x1: float = float(i+1) / float(cols) - 0.5
                 var y0: float = float(j) / float(rows) - 0.5
                 var y1: float = float(j+1) / float(rows) - 0.5
-                var inset: float = rng.randf_range(-0.045,0.045)
+                var inset: float = (rng.randf_range(-0.012,0.012) if broad_stone else rng.randf_range(-0.045,0.045))
                 var p0: Vector3 = _face_point(face,size,x0,y0,inset)
                 var p1: Vector3 = _face_point(face,size,x1,y0,inset)
-                var p2: Vector3 = _face_point(face,size,x1,y1,inset + rng.randf_range(-0.08,0.08))
+                var p2: Vector3 = _face_point(face,size,x1,y1,inset + (rng.randf_range(-0.018,0.018) if broad_stone else rng.randf_range(-0.08,0.08)))
                 var p3: Vector3 = _face_point(face,size,x0,y1,inset)
                 var color: Color = tone * rng.randf_range(0.79,1.12)
                 _tri(builder,p0,p1,p2,color)
@@ -211,10 +213,10 @@ func _mine_fittings(underground: HMUndergroundSites) -> void:
 func _undercroft_props(underground: HMUndergroundSites) -> void:
     var parent: Node3D = underground.get_node("UndercroftBellAndContainment")
     var middle: Vector3 = underground.locations["undercroft"]
-    for index: int in range(8):
+    for index: int in range(5):
         _decorative_box(parent,"ScatteredStone_%02d"%index,
-            Vector3(0.43+float(index%3)*0.12,0.14,0.32),
-            middle+Vector3(cos(float(index)*1.57)*3.3,0.16,sin(float(index)*1.6)*2.4),ROCK_BASE)
+            Vector3(0.29+float(index%3)*0.06,0.08,0.22),
+            middle+Vector3(cos(float(index)*1.57)*3.85,0.10,sin(float(index)*1.6)*2.9),ROCK_BASE)
     # Previously one nominal "wall rib" stood at x=-0.55, inside the
     # player's central sightline. Keep visible articulation at the real
     # wall margins instead of camouflaging the obstruction with camera tricks.
