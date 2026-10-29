@@ -1,0 +1,114 @@
+name: Hollowmere — manual Godot 4.7.2 QA
+
+# Public QA mirror: manual-only by design. Do not add push/PR/schedule triggers.
+on:
+  workflow_dispatch:
+    inputs:
+      capture_frames:
+        description: 'Attempt real Godot render/capture after QA (additional runtime)'
+        required: true
+        type: boolean
+        default: true
+      windows_headless:
+        description: 'Run separate Windows headless validation (additional runtime)'
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hollowmere-public-manual-qa-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  linux-godot-qa:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Check out exactly selected source
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies and optional software display support
+        run: |
+          python -m pip install --quiet numpy Pillow trimesh
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends xvfb mesa-vulkan-drivers libvulkan1 libasound2t64 libpulse0 libfontconfig1 unzip
+      - name: Restore reproducible authored materials from sources
+        run: |
+          python tools/generate_step21_materials.py
+          python tools/generate_step21_glb.py
+          python tools/generate_phase_b_surfaces.py
+          python tools/generate_phase_b_reference_glb.py
+      - name: Install and verify pinned official Godot 4.7.2 Standard
+        run: |
+          python tools/test_environment.py doctor --install
+          test -x .qa-tools/Godot_v4.7.2-stable_linux.x86_64
+      - name: Run real engine/physics/data and Python QA
+        run: |
+          python tools/test_environment.py check --godot .qa-tools/Godot_v4.7.2-stable_linux.x86_64
+      - name: Attempt software-rendered screenshot capture (not automatic visual acceptance)
+        if: ${{ inputs.capture_frames }}
+        run: |
+          python tools/test_environment.py render --godot .qa-tools/Godot_v4.7.2-stable_linux.x86_64
+      - name: Preserve logs and actual captured frames
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hollowmere-qa-${{ github.sha }}
+          path: |
+            build/qa-*.log
+            build/qa-environment.json
+            build/reference-*.png
+            build/phase-*.png
+            build/step*-*.png
+          if-no-files-found: warn
+
+  windows-headless:
+    if: ${{ inputs.windows_headless }}
+    runs-on: windows-2022
+    timeout-minutes: 40
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Restore procedural art sources
+        shell: pwsh
+        run: |
+          py -3 -m pip install --quiet numpy Pillow trimesh
+          py -3 tools/generate_step21_materials.py
+          py -3 tools/generate_step21_glb.py
+          py -3 tools/generate_phase_b_surfaces.py
+          py -3 tools/generate_phase_b_reference_glb.py
+      - name: Download official pinned Windows editor
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force '.qa-tools' | Out-Null
+          $archive = '.qa-tools/Godot_v4.7.2-stable_win64.exe.zip'
+          Invoke-WebRequest 'https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_win64.exe.zip' -OutFile $archive
+          $hash = (Get-FileHash $archive -Algorithm SHA256).Hash.ToLowerInvariant()
+          if ($hash -ne '731980f9608d61333e5baf54a2ef17210acc7a538446c0cb9969f002aca1e953') { throw "Pinned Godot Windows checksum mismatch" }
+          Expand-Archive $archive -DestinationPath .qa-tools -Force
+      - name: Test actual Windows engine parsing, gameplay and persistence headlessly
+        shell: pwsh
+        run: py -3 tools/test_environment.py check --godot .qa-tools/Godot_v4.7.2-stable_win64.exe
+      - name: Preserve Windows logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hollowmere-windows-headless-${{ github.sha }}
+          path: |
+            build/qa-*.log
+            build/qa-environment.json
+          if-no-files-found: warn
