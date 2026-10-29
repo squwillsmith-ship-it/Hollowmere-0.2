@@ -40,10 +40,11 @@ func build(protected: HMUndergroundSites) -> void:
                     _box(st,Vector3(position.x + side*4.57,11.14,z),
                         Vector3(0.09,0.20,0.66),Color("736e63"))
         else:
-            for i: int in range(4):
-                var a: float = TAU * float(i)/4.0
-                _box(st,position+Vector3(cos(a)*3.39,4.67,sin(a)*3.39),
-                    Vector3(0.31+float(i%2)*0.08,0.09,0.37),Color("777064").darkened(0.035*float(i%3)))
+            for x_side: float in [-3.35,3.35]:
+                for z_side: float in [-3.35,3.35]:
+                    _box(st,position+Vector3(x_side,4.78,z_side),
+                        Vector3(0.27,0.08,0.29),
+                        Color("777064").darkened(0.035 if x_side < 0.0 else 0.07))
         var art := MeshInstance3D.new()
         art.name = "PhaseCProtectedStrata_" + id
         art.mesh = st.commit()
