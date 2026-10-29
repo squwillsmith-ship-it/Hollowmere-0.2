@@ -110,10 +110,16 @@ func _build_undercroft(study: Vector3, bell: Vector3) -> void:
 		Vector3(study.x + 1.5, 9.8, 0.5), ROCK)
 	_shell(node, Vector3(study.x + 1.5, 9.8, 0.5),
 		Vector3(9.4, 2.4, 7.5), false, false, true)
-	_solid(node, "StoneWritingTable", Vector3(2.0, 0.65, 1.2),
-		Vector3(study.x + 1.5, 10.38, 1.5), CUT_STONE)
-	_solid(node, "EmptyChair", Vector3(0.85, 1.1, 0.75),
-		Vector3(study.x - 0.8, 10.48, 1.6), TIMBER)
+	# Move the scriptorium table against the wall. Keep true collision,
+	# replacing the sightline-blocking cube with a slab and two stone legs.
+	_solid(node, "StoneWritingTable", Vector3(1.65, 0.17, 0.88),
+		Vector3(study.x + 3.58, 10.70, 1.25), CUT_STONE)
+	for side: float in [-0.6, 0.6]:
+		_solid(node, "StudyTableStoneLeg_%d" % int(side * 10.0),
+			Vector3(0.21, 0.57, 0.62),
+			Vector3(study.x + 3.58 + side, 10.35, 1.25), ROCK)
+	_solid(node, "EmptyChair", Vector3(0.64, 0.68, 0.54),
+		Vector3(study.x + 2.05, 10.32, 2.20), TIMBER)
 	# The surviving bell-house is a roofless, salt-scoured stone frame.
 	# Open front and side arches leave actual walking and work-target access.
 	for side_x: float in [-3.35,3.35]:
