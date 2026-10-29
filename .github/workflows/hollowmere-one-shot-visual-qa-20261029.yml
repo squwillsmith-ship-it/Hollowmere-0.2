@@ -1,0 +1,73 @@
+name: Hollowmere — one-time visual framebuffer QA 2026-10-29
+
+# Runs only for this user-authorized, isolated testing branch.
+# Remove this file after completion to restore dispatch-only standard QA.
+on:
+  push:
+    branches:
+      - qa/visual-20261029
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hollowmere-one-shot-visual-20261029
+  cancel-in-progress: false
+
+jobs:
+  render-matrix:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - mode: forward_plus
+            label: ForwardPlus-Vulkan
+          - mode: gl_compatibility
+            label: OpenGL-Compatibility
+    name: Godot 4.7.2 — ${{ matrix.label }} — 10 views, 21 sites, materials, teardown
+    runs-on: ubuntu-24.04
+    timeout-minutes: 65
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned test requirements and software-display drivers
+        run: |
+          python -m pip install --quiet numpy Pillow trimesh scipy
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends xvfb mesa-vulkan-drivers libvulkan1 libasound2t64 libpulse0 libfontconfig1 libxrandr2 libxcursor1 libxi6 libxinerama1 unzip vulkan-tools mesa-utils
+          python -m compileall -q tools tests
+      - name: Prepare authored original materials and reference models
+        run: |
+          python tools/generate_step21_materials.py
+          python tools/generate_step21_glb.py
+          python tools/generate_phase_b_surfaces.py
+          python tools/generate_phase_b_reference_glb.py
+      - name: Check exact official Godot 4.7.2 Standard runtime
+        run: |
+          python tools/test_environment.py doctor --install
+          .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --version
+      - name: Record Mesa/Vulkan driver diagnostics (do not treat as framebuffer proof)
+        run: |
+          mkdir -p build/visual-${{ matrix.mode }}
+          vulkaninfo --summary > build/visual-${{ matrix.mode }}/qa-vulkaninfo.log 2>&1 || true
+          xvfb-run -a -s '-screen 0 1280x720x24' glxinfo -B > build/visual-${{ matrix.mode }}/qa-glxinfo.log 2>&1 || true
+      - name: Import all game assets and compile GDScript via the real engine
+        run: |
+          .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --headless --path game --editor --quit
+      - name: Run every real-frame visual capture and compare PNG integrity
+        run: |
+          python tools/visual_capture_matrix.py --godot .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --mode ${{ matrix.mode }}
+      - name: Archive actual current-source frame files, montage, driver and test logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hollowmere-visual-${{ matrix.mode }}-${{ github.sha }}
+          path: |
+            build/visual-${{ matrix.mode }}/*.png
+            build/visual-${{ matrix.mode }}/*.json
+            build/visual-${{ matrix.mode }}/*.log
+          if-no-files-found: warn
