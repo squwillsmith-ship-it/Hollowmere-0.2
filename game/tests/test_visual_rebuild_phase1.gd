@@ -89,8 +89,7 @@ func _run() -> void:
                     var world_x: float = (detail as MeshInstance3D).position.x
                     require(absf(world_x-position.x) >= 3.9,
                         "Undercroft rib stays outside central player sightline")
-            if detail is OmniLight3D and String(detail.name).begins_with(
-                    "ShieldedOilLantern"):
+            if detail is OmniLight3D and String(detail.name) == "BellHouseWallSconce":
                 var lamp: OmniLight3D = detail as OmniLight3D
                 if lamp.position.distance_to(bell_at) < 7.0:
                     bell_lamps += 1
