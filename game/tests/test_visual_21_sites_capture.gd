@@ -57,7 +57,7 @@ func _capture() -> void:
             if colors.size() < 6:
                 errors.append("Uniform frame for " + id + "/" + pose)
                 continue
-            var output: String = directory.path_join("site-" + id.get_file() + "-" + pose + ".png")
+            var output: String = directory.path_join("site-" + id.get_file().trim_prefix("site_") + "-" + pose + ".png")
             if frame.save_png(output) != OK:
                 errors.append("Failed writing " + output)
             else:
