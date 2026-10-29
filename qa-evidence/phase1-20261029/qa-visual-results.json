@@ -1,0 +1,429 @@
+{
+  "source_sha": "4f2bf47e4e356562226f3acc312450aa1daec31d",
+  "godot": "4.7.2 Standard",
+  "windows_gui_tested": false,
+  "runs": [
+    {
+      "mode": "forward_plus",
+      "test": "phase1",
+      "exit": 0,
+      "marker": true,
+      "pass": true
+    },
+    {
+      "mode": "forward_plus",
+      "test": "ten-view",
+      "exit": 0,
+      "marker": true,
+      "pass": true
+    },
+    {
+      "mode": "gl_compatibility",
+      "test": "phase1",
+      "exit": 0,
+      "marker": true,
+      "pass": true
+    },
+    {
+      "mode": "gl_compatibility",
+      "test": "ten-view",
+      "exit": 0,
+      "marker": true,
+      "pass": true
+    }
+  ],
+  "frames": {
+    "forward_plus/phase1-undercroft-matched.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 466848,
+      "sampled_colors": 706,
+      "mean_rgb": [
+        93.02,
+        96.2,
+        80.62
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "3feb65a5215667f07d9cf7c24f9fd48140b43b6259760e3fea1f137c6f4f3ccf"
+    },
+    "forward_plus/phase1-bell-matched.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 334317,
+      "sampled_colors": 914,
+      "mean_rgb": [
+        104.19,
+        110.61,
+        95.22
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "22a07cc73ce3b771b5c639a6490e3340dc4fb5afb25a78c4c188e74d0fefbde2"
+    },
+    "forward_plus/phase1-undercroft-central-eye.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 459498,
+      "sampled_colors": 779,
+      "mean_rgb": [
+        95.36,
+        97.73,
+        81.75
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "03bc0a4028e5dde9ddc12e85a470edb31e48b78b587cd63f93499fe8ecbad852"
+    },
+    "forward_plus/phase1-bell-standing-eye.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 377683,
+      "sampled_colors": 1168,
+      "mean_rgb": [
+        134.26,
+        143.01,
+        127.86
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "fbaff77a9104faa2951502b7f4b69a0300cb99aa97dd8fbf151ab243cc31f145"
+    },
+    "forward_plus/phase-e-well.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 580758,
+      "sampled_colors": 1012,
+      "mean_rgb": [
+        107.7,
+        108.52,
+        90.85
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "82f602824f147559cb3ea02924c3cd337ae70c7a9d44df5246eea09eb4512d9b"
+    },
+    "forward_plus/phase-e-mine.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 596918,
+      "sampled_colors": 822,
+      "mean_rgb": [
+        124.82,
+        125.61,
+        106.88
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "3ebc1419f24bb9198e1fa6d11378f519b2de96ab7a4c84e92eb02372c17b45b2"
+    },
+    "forward_plus/phase-e-undercroft.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 466848,
+      "sampled_colors": 706,
+      "mean_rgb": [
+        93.02,
+        96.2,
+        80.62
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "3feb65a5215667f07d9cf7c24f9fd48140b43b6259760e3fea1f137c6f4f3ccf"
+    },
+    "forward_plus/phase-e-bell.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 334317,
+      "sampled_colors": 914,
+      "mean_rgb": [
+        104.19,
+        110.61,
+        95.22
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "22a07cc73ce3b771b5c639a6490e3340dc4fb5afb25a78c4c188e74d0fefbde2"
+    },
+    "forward_plus/phase-e-harbour.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 129469,
+      "sampled_colors": 488,
+      "mean_rgb": [
+        116.5,
+        129.35,
+        118.01
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "d5ab02bb8a4a2fa940ff96a0322f00d49c4a3015f486fc76a0b46fa86612636f"
+    },
+    "forward_plus/phase-e-headland.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 228725,
+      "sampled_colors": 543,
+      "mean_rgb": [
+        115.09,
+        127.51,
+        115.71
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "fdc848db951ad40c831603d698071503855522dcd0dbd07709114d71680ff0d5"
+    },
+    "forward_plus/phase-e-inn.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 146603,
+      "sampled_colors": 443,
+      "mean_rgb": [
+        121.75,
+        134.62,
+        122.31
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "19cf817d59b31b23e7677c2b9e715ed43572a3e5e0c5d7c914d5602d54bd7395"
+    },
+    "forward_plus/phase-e-mine_office.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 156150,
+      "sampled_colors": 526,
+      "mean_rgb": [
+        123.5,
+        135.77,
+        123.93
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "302aa5c2d28fc14b1dd10f4d38e7dcd1e30116ed3ad7346567fbd04670fe52ee"
+    },
+    "forward_plus/phase-e-chapel.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 188795,
+      "sampled_colors": 381,
+      "mean_rgb": [
+        122.74,
+        137.05,
+        125.67
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "87a49b4151f8e718e75db48815a101dce3cdbd54b01b53eaf0cf81f39abecd4d"
+    },
+    "forward_plus/phase-e-shore.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 155632,
+      "sampled_colors": 670,
+      "mean_rgb": [
+        119.59,
+        138.09,
+        126.26
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "8f69e5f28edb1f9a436e78ce129d3ac0f7e85b598a0020b3f209c4bd6d593617"
+    },
+    "forward_plus/phase-e-undercroft-legacy-pose.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 452549,
+      "sampled_colors": 714,
+      "mean_rgb": [
+        93.76,
+        96.63,
+        81.05
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "71d02f3b99154f619aadfac8524d842fae250fa4cd03f81c90c466d5713f429d"
+    },
+    "gl_compatibility/phase1-undercroft-matched.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 574462,
+      "sampled_colors": 1057,
+      "mean_rgb": [
+        86.36,
+        85.54,
+        66.05
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "2353732ec19eabb5d6ac964cdba1783cf0aa4b5e25d37a106cb013f15ef04f10"
+    },
+    "gl_compatibility/phase1-bell-matched.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 397965,
+      "sampled_colors": 1043,
+      "mean_rgb": [
+        76.82,
+        81.9,
+        67.01
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "81dfba03f2b586d6c77fc184752cb4feb3f1d268aa025caaa5300728504b4ab6"
+    },
+    "gl_compatibility/phase1-undercroft-central-eye.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 490887,
+      "sampled_colors": 834,
+      "mean_rgb": [
+        61.58,
+        62.47,
+        48.86
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "c4ce74da6790290cd5b2a2e64ed0f0cfbd984d57d8b23c077305814b7c6d8c0a"
+    },
+    "gl_compatibility/phase1-bell-standing-eye.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 430583,
+      "sampled_colors": 1243,
+      "mean_rgb": [
+        123.92,
+        131.8,
+        115.37
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "ad9f0c0065da8db47b098c279eadc1a64436845517e7c26eae1433c4661ea4b0"
+    },
+    "gl_compatibility/phase-e-well.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 635758,
+      "sampled_colors": 1125,
+      "mean_rgb": [
+        75.66,
+        75.8,
+        59.67
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "f316a0d7b22e8c44b3fe47100251adb7747861ee94a0ecdaa5e7e9d60974a03a"
+    },
+    "gl_compatibility/phase-e-mine.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 667821,
+      "sampled_colors": 1097,
+      "mean_rgb": [
+        97.71,
+        97.45,
+        76.26
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "1d5902088ee7793aa91b5dc01685c04cec2f5b7621c247ad2a223d6cabfab7db"
+    },
+    "gl_compatibility/phase-e-undercroft.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 574462,
+      "sampled_colors": 1057,
+      "mean_rgb": [
+        86.36,
+        85.54,
+        66.05
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "2353732ec19eabb5d6ac964cdba1783cf0aa4b5e25d37a106cb013f15ef04f10"
+    },
+    "gl_compatibility/phase-e-bell.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 397965,
+      "sampled_colors": 1043,
+      "mean_rgb": [
+        76.82,
+        81.9,
+        67.01
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "81dfba03f2b586d6c77fc184752cb4feb3f1d268aa025caaa5300728504b4ab6"
+    },
+    "gl_compatibility/phase-e-harbour.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 150198,
+      "sampled_colors": 578,
+      "mean_rgb": [
+        100.58,
+        113.29,
+        102.55
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "9ac200b1b4d7e4a25b9c59d910341717d06e4fa7c56e002b02dfcdb6a71df81c"
+    },
+    "gl_compatibility/phase-e-headland.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 307053,
+      "sampled_colors": 660,
+      "mean_rgb": [
+        96.2,
+        108.02,
+        96.99
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "b73f929036c750efd10948476884d38cbf3456ae441885b8e4f2dbe6d7191886"
+    },
+    "gl_compatibility/phase-e-inn.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 182830,
+      "sampled_colors": 558,
+      "mean_rgb": [
+        104.84,
+        117.09,
+        105.47
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "d724b38fab84dc78e51d53e5129e93cb5e72a605d99e597296f8122daf9243f5"
+    },
+    "gl_compatibility/phase-e-mine_office.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 169625,
+      "sampled_colors": 664,
+      "mean_rgb": [
+        107.56,
+        118.77,
+        107.25
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "e5469d88c8992920addb4c314cc09547b6ae331855e930d06868046abb65304c"
+    },
+    "gl_compatibility/phase-e-chapel.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 229327,
+      "sampled_colors": 476,
+      "mean_rgb": [
+        107.62,
+        121.6,
+        110.96
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "a6684d56884c7a99ca6755824b968b5129c3fdbc935339f2d24f6a3dfd0f5120"
+    },
+    "gl_compatibility/phase-e-shore.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 218370,
+      "sampled_colors": 809,
+      "mean_rgb": [
+        131.09,
+        155.05,
+        140.39
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "036ac09f0e54063c116b6187cc5562740e5ece94f356d207b0467d4664610dcb"
+    },
+    "gl_compatibility/phase-e-undercroft-legacy-pose.png": {
+      "width": 1280,
+      "height": 720,
+      "bytes": 553847,
+      "sampled_colors": 1073,
+      "mean_rgb": [
+        91.91,
+        90.45,
+        69.67
+      ],
+      "near_black_or_white_fraction": 0.0,
+      "sha256": "02a4c7ecbc3b362268eee2aa7ea0a9bd1606df6c5a414f73bf3ec665dc184498"
+    }
+  },
+  "failures": [],
+  "pass": true
+}
