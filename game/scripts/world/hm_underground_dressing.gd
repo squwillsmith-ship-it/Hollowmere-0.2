@@ -181,8 +181,11 @@ func _well_stones(underground: HMUndergroundSites) -> void:
     # Unequal stone coping, oak windlass and a chain/rope with no vertical drop.
     for n: int in range(14):
         var angle: float = TAU * float(n)/14.0
-        var at: Vector3 = point + Vector3(cos(angle)*1.55,1.17,sin(angle)*1.55)
-        _decorative_box(parent,"ChippedCoping_%d"%n, Vector3(0.65,0.18,0.40),at,CUT_BASE)
+        var radius: float = 1.55 + 0.055*sin(float(n)*2.7)
+        var at: Vector3 = point + Vector3(cos(angle)*radius,1.17+0.025*sin(float(n)*1.9),sin(angle)*radius)
+        _decorative_box(parent,"ChippedCoping_%d"%n,
+            Vector3(0.58+float(n%3)*0.035,0.16+float(n%4)*0.012,0.38),at,
+            CUT_BASE.darkened(0.035*float(n%3)))
     _decorative_box(parent,"WellWinchDrum",Vector3(2.75,0.28,0.3),
         point+Vector3(0,2.25,0),WOOD_BASE)
     for t: int in range(15):
@@ -190,7 +193,8 @@ func _well_stones(underground: HMUndergroundSites) -> void:
         var jitter: float = sin(float(t)*2.13)*0.34
         _decorative_box(parent,"Gravel_%d"%t,Vector3(0.35,0.09,0.42),
             Vector3(point.x+jitter,4.22,z),ROCK_BASE)
-    _lantern(parent,underground.locations["well_listening"]+Vector3(-2.7,2.0,-1.7),0.7)
+    _lantern(parent,underground.locations["well_listening"]+Vector3(-2.7,2.0,-1.7),0.43,7.6,
+        "ListeningGalleryOilLamp")
 
 func _mine_fittings(underground: HMUndergroundSites) -> void:
     var parent: Node3D = underground.get_node("MineApproachOfficeAndSealedGallery")
@@ -206,7 +210,8 @@ func _mine_fittings(underground: HMUndergroundSites) -> void:
     for index: int in range(5):
         var x: float = 190.0 + float(index)*6.2
         _decorative_box(parent,"WedgeTop_%d"%index,
-            Vector3(0.32,0.30,4.0),Vector3(x,9.45,seal.z),WOOD_BASE)
+            Vector3(0.24+float(index%2)*0.04,0.20,3.78),
+            Vector3(x,9.45,seal.z),WOOD_BASE.darkened(0.04*float(index%3)))
     _lantern(parent,Vector3(seal.x-14,8.2,seal.z+1.4),0.55)
     _lantern(parent,Vector3(seal.x-25,8.2,seal.z-1.0),0.45)
 
