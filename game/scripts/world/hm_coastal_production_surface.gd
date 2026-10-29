@@ -57,12 +57,20 @@ static func create(size: Vector3, name: String, base: Color, path: bool) -> Arra
                 for i: int in range(count+1):
                     var u: float = float(i)/float(count)
                     var v: float = float(y)/float(rows)
-                    # Jagged eroded talus near the bottom, compressed at the
-                    # top for visual/physical lip consistency.
-                    var expansion: float = 0.11+0.48*(1.0-v)
-                    var ridge: float = (sin(u*12.0+float(face)*1.7+v*4.2)*0.22
-                        + sin(u*5.2-v*6.3)*0.14)
-                    offsets.append(expansion+ridge)
+                    # Broad grounded talus shoulders replace vertical boxed
+                    # headland sides. The top lip stays alongside the original
+                    # walkable collider, widening only towards the grounded toe.
+                    # Cross-face frequencies intentionally differ so each cliff
+                    # does not repeat the same ruler-straight polygon bands.
+                    var toe: float = pow(1.0-v,1.55)
+                    var apron: float = minf(size.y*0.39,4.65)
+                    var broad: float = (sin(u*5.8+float(face)*2.3)*0.36
+                        + sin(u*12.7+float(face)*0.91)*0.17)
+                    var fractured: float = (sin(u*17.4+v*5.7+float(face))*0.13
+                        + sin(u*8.1-v*11.3+float(face)*1.7)*0.11)
+                    var expansion: float = 0.065+toe*(apron+broad)
+                    offsets.append(maxf(0.04,expansion+
+                        fractured*(0.19+toe*0.81)))
                 edge.append(offsets)
             for row_index: int in range(rows):
                 var height0: float = -size.y*0.5+size.y*float(row_index)/float(rows)
@@ -74,10 +82,23 @@ static func create(size: Vector3, name: String, base: Color, path: bool) -> Arra
                     var p1: Vector3 = _cliff(face,size,u1,height0,edge[row_index][col+1])
                     var p2: Vector3 = _cliff(face,size,u1,height1,edge[row_index+1][col+1])
                     var p3: Vector3 = _cliff(face,size,u0,height1,edge[row_index+1][col])
-                    var grain: float = rng.randf_range(0.75,1.045)
-                    var bedded: Color = Color("62675f").lerp(base,0.40+float(row_index%3)*0.11)*grain
-                    _tri(tool,p0,p1,p2,bedded)
-                    _tri(tool,p0,p2,p3,bedded.darkened(0.075))
+                    # Broken mineral layers vary by face and elevation, not
+                    # evenly repeating alternate-colour horizontal belts.
+                    var grain: float = rng.randf_range(0.87,1.06)
+                    var exposure: float = float(row_index)/float(rows)
+                    var dark_rock: Color = Color("4b5551")
+                    var lifted_rock: Color = Color("747466")
+                    var mineral: Color = dark_rock.lerp(lifted_rock,
+                        clampf(exposure*0.58+0.24*sin(float(col)*0.71+
+                        float(row_index)*0.83+float(face)),0.08,0.86))
+                    var bedded: Color = mineral.lerp(base,0.19+
+                        0.19*exposure)*grain
+                    if (col+row_index+face)%2 == 0:
+                        _tri(tool,p0,p1,p3,bedded)
+                        _tri(tool,p1,p2,p3,bedded.darkened(0.055))
+                    else:
+                        _tri(tool,p0,p1,p2,bedded)
+                        _tri(tool,p0,p2,p3,bedded.darkened(0.055))
     else:
         # Road-edge aggregate is flush with physics and visually softens the
         # original perfectly straight paved slab. Keep no shoulder colliders.
