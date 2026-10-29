@@ -20,7 +20,7 @@ static func create(size: Vector3, name: String, base: Color, path: bool) -> Arra
             var xx: float = float(x)/float(nx)
             var zz: float = float(z)/float(nz)
             var sweep: float = sin(xx*9.3+zz*4.1+float(name.hash()%11))*0.012
-            var noise: float = rng.randf_range(-0.009,0.009) if path else rng.randf_range(-0.13,0.13)
+            var noise: float = rng.randf_range(-0.009,0.009) if path else rng.randf_range(-0.075,0.075)
             row.append(top+sweep+noise)
         height.append(row)
     for z: int in range(nz):
@@ -59,9 +59,9 @@ static func create(size: Vector3, name: String, base: Color, path: bool) -> Arra
                     var v: float = float(y)/float(rows)
                     # Jagged eroded talus near the bottom, compressed at the
                     # top for visual/physical lip consistency.
-                    var expansion: float = 0.15+0.58*(1.0-v)
-                    var ridge: float = (sin(u*21.0+float(face)*1.7+v*8.0)*0.22
-                        + sin(u*8.2-v*9.5)*0.15)
+                    var expansion: float = 0.11+0.48*(1.0-v)
+                    var ridge: float = (sin(u*12.0+float(face)*1.7+v*4.2)*0.22
+                        + sin(u*5.2-v*6.3)*0.14)
                     offsets.append(expansion+ridge)
                 edge.append(offsets)
             for row_index: int in range(rows):

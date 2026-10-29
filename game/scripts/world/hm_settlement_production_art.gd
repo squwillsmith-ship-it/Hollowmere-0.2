@@ -150,8 +150,8 @@ func _stonework(dims: Vector3,key: String,base: Color) -> ArrayMesh:
     var facing_x: bool = dims.z > dims.x
     var span: float = dims.z if facing_x else dims.x
     var depth: float = dims.x if facing_x else dims.z
-    var rows: int = clampi(ceili(dims.y/0.46),1,14)
-    var cols: int = clampi(ceili(span/0.85),2,35)
+    var rows: int = clampi(ceili(dims.y/0.67),1,14)
+    var cols: int = clampi(ceili(span/1.12),2,35)
     var tile_h: float = dims.y/float(rows)
     var tile_w: float = span/float(cols)
     for face: int in [-1,1]:
@@ -166,7 +166,7 @@ func _stonework(dims: Vector3,key: String,base: Color) -> ArrayMesh:
                 var top: float = bottom+tile_h-0.047
                 var gap: float = r.randf_range(0.014,0.042)
                 var lift: float = float(face)*(depth*0.5+r.randf_range(0.022,0.066))
-                var tint: Color = base * r.randf_range(0.77,1.05)
+                var tint: Color = base * r.randf_range(0.84,1.04)
                 var a := Vector3(lift,bottom,u0+gap) if facing_x else Vector3(u0+gap,bottom,lift)
                 var b := Vector3(lift,top,u0+gap*0.8) if facing_x else Vector3(u0+gap*0.8,top,lift)
                 var c := Vector3(lift,top-0.016,u1-gap) if facing_x else Vector3(u1-gap,top-0.016,lift)
@@ -249,16 +249,20 @@ func _slates(dims: Vector3,key: String,base: Color) -> ArrayMesh:
     st.begin(Mesh.PRIMITIVE_TRIANGLES)
     _core(st,dims,base.darkened(0.16))
     var r: RandomNumberGenerator = _rng(key,2901)
-    var across: int = clampi(ceili(dims.x/0.42),3,42)
-    var rows: int = clampi(ceili(dims.z/0.55),3,35)
+    var across: int = clampi(ceili(dims.x/0.50),3,42)
+    var rows: int = clampi(ceili(dims.z/0.66),3,35)
     for row: int in range(rows):
         for col: int in range(across):
-            var x0: float = -dims.x*0.5+dims.x*float(col)/float(across)
-            var x1: float = -dims.x*0.5+dims.x*float(col+1)/float(across)-0.009
+            var slate_width: float = dims.x/float(across)
+            var offset: float = slate_width*0.32 if row%2 == 1 else 0.0
+            var x0: float = maxf(-dims.x*0.5,-dims.x*0.5+slate_width*float(col)-offset)
+            var x1: float = minf(dims.x*0.5,-dims.x*0.5+slate_width*float(col+1)-offset-0.012)
+            if x1-x0 < slate_width*0.28:
+                continue
             var z0: float = -dims.z*0.5+dims.z*float(row)/float(rows)
-            var z1: float = -dims.z*0.5+dims.z*float(row+1)/float(rows)+0.028
-            var h: float = dims.y*0.5+0.018+r.randf_range(0.0,0.026)
-            var tint: Color = base * r.randf_range(0.73,1.06)
+            var z1: float = -dims.z*0.5+dims.z*float(row+1)/float(rows)+0.035
+            var h: float = dims.y*0.5+0.022+r.randf_range(0.0,0.018)
+            var tint: Color = base * r.randf_range(0.82,1.03)
             _quad(st,Vector3(x0,h,z0),Vector3(x0,h,z1),
                 Vector3(x1,h,z1),Vector3(x1,h,z0),tint)
     return st.commit()
