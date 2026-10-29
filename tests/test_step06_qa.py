@@ -32,7 +32,15 @@ class QASetupTests(unittest.TestCase):
             self.assertIn(phrase, source)
 
     def test_ci_is_source_controlled_and_read_only(self):
-        workflow = (ROOT / '.github/workflows/hollowmere-engine-tests.yml').read_text()
+        # The private development repository retains the original workflow name.
+        # The public clean-history mirror deliberately ships only manual QA workflows.
+        candidates = [
+            ROOT / '.github/workflows/hollowmere-engine-tests.yml',
+            ROOT / '.github/workflows/hollowmere-manual-qa.yml',
+        ]
+        existing = [path for path in candidates if path.is_file()]
+        self.assertTrue(existing, 'No source-controlled Godot QA workflow found')
+        workflow = existing[0].read_text()
         self.assertIn('permissions:', workflow)
         self.assertIn('contents: read', workflow)
         self.assertIn('actions/upload-artifact@v4', workflow)

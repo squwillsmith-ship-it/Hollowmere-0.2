@@ -28,7 +28,7 @@ jobs:
           python-version: '3.11'
       - name: Install test dependencies
         run: |
-          python -m pip install --quiet numpy Pillow trimesh
+          python -m pip install --quiet numpy Pillow trimesh scipy
           sudo apt-get update -qq
           sudo apt-get install -y --no-install-recommends mesa-vulkan-drivers libvulkan1 libasound2t64 libpulse0 libfontconfig1 unzip
       - name: Regenerate materials and GLB references required by data tests
@@ -67,12 +67,12 @@ jobs:
       - name: Regenerate source art needed for automated tests
         shell: pwsh
         run: |
-          py -3 -m pip install --quiet numpy Pillow trimesh
-          py -3 tools/generate_step21_materials.py
-          py -3 tools/generate_step21_glb.py
-          py -3 tools/generate_phase_b_surfaces.py
-          py -3 tools/generate_phase_b_reference_glb.py
-          py -3 -m compileall -q tools tests
+          python -m pip install --quiet numpy Pillow trimesh scipy
+          python tools/generate_step21_materials.py
+          python tools/generate_step21_glb.py
+          python tools/generate_phase_b_surfaces.py
+          python tools/generate_phase_b_reference_glb.py
+          python -m compileall -q tools tests
       - name: Install checksum-pinned Windows Godot 4.7.2 Standard
         shell: pwsh
         run: |
@@ -84,7 +84,7 @@ jobs:
           Expand-Archive $file -DestinationPath .qa-tools -Force
       - name: Run all nonvisual Windows engine, gameplay and save tests
         shell: pwsh
-        run: py -3 tools/test_environment.py check --godot .qa-tools/Godot_v4.7.2-stable_win64.exe
+        run: python tools/test_environment.py check --godot .qa-tools/Godot_v4.7.2-stable_win64.exe
       - name: Save Windows test logs (no renders or source history)
         if: always()
         uses: actions/upload-artifact@v4
@@ -109,11 +109,11 @@ jobs:
       - name: Restore reproducible generated source art
         shell: pwsh
         run: |
-          py -3 -m pip install --quiet numpy Pillow trimesh
-          py -3 tools/generate_step21_materials.py
-          py -3 tools/generate_step21_glb.py
-          py -3 tools/generate_phase_b_surfaces.py
-          py -3 tools/generate_phase_b_reference_glb.py
+          python -m pip install --quiet numpy Pillow trimesh scipy
+          python tools/generate_step21_materials.py
+          python tools/generate_step21_glb.py
+          python tools/generate_phase_b_surfaces.py
+          python tools/generate_phase_b_reference_glb.py
       - name: Download and verify official Windows Godot editor
         shell: pwsh
         run: |
@@ -137,7 +137,7 @@ jobs:
           Copy-Item '.qa-tools/unpacked/templates/*' $dest -Recurse -Force
       - name: Build native Windows x86-64 candidate (not GUI playtested)
         shell: pwsh
-        run: py -3 tools/build.py windows --godot .qa-tools/Godot_v4.7.2-stable_win64.exe
+        run: python tools/build.py windows --godot .qa-tools/Godot_v4.7.2-stable_win64.exe
       - name: Save packaged candidate and build manifest (no full source history)
         if: success()
         uses: actions/upload-artifact@v4
