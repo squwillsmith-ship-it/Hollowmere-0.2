@@ -132,13 +132,14 @@ func _decorative_box(parent: Node3D,title: String,size:Vector3,at:Vector3,tone:C
     geometry.position = at
     parent.add_child(geometry)
 
-func _lantern(parent: Node3D, at: Vector3, warmth: float = 1.0) -> void:
+func _lantern(parent: Node3D, at: Vector3, warmth: float = 1.0,
+        reach: float = 11.0) -> void:
     var lamp := OmniLight3D.new()
     lamp.name = "ShieldedOilLantern"
     lamp.position = at
     lamp.light_color = Color("efbd79")
     lamp.light_energy = 3.1 * warmth
-    lamp.omni_range = 11.0
+    lamp.omni_range = reach
     lamp.shadow_enabled = false
     parent.add_child(lamp)
     var cover := MeshInstance3D.new()
@@ -214,10 +215,15 @@ func _undercroft_props(underground: HMUndergroundSites) -> void:
         _decorative_box(parent,"ScatteredStone_%02d"%index,
             Vector3(0.43+float(index%3)*0.12,0.14,0.32),
             middle+Vector3(cos(float(index)*1.57)*3.3,0.16,sin(float(index)*1.6)*2.4),ROCK_BASE)
-    for index: int in range(3):
-        _decorative_box(parent,"UndercroftWallRib_%d"%index,
-            Vector3(0.33,2.25,0.23),
-            middle+Vector3(-3.55+float(index)*3.0,1.36,-2.8),CUT_BASE)
+    # Previously one nominal "wall rib" stood at x=-0.55, inside the
+    # player's central sightline. Keep visible articulation at the real
+    # wall margins instead of camouflaging the obstruction with camera tricks.
+    for side: float in [-1.0,1.0]:
+        for bay: int in range(2):
+            _decorative_box(parent,"UndercroftWallRib_%d_%d"%[int(side),bay],
+                Vector3(0.20,1.65,0.30),
+                middle+Vector3(side*4.16,0.96,-2.2+float(bay)*3.0),
+                CUT_BASE.darkened(0.13))
     _lantern(parent,middle+Vector3(0.7,2.12,0.3),0.65)
 
 func _bell(underground: HMUndergroundSites) -> void:
@@ -233,11 +239,31 @@ func _bell(underground: HMUndergroundSites) -> void:
     bell.mesh = cast
     bell.position = at
     var bronze := StandardMaterial3D.new()
-    bronze.albedo_color = Color("77664b")
-    bronze.roughness = 0.57
-    bronze.metallic = 0.62
+    # Tarnished bronze: a bell should read as a solid dark silhouette
+    # against pale stone, not as another yellow floodlit ceiling fragment.
+    bronze.albedo_color = Color("665941")
+    bronze.roughness = 0.76
+    bronze.metallic = 0.35
     bell.material_override = bronze
     parent.add_child(bell)
     _decorative_box(parent,"SaltEncrustedBellYoke",Vector3(1.75,0.23,0.35),
         at+Vector3(0,0.88,0),WOOD_BASE)
-    _lantern(parent,at+Vector3(2.2,0.5,2.1),0.62)
+    # Legible small clapper below the casting; non-colliding protected art.
+    var clapper := MeshInstance3D.new()
+    clapper.name = "CastBellClapper"
+    var iron := SphereMesh.new()
+    iron.radius = 0.17
+    iron.height = 0.32
+    clapper.mesh = iron
+    clapper.position = at + Vector3(0,-0.73,0)
+    var iron_finish := StandardMaterial3D.new()
+    iron_finish.albedo_color = Color("484843")
+    iron_finish.metallic = 0.24
+    iron_finish.roughness = 0.82
+    clapper.material_override = iron_finish
+    parent.add_child(clapper)
+    # Small grounded wall sconce instead of a large high yellow wash.
+    # Light source is visibly mounted at the side, away from the bell.
+    _decorative_box(parent,"BellLanternWallBracket",Vector3(0.43,0.10,0.24),
+        at+Vector3(2.78,-0.97,2.40),WOOD_BASE.darkened(0.18))
+    _lantern(parent,at+Vector3(2.96,-0.90,2.40),0.26,6.5)
