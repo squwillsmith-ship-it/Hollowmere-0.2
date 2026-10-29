@@ -1,0 +1,168 @@
+name: Hollowmere — Phase 1–3 exact-source visual acceptance diagnostics
+on:
+  push:
+    branches: [qa/visual-phase123-final-20261029]
+    paths: [.github/workflows/hollowmere-phase123-final-20261029.yml]
+permissions:
+  contents: write
+jobs:
+  phase1:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 65
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned render and Python prerequisites
+        run: |
+          python -m pip install --quiet numpy Pillow trimesh scipy
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends xvfb mesa-vulkan-drivers libvulkan1 libasound2t64 libpulse0 libfontconfig1 libxrandr2 libxcursor1 libxi6 libxinerama1 unzip vulkan-tools mesa-utils
+      - name: Rebuild original procedural sources
+        run: |
+          python tools/generate_step21_materials.py
+          python tools/generate_step21_glb.py
+          python tools/generate_phase_b_surfaces.py
+          python tools/generate_phase_b_reference_glb.py
+      - name: Install and import official Godot 4.7.2 Standard
+        run: |
+          mkdir -p build/phase1
+          python tools/test_environment.py doctor --install
+          .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --version | tee build/phase1/engine-version.log
+          .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --headless --path game --editor --quit | tee build/phase1/engine-import.log
+      - name: Run targeted actual Godot physics/ray/capsule checks
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          timeout 240s .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --headless --path game --script res://tests/test_visual_rebuild_phase1.gd 2>&1 | tee build/phase1/qa-physics.log
+          grep -q HOLLOWMERE_VISUAL_REBUILD_PHASE1_OK build/phase1/qa-physics.log
+          touch build/phase1/physics-pass
+      - name: Run full existing Godot and Python regressions
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          timeout 1200s python tools/test_environment.py check --godot .qa-tools/Godot_v4.7.2-stable_linux.x86_64 2>&1 | tee build/phase1/qa-regressions.log
+          touch build/phase1/regression-pass
+      - name: Capture genuine Phase 1 and ten-view ForwardPlus/Vulkan and OpenGL frames
+        continue-on-error: true
+        run: |
+          python - <<'PY'
+          import os,subprocess,json,sys
+          from pathlib import Path
+          from PIL import Image,ImageDraw
+          from tools.visual_capture_matrix import validate
+          base=Path.cwd()
+          godot=str((base/'.qa-tools/Godot_v4.7.2-stable_linux.x86_64').resolve())
+          out=base/'build/phase1'
+          evidence={'source_sha':os.environ.get('GITHUB_SHA'),'godot':'4.7.2 Standard','windows_gui_tested':False,'runs':[],'frames':{},'failures':[]}
+          for mode,driver in [('forward_plus','vulkan'),('gl_compatibility','opengl3')]:
+              dest=out/mode
+              dest.mkdir(parents=True,exist_ok=True)
+              settings=os.environ.copy()
+              settings['LIBGL_ALWAYS_SOFTWARE']='1'
+              settings['GODOT_HEADLESS']='false'
+              command=['xvfb-run','-a','-s','-screen 0 1280x720x24',godot,
+                '--audio-driver','Dummy','--rendering-method',mode,
+                '--rendering-driver',driver,'--path',str(base/'game')]
+              for test,script,envkey,success,frames in [
+                ('phase1','res://tests/test_visual_rebuild_phase1_capture.gd',
+                 'HOLLOWMERE_PHASE1_RENDER_DIR','HOLLOWMERE_PHASE1_MATCHED_CAPTURE_OK',
+                 ['phase1-'+x+'.png' for x in ['undercroft-matched','bell-matched','undercroft-central-eye','bell-standing-eye']]),
+                ('ten-view','res://tests/test_phase_e_capture.gd',
+                 'HOLLOWMERE_UNDERGROUND_RENDER_DIR','HOLLOWMERE_PHASE_E_RENDER_OK',
+                 ['phase-e-'+x+'.png' for x in ['well','mine','undercroft','bell','harbour','headland','inn','mine_office','chapel','shore']]
+                   +['phase-e-undercroft-legacy-pose.png'])]:
+                  env=settings.copy()
+                  env[envkey]=str(dest)
+                  try:
+                      proc=subprocess.run(command+['--script',script],env=env,capture_output=True,text=True,
+                                          errors='replace',timeout=480)
+                      logs=proc.stdout+'\n'+proc.stderr
+                      exitcode=proc.returncode
+                  except subprocess.TimeoutExpired as e:
+                      logs='Timeout: '+str(e)
+                      exitcode=124
+                  (dest/('qa-'+test+'.log')).write_text(logs)
+                  passed=exitcode==0 and success in logs
+                  for f in frames:
+                      file=dest/f
+                      if not file.is_file():
+                          passed=False
+                          evidence['failures'].append(mode+': missing '+f)
+                      else:
+                          try: evidence['frames'][mode+'/'+f]=validate(file)
+                          except Exception as e:
+                              passed=False
+                              evidence['failures'].append(mode+': invalid '+f+' '+str(e))
+                  evidence['runs'].append({'mode':mode,'test':test,'exit':exitcode,'marker':success in logs,'pass':passed})
+                  print('PHASE1_RENDER',mode,test,'PASS' if passed else 'FAIL',flush=True)
+                  if not passed:
+                      print('\n'.join(logs.splitlines()[-35:]),flush=True)
+          montage=Image.new('RGB',(1280,425),(30,32,33))
+          draw=ImageDraw.Draw(montage)
+          names=['undercroft-matched','bell-matched','undercroft-central-eye','bell-standing-eye']
+          for row,mode in enumerate(['forward_plus','gl_compatibility']):
+              for col,name in enumerate(names):
+                  path=out/mode/('phase1-'+name+'.png')
+                  if path.exists():
+                      with Image.open(path) as image:
+                          image=image.convert('RGB')
+                          image.thumbnail((320,180))
+                          montage.paste(image,(320*col,212*row))
+                  draw.text((320*col+5,212*row+185),mode+' '+name,fill=(235,237,233))
+          montage.save(out/'phase1-comparison-contact.png',optimize=True)
+          evidence['pass']=not evidence['failures'] and all(z['pass'] for z in evidence['runs'])
+          (out/'qa-visual-results.json').write_text(json.dumps(evidence,indent=2))
+          print('PHASE1_VISUAL',evidence['pass'],len(evidence['frames']),'genuine frames')
+          if evidence['pass']:
+              (out/'visual-pass').touch()
+          else:
+              sys.exit(1)
+          PY
+      - name: Render complete Brinewick ForwardPlus site / teardown / reference matrix
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          python tools/visual_capture_matrix.py --godot .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --mode forward_plus | tee build/phase1/qa-full-visual-matrix.log
+          touch build/phase1/matrix-pass
+      - name: Copy screenshot evidence into isolated QA branch
+        if: always()
+        continue-on-error: true
+        run: |
+          mkdir -p qa-evidence/phase1-20261029 qa-evidence/phase123-20261029
+          cp build/phase1/qa-visual-results.json qa-evidence/phase1-20261029/ 2>/dev/null || true
+          cp build/phase1/phase1-comparison-contact.png qa-evidence/phase1-20261029/ 2>/dev/null || true
+          for backend in forward_plus gl_compatibility; do
+            for view in bell-matched bell-standing-eye undercroft-matched undercroft-central-eye; do
+              test ! -f "build/phase1/$backend/phase1-$view.png" || cp "build/phase1/$backend/phase1-$view.png" "qa-evidence/phase1-20261029/$backend-$view.png"
+            done
+          done
+          for file in contact-10-canonical-views.png contact-21-site-wide.png contact-21-site-near.png contact-6-teardown-states.png qa-visual-matrix.json phase-e-undercroft.png phase-e-bell.png phase-e-harbour.png reference-cottage.png reference-warehouse.png; do
+            test ! -f "build/visual-forward_plus/$file" || cp "build/visual-forward_plus/$file" "qa-evidence/phase123-20261029/$file"
+          done
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f qa-evidence/phase1-20261029/ qa-evidence/phase123-20261029/
+          if ! git diff --cached --quiet; then
+            git commit -m "qa: archive true Phase 1 screenshots [skip ci]"
+            git push origin HEAD:qa/visual-phase123-final-20261029
+          fi
+      - name: Upload all actual frames and test logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hollowmere-phase1-one-shot
+          path: |
+            build/phase1/
+            build/visual-forward_plus/
+            build/qa-environment.json
+            build/qa-*.log
+          if-no-files-found: warn
+      - name: Fail closed if physics, regressions, or frame validity fail
+        if: always()
+        run: |
+          test -f build/phase1/physics-pass
+          test -f build/phase1/regression-pass
+          test -f build/phase1/visual-pass
+          test -f build/phase1/matrix-pass
