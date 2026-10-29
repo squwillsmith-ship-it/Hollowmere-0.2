@@ -300,7 +300,34 @@ func _landmark(site: Node3D, id: String) -> void:
 
 func _beam(parent: Node3D, title: String, a: Vector3,b: Vector3,
         width: float, color: Color) -> void:
-    var direction: Vector3 = b-a
+    # Anchor each facade brace to a pre-existing structural part rather
+    # than the immortal installation root. When the player dismantles that
+    # part, this entire decorative beam disappears with its parent, and
+    # restored saves cannot leave an independent floating beam behind.
+    var owner: StaticBody3D
+    var closest: float = INF
+    var middle: Vector3 = (a+b)*0.5
+    var has_removable: bool = false
+    for node: Node in parent.get_children():
+        if node is HMInspectTarget:
+            has_removable = true
+            break
+    for node: Node in parent.get_children():
+        var candidate: StaticBody3D = node as StaticBody3D
+        if candidate == null:
+            continue
+        if has_removable and not (candidate is HMInspectTarget):
+            continue
+        var distance: float = candidate.position.distance_squared_to(middle)
+        if distance < closest:
+            closest = distance
+            owner = candidate
+    # Do not add a detached piece where no part can actually own it.
+    if owner == null:
+        return
+    var local_a: Vector3 = owner.to_local(parent.to_global(a))
+    var local_b: Vector3 = owner.to_local(parent.to_global(b))
+    var direction: Vector3 = local_b-local_a
     if direction.length() < 0.1:
         return
     var mesh := MeshInstance3D.new()
@@ -308,11 +335,11 @@ func _beam(parent: Node3D, title: String, a: Vector3,b: Vector3,
     var box := BoxMesh.new()
     box.size = Vector3(width,direction.length(),width*0.83)
     mesh.mesh = box
-    mesh.position = (a+b)*0.5
+    mesh.position = (local_a+local_b)*0.5
     mesh.quaternion = Quaternion(Vector3.UP,direction.normalized())
     var mat := StandardMaterial3D.new()
     mat.albedo_color = color
     mat.roughness = 0.95
     mesh.material_override = mat
-    parent.add_child(mesh)
+    owner.add_child(mesh)
     carved_details += 1

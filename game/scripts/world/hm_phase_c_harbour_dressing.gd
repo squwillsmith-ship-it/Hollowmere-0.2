@@ -43,10 +43,24 @@ func build(sites: Dictionary) -> void:
             var stone: Color = Color("626860").lerp(Color("878779"),rng.randf_range(0.13,0.54))
             var position := origin + Vector3(-9.25-rng.randf_range(0.0,0.42),
                 -1.78+float(course)*0.45 + rng.randf_range(-0.08,0.06),z_cursor+length*0.5)
-            _box(st,position,Vector3(rng.randf_range(0.50,0.78),
-                rng.randf_range(0.38,0.53),length-0.08),stone)
+            _quay_wedge(st,position,Vector3(rng.randf_range(0.50,0.78),
+                rng.randf_range(0.38,0.53),length-0.08),stone,
+                rng.randf_range(-0.11,0.11))
             z_cursor += length + rng.randf_range(0.09,0.22)
             block += 1
+    # A sequence of leaning, masonry-backed oak fenders joins the visual
+    # language of the stone quay to the existing landing pier. Both remain
+    # seaward of the functional, colliding receiving and hauling surfaces.
+    for i: int in range(4):
+        var bay_z: float = -7.0+float(i)*4.6
+        var braces: Color = OAK * (0.84+float(i%3)*0.055)
+        var anchor: Vector3 = origin+Vector3(-9.65,-1.05,bay_z)
+        _quay_wedge(st,anchor,Vector3(0.64,1.46,0.68),
+            Color("64665b").lerp(Color("858075"),float(i)*0.085),0.14)
+        _sloping_oak(st,origin+Vector3(-9.55,-0.74,bay_z),
+            origin+Vector3(-8.80,0.08,bay_z),0.13,braces)
+        _box(st,origin+Vector3(-9.00,0.10,bay_z),
+            Vector3(0.66,0.13,0.19),OAK.darkened(0.11))
     _mesh(st,"OutboardMooringsAndClinker",true)
     quay_batches = 1
 
@@ -109,6 +123,47 @@ func _clinker_hull(st: SurfaceTool, at: Vector3) -> void:
         var rib_width: float = breadth[i]*1.68
         _box(st,at+Vector3(stations[i],0.22,0),
             Vector3(0.075,0.11,rib_width),Color("4f4336"))
+
+static func _quay_wedge(st: SurfaceTool, center: Vector3,
+        size: Vector3, tint: Color, rake: float) -> void:
+    # Closed irregular stone, not a floating flat overlay or a rectangular
+    # wall decal. Stones vary along their existing staggered courses.
+    var half: Vector3 = size*0.5
+    var a := Vector3(center.x-half.x,center.y-half.y,center.z-half.z)
+    var b := Vector3(center.x+half.x,center.y-half.y,center.z-half.z)
+    var c := Vector3(center.x+half.x,center.y-half.y,center.z+half.z)
+    var d := Vector3(center.x-half.x,center.y-half.y,center.z+half.z)
+    var e := Vector3(center.x-half.x+rake,center.y+half.y,center.z-half.z+0.055)
+    var f := Vector3(center.x+half.x+rake,center.y+half.y,center.z-half.z+0.025)
+    var g := Vector3(center.x+half.x+rake,center.y+half.y,center.z+half.z-0.045)
+    var h := Vector3(center.x-half.x+rake,center.y+half.y,center.z+half.z-0.025)
+    _quad(st,a,b,f,e,tint.darkened(0.16))
+    _quad(st,b,c,g,f,tint.darkened(0.095))
+    _quad(st,c,d,h,g,tint)
+    _quad(st,d,a,e,h,tint.darkened(0.055))
+    _quad(st,e,f,g,h,tint.lightened(0.055))
+    _quad(st,d,c,b,a,tint.darkened(0.23))
+
+static func _sloping_oak(st: SurfaceTool, lower: Vector3,
+        upper: Vector3, breadth: float, tint: Color) -> void:
+    # A proper diagonal plank in the quay face, rather than a vertical box.
+    var along: Vector3 = (upper-lower).normalized()
+    var right: Vector3 = Vector3(0,0,1)*breadth*0.5
+    var lift: Vector3 = Vector3(-along.y,along.x,0)*breadth*0.5
+    var a: Vector3 = lower-right-lift
+    var b: Vector3 = lower+right-lift
+    var c: Vector3 = upper+right-lift
+    var d: Vector3 = upper-right-lift
+    var e: Vector3 = lower-right+lift
+    var f: Vector3 = lower+right+lift
+    var g: Vector3 = upper+right+lift
+    var h: Vector3 = upper-right+lift
+    _quad(st,a,b,c,d,tint.darkened(0.14))
+    _quad(st,f,e,h,g,tint)
+    _quad(st,e,a,d,h,tint.darkened(0.22))
+    _quad(st,b,f,g,c,tint.darkened(0.12))
+    _quad(st,d,c,g,h,tint.lightened(0.05))
+    _quad(st,e,f,b,a,tint.darkened(0.24))
 
 static func _quad(st: SurfaceTool, a: Vector3,b: Vector3,c: Vector3,d: Vector3,
         tint: Color) -> void:

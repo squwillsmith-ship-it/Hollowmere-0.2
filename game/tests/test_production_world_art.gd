@@ -53,6 +53,24 @@ func _run() -> void:
                 "Untextured raw render blocks were concealed after replacement")
             check(bool(surface.get_meta("visual_only_preserves_colliders",false)),
                 "Existing production part collision remains source of truth")
+        # New art-ownership regression: scenery spanning removable supports
+        # must belong to real physical bodies, not immortal district roots.
+        # Visibility must follow the owner's removal/reload lifecycle.
+        var bracing_count: int = 0
+        for member: Node in district.find_children("*","MeshInstance3D",true,false):
+            var title: String = String(member.name)
+            if title.begins_with("LandingFender_") or title.begins_with("ShelterKneeBrace_") or title.begins_with("ChapelWeatheredFascia_") or title.begins_with("LightWindBrace_"):
+                bracing_count += 1
+                var host: StaticBody3D = member.get_parent() as StaticBody3D
+                check(host != null,"Scenic structural brace must be child-owned by a physical part: "+title)
+                if host != null:
+                    var was_visible: bool = host.visible
+                    host.visible = false
+                    check(not (member as MeshInstance3D).is_visible_in_tree(),
+                        "Part-owned brace must disappear with owner: "+title)
+                    host.visible = was_visible
+        check(bracing_count >= 10,
+            "Original landing, boatyard, chapel and navigation braces are retained with correct ownership")
         for site_id: String in ["brinewick/site_10","brinewick/site_19"]:
             var proxy: StaticBody3D = village.site_nodes[site_id].get_node("NonSalvageVolume")
             check(proxy.collision_layer == 0 and not proxy.visible,

@@ -156,7 +156,10 @@ func _mine_gallery(seal: Vector3) -> void:
                 0.10,0.045,n)
 
 func _undercroft(at: Vector3) -> void:
-    for n: int in range(3):
+    # Two end-bay arch frames preserve the authored stone structure while
+    # leaving the actual central standing-eye work and story view uncluttered.
+    # Existing vault collision and protected story targets remain untouched.
+    for n: int in [0,2]:
         var z: float = at.z-2.6+float(n)*2.6
         for side: float in [-1.0,1.0]:
             var x: float = at.x+side*4.05

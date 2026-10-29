@@ -39,7 +39,7 @@ func _run() -> void:
                     "Undercroft raked ribs are visual-only; roof collision is owned by stone vault")
             require(not String(piece.name).begins_with("UndercroftRoofRib_"),
                 "No old flat decorative stone rib masks the corrected vault")
-        require(pitched == 6,"Three pairs of masonry ribs follow the vaulted profile")
+        require(pitched == 4,"Two end-bay rib pairs preserve central standing-eye headroom")
     var position: Vector3 = underground.locations["undercroft"]
     var space: PhysicsDirectSpaceState3D = village.get_world_3d().direct_space_state
     var capsule := CapsuleShape3D.new()
