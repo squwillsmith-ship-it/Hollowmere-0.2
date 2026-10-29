@@ -37,7 +37,7 @@ jobs:
           python-version: '3.11'
       - name: Install dependencies and optional software display support
         run: |
-          python -m pip install --quiet numpy Pillow trimesh
+          python -m pip install --quiet numpy Pillow trimesh scipy
           sudo apt-get update -qq
           sudo apt-get install -y --no-install-recommends xvfb mesa-vulkan-drivers libvulkan1 libasound2t64 libpulse0 libfontconfig1 unzip
       - name: Restore reproducible authored materials from sources
@@ -86,11 +86,11 @@ jobs:
       - name: Restore procedural art sources
         shell: pwsh
         run: |
-          py -3 -m pip install --quiet numpy Pillow trimesh
-          py -3 tools/generate_step21_materials.py
-          py -3 tools/generate_step21_glb.py
-          py -3 tools/generate_phase_b_surfaces.py
-          py -3 tools/generate_phase_b_reference_glb.py
+          python -m pip install --quiet numpy Pillow trimesh scipy
+          python tools/generate_step21_materials.py
+          python tools/generate_step21_glb.py
+          python tools/generate_phase_b_surfaces.py
+          python tools/generate_phase_b_reference_glb.py
       - name: Download official pinned Windows editor
         shell: pwsh
         run: |
@@ -102,7 +102,7 @@ jobs:
           Expand-Archive $archive -DestinationPath .qa-tools -Force
       - name: Test actual Windows engine parsing, gameplay and persistence headlessly
         shell: pwsh
-        run: py -3 tools/test_environment.py check --godot .qa-tools/Godot_v4.7.2-stable_win64.exe
+        run: python tools/test_environment.py check --godot .qa-tools/Godot_v4.7.2-stable_win64.exe
       - name: Preserve Windows logs
         if: always()
         uses: actions/upload-artifact@v4

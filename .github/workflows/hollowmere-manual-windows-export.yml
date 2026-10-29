@@ -21,11 +21,11 @@ jobs:
       - name: Generate reproducible material assets
         shell: pwsh
         run: |
-          py -3 -m pip install --quiet numpy Pillow trimesh
-          py -3 tools/generate_step21_materials.py
-          py -3 tools/generate_step21_glb.py
-          py -3 tools/generate_phase_b_surfaces.py
-          py -3 tools/generate_phase_b_reference_glb.py
+          python -m pip install --quiet numpy Pillow trimesh scipy
+          python tools/generate_step21_materials.py
+          python tools/generate_step21_glb.py
+          python tools/generate_phase_b_surfaces.py
+          python tools/generate_phase_b_reference_glb.py
       - name: Install SHA-256 pinned Godot 4.7.2 Windows Standard editor
         shell: pwsh
         run: |
@@ -49,7 +49,7 @@ jobs:
           Copy-Item '.qa-tools/unpacked/templates/*' $dest -Recurse -Force
       - name: Package playable Windows engineering candidate
         shell: pwsh
-        run: py -3 tools/build.py windows --godot .qa-tools/Godot_v4.7.2-stable_win64.exe
+        run: python tools/build.py windows --godot .qa-tools/Godot_v4.7.2-stable_win64.exe
       - name: Upload candidate binaries, NOT full source history
         if: success()
         uses: actions/upload-artifact@v4
