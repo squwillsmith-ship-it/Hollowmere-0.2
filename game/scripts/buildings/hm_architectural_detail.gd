@@ -59,14 +59,14 @@ static func _boards(parent: Node3D, size: Vector3, base: Color, key: String) -> 
 	# collision, ID or salvage allocation. Joint spacing is deterministic.
 	var along_x: bool = _axis_is_x(size)
 	var span: float = size.x if along_x else size.z
-	var rows: int = maxi(2, ceili(size.y / 0.26))
+	var rows: int = maxi(2, ceili(size.y / 0.34))
 	var height: float = size.y / float(rows)
 	var r := RandomNumberGenerator.new()
 	r.seed = absi(key.hash()) + 84219
 	for row: int in range(rows):
 		var y: float = -size.y * 0.5 + (float(row) + 0.5) * height
 		var offset: float = r.randf_range(-0.009, 0.009)
-		var pieces: int = clampi(ceili(span / 1.35), 2, 6) if span > 1.75 else 1
+		var pieces: int = clampi(ceili(span / 1.60), 2, 6) if span > 1.75 else 1
 		var base_width: float = span / float(pieces)
 		# An alternating offset makes running joints, rather than stacked
 		# vertical seams. End caps are shortened to the actual wall envelope.
@@ -183,8 +183,8 @@ static func _slate(parent: Node3D, size: Vector3, base: Color, key: String) -> v
 
 static func _stonework(parent: Node3D, size: Vector3, base: Color, key: String) -> void:
 	var along_x: bool = _axis_is_x(size)
-	var rows: int = clampi(ceili(size.y / 0.34), 1, 6)
-	var columns: int = clampi(ceili((size.x if along_x else size.z) / 0.72), 2, 14)
+	var rows: int = clampi(ceili(size.y / 0.53), 1, 6)
+	var columns: int = clampi(ceili((size.x if along_x else size.z) / 1.02), 2, 14)
 	var span: float = size.x if along_x else size.z
 	for row: int in range(rows):
 		# Hand-laid bond: alternating courses have offset joints and occasional
@@ -197,7 +197,7 @@ static func _stonework(parent: Node3D, size: Vector3, base: Color, key: String) 
 			if b-a < unit*0.20:
 				continue
 			var h: float = size.y / float(rows)
-			var variation: float = 0.88 + float((col*5+row*7+absi(key.hash())%11)%9)*0.025
+			var variation: float = 0.91 + float((col*5+row*7+absi(key.hash())%11)%9)*0.017
 			var stone_size := Vector3((b-a)*0.965 if along_x else size.x*0.95,
 				h*0.94, size.z*0.95 if along_x else (b-a)*0.965)
 			var at := Vector3((a+b)*0.5 if along_x else 0.0,
