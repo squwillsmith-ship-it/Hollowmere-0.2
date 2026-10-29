@@ -38,12 +38,12 @@ jobs:
         run: |
           python tools/test_environment.py doctor --install
           test -x .qa-tools/Godot_v4.7.2-stable_linux.x86_64
-      - name: Existing Godot and Python comprehensive tests
+      # Companion to the first run's full Godot/Python suite. This second
+      # workflow-only revision captures 66 1280x720 actual frames. The game
+      # source blobs must be exactly identical to the tested earlier SHA.
+      - name: Full 10-view / 42-site / teardown Vulkan capture matrix
         run: |
-          python tools/test_environment.py check --godot .qa-tools/Godot_v4.7.2-stable_linux.x86_64
-      - name: Full exact-source authentic Vulkan screenshot matrix
-        run: |
-          python tools/test_environment.py render --godot .qa-tools/Godot_v4.7.2-stable_linux.x86_64
+          python tools/visual_capture_matrix.py --godot .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --mode forward_plus
       - name: Preserve machine-readable QA and genuine screenshots
         if: always()
         uses: actions/upload-artifact@v4
@@ -53,4 +53,5 @@ jobs:
             build/qa-*.log
             build/qa-environment.json
             build/*.png
+            build/visual-forward_plus/**
           if-no-files-found: warn
