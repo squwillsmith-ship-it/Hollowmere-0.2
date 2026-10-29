@@ -1,0 +1,13 @@
+{
+  "schema": "hollowmere_step21_material_study_v1",
+  "status": "WORKING_ART_MATERIALS_NOT_APPROVED_FINAL_COLOR_CALIBRATION",
+  "resolution": 512,
+  "materials": {
+    "aged_timber": {"family":"timber", "base_hex":"#82705C", "roughness":0.88,"seed":2101},
+    "weathered_timber": {"family":"timber", "base_hex":"#776D5F", "roughness":0.93,"seed":2102},
+    "dark_timber": {"family":"timber", "base_hex":"#51463A", "roughness":0.90,"seed":2103},
+    "salt_grey_timber": {"family":"timber", "base_hex":"#7C766E", "roughness":0.93,"seed":2104},
+    "cream_infill": {"family":"plaster", "base_hex":"#D0C6B3", "roughness":0.96,"seed":2105},
+    "patched_infill": {"family":"plaster", "base_hex":"#BDB4A1", "roughness":0.96,"seed":2106}
+  }
+}

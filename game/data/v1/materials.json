@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "authority": "Mechanics Reference 02",
+  "balance": "working-fixture-not-approved",
+  "families": [
+    {
+      "id": "timber",
+      "name": "Timber",
+      "credits_per_unit": 3,
+      "unit": "authored_recovery_unit"
+    },
+    {
+      "id": "stone",
+      "name": "Stone (including slate)",
+      "credits_per_unit": 2,
+      "unit": "authored_recovery_unit"
+    },
+    {
+      "id": "fired_clay",
+      "name": "Fired clay",
+      "credits_per_unit": 2,
+      "unit": "authored_recovery_unit"
+    },
+    {
+      "id": "iron",
+      "name": "Iron",
+      "credits_per_unit": 5,
+      "unit": "authored_recovery_unit"
+    },
+    {
+      "id": "copper_bronze",
+      "name": "Copper and bronze",
+      "credits_per_unit": 7,
+      "unit": "authored_recovery_unit"
+    },
+    {
+      "id": "fibres",
+      "name": "Fibres",
+      "credits_per_unit": 1,
+      "unit": "authored_recovery_unit"
+    },
+    {
+      "id": "glass",
+      "name": "Glass",
+      "credits_per_unit": 3,
+      "unit": "authored_recovery_unit"
+    },
+    {
+      "id": "mineral_fill",
+      "name": "Mineral fill",
+      "credits_per_unit": 1,
+      "unit": "authored_recovery_unit"
+    }
+  ],
+  "condition_states": [
+    "intact",
+    "damaged"
+  ],
+  "damaged_value_multiplier_percent": 60,
+  "normalisation_notes": [
+    "Slates are stone; neither slate nor vegetation creates a ninth salvage currency family.",
+    "An existing visually broken scrap object may still have intact salvage condition; its low base value accounts for its form."
+  ]
+}

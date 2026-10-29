@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "status": "PRODUCTION_NARRATIVE_TEXT_GROUNDED_PROPS_CLEARED_FROM_UNDERCROFT_WALKWAY",
+  "evidence": [
+    {
+      "flag_id": "net_store_sabotage",
+      "site_id": "brinewick/site_06",
+      "offset": [
+        2.6,
+        1.25,
+        3.6
+      ],
+      "title": "Saw-cut fishing-net rack",
+      "text": "The old repair ledger lists new sailcloth for the net store, but the stock was never ordered. The ruined beams were cut on their sheltered faces, where neither salt nor storm could reach. Aldren signed the inspection sheet and sent the fishing crews back out regardless. Brinewick did not lose the sea in a single bad season.",
+      "slate": false
+    },
+    {
+      "flag_id": "council_vote",
+      "site_id": "brinewick/site_19",
+      "offset": [
+        0.8,
+        1.25,
+        3.7
+      ],
+      "title": "Council slate from the mine office",
+      "text": "Seven councillors heard the proposal to follow the lower coal seam. Three argued the old workings should stay shut; two would have allowed repairs only. Aldren insisted a larger loan and deeper excavation could spare the village another winter without fish. The marginal notes include an unfamiliar warning: 'If you hear a familiar voice below, do not give it your name.'",
+      "slate": true
+    },
+    {
+      "flag_id": "first_missing_miner",
+      "site_id": "brinewick/site_09",
+      "offset": [
+        2.8,
+        1.2,
+        2.4
+      ],
+      "title": "Blanket and covered food by the well",
+      "text": "A blanket, two bowls and a clay cup remain beside the well. A father sat here after his son went missing in the early workings. The bowl was laid out each evening for someone who never returned. This was before the later inundation; the dates on the cups and the nine-person flood register do not belong to the same tragedy.",
+      "slate": false
+    },
+    {
+      "flag_id": "nine_miner_roster",
+      "site_id": "brinewick/site_19",
+      "offset": [
+        -1.5,
+        1.2,
+        3.8
+      ],
+      "title": "Flood rescue roster",
+      "text": "The later flood closed the lower gallery without warning. Nine names appear on this rescue register; Tomas, the carpenter, stands third. No bodies were recovered. In another hand, beside the date of the bell vigil, someone has written nine neat strokes. Below them, a tenth stroke was started and sharply crossed out.",
+      "slate": false
+    },
+    {
+      "flag_id": "returnee_denial",
+      "site_id": "brinewick/site_12",
+      "offset": [
+        2.5,
+        1.2,
+        4.5
+      ],
+      "title": "Bolted door and padded names",
+      "text": "The front door was barred from inside after the miners came back. In the ledger of household rations, an extra place is set but never named. Families learned to wrap keyrings and muffle iron latches. One witness records the returned workers reciting the right memories in the wrong order. No one could agree when the house became silent.",
+      "slate": false
+    },
+    {
+      "flag_id": "false_elsbeth_memory",
+      "site_id": "brinewick/site_14",
+      "offset": [
+        0,
+        1.2,
+        4.4
+      ],
+      "title": "Aldren's altered memory record",
+      "text": "Aldren wrote down a childhood game that he and Elsbeth never played. He had invented the detail to test the voice beneath the chapel. The next evening, the voice described that game as if it remembered him. The final page is torn along a ruled line; the unbroken ink on the desk suggests the writing stopped abruptly.",
+      "slate": false
+    },
+    {
+      "flag_id": "aldren_remains_found",
+      "site_id": "brinewick/site_14",
+      "offset": [
+        -1.7,
+        1.2,
+        4.4
+      ],
+      "title": "Undercroft death record",
+      "text": "Behind the writing table, sealed under loose chapel floor stones, lie Aldren's remains and the last pages of his journal. The dates make his death certain. The page nearest his hand asks for forgiveness but does not confirm what came back from the workings. A chair remains drawn up opposite him, though no one is recorded sitting there.",
+      "slate": false
+    },
+    {
+      "flag_id": "containment_understood",
+      "site_id": "brinewick/site_17",
+      "offset": [
+        2.5,
+        1.2,
+        2.2
+      ],
+      "title": "Mara's tide-driven bell schematic",
+      "text": "Mara's diagram ties the tidal float to a counterweight, pawl, bell striker and an arrangement of closed acoustic vents. The bell is not a spell: sound drew the thing's attention down a controlled route while the villages' other echoes were suppressed. The mechanism is badly worn. Delivering the bell would leave the route without its signal. Resetting it will require hands on every component.",
+      "slate": true
+    },
+    {
+      "flag_id": "mara_escape_clues",
+      "site_id": "brinewick/site_21",
+      "offset": [
+        1,
+        1.2,
+        3.8
+      ],
+      "title": "Cut descent rope and empty berth",
+      "text": "A repaired walking stick rests by the drained outfall. Someone cut the descent rope, then tied a replacement just out of sight from the chapel path. The small boat cradle is empty, and a second set of worn oarlocks hangs inside. Mara may have reached the inlet this way. The signs do not prove she escaped or tell us where she went.",
+      "slate": false
+    },
+    {
+      "flag_id": "inspection_suppression",
+      "site_id": "brinewick/site_03",
+      "offset": [
+        2,
+        1.2,
+        4
+      ],
+      "title": "Harbour office inspection ledger",
+      "text": "The harbour clerk's letters show that inspectors knew Brinewick had been emptied. There is no official mention of the bell, the silence, or what was heard beyond the sealed gallery. The company requested usable timber and stone, not a history of the village. A later memorandum asks that the church bell be recovered separately, intact, for a confidential consignee.",
+      "slate": false
+    }
+  ],
+  "finales": [
+    {
+      "ending_id": "bell_delivery",
+      "site_id": "brinewick/site_15",
+      "offset": [
+        2.5,
+        1.2,
+        4.2
+      ],
+      "title": "Sign company bell delivery and release order"
+    },
+    {
+      "ending_id": "repair_escape",
+      "site_id": "brinewick/site_21",
+      "offset": [
+        -2.2,
+        1.2,
+        3.8
+      ],
+      "title": "Complete Mara's protected escape route"
+    }
+  ]
+}

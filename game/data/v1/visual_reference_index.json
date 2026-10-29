@@ -1,0 +1,2006 @@
+{
+  "schema_version": 1,
+  "kind": "REFERENCE_ONLY_DO_NOT_INSTANTIATE",
+  "object_archetypes": [
+    {
+      "id": "TO-001",
+      "name": "Claw hammer",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "TO-002",
+      "name": "Crowbar",
+      "status": "R",
+      "removal_hint": "T3",
+      "protected_hint": "N"
+    },
+    {
+      "id": "TO-003",
+      "name": "Pickaxe",
+      "status": "R",
+      "removal_hint": "T3",
+      "protected_hint": "N"
+    },
+    {
+      "id": "TO-004",
+      "name": "Hand saw",
+      "status": "R",
+      "removal_hint": "T4",
+      "protected_hint": "N"
+    },
+    {
+      "id": "TO-005",
+      "name": "Hand grip / bare hands",
+      "status": "R",
+      "removal_hint": "Discovery/utility",
+      "protected_hint": "N"
+    },
+    {
+      "id": "TO-006",
+      "name": "Utility knife",
+      "status": "W",
+      "removal_hint": "Discovery/utility",
+      "protected_hint": "N"
+    },
+    {
+      "id": "TO-007",
+      "name": "Wooden mallet",
+      "status": "W",
+      "removal_hint": "Discovery/utility",
+      "protected_hint": "N"
+    },
+    {
+      "id": "TO-008",
+      "name": "Iron wedge",
+      "status": "W",
+      "removal_hint": "Discovery/utility",
+      "protected_hint": "N"
+    },
+    {
+      "id": "TO-009",
+      "name": "Cold chisel",
+      "status": "W",
+      "removal_hint": "Discovery/utility",
+      "protected_hint": "N"
+    },
+    {
+      "id": "TO-010",
+      "name": "Sharpening stone",
+      "status": "W",
+      "removal_hint": "Discovery/utility",
+      "protected_hint": "N"
+    },
+    {
+      "id": "TO-011",
+      "name": "Tool wrap",
+      "status": "W",
+      "removal_hint": "Discovery/utility",
+      "protected_hint": "N"
+    },
+    {
+      "id": "TO-012",
+      "name": "Small tool rack",
+      "status": "W",
+      "removal_hint": "Discovery/utility",
+      "protected_hint": "N"
+    },
+    {
+      "id": "AC-001",
+      "name": "Satchel",
+      "status": "W",
+      "removal_hint": "D",
+      "protected_hint": "N"
+    },
+    {
+      "id": "AC-002",
+      "name": "Reinforced pack",
+      "status": "W",
+      "removal_hint": "D",
+      "protected_hint": "N"
+    },
+    {
+      "id": "AC-003",
+      "name": "Salvager pack",
+      "status": "W",
+      "removal_hint": "D",
+      "protected_hint": "N"
+    },
+    {
+      "id": "AC-004",
+      "name": "Gathering basket",
+      "status": "W",
+      "removal_hint": "D",
+      "protected_hint": "N"
+    },
+    {
+      "id": "AC-005",
+      "name": "Wooden wheelbarrow",
+      "status": "W",
+      "removal_hint": "D",
+      "protected_hint": "N"
+    },
+    {
+      "id": "AC-006",
+      "name": "Two-wheel handcart",
+      "status": "W",
+      "removal_hint": "D",
+      "protected_hint": "N"
+    },
+    {
+      "id": "AC-007",
+      "name": "Four-wheel salvage cart",
+      "status": "W",
+      "removal_hint": "D",
+      "protected_hint": "N"
+    },
+    {
+      "id": "AC-008",
+      "name": "Portable ladder",
+      "status": "W",
+      "removal_hint": "D",
+      "protected_hint": "N"
+    },
+    {
+      "id": "AC-009",
+      "name": "Scaffold bay",
+      "status": "W",
+      "removal_hint": "D",
+      "protected_hint": "N"
+    },
+    {
+      "id": "AC-010",
+      "name": "Rope sling",
+      "status": "W",
+      "removal_hint": "D",
+      "protected_hint": "N"
+    },
+    {
+      "id": "AC-011",
+      "name": "Block and tackle",
+      "status": "W",
+      "removal_hint": "D",
+      "protected_hint": "N"
+    },
+    {
+      "id": "AC-012",
+      "name": "Stabilising jack",
+      "status": "W",
+      "removal_hint": "D",
+      "protected_hint": "N"
+    },
+    {
+      "id": "YA-001",
+      "name": "Requisition board",
+      "status": "R",
+      "removal_hint": "D",
+      "protected_hint": "N"
+    },
+    {
+      "id": "YA-002",
+      "name": "Recovery ledger",
+      "status": "R",
+      "removal_hint": "D",
+      "protected_hint": "N"
+    },
+    {
+      "id": "YA-003",
+      "name": "Receiving platform",
+      "status": "W",
+      "removal_hint": "D",
+      "protected_hint": "N"
+    },
+    {
+      "id": "YA-004",
+      "name": "Unloading ramp",
+      "status": "W",
+      "removal_hint": "D",
+      "protected_hint": "N"
+    },
+    {
+      "id": "YA-005",
+      "name": "Salvage sorting table",
+      "status": "W",
+      "removal_hint": "D",
+      "protected_hint": "N"
+    },
+    {
+      "id": "YA-006",
+      "name": "Bundle tying rack",
+      "status": "W",
+      "removal_hint": "D",
+      "protected_hint": "N"
+    },
+    {
+      "id": "YA-007",
+      "name": "Manual timber sawbench",
+      "status": "W",
+      "removal_hint": "D",
+      "protected_hint": "N"
+    },
+    {
+      "id": "YA-008",
+      "name": "Stone stacking bed",
+      "status": "W",
+      "removal_hint": "D",
+      "protected_hint": "N"
+    },
+    {
+      "id": "YA-009",
+      "name": "Crate of sorted iron",
+      "status": "W",
+      "removal_hint": "D",
+      "protected_hint": "N"
+    },
+    {
+      "id": "YA-010",
+      "name": "Cargo scale",
+      "status": "W",
+      "removal_hint": "D",
+      "protected_hint": "N"
+    },
+    {
+      "id": "YA-011",
+      "name": "Open salvage bin",
+      "status": "W",
+      "removal_hint": "D",
+      "protected_hint": "N"
+    },
+    {
+      "id": "YA-012",
+      "name": "Canvas goods cover",
+      "status": "W",
+      "removal_hint": "D",
+      "protected_hint": "N"
+    },
+    {
+      "id": "FU-001",
+      "name": "Farmhouse table",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "FU-002",
+      "name": "Simple wooden chair",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "FU-003",
+      "name": "Low stool",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "FU-004",
+      "name": "Long tavern bench",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "FU-005",
+      "name": "Single rope bed",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "FU-006",
+      "name": "Straw mattress",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "FU-007",
+      "name": "Lidded storage chest",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "FU-008",
+      "name": "Standing cupboard",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "FU-009",
+      "name": "Open wall shelf",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "FU-010",
+      "name": "High kitchen dresser",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "FU-011",
+      "name": "Carpenter workbench",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "FU-012",
+      "name": "Writing desk",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "HO-001",
+      "name": "Wooden bowl",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "HO-002",
+      "name": "Carved wooden plate",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "HO-003",
+      "name": "Clay cooking pot",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "HO-004",
+      "name": "Earthenware jug",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "HO-005",
+      "name": "Clay mug",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "HO-006",
+      "name": "Green glass bottle",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "HO-007",
+      "name": "Small glass jar",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "HO-008",
+      "name": "Iron cooking pan",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "HO-009",
+      "name": "Hearth kettle",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "HO-010",
+      "name": "Wooden spoon",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "HO-011",
+      "name": "Bucket with iron bail",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "HO-012",
+      "name": "Woven basket",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "CL-001",
+      "name": "Wool blanket",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "CL-002",
+      "name": "Rag rug",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "CL-003",
+      "name": "Linen bedsheet",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "CL-004",
+      "name": "Curtain pair",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "CL-005",
+      "name": "Hanging apron",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "CL-006",
+      "name": "Folded tunic",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "CL-007",
+      "name": "Leather work belt",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "CL-008",
+      "name": "Cloth sack",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "CL-009",
+      "name": "Rope coil",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "CL-010",
+      "name": "Roll of net twine",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "CL-011",
+      "name": "Padded door-wrap",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "CL-012",
+      "name": "Woven straw mat",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "OP-001",
+      "name": "Plank door leaf",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "OP-002",
+      "name": "Joined panel door",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "OP-003",
+      "name": "Hinged shutter pair",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "OP-004",
+      "name": "Wooden window frame",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "OP-005",
+      "name": "Small glazed casement",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "OP-006",
+      "name": "Door iron hinge",
+      "status": "W",
+      "removal_hint": "T2/T3",
+      "protected_hint": "N"
+    },
+    {
+      "id": "OP-007",
+      "name": "Iron latch and keeper",
+      "status": "W",
+      "removal_hint": "T2/T3",
+      "protected_hint": "N"
+    },
+    {
+      "id": "OP-008",
+      "name": "Forged door pull",
+      "status": "W",
+      "removal_hint": "T2/T3",
+      "protected_hint": "N"
+    },
+    {
+      "id": "OP-009",
+      "name": "Small iron padlock",
+      "status": "W",
+      "removal_hint": "T2/T3",
+      "protected_hint": "N"
+    },
+    {
+      "id": "OP-010",
+      "name": "Hall-side bolt",
+      "status": "W",
+      "removal_hint": "T2/T3",
+      "protected_hint": "N"
+    },
+    {
+      "id": "OP-011",
+      "name": "Door nameplate",
+      "status": "W",
+      "removal_hint": "T2/T3",
+      "protected_hint": "N"
+    },
+    {
+      "id": "OP-012",
+      "name": "Exterior stair handrail",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "RF-001",
+      "name": "Individual slate tile",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "RF-002",
+      "name": "Clay roof tile",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "RF-003",
+      "name": "Weathered wood shingle",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "RF-004",
+      "name": "Straw thatch bundle",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "RF-005",
+      "name": "Roof batten",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "RF-006",
+      "name": "Ridge cap tile",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "RF-007",
+      "name": "Leadlike metal flashing",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "RF-008",
+      "name": "Timber eaves board",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "RF-009",
+      "name": "Rain drip board",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "RF-010",
+      "name": "Roof purlin",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "RF-011",
+      "name": "Roof truss half",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "RF-012",
+      "name": "Roof access hatch",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "TM-001",
+      "name": "Rough wall plank",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "TM-002",
+      "name": "Heavy wall plank",
+      "status": "R",
+      "removal_hint": "T3",
+      "protected_hint": "N"
+    },
+    {
+      "id": "TM-003",
+      "name": "Floorboard",
+      "status": "R",
+      "removal_hint": "T3",
+      "protected_hint": "N"
+    },
+    {
+      "id": "TM-004",
+      "name": "Structural floor joist",
+      "status": "R",
+      "removal_hint": "T4",
+      "protected_hint": "N"
+    },
+    {
+      "id": "TM-005",
+      "name": "Square support post",
+      "status": "R",
+      "removal_hint": "T4",
+      "protected_hint": "N"
+    },
+    {
+      "id": "TM-006",
+      "name": "Main tie beam",
+      "status": "R",
+      "removal_hint": "T4",
+      "protected_hint": "N"
+    },
+    {
+      "id": "TM-007",
+      "name": "Diagonal timber brace",
+      "status": "R",
+      "removal_hint": "T4",
+      "protected_hint": "N"
+    },
+    {
+      "id": "TM-008",
+      "name": "Door lintel beam",
+      "status": "R",
+      "removal_hint": "T4",
+      "protected_hint": "N"
+    },
+    {
+      "id": "TM-009",
+      "name": "Window sill timber",
+      "status": "R",
+      "removal_hint": "T3",
+      "protected_hint": "N"
+    },
+    {
+      "id": "TM-010",
+      "name": "Light shed rail",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "TM-011",
+      "name": "Notched corner joint",
+      "status": "R",
+      "removal_hint": "T3",
+      "protected_hint": "N"
+    },
+    {
+      "id": "TM-012",
+      "name": "Framed cream infill bay",
+      "status": "R",
+      "removal_hint": "T3",
+      "protected_hint": "N"
+    },
+    {
+      "id": "ST-001",
+      "name": "Irregular fieldstone",
+      "status": "R",
+      "removal_hint": "T3",
+      "protected_hint": "N"
+    },
+    {
+      "id": "ST-002",
+      "name": "Long coursed rubble stone",
+      "status": "R",
+      "removal_hint": "T3",
+      "protected_hint": "N"
+    },
+    {
+      "id": "ST-003",
+      "name": "Corner dressed stone",
+      "status": "R",
+      "removal_hint": "T3",
+      "protected_hint": "N"
+    },
+    {
+      "id": "ST-004",
+      "name": "Loose paving stone",
+      "status": "R",
+      "removal_hint": "T3",
+      "protected_hint": "N"
+    },
+    {
+      "id": "ST-005",
+      "name": "Mortar-bound wall course",
+      "status": "R",
+      "removal_hint": "T3",
+      "protected_hint": "N"
+    },
+    {
+      "id": "ST-006",
+      "name": "Stone stair tread",
+      "status": "R",
+      "removal_hint": "T3",
+      "protected_hint": "N"
+    },
+    {
+      "id": "ST-007",
+      "name": "Chimney block",
+      "status": "R",
+      "removal_hint": "T3",
+      "protected_hint": "N"
+    },
+    {
+      "id": "ST-008",
+      "name": "Clay brick",
+      "status": "R",
+      "removal_hint": "T3",
+      "protected_hint": "N"
+    },
+    {
+      "id": "ST-009",
+      "name": "Fired terracotta paver",
+      "status": "R",
+      "removal_hint": "T3",
+      "protected_hint": "N"
+    },
+    {
+      "id": "ST-010",
+      "name": "Mortar clump",
+      "status": "R",
+      "removal_hint": "T3",
+      "protected_hint": "N"
+    },
+    {
+      "id": "ST-011",
+      "name": "Padstone footing",
+      "status": "R",
+      "removal_hint": "T3",
+      "protected_hint": "N"
+    },
+    {
+      "id": "ST-012",
+      "name": "Low retaining wall section",
+      "status": "R",
+      "removal_hint": "T3",
+      "protected_hint": "N"
+    },
+    {
+      "id": "ME-001",
+      "name": "Iron nail bundle",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "ME-002",
+      "name": "Single forged nail",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "ME-003",
+      "name": "Iron strap plate",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "ME-004",
+      "name": "Iron corner bracket",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "ME-005",
+      "name": "Long iron hinge pin",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "ME-006",
+      "name": "Metal roof hook",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "ME-007",
+      "name": "Short chain section",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "ME-008",
+      "name": "Iron peg",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "ME-009",
+      "name": "Copper sheet offcut",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "ME-010",
+      "name": "Bronze plate fitting",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "ME-011",
+      "name": "Iron fireplace grate",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "ME-012",
+      "name": "Mixed metal salvage pile",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "FI-001",
+      "name": "Hanging fishing net",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "FI-002",
+      "name": "Folded trawl net",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "FI-003",
+      "name": "Net drying rack",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "FI-004",
+      "name": "Cork net float",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "FI-005",
+      "name": "Fishing line spool",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "FI-006",
+      "name": "Wooden fish crate",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "FI-007",
+      "name": "Woven fish trap",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "FI-008",
+      "name": "Bait box",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "FI-009",
+      "name": "Fishing knife sheath",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "FI-010",
+      "name": "Fish sorting trough",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "FI-011",
+      "name": "Boat fender",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "FI-012",
+      "name": "Net-store support brace",
+      "status": "W",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "MA-001",
+      "name": "Small rowing boat",
+      "status": "W",
+      "removal_hint": "P or T3+",
+      "protected_hint": "N"
+    },
+    {
+      "id": "MA-002",
+      "name": "Small coastal sailboat",
+      "status": "W",
+      "removal_hint": "P or T3+",
+      "protected_hint": "N"
+    },
+    {
+      "id": "MA-003",
+      "name": "Wooden oar",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "MA-004",
+      "name": "Mooring bollard",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "MA-005",
+      "name": "Iron boat anchor",
+      "status": "W",
+      "removal_hint": "P or T3+",
+      "protected_hint": "N"
+    },
+    {
+      "id": "MA-006",
+      "name": "Dock gangplank",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "MA-007",
+      "name": "Pier timber pile",
+      "status": "W",
+      "removal_hint": "P or T3+",
+      "protected_hint": "N"
+    },
+    {
+      "id": "MA-008",
+      "name": "Quay cargo hook",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "MA-009",
+      "name": "Wooden capstan",
+      "status": "W",
+      "removal_hint": "P or T3+",
+      "protected_hint": "N"
+    },
+    {
+      "id": "MA-010",
+      "name": "Boat repair cradle",
+      "status": "W",
+      "removal_hint": "P or T3+",
+      "protected_hint": "N"
+    },
+    {
+      "id": "MA-011",
+      "name": "Sail canvas panel",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "MA-012",
+      "name": "Tide marker board",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "MI-001",
+      "name": "Mining timber prop",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "MI-002",
+      "name": "Cross-shore mining brace",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "MI-003",
+      "name": "Copper ore lump",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "MI-004",
+      "name": "Ore sack",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "MI-005",
+      "name": "Small mine cart",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "MI-006",
+      "name": "Wooden haul sled",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "MI-007",
+      "name": "Mine rail fragment",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "MI-008",
+      "name": "Mine warning slate",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "MI-009",
+      "name": "Shoring board",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "MI-010",
+      "name": "Timber cutting sawhorse",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "MI-011",
+      "name": "Tomas mechanism model",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "MI-012",
+      "name": "Chiselled warning stone",
+      "status": "R",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "CI-001",
+      "name": "Plain wooden pew",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "CI-002",
+      "name": "Chapel reading lectern",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "CI-003",
+      "name": "Stone altar slab",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "CI-004",
+      "name": "Prayer stool",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "CI-005",
+      "name": "Small school bench",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "CI-006",
+      "name": "School slate",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "CI-007",
+      "name": "Notice post",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "CI-008",
+      "name": "Communal notice board",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "CI-009",
+      "name": "Tavern counter",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "CI-010",
+      "name": "Public table setting",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "CI-011",
+      "name": "Square seating block",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "CI-012",
+      "name": "Public handbell",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "EV-001",
+      "name": "Prison work token",
+      "status": "R",
+      "removal_hint": "P",
+      "protected_hint": "N"
+    },
+    {
+      "id": "EV-002",
+      "name": "Suspension contract",
+      "status": "R",
+      "removal_hint": "P",
+      "protected_hint": "N"
+    },
+    {
+      "id": "EV-003",
+      "name": "Four requisition sheets",
+      "status": "R",
+      "removal_hint": "P",
+      "protected_hint": "N"
+    },
+    {
+      "id": "EV-004",
+      "name": "Loan and repair ledger",
+      "status": "W",
+      "removal_hint": "P",
+      "protected_hint": "N"
+    },
+    {
+      "id": "EV-005",
+      "name": "Inspection packet",
+      "status": "R",
+      "removal_hint": "P",
+      "protected_hint": "N"
+    },
+    {
+      "id": "EV-006",
+      "name": "Shift roster board",
+      "status": "R",
+      "removal_hint": "P",
+      "protected_hint": "N"
+    },
+    {
+      "id": "EV-007",
+      "name": "Ration record bundle",
+      "status": "W",
+      "removal_hint": "P",
+      "protected_hint": "N"
+    },
+    {
+      "id": "EV-008",
+      "name": "Altered death report",
+      "status": "W",
+      "removal_hint": "P",
+      "protected_hint": "N"
+    },
+    {
+      "id": "EV-009",
+      "name": "Elsbeth portrait",
+      "status": "R",
+      "removal_hint": "P",
+      "protected_hint": "N"
+    },
+    {
+      "id": "EV-010",
+      "name": "Aldren journal stack",
+      "status": "R",
+      "removal_hint": "P",
+      "protected_hint": "N"
+    },
+    {
+      "id": "EV-011",
+      "name": "Family-name list",
+      "status": "W",
+      "removal_hint": "P",
+      "protected_hint": "N"
+    },
+    {
+      "id": "EV-012",
+      "name": "Mara tidal diagram",
+      "status": "R",
+      "removal_hint": "P",
+      "protected_hint": "N"
+    },
+    {
+      "id": "BL-001",
+      "name": "Bronze harbour bell",
+      "status": "R",
+      "removal_hint": "P",
+      "protected_hint": "Y"
+    },
+    {
+      "id": "BL-002",
+      "name": "Bell timber yoke",
+      "status": "W",
+      "removal_hint": "P",
+      "protected_hint": "Y"
+    },
+    {
+      "id": "BL-003",
+      "name": "Bell clapper",
+      "status": "W",
+      "removal_hint": "P",
+      "protected_hint": "Y"
+    },
+    {
+      "id": "BL-004",
+      "name": "Rope bell pull",
+      "status": "W",
+      "removal_hint": "P",
+      "protected_hint": "Y"
+    },
+    {
+      "id": "BL-005",
+      "name": "Tide float",
+      "status": "R",
+      "removal_hint": "P",
+      "protected_hint": "Y"
+    },
+    {
+      "id": "BL-006",
+      "name": "Counterweight stone",
+      "status": "R",
+      "removal_hint": "P",
+      "protected_hint": "Y"
+    },
+    {
+      "id": "BL-007",
+      "name": "Ratchet wheel",
+      "status": "R",
+      "removal_hint": "P",
+      "protected_hint": "Y"
+    },
+    {
+      "id": "BL-008",
+      "name": "Striking hammer arm",
+      "status": "R",
+      "removal_hint": "P",
+      "protected_hint": "Y"
+    },
+    {
+      "id": "BL-009",
+      "name": "Drive-link rod",
+      "status": "W",
+      "removal_hint": "P",
+      "protected_hint": "Y"
+    },
+    {
+      "id": "BL-010",
+      "name": "Navigation lamp housing",
+      "status": "R",
+      "removal_hint": "P",
+      "protected_hint": "Y"
+    },
+    {
+      "id": "BL-011",
+      "name": "Lamp alignment bracket",
+      "status": "R",
+      "removal_hint": "P",
+      "protected_hint": "Y"
+    },
+    {
+      "id": "BL-012",
+      "name": "Blocked acoustic drain gate",
+      "status": "R",
+      "removal_hint": "P",
+      "protected_hint": "Y"
+    },
+    {
+      "id": "EX-001",
+      "name": "Hidden bookshelf fascia",
+      "status": "R",
+      "removal_hint": "P",
+      "protected_hint": "Y"
+    },
+    {
+      "id": "EX-002",
+      "name": "Listening opening grille",
+      "status": "R",
+      "removal_hint": "P",
+      "protected_hint": "Y"
+    },
+    {
+      "id": "EX-003",
+      "name": "Study locked inner door",
+      "status": "W",
+      "removal_hint": "P",
+      "protected_hint": "Y"
+    },
+    {
+      "id": "EX-004",
+      "name": "Two-place dining table",
+      "status": "W",
+      "removal_hint": "T1/P",
+      "protected_hint": "N"
+    },
+    {
+      "id": "EX-005",
+      "name": "Empty movable chair",
+      "status": "W",
+      "removal_hint": "P",
+      "protected_hint": "Y"
+    },
+    {
+      "id": "EX-006",
+      "name": "Identifiable static remains",
+      "status": "R",
+      "removal_hint": "P",
+      "protected_hint": "Y"
+    },
+    {
+      "id": "EX-007",
+      "name": "Cut escape rope",
+      "status": "R",
+      "removal_hint": "P",
+      "protected_hint": "Y"
+    },
+    {
+      "id": "EX-008",
+      "name": "Mara repaired walking stick",
+      "status": "R",
+      "removal_hint": "P",
+      "protected_hint": "Y"
+    },
+    {
+      "id": "EX-009",
+      "name": "Empty boat cradle",
+      "status": "R",
+      "removal_hint": "P",
+      "protected_hint": "Y"
+    },
+    {
+      "id": "EX-010",
+      "name": "Escape berth timber ladder",
+      "status": "W",
+      "removal_hint": "P",
+      "protected_hint": "Y"
+    },
+    {
+      "id": "EX-011",
+      "name": "Old well cover",
+      "status": "R",
+      "removal_hint": "P",
+      "protected_hint": "Y"
+    },
+    {
+      "id": "EX-012",
+      "name": "Hidden paving cache",
+      "status": "R",
+      "removal_hint": "P",
+      "protected_hint": "Y"
+    },
+    {
+      "id": "EN-001",
+      "name": "Low coastal grass tuft",
+      "status": "W",
+      "removal_hint": "S",
+      "protected_hint": "N"
+    },
+    {
+      "id": "EN-002",
+      "name": "Bracken fern",
+      "status": "W",
+      "removal_hint": "S",
+      "protected_hint": "N"
+    },
+    {
+      "id": "EN-003",
+      "name": "Wind-shaped shrub",
+      "status": "W",
+      "removal_hint": "S",
+      "protected_hint": "N"
+    },
+    {
+      "id": "EN-004",
+      "name": "Small coastal tree",
+      "status": "W",
+      "removal_hint": "S",
+      "protected_hint": "N"
+    },
+    {
+      "id": "EN-005",
+      "name": "Large gnarled tree",
+      "status": "W",
+      "removal_hint": "S",
+      "protected_hint": "N"
+    },
+    {
+      "id": "EN-006",
+      "name": "Split coastal boulder",
+      "status": "W",
+      "removal_hint": "S",
+      "protected_hint": "N"
+    },
+    {
+      "id": "EN-007",
+      "name": "Weathered gravel patch",
+      "status": "W",
+      "removal_hint": "S",
+      "protected_hint": "N"
+    },
+    {
+      "id": "EN-008",
+      "name": "Shore pebble group",
+      "status": "W",
+      "removal_hint": "S",
+      "protected_hint": "N"
+    },
+    {
+      "id": "EN-009",
+      "name": "Driftwood log",
+      "status": "W",
+      "removal_hint": "S",
+      "protected_hint": "N"
+    },
+    {
+      "id": "EN-010",
+      "name": "Seaweed tangle",
+      "status": "W",
+      "removal_hint": "S",
+      "protected_hint": "N"
+    },
+    {
+      "id": "EN-011",
+      "name": "Mud puddle",
+      "status": "W",
+      "removal_hint": "S",
+      "protected_hint": "N"
+    },
+    {
+      "id": "EN-012",
+      "name": "Rusted street signpost",
+      "status": "W",
+      "removal_hint": "S",
+      "protected_hint": "N"
+    },
+    {
+      "id": "SA-001",
+      "name": "Intact loose plank",
+      "status": "R",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "SA-002",
+      "name": "Damaged splintered plank",
+      "status": "R",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "SA-003",
+      "name": "Bundled timber boards",
+      "status": "R",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "SA-004",
+      "name": "Short saw-cut beam",
+      "status": "R",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "SA-005",
+      "name": "Whole salvaged beam",
+      "status": "R",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "SA-006",
+      "name": "Intact recovered stone",
+      "status": "R",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "SA-007",
+      "name": "Chipped damaged stone",
+      "status": "R",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "SA-008",
+      "name": "Sorted slate stack",
+      "status": "R",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "SA-009",
+      "name": "Broken slate shards",
+      "status": "R",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "SA-010",
+      "name": "Cleaned iron fittings",
+      "status": "R",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "SA-011",
+      "name": "Mixed fibre bundle",
+      "status": "R",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "SA-012",
+      "name": "Hand-sorted mineral fill",
+      "status": "R",
+      "removal_hint": "T1",
+      "protected_hint": "N"
+    },
+    {
+      "id": "LH-001",
+      "name": "Oil hand lantern",
+      "status": "R",
+      "removal_hint": "T1/T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "LH-002",
+      "name": "Wall lantern bracket",
+      "status": "W",
+      "removal_hint": "T1/T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "LH-003",
+      "name": "Wax candle holder",
+      "status": "W",
+      "removal_hint": "T1/T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "LH-004",
+      "name": "Burnt candle stub",
+      "status": "W",
+      "removal_hint": "T1/T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "LH-005",
+      "name": "Fireplace iron grate",
+      "status": "R",
+      "removal_hint": "T1/T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "LH-006",
+      "name": "Stone hearth surround",
+      "status": "W",
+      "removal_hint": "T1/T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "LH-007",
+      "name": "Stacked firewood",
+      "status": "W",
+      "removal_hint": "T1/T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "LH-008",
+      "name": "Ash and charcoal pile",
+      "status": "W",
+      "removal_hint": "T1/T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "LH-009",
+      "name": "Soot-blackened pot hook",
+      "status": "W",
+      "removal_hint": "T1/T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "LH-010",
+      "name": "Clay lamp-oil flask",
+      "status": "W",
+      "removal_hint": "T1/T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "LH-011",
+      "name": "Spare glass lamp pane",
+      "status": "W",
+      "removal_hint": "T1/T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "LH-012",
+      "name": "Workplace hanging lamp",
+      "status": "W",
+      "removal_hint": "T1/T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "SR-001",
+      "name": "Rough timber fence panel",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "SR-002",
+      "name": "Joined timber gate leaf",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "SR-003",
+      "name": "Gate iron latch",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "SR-004",
+      "name": "Stone boundary marker",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "SR-005",
+      "name": "Directional wooden sign",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "SR-006",
+      "name": "Repair notice stake",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "SR-007",
+      "name": "Clothes washing line",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "SR-008",
+      "name": "Outdoor hand pump",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "SR-009",
+      "name": "Small water trough",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "SR-010",
+      "name": "Broken timber wagon wheel",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "SR-011",
+      "name": "Coastal warning placard",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    },
+    {
+      "id": "SR-012",
+      "name": "Handheld sweeping broom",
+      "status": "W",
+      "removal_hint": "T2",
+      "protected_hint": "N"
+    }
+  ],
+  "proposed_buildings": [
+    {
+      "id": "BY-A01",
+      "class": "A",
+      "mapped_site": "02"
+    },
+    {
+      "id": "BY-B01",
+      "class": "B",
+      "mapped_site": "02"
+    },
+    {
+      "id": "HO-C01",
+      "class": "C",
+      "mapped_site": "03"
+    },
+    {
+      "id": "WA-C01",
+      "class": "C",
+      "mapped_site": "04"
+    },
+    {
+      "id": "WB-D01",
+      "class": "D",
+      "mapped_site": "05"
+    },
+    {
+      "id": "WB-B02",
+      "class": "B",
+      "mapped_site": "05"
+    },
+    {
+      "id": "NS-B01",
+      "class": "B",
+      "mapped_site": "06"
+    },
+    {
+      "id": "NS-A02",
+      "class": "A",
+      "mapped_site": "06"
+    },
+    {
+      "id": "LC-C01",
+      "class": "C",
+      "mapped_site": "07"
+    },
+    {
+      "id": "LC-C02",
+      "class": "C",
+      "mapped_site": "07"
+    },
+    {
+      "id": "LC-C03",
+      "class": "C",
+      "mapped_site": "07"
+    },
+    {
+      "id": "LC-C04",
+      "class": "C",
+      "mapped_site": "07"
+    },
+    {
+      "id": "LC-B05",
+      "class": "B",
+      "mapped_site": "07"
+    },
+    {
+      "id": "MH-C01",
+      "class": "C",
+      "mapped_site": "08"
+    },
+    {
+      "id": "IN-D01",
+      "class": "D",
+      "mapped_site": "10"
+    },
+    {
+      "id": "TW-C01",
+      "class": "C",
+      "mapped_site": "11"
+    },
+    {
+      "id": "TW-A02",
+      "class": "A",
+      "mapped_site": "11"
+    },
+    {
+      "id": "UC-C01",
+      "class": "C",
+      "mapped_site": "12"
+    },
+    {
+      "id": "UC-C02",
+      "class": "C",
+      "mapped_site": "12"
+    },
+    {
+      "id": "UC-C03",
+      "class": "C",
+      "mapped_site": "12"
+    },
+    {
+      "id": "UC-D04",
+      "class": "D",
+      "mapped_site": "12"
+    },
+    {
+      "id": "UC-B05",
+      "class": "B",
+      "mapped_site": "12"
+    },
+    {
+      "id": "CH-D01",
+      "class": "D",
+      "mapped_site": "13"
+    },
+    {
+      "id": "ST-D01",
+      "class": "D",
+      "mapped_site": "14"
+    },
+    {
+      "id": "BH-D01",
+      "class": "D",
+      "mapped_site": "15"
+    },
+    {
+      "id": "NL-C01",
+      "class": "C",
+      "mapped_site": "16"
+    },
+    {
+      "id": "MN-B01",
+      "class": "B",
+      "mapped_site": "18"
+    },
+    {
+      "id": "MO-B01",
+      "class": "B",
+      "mapped_site": "19"
+    },
+    {
+      "id": "MO-A02",
+      "class": "A",
+      "mapped_site": "19"
+    },
+    {
+      "id": "EB-A01",
+      "class": "A",
+      "mapped_site": "21"
+    }
+  ]
+}

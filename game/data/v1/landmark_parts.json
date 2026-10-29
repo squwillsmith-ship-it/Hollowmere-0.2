@@ -1,0 +1,1598 @@
+{
+  "schema_version": 1,
+  "kind": "catalogue_backed_village_landmark_components",
+  "parts": [
+    {
+      "title": "InnStoneFooting",
+      "site": "inn",
+      "body_index": 0,
+      "id": "village/inn/000_inn_stone_footing",
+      "archetype_id": "working:inn_stone_footing",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 2,
+      "supports": [
+        "village/inn/001_inn_hewn_post",
+        "village/inn/002_inn_hewn_post",
+        "village/inn/003_inn_hewn_post",
+        "village/inn/008_inn_hewn_post",
+        "village/inn/009_inn_hewn_post",
+        "village/inn/010_inn_hewn_post",
+        "village/inn/015_inn_front_lime_pier",
+        "village/inn/016_inn_rear_lime_panel",
+        "village/inn/017_inn_front_timber_door_post",
+        "village/inn/019_inn_front_lime_pier",
+        "village/inn/020_inn_rear_lime_panel",
+        "village/inn/021_inn_front_timber_door_post"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "stone",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnHewnPost",
+      "site": "inn",
+      "body_index": 1,
+      "id": "village/inn/001_inn_hewn_post",
+      "archetype_id": "working:inn_hewn_post",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 3,
+      "supports": [
+        "village/inn/004_inn_lime_infill",
+        "village/inn/005_inn_lime_infill"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 4
+      },
+      "outputs": [
+        {
+          "suffix": "timber",
+          "allocation": {
+            "timber": 4
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnHewnPost",
+      "site": "inn",
+      "body_index": 2,
+      "id": "village/inn/002_inn_hewn_post",
+      "archetype_id": "working:inn_hewn_post",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 3,
+      "supports": [
+        "village/inn/004_inn_lime_infill",
+        "village/inn/005_inn_lime_infill"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 4
+      },
+      "outputs": [
+        {
+          "suffix": "timber",
+          "allocation": {
+            "timber": 4
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnHewnPost",
+      "site": "inn",
+      "body_index": 3,
+      "id": "village/inn/003_inn_hewn_post",
+      "archetype_id": "working:inn_hewn_post",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 3,
+      "supports": [
+        "village/inn/004_inn_lime_infill",
+        "village/inn/005_inn_lime_infill"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 4
+      },
+      "outputs": [
+        {
+          "suffix": "timber",
+          "allocation": {
+            "timber": 4
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnLimeInfill",
+      "site": "inn",
+      "body_index": 4,
+      "id": "village/inn/004_inn_lime_infill",
+      "archetype_id": "working:inn_lime_infill",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 2,
+      "supports": [
+        "village/inn/007_inn_window_shutter"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 2
+      },
+      "outputs": [
+        {
+          "suffix": "stone",
+          "allocation": {
+            "mineral_fill": 2
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnLimeInfill",
+      "site": "inn",
+      "body_index": 5,
+      "id": "village/inn/005_inn_lime_infill",
+      "archetype_id": "working:inn_lime_infill",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 2,
+      "supports": [
+        "village/inn/007_inn_window_shutter"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 2
+      },
+      "outputs": [
+        {
+          "suffix": "stone",
+          "allocation": {
+            "mineral_fill": 2
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnOutsideEave",
+      "site": "inn",
+      "body_index": 6,
+      "id": "village/inn/006_inn_outside_eave",
+      "archetype_id": "working:inn_outside_eave",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 4
+      },
+      "outputs": [
+        {
+          "suffix": "timber",
+          "allocation": {
+            "timber": 4
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnWindowShutter",
+      "site": "inn",
+      "body_index": 7,
+      "id": "village/inn/007_inn_window_shutter",
+      "archetype_id": "working:inn_window_shutter",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "dismantle_basic_furniture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 3
+      },
+      "outputs": [
+        {
+          "suffix": "pieces",
+          "allocation": {
+            "timber": 3
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnHewnPost",
+      "site": "inn",
+      "body_index": 8,
+      "id": "village/inn/008_inn_hewn_post",
+      "archetype_id": "working:inn_hewn_post",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 3,
+      "supports": [
+        "village/inn/004_inn_lime_infill",
+        "village/inn/005_inn_lime_infill"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 4
+      },
+      "outputs": [
+        {
+          "suffix": "timber",
+          "allocation": {
+            "timber": 4
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnHewnPost",
+      "site": "inn",
+      "body_index": 9,
+      "id": "village/inn/009_inn_hewn_post",
+      "archetype_id": "working:inn_hewn_post",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 3,
+      "supports": [
+        "village/inn/004_inn_lime_infill",
+        "village/inn/005_inn_lime_infill"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 4
+      },
+      "outputs": [
+        {
+          "suffix": "timber",
+          "allocation": {
+            "timber": 4
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnHewnPost",
+      "site": "inn",
+      "body_index": 10,
+      "id": "village/inn/010_inn_hewn_post",
+      "archetype_id": "working:inn_hewn_post",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 3,
+      "supports": [
+        "village/inn/004_inn_lime_infill",
+        "village/inn/005_inn_lime_infill"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 4
+      },
+      "outputs": [
+        {
+          "suffix": "timber",
+          "allocation": {
+            "timber": 4
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnLimeInfill",
+      "site": "inn",
+      "body_index": 11,
+      "id": "village/inn/011_inn_lime_infill",
+      "archetype_id": "working:inn_lime_infill",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 2,
+      "supports": [
+        "village/inn/007_inn_window_shutter"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 2
+      },
+      "outputs": [
+        {
+          "suffix": "stone",
+          "allocation": {
+            "mineral_fill": 2
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnLimeInfill",
+      "site": "inn",
+      "body_index": 12,
+      "id": "village/inn/012_inn_lime_infill",
+      "archetype_id": "working:inn_lime_infill",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 2,
+      "supports": [
+        "village/inn/007_inn_window_shutter"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 2
+      },
+      "outputs": [
+        {
+          "suffix": "stone",
+          "allocation": {
+            "mineral_fill": 2
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnOutsideEave",
+      "site": "inn",
+      "body_index": 13,
+      "id": "village/inn/013_inn_outside_eave",
+      "archetype_id": "working:inn_outside_eave",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 4
+      },
+      "outputs": [
+        {
+          "suffix": "timber",
+          "allocation": {
+            "timber": 4
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnWindowShutter",
+      "site": "inn",
+      "body_index": 14,
+      "id": "village/inn/014_inn_window_shutter",
+      "archetype_id": "working:inn_window_shutter",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "dismantle_basic_furniture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 3
+      },
+      "outputs": [
+        {
+          "suffix": "pieces",
+          "allocation": {
+            "timber": 3
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnFrontLimePier",
+      "site": "inn",
+      "body_index": 15,
+      "id": "village/inn/015_inn_front_lime_pier",
+      "archetype_id": "working:inn_front_lime_pier",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 2
+      },
+      "outputs": [
+        {
+          "suffix": "stone",
+          "allocation": {
+            "mineral_fill": 2
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnRearLimePanel",
+      "site": "inn",
+      "body_index": 16,
+      "id": "village/inn/016_inn_rear_lime_panel",
+      "archetype_id": "working:inn_rear_lime_panel",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 2
+      },
+      "outputs": [
+        {
+          "suffix": "stone",
+          "allocation": {
+            "mineral_fill": 2
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnFrontTimberDoorPost",
+      "site": "inn",
+      "body_index": 17,
+      "id": "village/inn/017_inn_front_timber_door_post",
+      "archetype_id": "working:inn_front_timber_door_post",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 3,
+      "supports": [
+        "village/inn/004_inn_lime_infill",
+        "village/inn/005_inn_lime_infill"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 4
+      },
+      "outputs": [
+        {
+          "suffix": "timber",
+          "allocation": {
+            "timber": 4
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnExteriorWindowSill",
+      "site": "inn",
+      "body_index": 18,
+      "id": "village/inn/018_inn_exterior_window_sill",
+      "archetype_id": "working:inn_exterior_window_sill",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "dismantle_basic_furniture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 3
+      },
+      "outputs": [
+        {
+          "suffix": "pieces",
+          "allocation": {
+            "timber": 3
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnFrontLimePier",
+      "site": "inn",
+      "body_index": 19,
+      "id": "village/inn/019_inn_front_lime_pier",
+      "archetype_id": "working:inn_front_lime_pier",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 2
+      },
+      "outputs": [
+        {
+          "suffix": "stone",
+          "allocation": {
+            "mineral_fill": 2
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnRearLimePanel",
+      "site": "inn",
+      "body_index": 20,
+      "id": "village/inn/020_inn_rear_lime_panel",
+      "archetype_id": "working:inn_rear_lime_panel",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 2
+      },
+      "outputs": [
+        {
+          "suffix": "stone",
+          "allocation": {
+            "mineral_fill": 2
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnFrontTimberDoorPost",
+      "site": "inn",
+      "body_index": 21,
+      "id": "village/inn/021_inn_front_timber_door_post",
+      "archetype_id": "working:inn_front_timber_door_post",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 3,
+      "supports": [
+        "village/inn/004_inn_lime_infill",
+        "village/inn/005_inn_lime_infill"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 4
+      },
+      "outputs": [
+        {
+          "suffix": "timber",
+          "allocation": {
+            "timber": 4
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnExteriorWindowSill",
+      "site": "inn",
+      "body_index": 22,
+      "id": "village/inn/022_inn_exterior_window_sill",
+      "archetype_id": "working:inn_exterior_window_sill",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "dismantle_basic_furniture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 3
+      },
+      "outputs": [
+        {
+          "suffix": "pieces",
+          "allocation": {
+            "timber": 3
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnDoorLintel",
+      "site": "inn",
+      "body_index": 23,
+      "id": "village/inn/023_inn_door_lintel",
+      "archetype_id": "working:inn_door_lintel",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "dismantle_basic_furniture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 3
+      },
+      "outputs": [
+        {
+          "suffix": "pieces",
+          "allocation": {
+            "timber": 3
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnFrontUpperPlaster",
+      "site": "inn",
+      "body_index": 24,
+      "id": "village/inn/024_inn_front_upper_plaster",
+      "archetype_id": "working:inn_front_upper_plaster",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 2
+      },
+      "outputs": [
+        {
+          "suffix": "stone",
+          "allocation": {
+            "mineral_fill": 2
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnCantedSlateRoof",
+      "site": "inn",
+      "body_index": 25,
+      "id": "village/inn/025_inn_canted_slate_roof",
+      "archetype_id": "working:inn_canted_slate_roof",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 2
+      },
+      "outputs": [
+        {
+          "suffix": "pieces",
+          "allocation": {
+            "stone": 2
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnTimberRoofPurlin",
+      "site": "inn",
+      "body_index": 26,
+      "id": "village/inn/026_inn_timber_roof_purlin",
+      "archetype_id": "working:inn_timber_roof_purlin",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 3,
+      "supports": [
+        "village/inn/025_inn_canted_slate_roof",
+        "village/inn/027_inn_canted_slate_roof"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 4
+      },
+      "outputs": [
+        {
+          "suffix": "timber",
+          "allocation": {
+            "timber": 4
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnCantedSlateRoof",
+      "site": "inn",
+      "body_index": 27,
+      "id": "village/inn/027_inn_canted_slate_roof",
+      "archetype_id": "working:inn_canted_slate_roof",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 2
+      },
+      "outputs": [
+        {
+          "suffix": "pieces",
+          "allocation": {
+            "stone": 2
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnTimberRoofPurlin",
+      "site": "inn",
+      "body_index": 28,
+      "id": "village/inn/028_inn_timber_roof_purlin",
+      "archetype_id": "working:inn_timber_roof_purlin",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 3,
+      "supports": [
+        "village/inn/025_inn_canted_slate_roof",
+        "village/inn/027_inn_canted_slate_roof"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 4
+      },
+      "outputs": [
+        {
+          "suffix": "timber",
+          "allocation": {
+            "timber": 4
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnHandLimeGable",
+      "site": "inn",
+      "body_index": 29,
+      "id": "village/inn/029_inn_hand_lime_gable",
+      "archetype_id": "working:inn_hand_lime_gable",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 2
+      },
+      "outputs": [
+        {
+          "suffix": "stone",
+          "allocation": {
+            "mineral_fill": 2
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnHandLimeGable",
+      "site": "inn",
+      "body_index": 30,
+      "id": "village/inn/030_inn_hand_lime_gable",
+      "archetype_id": "working:inn_hand_lime_gable",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 2
+      },
+      "outputs": [
+        {
+          "suffix": "stone",
+          "allocation": {
+            "mineral_fill": 2
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnRidgeBeam",
+      "site": "inn",
+      "body_index": 31,
+      "id": "village/inn/031_inn_ridge_beam",
+      "archetype_id": "working:inn_ridge_beam",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 3,
+      "supports": [
+        "village/inn/025_inn_canted_slate_roof",
+        "village/inn/027_inn_canted_slate_roof"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 4
+      },
+      "outputs": [
+        {
+          "suffix": "timber",
+          "allocation": {
+            "timber": 4
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnCommonTable",
+      "site": "inn",
+      "body_index": 32,
+      "id": "village/inn/032_inn_common_table",
+      "archetype_id": "working:inn_common_table",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "dismantle_basic_furniture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 3
+      },
+      "outputs": [
+        {
+          "suffix": "pieces",
+          "allocation": {
+            "timber": 3
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnGatheringBench",
+      "site": "inn",
+      "body_index": 33,
+      "id": "village/inn/033_inn_gathering_bench",
+      "archetype_id": "working:inn_gathering_bench",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "dismantle_basic_furniture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 3
+      },
+      "outputs": [
+        {
+          "suffix": "pieces",
+          "allocation": {
+            "timber": 3
+          }
+        }
+      ]
+    },
+    {
+      "title": "InnGatheringBench",
+      "site": "inn",
+      "body_index": 34,
+      "id": "village/inn/034_inn_gathering_bench",
+      "archetype_id": "working:inn_gathering_bench",
+      "site_id": "brinewick/site_10",
+      "building_id": "BRINEWICK-INN-C",
+      "class": "C",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "dismantle_basic_furniture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 3
+      },
+      "outputs": [
+        {
+          "suffix": "pieces",
+          "allocation": {
+            "timber": 3
+          }
+        }
+      ]
+    },
+    {
+      "title": "MiningOfficeFooting",
+      "site": "mine",
+      "body_index": 35,
+      "id": "village/mine/035_mining_office_footing",
+      "archetype_id": "working:mining_office_footing",
+      "site_id": "brinewick/site_19",
+      "building_id": "BRINEWICK-MINE-OFFICE-C",
+      "class": "C",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 2,
+      "supports": [
+        "village/mine/036_office_hewn_corner_post",
+        "village/mine/037_office_hewn_corner_post",
+        "village/mine/038_office_wattle_lime_side",
+        "village/mine/039_office_front_half",
+        "village/mine/040_office_rear_masonry",
+        "village/mine/041_office_hewn_corner_post",
+        "village/mine/042_office_hewn_corner_post",
+        "village/mine/043_office_wattle_lime_side",
+        "village/mine/044_office_front_half",
+        "village/mine/045_office_rear_masonry"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "stone",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "title": "OfficeHewnCornerPost",
+      "site": "mine",
+      "body_index": 36,
+      "id": "village/mine/036_office_hewn_corner_post",
+      "archetype_id": "working:office_hewn_corner_post",
+      "site_id": "brinewick/site_19",
+      "building_id": "BRINEWICK-MINE-OFFICE-C",
+      "class": "C",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 3,
+      "supports": [
+        "village/mine/038_office_wattle_lime_side",
+        "village/mine/043_office_wattle_lime_side"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 4
+      },
+      "outputs": [
+        {
+          "suffix": "timber",
+          "allocation": {
+            "timber": 4
+          }
+        }
+      ]
+    },
+    {
+      "title": "OfficeHewnCornerPost",
+      "site": "mine",
+      "body_index": 37,
+      "id": "village/mine/037_office_hewn_corner_post",
+      "archetype_id": "working:office_hewn_corner_post",
+      "site_id": "brinewick/site_19",
+      "building_id": "BRINEWICK-MINE-OFFICE-C",
+      "class": "C",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 3,
+      "supports": [
+        "village/mine/038_office_wattle_lime_side",
+        "village/mine/043_office_wattle_lime_side"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 4
+      },
+      "outputs": [
+        {
+          "suffix": "timber",
+          "allocation": {
+            "timber": 4
+          }
+        }
+      ]
+    },
+    {
+      "title": "OfficeWattleLimeSide",
+      "site": "mine",
+      "body_index": 38,
+      "id": "village/mine/038_office_wattle_lime_side",
+      "archetype_id": "working:office_wattle_lime_side",
+      "site_id": "brinewick/site_19",
+      "building_id": "BRINEWICK-MINE-OFFICE-C",
+      "class": "C",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 2
+      },
+      "outputs": [
+        {
+          "suffix": "stone",
+          "allocation": {
+            "mineral_fill": 2
+          }
+        }
+      ]
+    },
+    {
+      "title": "OfficeFrontHalf",
+      "site": "mine",
+      "body_index": 39,
+      "id": "village/mine/039_office_front_half",
+      "archetype_id": "working:office_front_half",
+      "site_id": "brinewick/site_19",
+      "building_id": "BRINEWICK-MINE-OFFICE-C",
+      "class": "C",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "stone",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "title": "OfficeRearMasonry",
+      "site": "mine",
+      "body_index": 40,
+      "id": "village/mine/040_office_rear_masonry",
+      "archetype_id": "working:office_rear_masonry",
+      "site_id": "brinewick/site_19",
+      "building_id": "BRINEWICK-MINE-OFFICE-C",
+      "class": "C",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "stone",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "title": "OfficeHewnCornerPost",
+      "site": "mine",
+      "body_index": 41,
+      "id": "village/mine/041_office_hewn_corner_post",
+      "archetype_id": "working:office_hewn_corner_post",
+      "site_id": "brinewick/site_19",
+      "building_id": "BRINEWICK-MINE-OFFICE-C",
+      "class": "C",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 3,
+      "supports": [
+        "village/mine/038_office_wattle_lime_side",
+        "village/mine/043_office_wattle_lime_side"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 4
+      },
+      "outputs": [
+        {
+          "suffix": "timber",
+          "allocation": {
+            "timber": 4
+          }
+        }
+      ]
+    },
+    {
+      "title": "OfficeHewnCornerPost",
+      "site": "mine",
+      "body_index": 42,
+      "id": "village/mine/042_office_hewn_corner_post",
+      "archetype_id": "working:office_hewn_corner_post",
+      "site_id": "brinewick/site_19",
+      "building_id": "BRINEWICK-MINE-OFFICE-C",
+      "class": "C",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 3,
+      "supports": [
+        "village/mine/038_office_wattle_lime_side",
+        "village/mine/043_office_wattle_lime_side"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 4
+      },
+      "outputs": [
+        {
+          "suffix": "timber",
+          "allocation": {
+            "timber": 4
+          }
+        }
+      ]
+    },
+    {
+      "title": "OfficeWattleLimeSide",
+      "site": "mine",
+      "body_index": 43,
+      "id": "village/mine/043_office_wattle_lime_side",
+      "archetype_id": "working:office_wattle_lime_side",
+      "site_id": "brinewick/site_19",
+      "building_id": "BRINEWICK-MINE-OFFICE-C",
+      "class": "C",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 2
+      },
+      "outputs": [
+        {
+          "suffix": "stone",
+          "allocation": {
+            "mineral_fill": 2
+          }
+        }
+      ]
+    },
+    {
+      "title": "OfficeFrontHalf",
+      "site": "mine",
+      "body_index": 44,
+      "id": "village/mine/044_office_front_half",
+      "archetype_id": "working:office_front_half",
+      "site_id": "brinewick/site_19",
+      "building_id": "BRINEWICK-MINE-OFFICE-C",
+      "class": "C",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "stone",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "title": "OfficeRearMasonry",
+      "site": "mine",
+      "body_index": 45,
+      "id": "village/mine/045_office_rear_masonry",
+      "archetype_id": "working:office_rear_masonry",
+      "site_id": "brinewick/site_19",
+      "building_id": "BRINEWICK-MINE-OFFICE-C",
+      "class": "C",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "stone",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "title": "OfficeFrontLintel",
+      "site": "mine",
+      "body_index": 46,
+      "id": "village/mine/046_office_front_lintel",
+      "archetype_id": "working:office_front_lintel",
+      "site_id": "brinewick/site_19",
+      "building_id": "BRINEWICK-MINE-OFFICE-C",
+      "class": "C",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "dismantle_basic_furniture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 3
+      },
+      "outputs": [
+        {
+          "suffix": "pieces",
+          "allocation": {
+            "timber": 3
+          }
+        }
+      ]
+    },
+    {
+      "title": "OfficeUnevenSlateSlope",
+      "site": "mine",
+      "body_index": 47,
+      "id": "village/mine/047_office_uneven_slate_slope",
+      "archetype_id": "working:office_uneven_slate_slope",
+      "site_id": "brinewick/site_19",
+      "building_id": "BRINEWICK-MINE-OFFICE-C",
+      "class": "C",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 2
+      },
+      "outputs": [
+        {
+          "suffix": "pieces",
+          "allocation": {
+            "stone": 2
+          }
+        }
+      ]
+    },
+    {
+      "title": "OfficeUnevenSlateSlope",
+      "site": "mine",
+      "body_index": 48,
+      "id": "village/mine/048_office_uneven_slate_slope",
+      "archetype_id": "working:office_uneven_slate_slope",
+      "site_id": "brinewick/site_19",
+      "building_id": "BRINEWICK-MINE-OFFICE-C",
+      "class": "C",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 2
+      },
+      "outputs": [
+        {
+          "suffix": "pieces",
+          "allocation": {
+            "stone": 2
+          }
+        }
+      ]
+    },
+    {
+      "title": "MineOfficeLimeGable",
+      "site": "mine",
+      "body_index": 49,
+      "id": "village/mine/049_mine_office_lime_gable",
+      "archetype_id": "working:mine_office_lime_gable",
+      "site_id": "brinewick/site_19",
+      "building_id": "BRINEWICK-MINE-OFFICE-C",
+      "class": "C",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 2
+      },
+      "outputs": [
+        {
+          "suffix": "stone",
+          "allocation": {
+            "mineral_fill": 2
+          }
+        }
+      ]
+    },
+    {
+      "title": "MineOfficeLimeGable",
+      "site": "mine",
+      "body_index": 50,
+      "id": "village/mine/050_mine_office_lime_gable",
+      "archetype_id": "working:mine_office_lime_gable",
+      "site_id": "brinewick/site_19",
+      "building_id": "BRINEWICK-MINE-OFFICE-C",
+      "class": "C",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 2
+      },
+      "outputs": [
+        {
+          "suffix": "stone",
+          "allocation": {
+            "mineral_fill": 2
+          }
+        }
+      ]
+    },
+    {
+      "title": "MineOfficeRidge",
+      "site": "mine",
+      "body_index": 51,
+      "id": "village/mine/051_mine_office_ridge",
+      "archetype_id": "working:mine_office_ridge",
+      "site_id": "brinewick/site_19",
+      "building_id": "BRINEWICK-MINE-OFFICE-C",
+      "class": "C",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 3,
+      "supports": [
+        "village/mine/047_office_uneven_slate_slope",
+        "village/mine/048_office_uneven_slate_slope"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 4
+      },
+      "outputs": [
+        {
+          "suffix": "timber",
+          "allocation": {
+            "timber": 4
+          }
+        }
+      ]
+    },
+    {
+      "title": "MiningRecordsTable",
+      "site": "mine",
+      "body_index": 52,
+      "id": "village/mine/052_mining_records_table",
+      "archetype_id": "working:mining_records_table",
+      "site_id": "brinewick/site_19",
+      "building_id": "BRINEWICK-MINE-OFFICE-C",
+      "class": "C",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "dismantle_basic_furniture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 3
+      },
+      "outputs": [
+        {
+          "suffix": "pieces",
+          "allocation": {
+            "timber": 3
+          }
+        }
+      ]
+    },
+    {
+      "title": "MiningToolRack",
+      "site": "mine",
+      "body_index": 53,
+      "id": "village/mine/053_mining_tool_rack",
+      "archetype_id": "working:mining_tool_rack",
+      "site_id": "brinewick/site_19",
+      "building_id": "BRINEWICK-MINE-OFFICE-C",
+      "class": "C",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "dismantle_basic_furniture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 3
+      },
+      "outputs": [
+        {
+          "suffix": "pieces",
+          "allocation": {
+            "timber": 3
+          }
+        }
+      ]
+    }
+  ]
+}

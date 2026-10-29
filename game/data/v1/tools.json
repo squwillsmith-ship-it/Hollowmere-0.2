@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "tools": [
+    {
+      "id": "hands",
+      "name": "Hands",
+      "tier": 1,
+      "discovery": "innate",
+      "operations": [
+        "collect_loose",
+        "lift_movable",
+        "inspect"
+      ]
+    },
+    {
+      "id": "claw_hammer",
+      "name": "Claw hammer",
+      "tier": 2,
+      "discovery": "world",
+      "operations": [
+        "detach_light_fixture",
+        "separate_light_wood",
+        "dismantle_basic_furniture"
+      ]
+    },
+    {
+      "id": "crowbar",
+      "name": "Crowbar",
+      "tier": 3,
+      "discovery": "world",
+      "operations": [
+        "pry_substantial_timber",
+        "lift_floorboards",
+        "release_heavy_joint"
+      ]
+    },
+    {
+      "id": "pickaxe",
+      "name": "Pickaxe",
+      "tier": 3,
+      "discovery": "world",
+      "operations": [
+        "loosen_masonry",
+        "split_authored_stone"
+      ]
+    },
+    {
+      "id": "saw",
+      "name": "Saw",
+      "tier": 4,
+      "discovery": "world",
+      "operations": [
+        "cut_unloaded_frame",
+        "supported_transport_cut"
+      ]
+    }
+  ],
+  "access_aids": [
+    "ladder",
+    "sling",
+    "scaffold",
+    "wheelbarrow",
+    "cart",
+    "jack"
+  ],
+  "notes": [
+    "Only hands are innate. The four other capability tools are found in the world, not bought.",
+    "Crowbar and pickaxe are complementary Tier 3 operations, not substitutes.",
+    "Tier 4 saw becomes discoverable in Act III; Act IV uses existing capabilities.",
+    "Equipment such as a sling or jack can be required for safe action without adding a fifth tier."
+  ]
+}

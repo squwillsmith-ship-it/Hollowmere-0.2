@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "balance": "TEST FIXTURES; prices/effects are not locked",
+  "upgrades": [
+    {
+      "id": "pack_straps",
+      "name": "Pack straps",
+      "modifier": "carry_weight",
+      "applies_to": "player",
+      "levels": [
+        {
+          "price": 12,
+          "bonus_percent": 20
+        },
+        {
+          "price": 32,
+          "bonus_percent": 40
+        }
+      ]
+    },
+    {
+      "id": "walking_shoes",
+      "name": "Work shoes",
+      "modifier": "loaded_movement",
+      "applies_to": "player",
+      "levels": [
+        {
+          "price": 18,
+          "bonus_percent": 10
+        },
+        {
+          "price": 48,
+          "bonus_percent": 20
+        }
+      ]
+    },
+    {
+      "id": "hammer_grip",
+      "name": "Hammer grip",
+      "modifier": "work_speed",
+      "applies_to": "claw_hammer",
+      "levels": [
+        {
+          "price": 15,
+          "bonus_percent": 10
+        },
+        {
+          "price": 40,
+          "bonus_percent": 20
+        }
+      ]
+    },
+    {
+      "id": "crowbar_handle",
+      "name": "Crowbar handle",
+      "modifier": "work_speed",
+      "applies_to": "crowbar",
+      "levels": [
+        {
+          "price": 25,
+          "bonus_percent": 10
+        }
+      ]
+    },
+    {
+      "id": "saw_teeth",
+      "name": "Saw maintenance",
+      "modifier": "work_speed",
+      "applies_to": "saw",
+      "levels": [
+        {
+          "price": 35,
+          "bonus_percent": 10
+        }
+      ]
+    },
+    {
+      "id": "cart_bearings",
+      "name": "Cart bearings",
+      "modifier": "manual_cart_handling",
+      "applies_to": "cart",
+      "levels": [
+        {
+          "price": 28,
+          "bonus_percent": 15
+        }
+      ]
+    }
+  ],
+  "allowed_modifiers": [
+    "carry_weight",
+    "carry_volume",
+    "loaded_movement",
+    "work_speed",
+    "work_reach",
+    "manual_cart_handling",
+    "inspection_convenience"
+  ],
+  "disallowed_purchase_results": [
+    "new_capability",
+    "material_tier",
+    "automatic_collection",
+    "automatic_processing",
+    "automatic_transport",
+    "condition_repair"
+  ]
+}

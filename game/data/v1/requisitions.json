@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "progression_values": "test-fixtures-only-not-live-quotas",
+  "requisitions": [
+    {
+      "id": "req_act_01",
+      "act": 1,
+      "title": "Initial loose recovery",
+      "min_registered_units": 4,
+      "families": [
+        "timber",
+        "fibres",
+        "iron"
+      ],
+      "min_distinct_sites": 1,
+      "requires_flags": [],
+      "required_tool_ids": [
+        "hands"
+      ],
+      "fixture_only": true
+    },
+    {
+      "id": "req_act_02",
+      "act": 2,
+      "title": "Fittings and shelters",
+      "min_registered_units": 10,
+      "families": [
+        "timber",
+        "iron",
+        "fibres"
+      ],
+      "min_distinct_sites": 2,
+      "requires_flags": [
+        "bell_first_strike"
+      ],
+      "required_tool_ids": [
+        "claw_hammer"
+      ],
+      "fixture_only": true
+    },
+    {
+      "id": "req_act_03",
+      "act": 3,
+      "title": "Substantial materials",
+      "min_registered_units": 25,
+      "families": [
+        "timber",
+        "stone"
+      ],
+      "min_distinct_sites": 3,
+      "requires_flags": [
+        "mine_voice_heard"
+      ],
+      "required_tool_ids": [
+        "crowbar",
+        "pickaxe"
+      ],
+      "fixture_only": true
+    },
+    {
+      "id": "req_act_04",
+      "act": 4,
+      "title": "Final recovery",
+      "min_registered_units": 65,
+      "families": [],
+      "min_distinct_sites": 4,
+      "requires_flags": [
+        "aldren_remains_found",
+        "containment_understood"
+      ],
+      "required_tool_ids": [
+        "saw"
+      ],
+      "fixture_only": true
+    }
+  ],
+  "ordinary_recovery_excludes": [
+    "protected_story",
+    "permanent_route",
+    "mine_inner_seal",
+    "harbour_bell",
+    "decorative_only"
+  ],
+  "endings": [
+    "bell_delivery",
+    "repair_escape"
+  ]
+}

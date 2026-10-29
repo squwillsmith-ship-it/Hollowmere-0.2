@@ -1,0 +1,7600 @@
+{
+  "schema_version": 1,
+  "kind": "TEST_FIXTURES_NOT_PLACED_IN_WORLD",
+  "parts": [
+    {
+      "id": "fixture/shed/loose_rope",
+      "archetype_id": "fixture:rope_coil",
+      "site_id": "brinewick/site_02",
+      "building_id": "FIXTURE-SHED-A",
+      "class": "A",
+      "tier": 1,
+      "tool_id": "hands",
+      "operation": "collect_loose",
+      "work_units": 1,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "fibres": 2
+      },
+      "outputs": [
+        {
+          "suffix": "rope",
+          "allocation": {
+            "fibres": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "fixture/shed/roof_patch",
+      "archetype_id": "fixture:timber_roof_patch",
+      "site_id": "brinewick/site_02",
+      "building_id": "FIXTURE-SHED-A",
+      "class": "A",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "separate_light_wood",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 4,
+        "iron": 1
+      },
+      "outputs": [
+        {
+          "suffix": "boards",
+          "allocation": {
+            "timber": 4
+          }
+        },
+        {
+          "suffix": "fasteners",
+          "allocation": {
+            "iron": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "fixture/shed/upper_rail",
+      "archetype_id": "fixture:light_rail",
+      "site_id": "brinewick/site_02",
+      "building_id": "FIXTURE-SHED-A",
+      "class": "A",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "separate_light_wood",
+      "work_units": 2,
+      "supports": [
+        "fixture/shed/roof_patch"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 3
+      },
+      "outputs": [
+        {
+          "suffix": "wood",
+          "allocation": {
+            "timber": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "fixture/shed/posts",
+      "archetype_id": "fixture:light_post_bundle",
+      "site_id": "brinewick/site_02",
+      "building_id": "FIXTURE-SHED-A",
+      "class": "A",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "separate_light_wood",
+      "work_units": 3,
+      "supports": [
+        "fixture/shed/upper_rail"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 4
+      },
+      "outputs": [
+        {
+          "suffix": "wood",
+          "allocation": {
+            "timber": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "fixture/house/curtain",
+      "archetype_id": "fixture:curtain",
+      "site_id": "brinewick/site_07",
+      "building_id": "FIXTURE-HOUSE-C",
+      "class": "C",
+      "tier": 1,
+      "tool_id": "hands",
+      "operation": "collect_loose",
+      "work_units": 1,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "fibres": 2
+      },
+      "outputs": [
+        {
+          "suffix": "cloth",
+          "allocation": {
+            "fibres": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "fixture/house/shutters",
+      "archetype_id": "fixture:shutters",
+      "site_id": "brinewick/site_07",
+      "building_id": "FIXTURE-HOUSE-C",
+      "class": "C",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2,
+        "iron": 1
+      },
+      "outputs": [
+        {
+          "suffix": "shutters",
+          "allocation": {
+            "timber": 2,
+            "iron": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "fixture/house/cladding",
+      "archetype_id": "fixture:cladding",
+      "site_id": "brinewick/site_07",
+      "building_id": "FIXTURE-HOUSE-C",
+      "class": "C",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 4,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 6,
+        "iron": 1
+      },
+      "outputs": [
+        {
+          "suffix": "boards",
+          "allocation": {
+            "timber": 6
+          }
+        },
+        {
+          "suffix": "nails",
+          "allocation": {
+            "iron": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "fixture/house/slate_patch",
+      "archetype_id": "fixture:slate_patch",
+      "site_id": "brinewick/site_07",
+      "building_id": "FIXTURE-HOUSE-C",
+      "class": "C",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 4,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 4
+      },
+      "outputs": [
+        {
+          "suffix": "slates",
+          "allocation": {
+            "stone": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "fixture/house/beam",
+      "archetype_id": "fixture:frame_beam",
+      "site_id": "brinewick/site_07",
+      "building_id": "FIXTURE-HOUSE-C",
+      "class": "C",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 6,
+      "supports": [
+        "fixture/house/slate_patch"
+      ],
+      "requires_access_aids": [
+        "sling"
+      ],
+      "protected": false,
+      "allocation": {
+        "timber": 8
+      },
+      "outputs": [
+        {
+          "suffix": "beam",
+          "allocation": {
+            "timber": 8
+          }
+        }
+      ]
+    },
+    {
+      "id": "fixture/house/stone_block",
+      "archetype_id": "fixture:stone_block",
+      "site_id": "brinewick/site_07",
+      "building_id": "FIXTURE-HOUSE-C",
+      "class": "C",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 4,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 5,
+        "mineral_fill": 1
+      },
+      "outputs": [
+        {
+          "suffix": "stone",
+          "allocation": {
+            "stone": 5
+          }
+        },
+        {
+          "suffix": "mortar",
+          "allocation": {
+            "mineral_fill": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "fixture/harbour/bell",
+      "archetype_id": "fixture:harbour_bell",
+      "site_id": "brinewick/site_15",
+      "building_id": "FIXTURE-BELL",
+      "class": "D",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 6,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": true,
+      "protection_id": "harbour_bell",
+      "allocation": {
+        "copper_bronze": 15
+      },
+      "outputs": [
+        {
+          "suffix": "bell",
+          "allocation": {
+            "copper_bronze": 15
+          }
+        }
+      ]
+    },
+    {
+      "id": "fixture/mine/inner_seal",
+      "archetype_id": "fixture:inner_seal",
+      "site_id": "brinewick/site_18",
+      "building_id": "FIXTURE-MINE",
+      "class": "D",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 99,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": true,
+      "protection_id": "mine_inner_seal",
+      "allocation": {},
+      "outputs": []
+    },
+    {
+      "id": "fixture/house/front_infill",
+      "archetype_id": "fixture:front_infill",
+      "site_id": "brinewick/site_07",
+      "building_id": "FIXTURE-HOUSE-C",
+      "class": "C",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "infill",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "fixture/house/rear_infill",
+      "archetype_id": "fixture:rear_infill",
+      "site_id": "brinewick/site_07",
+      "building_id": "FIXTURE-HOUSE-C",
+      "class": "C",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 4,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 4
+      },
+      "outputs": [
+        {
+          "suffix": "infill",
+          "allocation": {
+            "mineral_fill": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "fixture/house/threshold",
+      "archetype_id": "fixture:threshold",
+      "site_id": "brinewick/site_07",
+      "building_id": "FIXTURE-HOUSE-C",
+      "class": "C",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3,
+        "mineral_fill": 1
+      },
+      "outputs": [
+        {
+          "suffix": "threshold",
+          "allocation": {
+            "stone": 3,
+            "mineral_fill": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/back_frame",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/04/old_warehouse/roof_left",
+        "village/04/old_warehouse/roof_right"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/west_side",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/east_side",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/pier_door_left",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/pier_door_right",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/roof_left",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/roof_right",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/storage_rack",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/back_frame",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/05/expanded_warehouse/roof_left",
+        "village/05/expanded_warehouse/roof_right"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/west_side",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/east_side",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/pier_door_left",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/pier_door_right",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/roof_left",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/roof_right",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/storage_rack",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/rear_infill",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/west_infill",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/east_infill",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/front_left_panel",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/front_right_panel",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/left_wall_stud",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/08/mara_home/low_roof_west",
+        "village/08/mara_home/low_roof_east"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/right_wall_stud",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/08/mara_home/low_roof_west",
+        "village/08/mara_home/low_roof_east"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/low_roof_west",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/low_roof_east",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/rear_infill",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/west_infill",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/east_infill",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/front_left_panel",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/front_right_panel",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/left_wall_stud",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/12/upper_cottage_cluster_study/low_roof_west",
+        "village/12/upper_cottage_cluster_study/low_roof_east"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/right_wall_stud",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/12/upper_cottage_cluster_study/low_roof_west",
+        "village/12/upper_cottage_cluster_study/low_roof_east"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/low_roof_west",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/low_roof_east",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/west_timber_wall",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/11/tomas_workshop/rafters_west",
+        "village/11/tomas_workshop/rafters_east"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/rear_plaster_wall",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/eastern_frame",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/11/tomas_workshop/rafters_west",
+        "village/11/tomas_workshop/rafters_east"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/front_panel_left",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/front_panel_right",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/rafters_west",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/rafters_east",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/repair_trestle_left",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/manual_workbench",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/tools_cache_shelf",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/lower_weatherboard_rear",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/lower_weatherboard_west",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/lower_weatherboard_east",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/ledger_room_front_left",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/ledger_room_front_right",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/roof_slope_east",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/roof_slope_west",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/paperwork_desk",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/net_drying_frame_left",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/06/net_store/salted_roof_west",
+        "village/06/net_store/salted_roof_east"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/net_drying_frame_right",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/06/net_store/salted_roof_west",
+        "village/06/net_store/salted_roof_east"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/back_weatherboard",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/front_rail_left",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/front_rail_right",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/salted_roof_west",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/salted_roof_east",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/net_rack",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 1,
+      "tool_id": "hands",
+      "operation": "collect_loose",
+      "work_units": 1,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "fibres": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "fibres": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/back_frame/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/04/old_warehouse/roof_left/section_02",
+        "village/04/old_warehouse/roof_left/section_08",
+        "village/04/old_warehouse/roof_right/section_07"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/back_frame/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/04/old_warehouse/roof_left/section_03",
+        "village/04/old_warehouse/roof_right/section_02",
+        "village/04/old_warehouse/roof_right/section_08"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/back_frame/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/04/old_warehouse/roof_left/section_04",
+        "village/04/old_warehouse/roof_right/section_03"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/back_frame/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/04/old_warehouse/roof_left/section_05",
+        "village/04/old_warehouse/roof_right/section_04"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/back_frame/section_06",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/04/old_warehouse/roof_left/section_06",
+        "village/04/old_warehouse/roof_right/section_05"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/back_frame/section_07",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/04/old_warehouse/roof_left/section_07",
+        "village/04/old_warehouse/roof_right/section_06"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/west_side/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/west_side/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/west_side/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/west_side/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/east_side/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/east_side/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/east_side/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/east_side/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/pier_door_left/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/pier_door_left/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/pier_door_right/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/pier_door_right/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/roof_left/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/roof_left/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/roof_left/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/roof_left/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/roof_left/section_06",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/roof_left/section_07",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/roof_left/section_08",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/roof_right/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/roof_right/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/roof_right/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/roof_right/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/roof_right/section_06",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/roof_right/section_07",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/roof_right/section_08",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/storage_rack/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/04/old_warehouse/storage_rack/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_04",
+      "building_id": "BW-DISTRICT-OLD_WAREHOUSE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/back_frame/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/05/expanded_warehouse/roof_left/section_02",
+        "village/05/expanded_warehouse/roof_left/section_09",
+        "village/05/expanded_warehouse/roof_right/section_08"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/back_frame/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/05/expanded_warehouse/roof_left/section_03",
+        "village/05/expanded_warehouse/roof_right/section_02",
+        "village/05/expanded_warehouse/roof_right/section_09"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/back_frame/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/05/expanded_warehouse/roof_left/section_04",
+        "village/05/expanded_warehouse/roof_right/section_03"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/back_frame/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/05/expanded_warehouse/roof_left/section_05",
+        "village/05/expanded_warehouse/roof_right/section_04"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/back_frame/section_06",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/05/expanded_warehouse/roof_left/section_06",
+        "village/05/expanded_warehouse/roof_right/section_05"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/back_frame/section_07",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/05/expanded_warehouse/roof_left/section_07",
+        "village/05/expanded_warehouse/roof_right/section_06"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/back_frame/section_08",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/05/expanded_warehouse/roof_left/section_08",
+        "village/05/expanded_warehouse/roof_right/section_07"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/west_side/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/west_side/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/west_side/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/west_side/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/west_side/section_06",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/west_side/section_07",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/east_side/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/east_side/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/east_side/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/east_side/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/east_side/section_06",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/east_side/section_07",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/pier_door_left/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/pier_door_left/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/pier_door_left/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/pier_door_right/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/pier_door_right/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/pier_door_right/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/roof_left/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/roof_left/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/roof_left/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/roof_left/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/roof_left/section_06",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/roof_left/section_07",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/roof_left/section_08",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/roof_left/section_09",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/roof_right/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/roof_right/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/roof_right/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/roof_right/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/roof_right/section_06",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/roof_right/section_07",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/roof_right/section_08",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/roof_right/section_09",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/storage_rack/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/05/expanded_warehouse/storage_rack/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_05",
+      "building_id": "BW-DISTRICT-EXPANDED_WAREHOUSE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/rear_infill/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/rear_infill/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/rear_infill/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/rear_infill/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/west_infill/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/west_infill/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/west_infill/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/west_infill/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/east_infill/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/east_infill/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/east_infill/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/east_infill/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/front_left_panel/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/front_left_panel/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/front_right_panel/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/front_right_panel/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/left_wall_stud/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/08/mara_home/low_roof_west/section_02",
+        "village/08/mara_home/low_roof_east/section_04"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/left_wall_stud/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/08/mara_home/low_roof_west/section_03",
+        "village/08/mara_home/low_roof_east/section_05"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/left_wall_stud/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/08/mara_home/low_roof_west/section_04",
+        "village/08/mara_home/low_roof_east/section_06"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/left_wall_stud/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/08/mara_home/low_roof_west/section_05",
+        "village/08/mara_home/low_roof_east/section_07"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/right_wall_stud/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/08/mara_home/low_roof_west/section_06"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/right_wall_stud/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/08/mara_home/low_roof_west/section_07"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/right_wall_stud/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/08/mara_home/low_roof_east/section_02"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/right_wall_stud/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/08/mara_home/low_roof_east/section_03"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/low_roof_west/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/low_roof_west/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/low_roof_west/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/low_roof_west/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/low_roof_west/section_06",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/low_roof_west/section_07",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/low_roof_east/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/low_roof_east/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/low_roof_east/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/low_roof_east/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/low_roof_east/section_06",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/08/mara_home/low_roof_east/section_07",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_08",
+      "building_id": "BW-DISTRICT-MARA_HOME",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/rear_infill/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/rear_infill/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/rear_infill/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/west_infill/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/west_infill/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/west_infill/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/east_infill/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/east_infill/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/east_infill/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/front_left_panel/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/front_left_panel/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/front_right_panel/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/front_right_panel/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/left_wall_stud/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/12/upper_cottage_cluster_study/low_roof_west/section_02",
+        "village/12/upper_cottage_cluster_study/low_roof_east/section_04"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/left_wall_stud/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/12/upper_cottage_cluster_study/low_roof_west/section_03",
+        "village/12/upper_cottage_cluster_study/low_roof_east/section_05"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/left_wall_stud/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/12/upper_cottage_cluster_study/low_roof_west/section_04"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/right_wall_stud/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/12/upper_cottage_cluster_study/low_roof_west/section_05"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/right_wall_stud/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/12/upper_cottage_cluster_study/low_roof_east/section_02"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/right_wall_stud/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/12/upper_cottage_cluster_study/low_roof_east/section_03"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/low_roof_west/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/low_roof_west/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/low_roof_west/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/low_roof_west/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/low_roof_east/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/low_roof_east/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/low_roof_east/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/12/upper_cottage_cluster_study/low_roof_east/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_12",
+      "building_id": "BW-DISTRICT-UPPER_COTTAGE_CLUSTER_STUDY",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/west_timber_wall/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/11/tomas_workshop/rafters_west/section_02",
+        "village/11/tomas_workshop/rafters_east/section_04"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/west_timber_wall/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/11/tomas_workshop/rafters_west/section_03",
+        "village/11/tomas_workshop/rafters_east/section_05"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/west_timber_wall/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/11/tomas_workshop/rafters_west/section_04",
+        "village/11/tomas_workshop/rafters_east/section_06"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/west_timber_wall/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/11/tomas_workshop/rafters_west/section_05",
+        "village/11/tomas_workshop/rafters_east/section_07"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/rear_plaster_wall/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/rear_plaster_wall/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/rear_plaster_wall/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/rear_plaster_wall/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/eastern_frame/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/11/tomas_workshop/rafters_west/section_06"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/eastern_frame/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/11/tomas_workshop/rafters_west/section_07"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/eastern_frame/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/11/tomas_workshop/rafters_east/section_02"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/eastern_frame/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/11/tomas_workshop/rafters_east/section_03"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/front_panel_left/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/front_panel_left/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/front_panel_right/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/front_panel_right/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/rafters_west/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/rafters_west/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/rafters_west/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/rafters_west/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/rafters_west/section_06",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/rafters_west/section_07",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/rafters_east/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/rafters_east/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/rafters_east/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/rafters_east/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/rafters_east/section_06",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/rafters_east/section_07",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/repair_trestle_left/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/repair_trestle_left/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/manual_workbench/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/11/tomas_workshop/manual_workbench/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_11",
+      "building_id": "BW-CRAFT-TOMAS_WORKSHOP",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 2,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/lower_weatherboard_rear/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/lower_weatherboard_rear/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/lower_weatherboard_rear/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/lower_weatherboard_rear/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/lower_weatherboard_west/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/lower_weatherboard_west/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/lower_weatherboard_west/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/lower_weatherboard_east/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/lower_weatherboard_east/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/lower_weatherboard_east/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/ledger_room_front_left/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/ledger_room_front_left/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/ledger_room_front_right/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/ledger_room_front_right/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 2,
+      "tool_id": "claw_hammer",
+      "operation": "detach_light_fixture",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "mineral_fill": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "mineral_fill": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/roof_slope_east/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/roof_slope_east/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/roof_slope_east/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/roof_slope_east/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/roof_slope_east/section_06",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/roof_slope_west/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/roof_slope_west/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/roof_slope_west/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/roof_slope_west/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/03/office/roof_slope_west/section_06",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_03",
+      "building_id": "BW-HARBOUR-OFFICE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/net_drying_frame_left/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/06/net_store/salted_roof_west/section_02",
+        "village/06/net_store/salted_roof_east/section_03"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/net_drying_frame_left/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/06/net_store/salted_roof_west/section_03",
+        "village/06/net_store/salted_roof_east/section_04"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/net_drying_frame_left/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/06/net_store/salted_roof_west/section_04",
+        "village/06/net_store/salted_roof_east/section_05"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/net_drying_frame_right/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/06/net_store/salted_roof_west/section_05",
+        "village/06/net_store/salted_roof_east/section_06"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/net_drying_frame_right/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/06/net_store/salted_roof_west/section_06"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/net_drying_frame_right/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 4,
+      "tool_id": "saw",
+      "operation": "cut_unloaded_frame",
+      "work_units": 4,
+      "supports": [
+        "village/06/net_store/salted_roof_east/section_02"
+      ],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 7
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/back_weatherboard/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/back_weatherboard/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/back_weatherboard/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/back_weatherboard/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "crowbar",
+      "operation": "pry_substantial_timber",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 5
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/salted_roof_west/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/salted_roof_west/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/salted_roof_west/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/salted_roof_west/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/salted_roof_west/section_06",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/salted_roof_east/section_02",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/salted_roof_east/section_03",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/salted_roof_east/section_04",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/salted_roof_east/section_05",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/06/net_store/salted_roof_east/section_06",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_06",
+      "building_id": "BW-HARBOUR-NET_STORE",
+      "class": "B",
+      "tier": 3,
+      "tool_id": "pickaxe",
+      "operation": "loosen_masonry",
+      "work_units": 3,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "stone": 3
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "stone": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/02/yard_scrap/looseropecoil",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_02",
+      "building_id": "BW-YARD-SCRAP",
+      "class": "B",
+      "tier": 1,
+      "tool_id": "hands",
+      "operation": "collect_loose",
+      "work_units": 1,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "fibres": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "fibres": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/02/yard_scrap/stormthrownplanka",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_02",
+      "building_id": "BW-YARD-SCRAP",
+      "class": "B",
+      "tier": 1,
+      "tool_id": "hands",
+      "operation": "collect_loose",
+      "work_units": 1,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/02/yard_scrap/stormthrownplankb",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_02",
+      "building_id": "BW-YARD-SCRAP",
+      "class": "B",
+      "tier": 1,
+      "tool_id": "hands",
+      "operation": "collect_loose",
+      "work_units": 1,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/02/yard_scrap/discardedropeend",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_02",
+      "building_id": "BW-YARD-SCRAP",
+      "class": "B",
+      "tier": 1,
+      "tool_id": "hands",
+      "operation": "collect_loose",
+      "work_units": 1,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "fibres": 2
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "fibres": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/01/loose_driftwood/driftwoodpiecea",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_01",
+      "building_id": "BW-LOOSE-DRIFTWOOD",
+      "class": "B",
+      "tier": 1,
+      "tool_id": "hands",
+      "operation": "collect_loose",
+      "work_units": 1,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 1
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "village/01/loose_driftwood/driftwoodpieceb",
+      "archetype_id": "fixture:authored_village_component",
+      "site_id": "brinewick/site_01",
+      "building_id": "BW-LOOSE-DRIFTWOOD",
+      "class": "B",
+      "tier": 1,
+      "tool_id": "hands",
+      "operation": "collect_loose",
+      "work_units": 1,
+      "supports": [],
+      "requires_access_aids": [],
+      "protected": false,
+      "allocation": {
+        "timber": 1
+      },
+      "outputs": [
+        {
+          "suffix": "lot",
+          "allocation": {
+            "timber": 1
+          }
+        }
+      ]
+    }
+  ]
+}

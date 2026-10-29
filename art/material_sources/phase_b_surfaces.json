@@ -1,0 +1,11 @@
+{
+  "resolution": 512,
+  "usage": "Very subtle neutral triplanar overlays for already vertex-coloured 1B/1C meshes, no new salvage types",
+  "profiles": {
+    "stone": {"tone": 241, "roughness": 0.968, "macro": 12.0, "meso": 5.0, "seed": 31577},
+    "slate": {"tone": 245, "roughness": 0.925, "macro": 8.0, "meso": 6.5, "seed": 8290},
+    "timber": {"tone": 243, "roughness": 0.945, "macro": 10.5, "meso": 4.5, "seed": 55219},
+    "lime": {"tone": 250, "roughness": 0.976, "macro": 5.0, "meso": 4.0, "seed": 7125},
+    "deck": {"tone": 242, "roughness": 0.952, "macro": 10.0, "meso": 7.0, "seed": 48830}
+  }
+}

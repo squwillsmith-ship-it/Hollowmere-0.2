@@ -1,0 +1,482 @@
+{
+  "manifest_version": 1,
+  "id": "working/cottage_01",
+  "status": "ENGINEERING_PREFAB_NOT_APPROVED_PRODUCTION_ART",
+  "site_id": "brinewick/site_07",
+  "building_id": "FIXTURE-HOUSE-C",
+  "class": "C",
+  "description": "Small manually dismantlable engineering cottage: nine separately targettable recoverable assemblies above a permanent packed-earth ground footprint; aesthetic/detail quality remains provisional.",
+  "origin": [
+    -8,
+    0,
+    -5.3
+  ],
+  "parts": [
+    {
+      "id": "fixture/house/curtain",
+      "geometry": [
+        {
+          "shape": "box",
+          "name": "DoorCloth",
+          "size": [
+            0.9,
+            1.6,
+            0.07
+          ],
+          "position": [
+            0,
+            1.25,
+            2.19
+          ],
+          "material": "fibre"
+        }
+      ]
+    },
+    {
+      "id": "fixture/house/shutters",
+      "geometry": [
+        {
+          "shape": "box",
+          "name": "WestShutter",
+          "size": [
+            0.45,
+            0.96,
+            0.1
+          ],
+          "position": [
+            -1.14,
+            1.65,
+            2.24
+          ],
+          "material": "aged_timber",
+          "detail_profile": "shutter"
+        },
+        {
+          "shape": "box",
+          "name": "EastShutter",
+          "size": [
+            0.45,
+            0.96,
+            0.1
+          ],
+          "position": [
+            1.14,
+            1.65,
+            2.24
+          ],
+          "material": "aged_timber",
+          "detail_profile": "shutter"
+        }
+      ]
+    },
+    {
+      "id": "fixture/house/cladding",
+      "geometry": [
+        {
+          "shape": "box",
+          "name": "WestWallBoards",
+          "size": [
+            0.11,
+            1.82,
+            3.75
+          ],
+          "position": [
+            -2.38,
+            1.65,
+            0
+          ],
+          "material": "weathered_timber",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "shape": "box",
+          "name": "EastWallBoards",
+          "size": [
+            0.11,
+            1.82,
+            3.75
+          ],
+          "position": [
+            2.38,
+            1.65,
+            0
+          ],
+          "material": "weathered_timber",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "shape": "box",
+          "name": "RearWeatherboard",
+          "size": [
+            4.68,
+            0.64,
+            0.12
+          ],
+          "position": [
+            0,
+            2.18,
+            -2.2
+          ],
+          "material": "weathered_timber",
+          "detail_profile": "weatherboards"
+        }
+      ]
+    },
+    {
+      "id": "fixture/house/slate_patch",
+      "geometry": [
+        {
+          "shape": "slate_course",
+          "name": "WestRoofSlope",
+          "size": [
+            2.65,
+            0.14,
+            4.95
+          ],
+          "position": [
+            -1.25,
+            3.24,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            28
+          ],
+          "material": "grey_slate",
+          "detail_profile": "slate"
+        },
+        {
+          "shape": "slate_course",
+          "name": "EastRoofSlope",
+          "size": [
+            2.65,
+            0.14,
+            4.95
+          ],
+          "position": [
+            1.25,
+            3.24,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            -28
+          ],
+          "material": "grey_slate",
+          "detail_profile": "slate"
+        }
+      ]
+    },
+    {
+      "id": "fixture/house/beam",
+      "geometry": [
+        {
+          "shape": "box",
+          "name": "RidgeBeam",
+          "size": [
+            0.34,
+            0.36,
+            4.9
+          ],
+          "position": [
+            0,
+            4,
+            0
+          ],
+          "material": "dark_timber",
+          "detail_profile": "rough_beam"
+        },
+        {
+          "shape": "box",
+          "name": "FrontTieBeam",
+          "size": [
+            4.7,
+            0.24,
+            0.25
+          ],
+          "position": [
+            0,
+            2.75,
+            2.2
+          ],
+          "material": "dark_timber",
+          "detail_profile": "rough_beam"
+        }
+      ]
+    },
+    {
+      "id": "fixture/house/stone_block",
+      "geometry": [
+        {
+          "shape": "irregular_stone",
+          "name": "FoundationNorthwest",
+          "size": [
+            1.2,
+            0.64,
+            0.75
+          ],
+          "position": [
+            -1.65,
+            0.32,
+            2.25
+          ],
+          "material": "rough_stone"
+        },
+        {
+          "shape": "irregular_stone",
+          "name": "FoundationNortheast",
+          "size": [
+            1.3,
+            0.56,
+            0.7
+          ],
+          "position": [
+            1.55,
+            0.28,
+            2.25
+          ],
+          "material": "rough_stone"
+        },
+        {
+          "shape": "irregular_stone",
+          "name": "FoundationRear",
+          "size": [
+            2.1,
+            0.5,
+            0.78
+          ],
+          "position": [
+            0,
+            0.25,
+            -2.2
+          ],
+          "material": "rough_stone"
+        }
+      ]
+    },
+    {
+      "id": "fixture/house/front_infill",
+      "geometry": [
+        {
+          "shape": "box",
+          "name": "WestWindowSill",
+          "size": [
+            1.18,
+            0.65,
+            0.11
+          ],
+          "position": [
+            -1.14,
+            0.79,
+            2.2
+          ],
+          "material": "cream_infill",
+          "detail_profile": "patch_plaster"
+        },
+        {
+          "shape": "box",
+          "name": "WestWindowLintel",
+          "size": [
+            1.18,
+            0.53,
+            0.11
+          ],
+          "position": [
+            -1.14,
+            2.25,
+            2.2
+          ],
+          "material": "cream_infill",
+          "detail_profile": "patch_plaster"
+        },
+        {
+          "shape": "box",
+          "name": "WestWindowInnerJamb",
+          "size": [
+            0.28,
+            0.94,
+            0.11
+          ],
+          "position": [
+            -0.6799999999999999,
+            1.575,
+            2.2
+          ],
+          "material": "cream_infill",
+          "detail_profile": "patch_plaster"
+        },
+        {
+          "shape": "box",
+          "name": "WestWindowOuterJamb",
+          "size": [
+            0.28,
+            0.94,
+            0.11
+          ],
+          "position": [
+            -1.5999999999999999,
+            1.575,
+            2.2
+          ],
+          "material": "cream_infill",
+          "detail_profile": "patch_plaster"
+        },
+        {
+          "shape": "box",
+          "name": "EastWindowSill",
+          "size": [
+            1.18,
+            0.65,
+            0.11
+          ],
+          "position": [
+            1.14,
+            0.79,
+            2.2
+          ],
+          "material": "cream_infill",
+          "detail_profile": "patch_plaster"
+        },
+        {
+          "shape": "box",
+          "name": "EastWindowLintel",
+          "size": [
+            1.18,
+            0.53,
+            0.11
+          ],
+          "position": [
+            1.14,
+            2.25,
+            2.2
+          ],
+          "material": "cream_infill",
+          "detail_profile": "patch_plaster"
+        },
+        {
+          "shape": "box",
+          "name": "EastWindowInnerJamb",
+          "size": [
+            0.28,
+            0.94,
+            0.11
+          ],
+          "position": [
+            0.6799999999999999,
+            1.575,
+            2.2
+          ],
+          "material": "cream_infill",
+          "detail_profile": "patch_plaster"
+        },
+        {
+          "shape": "box",
+          "name": "EastWindowOuterJamb",
+          "size": [
+            0.28,
+            0.94,
+            0.11
+          ],
+          "position": [
+            1.5999999999999999,
+            1.575,
+            2.2
+          ],
+          "material": "cream_infill",
+          "detail_profile": "patch_plaster"
+        },
+        {
+          "shape": "gable_panel",
+          "name": "FrontLimeGable",
+          "size": [
+            4.55,
+            1.13,
+            0.16
+          ],
+          "position": [
+            0,
+            3.32,
+            2.2
+          ],
+          "material": "patched_infill"
+        }
+      ]
+    },
+    {
+      "id": "fixture/house/rear_infill",
+      "geometry": [
+        {
+          "shape": "box",
+          "name": "RearInfill",
+          "size": [
+            4.28,
+            1.86,
+            0.11
+          ],
+          "position": [
+            0,
+            1.35,
+            -2.2
+          ],
+          "material": "cream_infill",
+          "detail_profile": "patch_plaster"
+        },
+        {
+          "shape": "gable_panel",
+          "name": "RearLimeGable",
+          "size": [
+            4.55,
+            1.13,
+            0.16
+          ],
+          "position": [
+            0,
+            3.32,
+            -2.2
+          ],
+          "material": "patched_infill"
+        }
+      ]
+    },
+    {
+      "id": "fixture/house/threshold",
+      "geometry": [
+        {
+          "shape": "box",
+          "name": "FrontThreshold",
+          "size": [
+            1.08,
+            0.15,
+            0.5
+          ],
+          "position": [
+            0,
+            0.1,
+            2.36
+          ],
+          "material": "rough_stone",
+          "detail_profile": "stonework"
+        }
+      ]
+    }
+  ],
+  "static_scenery": [
+    {
+      "shape": "box",
+      "name": "Footprint",
+      "size": [
+        4.8,
+        0.12,
+        4.5
+      ],
+      "position": [
+        0,
+        0.02,
+        0
+      ],
+      "material": "packed_earth"
+    }
+  ]
+}

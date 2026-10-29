@@ -1,0 +1,12 @@
+.godot/
+build/
+toolchain/
+__pycache__/
+*.tmp
+.DS_Store
+game/.godot/
+game/export_credentials.cfg
+.qa-tools/
+
+# Transient PNGs extracted by Godot when importing embedded GLB textures.
+game/assets/materials/step21/step21_material_swatches_*.png

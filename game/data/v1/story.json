@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "discoveries": [
+    {
+      "id": "bell_first_strike",
+      "minimum_act": 1,
+      "location_id": "brinewick/site_15",
+      "preserve_after_dismantle": false,
+      "one_time": true,
+      "kind": "one_time_encounter"
+    },
+    {
+      "id": "net_store_sabotage",
+      "minimum_act": 2,
+      "location_id": "brinewick/site_06",
+      "preserve_after_dismantle": true,
+      "one_time": true,
+      "kind": "narrative_evidence"
+    },
+    {
+      "id": "council_vote",
+      "minimum_act": 2,
+      "location_id": "brinewick/site_19",
+      "preserve_after_dismantle": true,
+      "one_time": true,
+      "kind": "narrative_evidence"
+    },
+    {
+      "id": "first_missing_miner",
+      "minimum_act": 2,
+      "location_id": "brinewick/site_09",
+      "preserve_after_dismantle": true,
+      "one_time": true,
+      "kind": "narrative_evidence"
+    },
+    {
+      "id": "nine_miner_roster",
+      "minimum_act": 2,
+      "location_id": "brinewick/site_19",
+      "preserve_after_dismantle": true,
+      "one_time": true,
+      "kind": "narrative_evidence"
+    },
+    {
+      "id": "mine_voice_heard",
+      "minimum_act": 2,
+      "location_id": "brinewick/site_18",
+      "preserve_after_dismantle": true,
+      "one_time": true,
+      "kind": "narrative_evidence"
+    },
+    {
+      "id": "returnee_denial",
+      "minimum_act": 3,
+      "location_id": "brinewick/site_12",
+      "preserve_after_dismantle": true,
+      "one_time": true,
+      "kind": "narrative_evidence"
+    },
+    {
+      "id": "false_elsbeth_memory",
+      "minimum_act": 3,
+      "location_id": "brinewick/site_14",
+      "preserve_after_dismantle": true,
+      "one_time": true,
+      "kind": "narrative_evidence"
+    },
+    {
+      "id": "aldren_remains_found",
+      "minimum_act": 3,
+      "location_id": "brinewick/site_14",
+      "preserve_after_dismantle": true,
+      "one_time": true,
+      "kind": "narrative_evidence"
+    },
+    {
+      "id": "containment_understood",
+      "minimum_act": 4,
+      "location_id": "brinewick/site_17",
+      "preserve_after_dismantle": true,
+      "one_time": true,
+      "kind": "narrative_evidence"
+    },
+    {
+      "id": "mara_escape_clues",
+      "minimum_act": 4,
+      "location_id": "brinewick/site_21",
+      "preserve_after_dismantle": true,
+      "one_time": true,
+      "kind": "narrative_evidence"
+    },
+    {
+      "id": "inspection_suppression",
+      "minimum_act": 4,
+      "location_id": "brinewick/site_03",
+      "preserve_after_dismantle": true,
+      "one_time": true,
+      "kind": "narrative_evidence"
+    }
+  ],
+  "ending_flags": [
+    {
+      "id": "bell_delivery",
+      "exclusive_with": "repair_escape",
+      "requires_explicit_choice": true
+    },
+    {
+      "id": "repair_escape",
+      "exclusive_with": "bell_delivery",
+      "requires_explicit_choice": true
+    }
+  ],
+  "protections": [
+    "mine_inner_seal",
+    "navigation_routes",
+    "containment_mechanism",
+    "harbour_bell",
+    "essential_evidence",
+    "escape_route"
+  ],
+  "deliberately_unresolved": [
+    "entity_origin",
+    "original_nine_fate",
+    "elsbeth_fate",
+    "mara_survival"
+  ]
+}

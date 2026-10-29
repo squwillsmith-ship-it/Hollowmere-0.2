@@ -1,13 +1,11 @@
-# Hollowmere — public QA mirror
+# Hollowmere 0.2 — Public QA Mirror
 
-This is a clean-history testing mirror for the in-development Godot game Hollowmere (Brinewick). It is **not** a finished game or a verified release.
+This is a **clean-history testing copy** of the Godot Hollowmere/Brinewick project, not the finished game and not an open-source software release.
 
-The original development Git history, internal design documents and private Google Drive workspace are intentionally not mirrored here.
+The working source is based on the Visual Rebuild Batch03 offline source archive (SHA-256 `38b1cf84de4a553ac44c0de8d1513734f41813b17cb9563ef8c4126287271729`, 29 October 2026). The original Git history, historical PRs, private design records, and archived workflow artifacts are intentionally excluded.
 
-**Status:** Mirror setup in progress; no Godot tests or GitHub Actions runs have been launched.
+**Testing status:** no tests or GitHub Actions have been run on this public mirror. The previous Godot Batch02 verification does not certify new Batch03 changes.
 
-Source provenance and setup instructions will be recorded in `docs/SOURCE-PROVENANCE.md`.
+All project-original code, art and assets remain copyright the project owner, all rights reserved; third-party licences and notices are preserved separately. Public visibility does not grant a licence to reuse original work.
 
-## Source and licensing
-
-Copyright © 2026 Hollowmere project owner. All rights reserved unless a file expressly states otherwise. Public visibility does not grant a licence to reuse project code, art, audio or other original assets. Applicable third-party notices must be retained.
+Runs are manual-only and must be explicitly authorized. See `docs/SOURCE-PROVENANCE.md`.

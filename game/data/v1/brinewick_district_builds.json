@@ -1,0 +1,5873 @@
+{
+  "schema_version": 1,
+  "status": "PHASE_EF_STUDY_ACCESS_CORRECTED_WITH_AUTHORED_DOOR_REVEAL",
+  "installations": [
+    {
+      "id": "service/landing_pier",
+      "site_id": "brinewick/site_01",
+      "step": 26,
+      "kind": "scenery",
+      "geometry": [
+        {
+          "name": "PierDeck",
+          "material": "jetty",
+          "size": [
+            11,
+            0.3,
+            6
+          ],
+          "offset": [
+            0,
+            0.05,
+            0
+          ]
+        },
+        {
+          "name": "LandingPost_-4.5",
+          "material": "wood_dark",
+          "size": [
+            0.55,
+            2.4,
+            0.55
+          ],
+          "offset": [
+            -4.5,
+            -0.95,
+            -2.4
+          ]
+        },
+        {
+          "name": "LandingPost_0",
+          "material": "wood_dark",
+          "size": [
+            0.55,
+            2.4,
+            0.55
+          ],
+          "offset": [
+            0,
+            -0.95,
+            -2.4
+          ]
+        },
+        {
+          "name": "LandingPost_4.5",
+          "material": "wood_dark",
+          "size": [
+            0.55,
+            2.4,
+            0.55
+          ],
+          "offset": [
+            4.5,
+            -0.95,
+            -2.4
+          ]
+        },
+        {
+          "name": "MooringRail",
+          "material": "wood_salt",
+          "size": [
+            9,
+            0.3,
+            0.35
+          ],
+          "offset": [
+            0,
+            0.65,
+            -2.2
+          ]
+        },
+        {
+          "name": "PierLandingRamp",
+          "material": "jetty",
+          "size": [
+            7,
+            0.2,
+            2
+          ],
+          "offset": [
+            5,
+            0.2,
+            3.5
+          ],
+          "rotation": [
+            0,
+            -16,
+            0
+          ]
+        },
+        {
+          "name": "DriftwoodPieceA",
+          "material": "wood_salt",
+          "offset": [
+            -3.2,
+            0.55,
+            0.85
+          ],
+          "size": [
+            0.7,
+            0.12,
+            0.32
+          ],
+          "removable_part_id": "village/01/loose_driftwood/driftwoodpiecea"
+        },
+        {
+          "name": "DriftwoodPieceB",
+          "material": "wood_salt",
+          "offset": [
+            -2.5,
+            0.55,
+            0.85
+          ],
+          "size": [
+            0.7,
+            0.12,
+            0.32
+          ],
+          "removable_part_id": "village/01/loose_driftwood/driftwoodpieceb"
+        }
+      ]
+    },
+    {
+      "id": "service/boatyard_base",
+      "site_id": "brinewick/site_02",
+      "step": 26,
+      "kind": "scenery",
+      "geometry": [
+        {
+          "name": "CompanyWorkShelterRoofLeft", "material": "roof",
+          "size": [9.65, 0.25, 3.40], "offset": [0, 3.95, -1.61],
+          "rotation": [-15.0, 0.0, 0.0]
+        },
+        {
+          "name": "CompanyWorkShelterRoofRight", "material": "roof",
+          "size": [9.65, 0.25, 3.40], "offset": [0, 3.95, 1.61],
+          "rotation": [15.0, 0.0, 0.0]
+        },
+        {
+          "name": "ShelterPost_-4.2_-2.7",
+          "material": "wood",
+          "size": [
+            0.38,
+            3.5,
+            0.38
+          ],
+          "offset": [
+            -4.2,
+            1.75,
+            -2.7
+          ]
+        },
+        {
+          "name": "ShelterPost_-4.2_2.7",
+          "material": "wood",
+          "size": [
+            0.38,
+            3.5,
+            0.38
+          ],
+          "offset": [
+            -4.2,
+            1.75,
+            2.7
+          ]
+        },
+        {
+          "name": "ShelterPost_4.2_-2.7",
+          "material": "wood",
+          "size": [
+            0.38,
+            3.5,
+            0.38
+          ],
+          "offset": [
+            4.2,
+            1.75,
+            -2.7
+          ]
+        },
+        {
+          "name": "ShelterPost_4.2_2.7",
+          "material": "wood",
+          "size": [
+            0.38,
+            3.5,
+            0.38
+          ],
+          "offset": [
+            4.2,
+            1.75,
+            2.7
+          ]
+        },
+        {
+          "name": "ReceivingPad",
+          "material": "stone",
+          "size": [
+            3,
+            0.22,
+            3
+          ],
+          "offset": [
+            -2.2,
+            0.12,
+            -2.3
+          ]
+        },
+        {
+          "name": "LedgerCounter",
+          "material": "wood_dark",
+          "size": [
+            2.3,
+            1.2,
+            0.75
+          ],
+          "offset": [
+            1.5,
+            0.6,
+            2
+          ]
+        },
+        {
+          "name": "ManualSortingBench",
+          "material": "wood",
+          "size": [
+            2.2,
+            0.9,
+            0.8
+          ],
+          "offset": [
+            1.65,
+            0.45,
+            -2.2
+          ]
+        },
+        {
+          "name": "SupplyShelving",
+          "material": "wood_salt",
+          "size": [
+            0.6,
+            2.1,
+            2
+          ],
+          "offset": [
+            -4,
+            1.1,
+            0
+          ]
+        },
+        {
+          "name": "LooseRopeCoil",
+          "material": "rope",
+          "offset": [
+            -1.1,
+            0.85,
+            2.1
+          ],
+          "size": [
+            0.48,
+            0.12,
+            0.43
+          ],
+          "removable_part_id": "village/02/yard_scrap/looseropecoil"
+        },
+        {
+          "name": "StormThrownPlankA",
+          "material": "wood",
+          "offset": [
+            -3.1,
+            0.6,
+            -0.3
+          ],
+          "size": [
+            0.95,
+            0.15,
+            0.25
+          ],
+          "removable_part_id": "village/02/yard_scrap/stormthrownplanka"
+        },
+        {
+          "name": "StormThrownPlankB",
+          "material": "wood_salt",
+          "offset": [
+            -3,
+            0.82,
+            0.2
+          ],
+          "size": [
+            0.88,
+            0.16,
+            0.21
+          ],
+          "removable_part_id": "village/02/yard_scrap/stormthrownplankb"
+        },
+        {
+          "name": "DiscardedRopeEnd",
+          "material": "rope",
+          "offset": [
+            -3.6,
+            0.5,
+            1.65
+          ],
+          "size": [
+            0.55,
+            0.12,
+            0.28
+          ],
+          "removable_part_id": "village/02/yard_scrap/discardedropeend"
+        }
+      ]
+    },
+    {
+      "id": "district/old_warehouse",
+      "site_id": "brinewick/site_04",
+      "step": 27,
+      "kind": "scenery",
+      "geometry": [
+        {
+          "name": "StoneWarehouseFootprint",
+          "material": "stone",
+          "size": [
+            10.6,
+            0.35,
+            8.6
+          ],
+          "offset": [
+            0,
+            0.18,
+            0
+          ],
+          "detail_profile": "stonework"
+        },
+        {
+          "name": "BackFrame_Section_01",
+          "material": "wood_salt",
+          "size": [
+            1.42857,
+            4.7,
+            0.25
+          ],
+          "offset": [
+            -4.28571,
+            2.5,
+            -4
+          ],
+          "removable_part_id": "village/04/old_warehouse/back_frame",
+          "detail_profile": "framed_bay"
+        },
+        {
+          "name": "BackFrame_Section_02",
+          "material": "wood_salt",
+          "size": [
+            1.42857,
+            4.7,
+            0.25
+          ],
+          "offset": [
+            -2.85714,
+            2.5,
+            -4
+          ],
+          "removable_part_id": "village/04/old_warehouse/back_frame/section_02",
+          "detail_profile": "framed_bay"
+        },
+        {
+          "name": "BackFrame_Section_03",
+          "material": "wood_salt",
+          "size": [
+            1.42857,
+            4.7,
+            0.25
+          ],
+          "offset": [
+            -1.42857,
+            2.5,
+            -4
+          ],
+          "removable_part_id": "village/04/old_warehouse/back_frame/section_03",
+          "detail_profile": "framed_bay"
+        },
+        {
+          "name": "BackFrame_Section_04",
+          "material": "wood_salt",
+          "size": [
+            1.42857,
+            4.7,
+            0.25
+          ],
+          "offset": [
+            0,
+            2.5,
+            -4
+          ],
+          "removable_part_id": "village/04/old_warehouse/back_frame/section_04",
+          "detail_profile": "framed_bay"
+        },
+        {
+          "name": "BackFrame_Section_05",
+          "material": "wood_salt",
+          "size": [
+            1.42857,
+            4.7,
+            0.25
+          ],
+          "offset": [
+            1.42857,
+            2.5,
+            -4
+          ],
+          "removable_part_id": "village/04/old_warehouse/back_frame/section_05",
+          "detail_profile": "framed_bay"
+        },
+        {
+          "name": "BackFrame_Section_06",
+          "material": "wood_salt",
+          "size": [
+            1.42857,
+            4.7,
+            0.25
+          ],
+          "offset": [
+            2.85714,
+            2.5,
+            -4
+          ],
+          "removable_part_id": "village/04/old_warehouse/back_frame/section_06",
+          "detail_profile": "framed_bay"
+        },
+        {
+          "name": "BackFrame_Section_07",
+          "material": "wood_salt",
+          "size": [
+            1.42857,
+            4.7,
+            0.25
+          ],
+          "offset": [
+            4.28571,
+            2.5,
+            -4
+          ],
+          "removable_part_id": "village/04/old_warehouse/back_frame/section_07",
+          "detail_profile": "framed_bay"
+        },
+        {
+          "name": "WestSide_Section_01",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            4.7,
+            1.6
+          ],
+          "offset": [
+            -5,
+            2.5,
+            -3.2
+          ],
+          "removable_part_id": "village/04/old_warehouse/west_side",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "WestSide_Section_02",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            4.7,
+            1.6
+          ],
+          "offset": [
+            -5,
+            2.5,
+            -1.6
+          ],
+          "removable_part_id": "village/04/old_warehouse/west_side/section_02",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "WestSide_Section_03",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            4.7,
+            1.6
+          ],
+          "offset": [
+            -5,
+            2.5,
+            0
+          ],
+          "removable_part_id": "village/04/old_warehouse/west_side/section_03",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "WestSide_Section_04",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            4.7,
+            1.6
+          ],
+          "offset": [
+            -5,
+            2.5,
+            1.6
+          ],
+          "removable_part_id": "village/04/old_warehouse/west_side/section_04",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "WestSide_Section_05",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            4.7,
+            1.6
+          ],
+          "offset": [
+            -5,
+            2.5,
+            3.2
+          ],
+          "removable_part_id": "village/04/old_warehouse/west_side/section_05",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "EastSide_Section_01",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            4.7,
+            1.6
+          ],
+          "offset": [
+            5,
+            2.5,
+            -3.2
+          ],
+          "removable_part_id": "village/04/old_warehouse/east_side",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "EastSide_Section_02",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            4.7,
+            1.6
+          ],
+          "offset": [
+            5,
+            2.5,
+            -1.6
+          ],
+          "removable_part_id": "village/04/old_warehouse/east_side/section_02",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "EastSide_Section_03",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            4.7,
+            1.6
+          ],
+          "offset": [
+            5,
+            2.5,
+            0
+          ],
+          "removable_part_id": "village/04/old_warehouse/east_side/section_03",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "EastSide_Section_04",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            4.7,
+            1.6
+          ],
+          "offset": [
+            5,
+            2.5,
+            1.6
+          ],
+          "removable_part_id": "village/04/old_warehouse/east_side/section_04",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "EastSide_Section_05",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            4.7,
+            1.6
+          ],
+          "offset": [
+            5,
+            2.5,
+            3.2
+          ],
+          "removable_part_id": "village/04/old_warehouse/east_side/section_05",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "PierDoorLeft_Section_01",
+          "material": "wood",
+          "size": [
+            3.75,
+            1.56667,
+            0.25
+          ],
+          "offset": [
+            -3.125,
+            0.93333,
+            4
+          ],
+          "removable_part_id": "village/04/old_warehouse/pier_door_left",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "PierDoorLeft_Section_02",
+          "material": "wood",
+          "size": [
+            3.75,
+            1.56667,
+            0.25
+          ],
+          "offset": [
+            -3.125,
+            2.5,
+            4
+          ],
+          "removable_part_id": "village/04/old_warehouse/pier_door_left/section_02",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "PierDoorLeft_Section_03",
+          "material": "wood",
+          "size": [
+            3.75,
+            1.56667,
+            0.25
+          ],
+          "offset": [
+            -3.125,
+            4.06667,
+            4
+          ],
+          "removable_part_id": "village/04/old_warehouse/pier_door_left/section_03",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "PierDoorRight_Section_01",
+          "material": "wood",
+          "size": [
+            3.75,
+            1.56667,
+            0.25
+          ],
+          "offset": [
+            3.125,
+            0.93333,
+            4
+          ],
+          "removable_part_id": "village/04/old_warehouse/pier_door_right",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "PierDoorRight_Section_02",
+          "material": "wood",
+          "size": [
+            3.75,
+            1.56667,
+            0.25
+          ],
+          "offset": [
+            3.125,
+            2.5,
+            4
+          ],
+          "removable_part_id": "village/04/old_warehouse/pier_door_right/section_02",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "PierDoorRight_Section_03",
+          "material": "wood",
+          "size": [
+            3.75,
+            1.56667,
+            0.25
+          ],
+          "offset": [
+            3.125,
+            4.06667,
+            4
+          ],
+          "removable_part_id": "village/04/old_warehouse/pier_door_right/section_03",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "RoofLeft_Course_01",
+          "material": "roof",
+          "size": [
+            5.7,
+            0.22,
+            1.0875
+          ],
+          "offset": [
+            -2.5,
+            5.2,
+            -3.80625
+          ],
+          "rotation": [
+            0,
+            0,
+            27
+          ],
+          "removable_part_id": "village/04/old_warehouse/roof_left",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofLeft_Course_02",
+          "material": "roof",
+          "size": [
+            5.7,
+            0.22,
+            1.0875
+          ],
+          "offset": [
+            -2.5,
+            5.2,
+            -2.71875
+          ],
+          "rotation": [
+            0,
+            0,
+            27
+          ],
+          "removable_part_id": "village/04/old_warehouse/roof_left/section_02",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofLeft_Course_03",
+          "material": "roof",
+          "size": [
+            5.7,
+            0.22,
+            1.0875
+          ],
+          "offset": [
+            -2.5,
+            5.2,
+            -1.63125
+          ],
+          "rotation": [
+            0,
+            0,
+            27
+          ],
+          "removable_part_id": "village/04/old_warehouse/roof_left/section_03",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofLeft_Course_04",
+          "material": "roof",
+          "size": [
+            5.7,
+            0.22,
+            1.0875
+          ],
+          "offset": [
+            -2.5,
+            5.2,
+            -0.54375
+          ],
+          "rotation": [
+            0,
+            0,
+            27
+          ],
+          "removable_part_id": "village/04/old_warehouse/roof_left/section_04",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofLeft_Course_05",
+          "material": "roof",
+          "size": [
+            5.7,
+            0.22,
+            1.0875
+          ],
+          "offset": [
+            -2.5,
+            5.2,
+            0.54375
+          ],
+          "rotation": [
+            0,
+            0,
+            27
+          ],
+          "removable_part_id": "village/04/old_warehouse/roof_left/section_05",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofLeft_Course_06",
+          "material": "roof",
+          "size": [
+            5.7,
+            0.22,
+            1.0875
+          ],
+          "offset": [
+            -2.5,
+            5.2,
+            1.63125
+          ],
+          "rotation": [
+            0,
+            0,
+            27
+          ],
+          "removable_part_id": "village/04/old_warehouse/roof_left/section_06",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofLeft_Course_07",
+          "material": "roof",
+          "size": [
+            5.7,
+            0.22,
+            1.0875
+          ],
+          "offset": [
+            -2.5,
+            5.2,
+            2.71875
+          ],
+          "rotation": [
+            0,
+            0,
+            27
+          ],
+          "removable_part_id": "village/04/old_warehouse/roof_left/section_07",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofLeft_Course_08",
+          "material": "roof",
+          "size": [
+            5.7,
+            0.22,
+            1.0875
+          ],
+          "offset": [
+            -2.5,
+            5.2,
+            3.80625
+          ],
+          "rotation": [
+            0,
+            0,
+            27
+          ],
+          "removable_part_id": "village/04/old_warehouse/roof_left/section_08",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofRight_Course_01",
+          "material": "roof",
+          "size": [
+            5.7,
+            0.22,
+            1.0875
+          ],
+          "offset": [
+            2.5,
+            5.2,
+            -3.80625
+          ],
+          "rotation": [
+            0,
+            0,
+            -27
+          ],
+          "removable_part_id": "village/04/old_warehouse/roof_right",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofRight_Course_02",
+          "material": "roof",
+          "size": [
+            5.7,
+            0.22,
+            1.0875
+          ],
+          "offset": [
+            2.5,
+            5.2,
+            -2.71875
+          ],
+          "rotation": [
+            0,
+            0,
+            -27
+          ],
+          "removable_part_id": "village/04/old_warehouse/roof_right/section_02",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofRight_Course_03",
+          "material": "roof",
+          "size": [
+            5.7,
+            0.22,
+            1.0875
+          ],
+          "offset": [
+            2.5,
+            5.2,
+            -1.63125
+          ],
+          "rotation": [
+            0,
+            0,
+            -27
+          ],
+          "removable_part_id": "village/04/old_warehouse/roof_right/section_03",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofRight_Course_04",
+          "material": "roof",
+          "size": [
+            5.7,
+            0.22,
+            1.0875
+          ],
+          "offset": [
+            2.5,
+            5.2,
+            -0.54375
+          ],
+          "rotation": [
+            0,
+            0,
+            -27
+          ],
+          "removable_part_id": "village/04/old_warehouse/roof_right/section_04",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofRight_Course_05",
+          "material": "roof",
+          "size": [
+            5.7,
+            0.22,
+            1.0875
+          ],
+          "offset": [
+            2.5,
+            5.2,
+            0.54375
+          ],
+          "rotation": [
+            0,
+            0,
+            -27
+          ],
+          "removable_part_id": "village/04/old_warehouse/roof_right/section_05",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofRight_Course_06",
+          "material": "roof",
+          "size": [
+            5.7,
+            0.22,
+            1.0875
+          ],
+          "offset": [
+            2.5,
+            5.2,
+            1.63125
+          ],
+          "rotation": [
+            0,
+            0,
+            -27
+          ],
+          "removable_part_id": "village/04/old_warehouse/roof_right/section_06",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofRight_Course_07",
+          "material": "roof",
+          "size": [
+            5.7,
+            0.22,
+            1.0875
+          ],
+          "offset": [
+            2.5,
+            5.2,
+            2.71875
+          ],
+          "rotation": [
+            0,
+            0,
+            -27
+          ],
+          "removable_part_id": "village/04/old_warehouse/roof_right/section_07",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofRight_Course_08",
+          "material": "roof",
+          "size": [
+            5.7,
+            0.22,
+            1.0875
+          ],
+          "offset": [
+            2.5,
+            5.2,
+            3.80625
+          ],
+          "rotation": [
+            0,
+            0,
+            -27
+          ],
+          "removable_part_id": "village/04/old_warehouse/roof_right/section_08",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "StorageRack_Section_01",
+          "material": "wood_dark",
+          "size": [
+            1.2,
+            2.4,
+            0.8
+          ],
+          "offset": [
+            -3.7,
+            1.4,
+            -2.6666666666666665
+          ],
+          "removable_part_id": "village/04/old_warehouse/storage_rack",
+          "detail_profile": "framed_bay"
+        },
+        {
+          "name": "StorageRack_Section_02",
+          "material": "wood_dark",
+          "size": [
+            1.2,
+            2.4,
+            0.8
+          ],
+          "offset": [
+            -2.5,
+            1.4,
+            -2.6666666666666665
+          ],
+          "removable_part_id": "village/04/old_warehouse/storage_rack/section_02",
+          "detail_profile": "framed_bay"
+        },
+        {
+          "name": "StorageRack_Section_03",
+          "material": "wood_dark",
+          "size": [
+            1.2,
+            2.4,
+            0.8
+          ],
+          "offset": [
+            -1.3,
+            1.4,
+            -2.6666666666666665
+          ],
+          "removable_part_id": "village/04/old_warehouse/storage_rack/section_03",
+          "detail_profile": "framed_bay"
+        }
+      ],
+      "has_removable_components": true
+    },
+    {
+      "id": "district/expanded_warehouse",
+      "site_id": "brinewick/site_05",
+      "step": 27,
+      "kind": "scenery",
+      "geometry": [
+        {
+          "name": "StoneWarehouseFootprint",
+          "material": "stone",
+          "size": [
+            13.1,
+            0.35,
+            10.6
+          ],
+          "offset": [
+            0,
+            0.18,
+            0
+          ],
+          "detail_profile": "stonework"
+        },
+        {
+          "name": "BackFrame_Section_01",
+          "material": "wood",
+          "size": [
+            1.5625,
+            4.7,
+            0.25
+          ],
+          "offset": [
+            -5.46875,
+            2.5,
+            -5
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/back_frame",
+          "detail_profile": "framed_bay"
+        },
+        {
+          "name": "BackFrame_Section_02",
+          "material": "wood",
+          "size": [
+            1.5625,
+            4.7,
+            0.25
+          ],
+          "offset": [
+            -3.90625,
+            2.5,
+            -5
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/back_frame/section_02",
+          "detail_profile": "framed_bay"
+        },
+        {
+          "name": "BackFrame_Section_03",
+          "material": "wood",
+          "size": [
+            1.5625,
+            4.7,
+            0.25
+          ],
+          "offset": [
+            -2.34375,
+            2.5,
+            -5
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/back_frame/section_03",
+          "detail_profile": "framed_bay"
+        },
+        {
+          "name": "BackFrame_Section_04",
+          "material": "wood",
+          "size": [
+            1.5625,
+            4.7,
+            0.25
+          ],
+          "offset": [
+            -0.78125,
+            2.5,
+            -5
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/back_frame/section_04",
+          "detail_profile": "framed_bay"
+        },
+        {
+          "name": "BackFrame_Section_05",
+          "material": "wood",
+          "size": [
+            1.5625,
+            4.7,
+            0.25
+          ],
+          "offset": [
+            0.78125,
+            2.5,
+            -5
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/back_frame/section_05",
+          "detail_profile": "framed_bay"
+        },
+        {
+          "name": "BackFrame_Section_06",
+          "material": "wood",
+          "size": [
+            1.5625,
+            4.7,
+            0.25
+          ],
+          "offset": [
+            2.34375,
+            2.5,
+            -5
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/back_frame/section_06",
+          "detail_profile": "framed_bay"
+        },
+        {
+          "name": "BackFrame_Section_07",
+          "material": "wood",
+          "size": [
+            1.5625,
+            4.7,
+            0.25
+          ],
+          "offset": [
+            3.90625,
+            2.5,
+            -5
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/back_frame/section_07",
+          "detail_profile": "framed_bay"
+        },
+        {
+          "name": "BackFrame_Section_08",
+          "material": "wood",
+          "size": [
+            1.5625,
+            4.7,
+            0.25
+          ],
+          "offset": [
+            5.46875,
+            2.5,
+            -5
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/back_frame/section_08",
+          "detail_profile": "framed_bay"
+        },
+        {
+          "name": "WestSide_Section_01",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            4.7,
+            1.42857
+          ],
+          "offset": [
+            -6.25,
+            2.5,
+            -4.28571
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/west_side",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "WestSide_Section_02",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            4.7,
+            1.42857
+          ],
+          "offset": [
+            -6.25,
+            2.5,
+            -2.85714
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/west_side/section_02",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "WestSide_Section_03",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            4.7,
+            1.42857
+          ],
+          "offset": [
+            -6.25,
+            2.5,
+            -1.42857
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/west_side/section_03",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "WestSide_Section_04",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            4.7,
+            1.42857
+          ],
+          "offset": [
+            -6.25,
+            2.5,
+            0
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/west_side/section_04",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "WestSide_Section_05",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            4.7,
+            1.42857
+          ],
+          "offset": [
+            -6.25,
+            2.5,
+            1.42857
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/west_side/section_05",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "WestSide_Section_06",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            4.7,
+            1.42857
+          ],
+          "offset": [
+            -6.25,
+            2.5,
+            2.85714
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/west_side/section_06",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "WestSide_Section_07",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            4.7,
+            1.42857
+          ],
+          "offset": [
+            -6.25,
+            2.5,
+            4.28571
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/west_side/section_07",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "EastSide_Section_01",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            4.7,
+            1.42857
+          ],
+          "offset": [
+            6.25,
+            2.5,
+            -4.28571
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/east_side",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "EastSide_Section_02",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            4.7,
+            1.42857
+          ],
+          "offset": [
+            6.25,
+            2.5,
+            -2.85714
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/east_side/section_02",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "EastSide_Section_03",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            4.7,
+            1.42857
+          ],
+          "offset": [
+            6.25,
+            2.5,
+            -1.42857
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/east_side/section_03",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "EastSide_Section_04",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            4.7,
+            1.42857
+          ],
+          "offset": [
+            6.25,
+            2.5,
+            0
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/east_side/section_04",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "EastSide_Section_05",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            4.7,
+            1.42857
+          ],
+          "offset": [
+            6.25,
+            2.5,
+            1.42857
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/east_side/section_05",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "EastSide_Section_06",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            4.7,
+            1.42857
+          ],
+          "offset": [
+            6.25,
+            2.5,
+            2.85714
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/east_side/section_06",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "EastSide_Section_07",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            4.7,
+            1.42857
+          ],
+          "offset": [
+            6.25,
+            2.5,
+            4.28571
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/east_side/section_07",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "PierDoorLeft_Section_01",
+          "material": "wood",
+          "size": [
+            1.25,
+            4.7,
+            0.25
+          ],
+          "offset": [
+            -5.625,
+            2.5,
+            5
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/pier_door_left",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "PierDoorLeft_Section_02",
+          "material": "wood",
+          "size": [
+            1.25,
+            4.7,
+            0.25
+          ],
+          "offset": [
+            -4.375,
+            2.5,
+            5
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/pier_door_left/section_02",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "PierDoorLeft_Section_03",
+          "material": "wood",
+          "size": [
+            1.25,
+            4.7,
+            0.25
+          ],
+          "offset": [
+            -3.125,
+            2.5,
+            5
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/pier_door_left/section_03",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "PierDoorLeft_Section_04",
+          "material": "wood",
+          "size": [
+            1.25,
+            4.7,
+            0.25
+          ],
+          "offset": [
+            -1.875,
+            2.5,
+            5
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/pier_door_left/section_04",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "PierDoorRight_Section_01",
+          "material": "wood",
+          "size": [
+            1.25,
+            4.7,
+            0.25
+          ],
+          "offset": [
+            1.875,
+            2.5,
+            5
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/pier_door_right",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "PierDoorRight_Section_02",
+          "material": "wood",
+          "size": [
+            1.25,
+            4.7,
+            0.25
+          ],
+          "offset": [
+            3.125,
+            2.5,
+            5
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/pier_door_right/section_02",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "PierDoorRight_Section_03",
+          "material": "wood",
+          "size": [
+            1.25,
+            4.7,
+            0.25
+          ],
+          "offset": [
+            4.375,
+            2.5,
+            5
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/pier_door_right/section_03",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "PierDoorRight_Section_04",
+          "material": "wood",
+          "size": [
+            1.25,
+            4.7,
+            0.25
+          ],
+          "offset": [
+            5.625,
+            2.5,
+            5
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/pier_door_right/section_04",
+          "detail_profile": "weatherboards"
+        },
+        {
+          "name": "RoofLeft_Course_01",
+          "material": "roof",
+          "size": [
+            6.95,
+            0.22,
+            1.18889
+          ],
+          "offset": [
+            -3.125,
+            5.2,
+            -4.75556
+          ],
+          "rotation": [
+            0,
+            0,
+            27
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/roof_left",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofLeft_Course_02",
+          "material": "roof",
+          "size": [
+            6.95,
+            0.22,
+            1.18889
+          ],
+          "offset": [
+            -3.125,
+            5.2,
+            -3.56667
+          ],
+          "rotation": [
+            0,
+            0,
+            27
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/roof_left/section_02",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofLeft_Course_03",
+          "material": "roof",
+          "size": [
+            6.95,
+            0.22,
+            1.18889
+          ],
+          "offset": [
+            -3.125,
+            5.2,
+            -2.37778
+          ],
+          "rotation": [
+            0,
+            0,
+            27
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/roof_left/section_03",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofLeft_Course_04",
+          "material": "roof",
+          "size": [
+            6.95,
+            0.22,
+            1.18889
+          ],
+          "offset": [
+            -3.125,
+            5.2,
+            -1.18889
+          ],
+          "rotation": [
+            0,
+            0,
+            27
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/roof_left/section_04",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofLeft_Course_05",
+          "material": "roof",
+          "size": [
+            6.95,
+            0.22,
+            1.18889
+          ],
+          "offset": [
+            -3.125,
+            5.2,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            27
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/roof_left/section_05",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofLeft_Course_06",
+          "material": "roof",
+          "size": [
+            6.95,
+            0.22,
+            1.18889
+          ],
+          "offset": [
+            -3.125,
+            5.2,
+            1.18889
+          ],
+          "rotation": [
+            0,
+            0,
+            27
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/roof_left/section_06",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofLeft_Course_07",
+          "material": "roof",
+          "size": [
+            6.95,
+            0.22,
+            1.18889
+          ],
+          "offset": [
+            -3.125,
+            5.2,
+            2.37778
+          ],
+          "rotation": [
+            0,
+            0,
+            27
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/roof_left/section_07",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofLeft_Course_08",
+          "material": "roof",
+          "size": [
+            6.95,
+            0.22,
+            1.18889
+          ],
+          "offset": [
+            -3.125,
+            5.2,
+            3.56667
+          ],
+          "rotation": [
+            0,
+            0,
+            27
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/roof_left/section_08",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofLeft_Course_09",
+          "material": "roof",
+          "size": [
+            6.95,
+            0.22,
+            1.18889
+          ],
+          "offset": [
+            -3.125,
+            5.2,
+            4.75556
+          ],
+          "rotation": [
+            0,
+            0,
+            27
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/roof_left/section_09",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofRight_Course_01",
+          "material": "roof",
+          "size": [
+            6.95,
+            0.22,
+            1.18889
+          ],
+          "offset": [
+            3.125,
+            5.2,
+            -4.75556
+          ],
+          "rotation": [
+            0,
+            0,
+            -27
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/roof_right",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofRight_Course_02",
+          "material": "roof",
+          "size": [
+            6.95,
+            0.22,
+            1.18889
+          ],
+          "offset": [
+            3.125,
+            5.2,
+            -3.56667
+          ],
+          "rotation": [
+            0,
+            0,
+            -27
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/roof_right/section_02",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofRight_Course_03",
+          "material": "roof",
+          "size": [
+            6.95,
+            0.22,
+            1.18889
+          ],
+          "offset": [
+            3.125,
+            5.2,
+            -2.37778
+          ],
+          "rotation": [
+            0,
+            0,
+            -27
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/roof_right/section_03",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofRight_Course_04",
+          "material": "roof",
+          "size": [
+            6.95,
+            0.22,
+            1.18889
+          ],
+          "offset": [
+            3.125,
+            5.2,
+            -1.18889
+          ],
+          "rotation": [
+            0,
+            0,
+            -27
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/roof_right/section_04",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofRight_Course_05",
+          "material": "roof",
+          "size": [
+            6.95,
+            0.22,
+            1.18889
+          ],
+          "offset": [
+            3.125,
+            5.2,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            -27
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/roof_right/section_05",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofRight_Course_06",
+          "material": "roof",
+          "size": [
+            6.95,
+            0.22,
+            1.18889
+          ],
+          "offset": [
+            3.125,
+            5.2,
+            1.18889
+          ],
+          "rotation": [
+            0,
+            0,
+            -27
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/roof_right/section_06",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofRight_Course_07",
+          "material": "roof",
+          "size": [
+            6.95,
+            0.22,
+            1.18889
+          ],
+          "offset": [
+            3.125,
+            5.2,
+            2.37778
+          ],
+          "rotation": [
+            0,
+            0,
+            -27
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/roof_right/section_07",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofRight_Course_08",
+          "material": "roof",
+          "size": [
+            6.95,
+            0.22,
+            1.18889
+          ],
+          "offset": [
+            3.125,
+            5.2,
+            3.56667
+          ],
+          "rotation": [
+            0,
+            0,
+            -27
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/roof_right/section_08",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "RoofRight_Course_09",
+          "material": "roof",
+          "size": [
+            6.95,
+            0.22,
+            1.18889
+          ],
+          "offset": [
+            3.125,
+            5.2,
+            4.75556
+          ],
+          "rotation": [
+            0,
+            0,
+            -27
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/roof_right/section_09",
+          "detail_profile": "slate"
+        },
+        {
+          "name": "StorageRack_Section_01",
+          "material": "wood_dark",
+          "size": [
+            1.2,
+            2.4,
+            0.8
+          ],
+          "offset": [
+            -4.325,
+            1.4,
+            -3.3333333333333335
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/storage_rack",
+          "detail_profile": "framed_bay"
+        },
+        {
+          "name": "StorageRack_Section_02",
+          "material": "wood_dark",
+          "size": [
+            1.2,
+            2.4,
+            0.8
+          ],
+          "offset": [
+            -3.125,
+            1.4,
+            -3.3333333333333335
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/storage_rack/section_02",
+          "detail_profile": "framed_bay"
+        },
+        {
+          "name": "StorageRack_Section_03",
+          "material": "wood_dark",
+          "size": [
+            1.2,
+            2.4,
+            0.8
+          ],
+          "offset": [
+            -1.925,
+            1.4,
+            -3.3333333333333335
+          ],
+          "removable_part_id": "village/05/expanded_warehouse/storage_rack/section_03",
+          "detail_profile": "framed_bay"
+        }
+      ],
+      "has_removable_components": true
+    },
+    {
+      "id": "district/lower_cottage_01",
+      "site_id": "brinewick/site_07",
+      "step": 27,
+      "kind": "cottage",
+      "geometry": []
+    },
+    {
+      "id": "district/mara_home",
+      "site_id": "brinewick/site_08",
+      "step": 27,
+      "kind": "scenery",
+      "geometry": [
+        {
+          "name": "Foundation",
+          "material": "stone",
+          "size": [
+            7.6,
+            0.38,
+            7.6
+          ],
+          "offset": [
+            0,
+            0.19,
+            0
+          ]
+        },
+        {
+          "name": "RearInfill_Section_01",
+          "material": "plaster",
+          "size": [
+            1.4,
+            2.7,
+            0.18
+          ],
+          "offset": [
+            -2.8,
+            1.6,
+            -3.5
+          ],
+          "removable_part_id": "village/08/mara_home/rear_infill"
+        },
+        {
+          "name": "RearInfill_Section_02",
+          "material": "plaster",
+          "size": [
+            1.4,
+            2.7,
+            0.18
+          ],
+          "offset": [
+            -1.4,
+            1.6,
+            -3.5
+          ],
+          "removable_part_id": "village/08/mara_home/rear_infill/section_02"
+        },
+        {
+          "name": "RearInfill_Section_03",
+          "material": "plaster",
+          "size": [
+            1.4,
+            2.7,
+            0.18
+          ],
+          "offset": [
+            0,
+            1.6,
+            -3.5
+          ],
+          "removable_part_id": "village/08/mara_home/rear_infill/section_03"
+        },
+        {
+          "name": "RearInfill_Section_04",
+          "material": "plaster",
+          "size": [
+            1.4,
+            2.7,
+            0.18
+          ],
+          "offset": [
+            1.4,
+            1.6,
+            -3.5
+          ],
+          "removable_part_id": "village/08/mara_home/rear_infill/section_04"
+        },
+        {
+          "name": "RearInfill_Section_05",
+          "material": "plaster",
+          "size": [
+            1.4,
+            2.7,
+            0.18
+          ],
+          "offset": [
+            2.8,
+            1.6,
+            -3.5
+          ],
+          "removable_part_id": "village/08/mara_home/rear_infill/section_05"
+        },
+        {
+          "name": "WestInfill_Section_01",
+          "material": "plaster",
+          "size": [
+            0.18,
+            2.7,
+            1.4
+          ],
+          "offset": [
+            -3.5,
+            1.6,
+            -2.8
+          ],
+          "removable_part_id": "village/08/mara_home/west_infill"
+        },
+        {
+          "name": "WestInfill_Section_02",
+          "material": "plaster",
+          "size": [
+            0.18,
+            2.7,
+            1.4
+          ],
+          "offset": [
+            -3.5,
+            1.6,
+            -1.4
+          ],
+          "removable_part_id": "village/08/mara_home/west_infill/section_02"
+        },
+        {
+          "name": "WestInfill_Section_03",
+          "material": "plaster",
+          "size": [
+            0.18,
+            2.7,
+            1.4
+          ],
+          "offset": [
+            -3.5,
+            1.6,
+            0
+          ],
+          "removable_part_id": "village/08/mara_home/west_infill/section_03"
+        },
+        {
+          "name": "WestInfill_Section_04",
+          "material": "plaster",
+          "size": [
+            0.18,
+            2.7,
+            1.4
+          ],
+          "offset": [
+            -3.5,
+            1.6,
+            1.4
+          ],
+          "removable_part_id": "village/08/mara_home/west_infill/section_04"
+        },
+        {
+          "name": "WestInfill_Section_05",
+          "material": "plaster",
+          "size": [
+            0.18,
+            2.7,
+            1.4
+          ],
+          "offset": [
+            -3.5,
+            1.6,
+            2.8
+          ],
+          "removable_part_id": "village/08/mara_home/west_infill/section_05"
+        },
+        {
+          "name": "EastInfill_Section_01",
+          "material": "plaster",
+          "size": [
+            0.18,
+            2.7,
+            1.4
+          ],
+          "offset": [
+            3.5,
+            1.6,
+            -2.8
+          ],
+          "removable_part_id": "village/08/mara_home/east_infill"
+        },
+        {
+          "name": "EastInfill_Section_02",
+          "material": "plaster",
+          "size": [
+            0.18,
+            2.7,
+            1.4
+          ],
+          "offset": [
+            3.5,
+            1.6,
+            -1.4
+          ],
+          "removable_part_id": "village/08/mara_home/east_infill/section_02"
+        },
+        {
+          "name": "EastInfill_Section_03",
+          "material": "plaster",
+          "size": [
+            0.18,
+            2.7,
+            1.4
+          ],
+          "offset": [
+            3.5,
+            1.6,
+            0
+          ],
+          "removable_part_id": "village/08/mara_home/east_infill/section_03"
+        },
+        {
+          "name": "EastInfill_Section_04",
+          "material": "plaster",
+          "size": [
+            0.18,
+            2.7,
+            1.4
+          ],
+          "offset": [
+            3.5,
+            1.6,
+            1.4
+          ],
+          "removable_part_id": "village/08/mara_home/east_infill/section_04"
+        },
+        {
+          "name": "EastInfill_Section_05",
+          "material": "plaster",
+          "size": [
+            0.18,
+            2.7,
+            1.4
+          ],
+          "offset": [
+            3.5,
+            1.6,
+            2.8
+          ],
+          "removable_part_id": "village/08/mara_home/east_infill/section_05"
+        },
+        {
+          "name": "FrontLeftPanel_Section_01",
+          "material": "plaster",
+          "size": [
+            0.91667,
+            2.7,
+            0.18
+          ],
+          "offset": [
+            -3.04167,
+            1.6,
+            3.5
+          ],
+          "removable_part_id": "village/08/mara_home/front_left_panel"
+        },
+        {
+          "name": "FrontLeftPanel_Section_02",
+          "material": "plaster",
+          "size": [
+            0.91667,
+            2.7,
+            0.18
+          ],
+          "offset": [
+            -2.125,
+            1.6,
+            3.5
+          ],
+          "removable_part_id": "village/08/mara_home/front_left_panel/section_02"
+        },
+        {
+          "name": "FrontLeftPanel_Section_03",
+          "material": "plaster",
+          "size": [
+            0.91667,
+            2.7,
+            0.18
+          ],
+          "offset": [
+            -1.20833,
+            1.6,
+            3.5
+          ],
+          "removable_part_id": "village/08/mara_home/front_left_panel/section_03"
+        },
+        {
+          "name": "FrontRightPanel_Section_01",
+          "material": "plaster",
+          "size": [
+            0.91667,
+            2.7,
+            0.18
+          ],
+          "offset": [
+            1.20833,
+            1.6,
+            3.5
+          ],
+          "removable_part_id": "village/08/mara_home/front_right_panel"
+        },
+        {
+          "name": "FrontRightPanel_Section_02",
+          "material": "plaster",
+          "size": [
+            0.91667,
+            2.7,
+            0.18
+          ],
+          "offset": [
+            2.125,
+            1.6,
+            3.5
+          ],
+          "removable_part_id": "village/08/mara_home/front_right_panel/section_02"
+        },
+        {
+          "name": "FrontRightPanel_Section_03",
+          "material": "plaster",
+          "size": [
+            0.91667,
+            2.7,
+            0.18
+          ],
+          "offset": [
+            3.04167,
+            1.6,
+            3.5
+          ],
+          "removable_part_id": "village/08/mara_home/front_right_panel/section_03"
+        },
+        {
+          "name": "LeftWallStud_Section_01",
+          "material": "wood_dark",
+          "size": [
+            0.2,
+            4,
+            1.4
+          ],
+          "offset": [
+            -3.5,
+            2,
+            -2.8
+          ],
+          "removable_part_id": "village/08/mara_home/left_wall_stud"
+        },
+        {
+          "name": "LeftWallStud_Section_02",
+          "material": "wood_dark",
+          "size": [
+            0.2,
+            4,
+            1.4
+          ],
+          "offset": [
+            -3.5,
+            2,
+            -1.4
+          ],
+          "removable_part_id": "village/08/mara_home/left_wall_stud/section_02"
+        },
+        {
+          "name": "LeftWallStud_Section_03",
+          "material": "wood_dark",
+          "size": [
+            0.2,
+            4,
+            1.4
+          ],
+          "offset": [
+            -3.5,
+            2,
+            0
+          ],
+          "removable_part_id": "village/08/mara_home/left_wall_stud/section_03"
+        },
+        {
+          "name": "LeftWallStud_Section_04",
+          "material": "wood_dark",
+          "size": [
+            0.2,
+            4,
+            1.4
+          ],
+          "offset": [
+            -3.5,
+            2,
+            1.4
+          ],
+          "removable_part_id": "village/08/mara_home/left_wall_stud/section_04"
+        },
+        {
+          "name": "LeftWallStud_Section_05",
+          "material": "wood_dark",
+          "size": [
+            0.2,
+            4,
+            1.4
+          ],
+          "offset": [
+            -3.5,
+            2,
+            2.8
+          ],
+          "removable_part_id": "village/08/mara_home/left_wall_stud/section_05"
+        },
+        {
+          "name": "RightWallStud_Section_01",
+          "material": "wood_dark",
+          "size": [
+            0.2,
+            4,
+            1.4
+          ],
+          "offset": [
+            3.5,
+            2,
+            -2.8
+          ],
+          "removable_part_id": "village/08/mara_home/right_wall_stud"
+        },
+        {
+          "name": "RightWallStud_Section_02",
+          "material": "wood_dark",
+          "size": [
+            0.2,
+            4,
+            1.4
+          ],
+          "offset": [
+            3.5,
+            2,
+            -1.4
+          ],
+          "removable_part_id": "village/08/mara_home/right_wall_stud/section_02"
+        },
+        {
+          "name": "RightWallStud_Section_03",
+          "material": "wood_dark",
+          "size": [
+            0.2,
+            4,
+            1.4
+          ],
+          "offset": [
+            3.5,
+            2,
+            0
+          ],
+          "removable_part_id": "village/08/mara_home/right_wall_stud/section_03"
+        },
+        {
+          "name": "RightWallStud_Section_04",
+          "material": "wood_dark",
+          "size": [
+            0.2,
+            4,
+            1.4
+          ],
+          "offset": [
+            3.5,
+            2,
+            1.4
+          ],
+          "removable_part_id": "village/08/mara_home/right_wall_stud/section_04"
+        },
+        {
+          "name": "RightWallStud_Section_05",
+          "material": "wood_dark",
+          "size": [
+            0.2,
+            4,
+            1.4
+          ],
+          "offset": [
+            3.5,
+            2,
+            2.8
+          ],
+          "removable_part_id": "village/08/mara_home/right_wall_stud/section_05"
+        },
+        {
+          "name": "LowRoofWest_Course_01",
+          "material": "roof",
+          "size": [
+            4.1,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            -1.75,
+            3.35,
+            -3.3
+          ],
+          "rotation": [
+            0,
+            0,
+            -23
+          ],
+          "removable_part_id": "village/08/mara_home/low_roof_west"
+        },
+        {
+          "name": "LowRoofWest_Course_02",
+          "material": "roof",
+          "size": [
+            4.1,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            -1.75,
+            3.35,
+            -2.2
+          ],
+          "rotation": [
+            0,
+            0,
+            -23
+          ],
+          "removable_part_id": "village/08/mara_home/low_roof_west/section_02"
+        },
+        {
+          "name": "LowRoofWest_Course_03",
+          "material": "roof",
+          "size": [
+            4.1,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            -1.75,
+            3.35,
+            -1.1
+          ],
+          "rotation": [
+            0,
+            0,
+            -23
+          ],
+          "removable_part_id": "village/08/mara_home/low_roof_west/section_03"
+        },
+        {
+          "name": "LowRoofWest_Course_04",
+          "material": "roof",
+          "size": [
+            4.1,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            -1.75,
+            3.35,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            -23
+          ],
+          "removable_part_id": "village/08/mara_home/low_roof_west/section_04"
+        },
+        {
+          "name": "LowRoofWest_Course_05",
+          "material": "roof",
+          "size": [
+            4.1,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            -1.75,
+            3.35,
+            1.1
+          ],
+          "rotation": [
+            0,
+            0,
+            -23
+          ],
+          "removable_part_id": "village/08/mara_home/low_roof_west/section_05"
+        },
+        {
+          "name": "LowRoofWest_Course_06",
+          "material": "roof",
+          "size": [
+            4.1,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            -1.75,
+            3.35,
+            2.2
+          ],
+          "rotation": [
+            0,
+            0,
+            -23
+          ],
+          "removable_part_id": "village/08/mara_home/low_roof_west/section_06"
+        },
+        {
+          "name": "LowRoofWest_Course_07",
+          "material": "roof",
+          "size": [
+            4.1,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            -1.75,
+            3.35,
+            3.3
+          ],
+          "rotation": [
+            0,
+            0,
+            -23
+          ],
+          "removable_part_id": "village/08/mara_home/low_roof_west/section_07"
+        },
+        {
+          "name": "LowRoofEast_Course_01",
+          "material": "roof",
+          "size": [
+            4.1,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            1.75,
+            3.35,
+            -3.3
+          ],
+          "rotation": [
+            0,
+            0,
+            23
+          ],
+          "removable_part_id": "village/08/mara_home/low_roof_east"
+        },
+        {
+          "name": "LowRoofEast_Course_02",
+          "material": "roof",
+          "size": [
+            4.1,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            1.75,
+            3.35,
+            -2.2
+          ],
+          "rotation": [
+            0,
+            0,
+            23
+          ],
+          "removable_part_id": "village/08/mara_home/low_roof_east/section_02"
+        },
+        {
+          "name": "LowRoofEast_Course_03",
+          "material": "roof",
+          "size": [
+            4.1,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            1.75,
+            3.35,
+            -1.1
+          ],
+          "rotation": [
+            0,
+            0,
+            23
+          ],
+          "removable_part_id": "village/08/mara_home/low_roof_east/section_03"
+        },
+        {
+          "name": "LowRoofEast_Course_04",
+          "material": "roof",
+          "size": [
+            4.1,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            1.75,
+            3.35,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            23
+          ],
+          "removable_part_id": "village/08/mara_home/low_roof_east/section_04"
+        },
+        {
+          "name": "LowRoofEast_Course_05",
+          "material": "roof",
+          "size": [
+            4.1,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            1.75,
+            3.35,
+            1.1
+          ],
+          "rotation": [
+            0,
+            0,
+            23
+          ],
+          "removable_part_id": "village/08/mara_home/low_roof_east/section_05"
+        },
+        {
+          "name": "LowRoofEast_Course_06",
+          "material": "roof",
+          "size": [
+            4.1,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            1.75,
+            3.35,
+            2.2
+          ],
+          "rotation": [
+            0,
+            0,
+            23
+          ],
+          "removable_part_id": "village/08/mara_home/low_roof_east/section_06"
+        },
+        {
+          "name": "LowRoofEast_Course_07",
+          "material": "roof",
+          "size": [
+            4.1,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            1.75,
+            3.35,
+            3.3
+          ],
+          "rotation": [
+            0,
+            0,
+            23
+          ],
+          "removable_part_id": "village/08/mara_home/low_roof_east/section_07"
+        }
+      ],
+      "has_removable_components": true
+    },
+    {
+      "id": "district/upper_cottage_cluster_study",
+      "site_id": "brinewick/site_12",
+      "step": 27,
+      "kind": "scenery",
+      "geometry": [
+        {
+          "name": "Foundation",
+          "material": "stone",
+          "size": [
+            6.6,
+            0.38,
+            5.6
+          ],
+          "offset": [
+            0,
+            0.19,
+            0
+          ]
+        },
+        {
+          "name": "RearInfill_Section_01",
+          "material": "plaster",
+          "size": [
+            1.5,
+            2.7,
+            0.18
+          ],
+          "offset": [
+            -2.25,
+            1.6,
+            -2.5
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/rear_infill"
+        },
+        {
+          "name": "RearInfill_Section_02",
+          "material": "plaster",
+          "size": [
+            1.5,
+            2.7,
+            0.18
+          ],
+          "offset": [
+            -0.75,
+            1.6,
+            -2.5
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/rear_infill/section_02"
+        },
+        {
+          "name": "RearInfill_Section_03",
+          "material": "plaster",
+          "size": [
+            1.5,
+            2.7,
+            0.18
+          ],
+          "offset": [
+            0.75,
+            1.6,
+            -2.5
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/rear_infill/section_03"
+        },
+        {
+          "name": "RearInfill_Section_04",
+          "material": "plaster",
+          "size": [
+            1.5,
+            2.7,
+            0.18
+          ],
+          "offset": [
+            2.25,
+            1.6,
+            -2.5
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/rear_infill/section_04"
+        },
+        {
+          "name": "WestInfill_Section_01",
+          "material": "plaster",
+          "size": [
+            0.18,
+            2.7,
+            1.25
+          ],
+          "offset": [
+            -3,
+            1.6,
+            -1.875
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/west_infill"
+        },
+        {
+          "name": "WestInfill_Section_02",
+          "material": "plaster",
+          "size": [
+            0.18,
+            2.7,
+            1.25
+          ],
+          "offset": [
+            -3,
+            1.6,
+            -0.625
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/west_infill/section_02"
+        },
+        {
+          "name": "WestInfill_Section_03",
+          "material": "plaster",
+          "size": [
+            0.18,
+            2.7,
+            1.25
+          ],
+          "offset": [
+            -3,
+            1.6,
+            0.625
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/west_infill/section_03"
+        },
+        {
+          "name": "WestInfill_Section_04",
+          "material": "plaster",
+          "size": [
+            0.18,
+            2.7,
+            1.25
+          ],
+          "offset": [
+            -3,
+            1.6,
+            1.875
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/west_infill/section_04"
+        },
+        {
+          "name": "EastInfill_Section_01",
+          "material": "plaster",
+          "size": [
+            0.18,
+            2.7,
+            1.25
+          ],
+          "offset": [
+            3,
+            1.6,
+            -1.875
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/east_infill"
+        },
+        {
+          "name": "EastInfill_Section_02",
+          "material": "plaster",
+          "size": [
+            0.18,
+            2.7,
+            1.25
+          ],
+          "offset": [
+            3,
+            1.6,
+            -0.625
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/east_infill/section_02"
+        },
+        {
+          "name": "EastInfill_Section_03",
+          "material": "plaster",
+          "size": [
+            0.18,
+            2.7,
+            1.25
+          ],
+          "offset": [
+            3,
+            1.6,
+            0.625
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/east_infill/section_03"
+        },
+        {
+          "name": "EastInfill_Section_04",
+          "material": "plaster",
+          "size": [
+            0.18,
+            2.7,
+            1.25
+          ],
+          "offset": [
+            3,
+            1.6,
+            1.875
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/east_infill/section_04"
+        },
+        {
+          "name": "FrontLeftPanel_Section_01",
+          "material": "plaster",
+          "size": [
+            2.25,
+            0.9,
+            0.18
+          ],
+          "offset": [
+            -1.875,
+            0.7,
+            2.5
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/front_left_panel"
+        },
+        {
+          "name": "FrontLeftPanel_Section_02",
+          "material": "plaster",
+          "size": [
+            2.25,
+            0.9,
+            0.18
+          ],
+          "offset": [
+            -1.875,
+            1.6,
+            2.5
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/front_left_panel/section_02"
+        },
+        {
+          "name": "FrontLeftPanel_Section_03",
+          "material": "plaster",
+          "size": [
+            2.25,
+            0.9,
+            0.18
+          ],
+          "offset": [
+            -1.875,
+            2.5,
+            2.5
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/front_left_panel/section_03"
+        },
+        {
+          "name": "FrontRightPanel_Section_01",
+          "material": "plaster",
+          "size": [
+            2.25,
+            0.9,
+            0.18
+          ],
+          "offset": [
+            1.875,
+            0.7,
+            2.5
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/front_right_panel"
+        },
+        {
+          "name": "FrontRightPanel_Section_02",
+          "material": "plaster",
+          "size": [
+            2.25,
+            0.9,
+            0.18
+          ],
+          "offset": [
+            1.875,
+            1.6,
+            2.5
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/front_right_panel/section_02"
+        },
+        {
+          "name": "FrontRightPanel_Section_03",
+          "material": "plaster",
+          "size": [
+            2.25,
+            0.9,
+            0.18
+          ],
+          "offset": [
+            1.875,
+            2.5,
+            2.5
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/front_right_panel/section_03"
+        },
+        {
+          "name": "LeftWallStud_Section_01",
+          "material": "wood_dark",
+          "size": [
+            0.2,
+            3.4,
+            1.25
+          ],
+          "offset": [
+            -3,
+            1.7,
+            -1.875
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/left_wall_stud"
+        },
+        {
+          "name": "LeftWallStud_Section_02",
+          "material": "wood_dark",
+          "size": [
+            0.2,
+            3.4,
+            1.25
+          ],
+          "offset": [
+            -3,
+            1.7,
+            -0.625
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/left_wall_stud/section_02"
+        },
+        {
+          "name": "LeftWallStud_Section_03",
+          "material": "wood_dark",
+          "size": [
+            0.2,
+            3.4,
+            1.25
+          ],
+          "offset": [
+            -3,
+            1.7,
+            0.625
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/left_wall_stud/section_03"
+        },
+        {
+          "name": "LeftWallStud_Section_04",
+          "material": "wood_dark",
+          "size": [
+            0.2,
+            3.4,
+            1.25
+          ],
+          "offset": [
+            -3,
+            1.7,
+            1.875
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/left_wall_stud/section_04"
+        },
+        {
+          "name": "RightWallStud_Section_01",
+          "material": "wood_dark",
+          "size": [
+            0.2,
+            3.4,
+            1.25
+          ],
+          "offset": [
+            3,
+            1.7,
+            -1.875
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/right_wall_stud"
+        },
+        {
+          "name": "RightWallStud_Section_02",
+          "material": "wood_dark",
+          "size": [
+            0.2,
+            3.4,
+            1.25
+          ],
+          "offset": [
+            3,
+            1.7,
+            -0.625
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/right_wall_stud/section_02"
+        },
+        {
+          "name": "RightWallStud_Section_03",
+          "material": "wood_dark",
+          "size": [
+            0.2,
+            3.4,
+            1.25
+          ],
+          "offset": [
+            3,
+            1.7,
+            0.625
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/right_wall_stud/section_03"
+        },
+        {
+          "name": "RightWallStud_Section_04",
+          "material": "wood_dark",
+          "size": [
+            0.2,
+            3.4,
+            1.25
+          ],
+          "offset": [
+            3,
+            1.7,
+            1.875
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/right_wall_stud/section_04"
+        },
+        {
+          "name": "LowRoofWest_Course_01",
+          "material": "roof",
+          "size": [
+            3.6,
+            0.2,
+            1.14
+          ],
+          "offset": [
+            -1.5,
+            3.35,
+            -2.28
+          ],
+          "rotation": [
+            0,
+            0,
+            -23
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/low_roof_west"
+        },
+        {
+          "name": "LowRoofWest_Course_02",
+          "material": "roof",
+          "size": [
+            3.6,
+            0.2,
+            1.14
+          ],
+          "offset": [
+            -1.5,
+            3.35,
+            -1.14
+          ],
+          "rotation": [
+            0,
+            0,
+            -23
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/low_roof_west/section_02"
+        },
+        {
+          "name": "LowRoofWest_Course_03",
+          "material": "roof",
+          "size": [
+            3.6,
+            0.2,
+            1.14
+          ],
+          "offset": [
+            -1.5,
+            3.35,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            -23
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/low_roof_west/section_03"
+        },
+        {
+          "name": "LowRoofWest_Course_04",
+          "material": "roof",
+          "size": [
+            3.6,
+            0.2,
+            1.14
+          ],
+          "offset": [
+            -1.5,
+            3.35,
+            1.14
+          ],
+          "rotation": [
+            0,
+            0,
+            -23
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/low_roof_west/section_04"
+        },
+        {
+          "name": "LowRoofWest_Course_05",
+          "material": "roof",
+          "size": [
+            3.6,
+            0.2,
+            1.14
+          ],
+          "offset": [
+            -1.5,
+            3.35,
+            2.28
+          ],
+          "rotation": [
+            0,
+            0,
+            -23
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/low_roof_west/section_05"
+        },
+        {
+          "name": "LowRoofEast_Course_01",
+          "material": "roof",
+          "size": [
+            3.6,
+            0.2,
+            1.14
+          ],
+          "offset": [
+            1.5,
+            3.35,
+            -2.28
+          ],
+          "rotation": [
+            0,
+            0,
+            23
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/low_roof_east"
+        },
+        {
+          "name": "LowRoofEast_Course_02",
+          "material": "roof",
+          "size": [
+            3.6,
+            0.2,
+            1.14
+          ],
+          "offset": [
+            1.5,
+            3.35,
+            -1.14
+          ],
+          "rotation": [
+            0,
+            0,
+            23
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/low_roof_east/section_02"
+        },
+        {
+          "name": "LowRoofEast_Course_03",
+          "material": "roof",
+          "size": [
+            3.6,
+            0.2,
+            1.14
+          ],
+          "offset": [
+            1.5,
+            3.35,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            23
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/low_roof_east/section_03"
+        },
+        {
+          "name": "LowRoofEast_Course_04",
+          "material": "roof",
+          "size": [
+            3.6,
+            0.2,
+            1.14
+          ],
+          "offset": [
+            1.5,
+            3.35,
+            1.14
+          ],
+          "rotation": [
+            0,
+            0,
+            23
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/low_roof_east/section_04"
+        },
+        {
+          "name": "LowRoofEast_Course_05",
+          "material": "roof",
+          "size": [
+            3.6,
+            0.2,
+            1.14
+          ],
+          "offset": [
+            1.5,
+            3.35,
+            2.28
+          ],
+          "rotation": [
+            0,
+            0,
+            23
+          ],
+          "removable_part_id": "village/12/upper_cottage_cluster_study/low_roof_east/section_05"
+        }
+      ],
+      "has_removable_components": true
+    },
+    {
+      "id": "craft/tomas_workshop",
+      "site_id": "brinewick/site_11",
+      "step": 28,
+      "kind": "scenery",
+      "geometry": [
+        {
+          "name": "WorkshopStonePlinth",
+          "material": "stone",
+          "size": [
+            8.4,
+            0.32,
+            7.5
+          ],
+          "offset": [
+            0,
+            0.16,
+            0
+          ]
+        },
+        {
+          "name": "WestTimberWall_Section_01",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            3.5,
+            1.42
+          ],
+          "offset": [
+            -4,
+            1.85,
+            -2.84
+          ],
+          "removable_part_id": "village/11/tomas_workshop/west_timber_wall"
+        },
+        {
+          "name": "WestTimberWall_Section_02",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            3.5,
+            1.42
+          ],
+          "offset": [
+            -4,
+            1.85,
+            -1.42
+          ],
+          "removable_part_id": "village/11/tomas_workshop/west_timber_wall/section_02"
+        },
+        {
+          "name": "WestTimberWall_Section_03",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            3.5,
+            1.42
+          ],
+          "offset": [
+            -4,
+            1.85,
+            0
+          ],
+          "removable_part_id": "village/11/tomas_workshop/west_timber_wall/section_03"
+        },
+        {
+          "name": "WestTimberWall_Section_04",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            3.5,
+            1.42
+          ],
+          "offset": [
+            -4,
+            1.85,
+            1.42
+          ],
+          "removable_part_id": "village/11/tomas_workshop/west_timber_wall/section_04"
+        },
+        {
+          "name": "WestTimberWall_Section_05",
+          "material": "wood_salt",
+          "size": [
+            0.25,
+            3.5,
+            1.42
+          ],
+          "offset": [
+            -4,
+            1.85,
+            2.84
+          ],
+          "removable_part_id": "village/11/tomas_workshop/west_timber_wall/section_05"
+        },
+        {
+          "name": "RearPlasterWall_Section_01",
+          "material": "plaster",
+          "size": [
+            1.6,
+            3.2,
+            0.2
+          ],
+          "offset": [
+            -3.2,
+            1.8,
+            -3.55
+          ],
+          "removable_part_id": "village/11/tomas_workshop/rear_plaster_wall"
+        },
+        {
+          "name": "RearPlasterWall_Section_02",
+          "material": "plaster",
+          "size": [
+            1.6,
+            3.2,
+            0.2
+          ],
+          "offset": [
+            -1.6,
+            1.8,
+            -3.55
+          ],
+          "removable_part_id": "village/11/tomas_workshop/rear_plaster_wall/section_02"
+        },
+        {
+          "name": "RearPlasterWall_Section_03",
+          "material": "plaster",
+          "size": [
+            1.6,
+            3.2,
+            0.2
+          ],
+          "offset": [
+            0,
+            1.8,
+            -3.55
+          ],
+          "removable_part_id": "village/11/tomas_workshop/rear_plaster_wall/section_03"
+        },
+        {
+          "name": "RearPlasterWall_Section_04",
+          "material": "plaster",
+          "size": [
+            1.6,
+            3.2,
+            0.2
+          ],
+          "offset": [
+            1.6,
+            1.8,
+            -3.55
+          ],
+          "removable_part_id": "village/11/tomas_workshop/rear_plaster_wall/section_04"
+        },
+        {
+          "name": "RearPlasterWall_Section_05",
+          "material": "plaster",
+          "size": [
+            1.6,
+            3.2,
+            0.2
+          ],
+          "offset": [
+            3.2,
+            1.8,
+            -3.55
+          ],
+          "removable_part_id": "village/11/tomas_workshop/rear_plaster_wall/section_05"
+        },
+        {
+          "name": "EasternFrame_Section_01",
+          "material": "wood_dark",
+          "size": [
+            0.25,
+            3.5,
+            1.42
+          ],
+          "offset": [
+            4,
+            1.85,
+            -2.84
+          ],
+          "removable_part_id": "village/11/tomas_workshop/eastern_frame"
+        },
+        {
+          "name": "EasternFrame_Section_02",
+          "material": "wood_dark",
+          "size": [
+            0.25,
+            3.5,
+            1.42
+          ],
+          "offset": [
+            4,
+            1.85,
+            -1.42
+          ],
+          "removable_part_id": "village/11/tomas_workshop/eastern_frame/section_02"
+        },
+        {
+          "name": "EasternFrame_Section_03",
+          "material": "wood_dark",
+          "size": [
+            0.25,
+            3.5,
+            1.42
+          ],
+          "offset": [
+            4,
+            1.85,
+            0
+          ],
+          "removable_part_id": "village/11/tomas_workshop/eastern_frame/section_03"
+        },
+        {
+          "name": "EasternFrame_Section_04",
+          "material": "wood_dark",
+          "size": [
+            0.25,
+            3.5,
+            1.42
+          ],
+          "offset": [
+            4,
+            1.85,
+            1.42
+          ],
+          "removable_part_id": "village/11/tomas_workshop/eastern_frame/section_04"
+        },
+        {
+          "name": "EasternFrame_Section_05",
+          "material": "wood_dark",
+          "size": [
+            0.25,
+            3.5,
+            1.42
+          ],
+          "offset": [
+            4,
+            1.85,
+            2.84
+          ],
+          "removable_part_id": "village/11/tomas_workshop/eastern_frame/section_05"
+        },
+        {
+          "name": "FrontPanelLeft_Section_01",
+          "material": "plaster",
+          "size": [
+            2.7,
+            0.93333,
+            0.2
+          ],
+          "offset": [
+            -2.55,
+            0.66667,
+            3.55
+          ],
+          "removable_part_id": "village/11/tomas_workshop/front_panel_left"
+        },
+        {
+          "name": "FrontPanelLeft_Section_02",
+          "material": "plaster",
+          "size": [
+            2.7,
+            0.93333,
+            0.2
+          ],
+          "offset": [
+            -2.55,
+            1.6,
+            3.55
+          ],
+          "removable_part_id": "village/11/tomas_workshop/front_panel_left/section_02"
+        },
+        {
+          "name": "FrontPanelLeft_Section_03",
+          "material": "plaster",
+          "size": [
+            2.7,
+            0.93333,
+            0.2
+          ],
+          "offset": [
+            -2.55,
+            2.53333,
+            3.55
+          ],
+          "removable_part_id": "village/11/tomas_workshop/front_panel_left/section_03"
+        },
+        {
+          "name": "FrontPanelRight_Section_01",
+          "material": "plaster",
+          "size": [
+            2.7,
+            0.93333,
+            0.2
+          ],
+          "offset": [
+            2.55,
+            0.66667,
+            3.55
+          ],
+          "removable_part_id": "village/11/tomas_workshop/front_panel_right"
+        },
+        {
+          "name": "FrontPanelRight_Section_02",
+          "material": "plaster",
+          "size": [
+            2.7,
+            0.93333,
+            0.2
+          ],
+          "offset": [
+            2.55,
+            1.6,
+            3.55
+          ],
+          "removable_part_id": "village/11/tomas_workshop/front_panel_right/section_02"
+        },
+        {
+          "name": "FrontPanelRight_Section_03",
+          "material": "plaster",
+          "size": [
+            2.7,
+            0.93333,
+            0.2
+          ],
+          "offset": [
+            2.55,
+            2.53333,
+            3.55
+          ],
+          "removable_part_id": "village/11/tomas_workshop/front_panel_right/section_03"
+        },
+        {
+          "name": "RaftersWest_Course_01",
+          "material": "roof",
+          "size": [
+            4.6,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            -2,
+            4.1,
+            -3.3
+          ],
+          "rotation": [
+            0,
+            0,
+            -22
+          ],
+          "removable_part_id": "village/11/tomas_workshop/rafters_west"
+        },
+        {
+          "name": "RaftersWest_Course_02",
+          "material": "roof",
+          "size": [
+            4.6,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            -2,
+            4.1,
+            -2.2
+          ],
+          "rotation": [
+            0,
+            0,
+            -22
+          ],
+          "removable_part_id": "village/11/tomas_workshop/rafters_west/section_02"
+        },
+        {
+          "name": "RaftersWest_Course_03",
+          "material": "roof",
+          "size": [
+            4.6,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            -2,
+            4.1,
+            -1.1
+          ],
+          "rotation": [
+            0,
+            0,
+            -22
+          ],
+          "removable_part_id": "village/11/tomas_workshop/rafters_west/section_03"
+        },
+        {
+          "name": "RaftersWest_Course_04",
+          "material": "roof",
+          "size": [
+            4.6,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            -2,
+            4.1,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            -22
+          ],
+          "removable_part_id": "village/11/tomas_workshop/rafters_west/section_04"
+        },
+        {
+          "name": "RaftersWest_Course_05",
+          "material": "roof",
+          "size": [
+            4.6,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            -2,
+            4.1,
+            1.1
+          ],
+          "rotation": [
+            0,
+            0,
+            -22
+          ],
+          "removable_part_id": "village/11/tomas_workshop/rafters_west/section_05"
+        },
+        {
+          "name": "RaftersWest_Course_06",
+          "material": "roof",
+          "size": [
+            4.6,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            -2,
+            4.1,
+            2.2
+          ],
+          "rotation": [
+            0,
+            0,
+            -22
+          ],
+          "removable_part_id": "village/11/tomas_workshop/rafters_west/section_06"
+        },
+        {
+          "name": "RaftersWest_Course_07",
+          "material": "roof",
+          "size": [
+            4.6,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            -2,
+            4.1,
+            3.3
+          ],
+          "rotation": [
+            0,
+            0,
+            -22
+          ],
+          "removable_part_id": "village/11/tomas_workshop/rafters_west/section_07"
+        },
+        {
+          "name": "RaftersEast_Course_01",
+          "material": "roof",
+          "size": [
+            4.6,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            2,
+            4.1,
+            -3.3
+          ],
+          "rotation": [
+            0,
+            0,
+            22
+          ],
+          "removable_part_id": "village/11/tomas_workshop/rafters_east"
+        },
+        {
+          "name": "RaftersEast_Course_02",
+          "material": "roof",
+          "size": [
+            4.6,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            2,
+            4.1,
+            -2.2
+          ],
+          "rotation": [
+            0,
+            0,
+            22
+          ],
+          "removable_part_id": "village/11/tomas_workshop/rafters_east/section_02"
+        },
+        {
+          "name": "RaftersEast_Course_03",
+          "material": "roof",
+          "size": [
+            4.6,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            2,
+            4.1,
+            -1.1
+          ],
+          "rotation": [
+            0,
+            0,
+            22
+          ],
+          "removable_part_id": "village/11/tomas_workshop/rafters_east/section_03"
+        },
+        {
+          "name": "RaftersEast_Course_04",
+          "material": "roof",
+          "size": [
+            4.6,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            2,
+            4.1,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            22
+          ],
+          "removable_part_id": "village/11/tomas_workshop/rafters_east/section_04"
+        },
+        {
+          "name": "RaftersEast_Course_05",
+          "material": "roof",
+          "size": [
+            4.6,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            2,
+            4.1,
+            1.1
+          ],
+          "rotation": [
+            0,
+            0,
+            22
+          ],
+          "removable_part_id": "village/11/tomas_workshop/rafters_east/section_05"
+        },
+        {
+          "name": "RaftersEast_Course_06",
+          "material": "roof",
+          "size": [
+            4.6,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            2,
+            4.1,
+            2.2
+          ],
+          "rotation": [
+            0,
+            0,
+            22
+          ],
+          "removable_part_id": "village/11/tomas_workshop/rafters_east/section_06"
+        },
+        {
+          "name": "RaftersEast_Course_07",
+          "material": "roof",
+          "size": [
+            4.6,
+            0.2,
+            1.1
+          ],
+          "offset": [
+            2,
+            4.1,
+            3.3
+          ],
+          "rotation": [
+            0,
+            0,
+            22
+          ],
+          "removable_part_id": "village/11/tomas_workshop/rafters_east/section_07"
+        },
+        {
+          "name": "RepairTrestleLeft_Section_01",
+          "material": "wood",
+          "size": [
+            0.86667,
+            0.82,
+            1.2
+          ],
+          "offset": [
+            -2.86667,
+            0.41,
+            -0.5
+          ],
+          "removable_part_id": "village/11/tomas_workshop/repair_trestle_left"
+        },
+        {
+          "name": "RepairTrestleLeft_Section_02",
+          "material": "wood",
+          "size": [
+            0.86667,
+            0.82,
+            1.2
+          ],
+          "offset": [
+            -2,
+            0.41,
+            -0.5
+          ],
+          "removable_part_id": "village/11/tomas_workshop/repair_trestle_left/section_02"
+        },
+        {
+          "name": "RepairTrestleLeft_Section_03",
+          "material": "wood",
+          "size": [
+            0.86667,
+            0.82,
+            1.2
+          ],
+          "offset": [
+            -1.13333,
+            0.41,
+            -0.5
+          ],
+          "removable_part_id": "village/11/tomas_workshop/repair_trestle_left/section_03"
+        },
+        {
+          "name": "ManualWorkbench_Section_01",
+          "material": "wood_dark",
+          "size": [
+            0.93333,
+            0.92,
+            1.2
+          ],
+          "offset": [
+            0.86667,
+            0.46,
+            -0.6
+          ],
+          "removable_part_id": "village/11/tomas_workshop/manual_workbench"
+        },
+        {
+          "name": "ManualWorkbench_Section_02",
+          "material": "wood_dark",
+          "size": [
+            0.93333,
+            0.92,
+            1.2
+          ],
+          "offset": [
+            1.8,
+            0.46,
+            -0.6
+          ],
+          "removable_part_id": "village/11/tomas_workshop/manual_workbench/section_02"
+        },
+        {
+          "name": "ManualWorkbench_Section_03",
+          "material": "wood_dark",
+          "size": [
+            0.93333,
+            0.92,
+            1.2
+          ],
+          "offset": [
+            2.73333,
+            0.46,
+            -0.6
+          ],
+          "removable_part_id": "village/11/tomas_workshop/manual_workbench/section_03"
+        },
+        {
+          "name": "ToolsCacheShelf",
+          "material": "wood_salt",
+          "size": [
+            1.6,
+            1.1,
+            0.55
+          ],
+          "offset": [
+            0,
+            0.55,
+            2.55
+          ],
+          "removable_part_id": "village/11/tomas_workshop/tools_cache_shelf"
+        }
+      ],
+      "has_removable_components": true
+    },
+    {
+      "id": "discovery/workshop_hammer",
+      "site_id": "brinewick/site_11",
+      "step": 28,
+      "kind": "tool_pickup",
+      "tool_id": "claw_hammer",
+      "pickup_offset": [
+        0,
+        1.25,
+        2.5
+      ],
+      "geometry": []
+    },
+    {
+      "id": "harbour/office",
+      "site_id": "brinewick/site_03",
+      "step": 29,
+      "kind": "scenery",
+      "geometry": [
+        {
+          "name": "OfficeStoneFootprint",
+          "material": "stone",
+          "size": [
+            7.4,
+            0.35,
+            6.9
+          ],
+          "offset": [
+            0,
+            0.17,
+            0
+          ]
+        },
+        {
+          "name": "LowerWeatherboardRear_Section_01",
+          "material": "wood_salt",
+          "size": [
+            1.4,
+            2.7,
+            0.2
+          ],
+          "offset": [
+            -2.8,
+            1.55,
+            -3.3
+          ],
+          "removable_part_id": "village/03/office/lower_weatherboard_rear"
+        },
+        {
+          "name": "LowerWeatherboardRear_Section_02",
+          "material": "wood_salt",
+          "size": [
+            1.4,
+            2.7,
+            0.2
+          ],
+          "offset": [
+            -1.4,
+            1.55,
+            -3.3
+          ],
+          "removable_part_id": "village/03/office/lower_weatherboard_rear/section_02"
+        },
+        {
+          "name": "LowerWeatherboardRear_Section_03",
+          "material": "wood_salt",
+          "size": [
+            1.4,
+            2.7,
+            0.2
+          ],
+          "offset": [
+            0,
+            1.55,
+            -3.3
+          ],
+          "removable_part_id": "village/03/office/lower_weatherboard_rear/section_03"
+        },
+        {
+          "name": "LowerWeatherboardRear_Section_04",
+          "material": "wood_salt",
+          "size": [
+            1.4,
+            2.7,
+            0.2
+          ],
+          "offset": [
+            1.4,
+            1.55,
+            -3.3
+          ],
+          "removable_part_id": "village/03/office/lower_weatherboard_rear/section_04"
+        },
+        {
+          "name": "LowerWeatherboardRear_Section_05",
+          "material": "wood_salt",
+          "size": [
+            1.4,
+            2.7,
+            0.2
+          ],
+          "offset": [
+            2.8,
+            1.55,
+            -3.3
+          ],
+          "removable_part_id": "village/03/office/lower_weatherboard_rear/section_05"
+        },
+        {
+          "name": "LowerWeatherboardWest_Section_01",
+          "material": "wood_salt",
+          "size": [
+            0.2,
+            2.7,
+            1.625
+          ],
+          "offset": [
+            -3.5,
+            1.55,
+            -2.4375
+          ],
+          "removable_part_id": "village/03/office/lower_weatherboard_west"
+        },
+        {
+          "name": "LowerWeatherboardWest_Section_02",
+          "material": "wood_salt",
+          "size": [
+            0.2,
+            2.7,
+            1.625
+          ],
+          "offset": [
+            -3.5,
+            1.55,
+            -0.8125
+          ],
+          "removable_part_id": "village/03/office/lower_weatherboard_west/section_02"
+        },
+        {
+          "name": "LowerWeatherboardWest_Section_03",
+          "material": "wood_salt",
+          "size": [
+            0.2,
+            2.7,
+            1.625
+          ],
+          "offset": [
+            -3.5,
+            1.55,
+            0.8125
+          ],
+          "removable_part_id": "village/03/office/lower_weatherboard_west/section_03"
+        },
+        {
+          "name": "LowerWeatherboardWest_Section_04",
+          "material": "wood_salt",
+          "size": [
+            0.2,
+            2.7,
+            1.625
+          ],
+          "offset": [
+            -3.5,
+            1.55,
+            2.4375
+          ],
+          "removable_part_id": "village/03/office/lower_weatherboard_west/section_04"
+        },
+        {
+          "name": "LowerWeatherboardEast_Section_01",
+          "material": "wood",
+          "size": [
+            0.2,
+            2.7,
+            1.625
+          ],
+          "offset": [
+            3.5,
+            1.55,
+            -2.4375
+          ],
+          "removable_part_id": "village/03/office/lower_weatherboard_east"
+        },
+        {
+          "name": "LowerWeatherboardEast_Section_02",
+          "material": "wood",
+          "size": [
+            0.2,
+            2.7,
+            1.625
+          ],
+          "offset": [
+            3.5,
+            1.55,
+            -0.8125
+          ],
+          "removable_part_id": "village/03/office/lower_weatherboard_east/section_02"
+        },
+        {
+          "name": "LowerWeatherboardEast_Section_03",
+          "material": "wood",
+          "size": [
+            0.2,
+            2.7,
+            1.625
+          ],
+          "offset": [
+            3.5,
+            1.55,
+            0.8125
+          ],
+          "removable_part_id": "village/03/office/lower_weatherboard_east/section_03"
+        },
+        {
+          "name": "LowerWeatherboardEast_Section_04",
+          "material": "wood",
+          "size": [
+            0.2,
+            2.7,
+            1.625
+          ],
+          "offset": [
+            3.5,
+            1.55,
+            2.4375
+          ],
+          "removable_part_id": "village/03/office/lower_weatherboard_east/section_04"
+        },
+        {
+          "name": "LedgerRoomFrontLeft_Section_01",
+          "material": "plaster",
+          "size": [
+            0.83333,
+            2.5,
+            0.2
+          ],
+          "offset": [
+            -3.03333,
+            1.5,
+            3.3
+          ],
+          "removable_part_id": "village/03/office/ledger_room_front_left"
+        },
+        {
+          "name": "LedgerRoomFrontLeft_Section_02",
+          "material": "plaster",
+          "size": [
+            0.83333,
+            2.5,
+            0.2
+          ],
+          "offset": [
+            -2.2,
+            1.5,
+            3.3
+          ],
+          "removable_part_id": "village/03/office/ledger_room_front_left/section_02"
+        },
+        {
+          "name": "LedgerRoomFrontLeft_Section_03",
+          "material": "plaster",
+          "size": [
+            0.83333,
+            2.5,
+            0.2
+          ],
+          "offset": [
+            -1.36667,
+            1.5,
+            3.3
+          ],
+          "removable_part_id": "village/03/office/ledger_room_front_left/section_03"
+        },
+        {
+          "name": "LedgerRoomFrontRight_Section_01",
+          "material": "plaster",
+          "size": [
+            0.83333,
+            2.5,
+            0.2
+          ],
+          "offset": [
+            1.36667,
+            1.5,
+            3.3
+          ],
+          "removable_part_id": "village/03/office/ledger_room_front_right"
+        },
+        {
+          "name": "LedgerRoomFrontRight_Section_02",
+          "material": "plaster",
+          "size": [
+            0.83333,
+            2.5,
+            0.2
+          ],
+          "offset": [
+            2.2,
+            1.5,
+            3.3
+          ],
+          "removable_part_id": "village/03/office/ledger_room_front_right/section_02"
+        },
+        {
+          "name": "LedgerRoomFrontRight_Section_03",
+          "material": "plaster",
+          "size": [
+            0.83333,
+            2.5,
+            0.2
+          ],
+          "offset": [
+            3.03333,
+            1.5,
+            3.3
+          ],
+          "removable_part_id": "village/03/office/ledger_room_front_right/section_03"
+        },
+        {
+          "name": "RoofSlopeEast_Course_01",
+          "material": "roof",
+          "size": [
+            4,
+            0.2,
+            1.2
+          ],
+          "offset": [
+            1.6,
+            3.45,
+            -3
+          ],
+          "rotation": [
+            0,
+            0,
+            23
+          ],
+          "removable_part_id": "village/03/office/roof_slope_east"
+        },
+        {
+          "name": "RoofSlopeEast_Course_02",
+          "material": "roof",
+          "size": [
+            4,
+            0.2,
+            1.2
+          ],
+          "offset": [
+            1.6,
+            3.45,
+            -1.8
+          ],
+          "rotation": [
+            0,
+            0,
+            23
+          ],
+          "removable_part_id": "village/03/office/roof_slope_east/section_02"
+        },
+        {
+          "name": "RoofSlopeEast_Course_03",
+          "material": "roof",
+          "size": [
+            4,
+            0.2,
+            1.2
+          ],
+          "offset": [
+            1.6,
+            3.45,
+            -0.6
+          ],
+          "rotation": [
+            0,
+            0,
+            23
+          ],
+          "removable_part_id": "village/03/office/roof_slope_east/section_03"
+        },
+        {
+          "name": "RoofSlopeEast_Course_04",
+          "material": "roof",
+          "size": [
+            4,
+            0.2,
+            1.2
+          ],
+          "offset": [
+            1.6,
+            3.45,
+            0.6
+          ],
+          "rotation": [
+            0,
+            0,
+            23
+          ],
+          "removable_part_id": "village/03/office/roof_slope_east/section_04"
+        },
+        {
+          "name": "RoofSlopeEast_Course_05",
+          "material": "roof",
+          "size": [
+            4,
+            0.2,
+            1.2
+          ],
+          "offset": [
+            1.6,
+            3.45,
+            1.8
+          ],
+          "rotation": [
+            0,
+            0,
+            23
+          ],
+          "removable_part_id": "village/03/office/roof_slope_east/section_05"
+        },
+        {
+          "name": "RoofSlopeEast_Course_06",
+          "material": "roof",
+          "size": [
+            4,
+            0.2,
+            1.2
+          ],
+          "offset": [
+            1.6,
+            3.45,
+            3
+          ],
+          "rotation": [
+            0,
+            0,
+            23
+          ],
+          "removable_part_id": "village/03/office/roof_slope_east/section_06"
+        },
+        {
+          "name": "RoofSlopeWest_Course_01",
+          "material": "roof",
+          "size": [
+            4,
+            0.2,
+            1.2
+          ],
+          "offset": [
+            -1.6,
+            3.45,
+            -3
+          ],
+          "rotation": [
+            0,
+            0,
+            -23
+          ],
+          "removable_part_id": "village/03/office/roof_slope_west"
+        },
+        {
+          "name": "RoofSlopeWest_Course_02",
+          "material": "roof",
+          "size": [
+            4,
+            0.2,
+            1.2
+          ],
+          "offset": [
+            -1.6,
+            3.45,
+            -1.8
+          ],
+          "rotation": [
+            0,
+            0,
+            -23
+          ],
+          "removable_part_id": "village/03/office/roof_slope_west/section_02"
+        },
+        {
+          "name": "RoofSlopeWest_Course_03",
+          "material": "roof",
+          "size": [
+            4,
+            0.2,
+            1.2
+          ],
+          "offset": [
+            -1.6,
+            3.45,
+            -0.6
+          ],
+          "rotation": [
+            0,
+            0,
+            -23
+          ],
+          "removable_part_id": "village/03/office/roof_slope_west/section_03"
+        },
+        {
+          "name": "RoofSlopeWest_Course_04",
+          "material": "roof",
+          "size": [
+            4,
+            0.2,
+            1.2
+          ],
+          "offset": [
+            -1.6,
+            3.45,
+            0.6
+          ],
+          "rotation": [
+            0,
+            0,
+            -23
+          ],
+          "removable_part_id": "village/03/office/roof_slope_west/section_04"
+        },
+        {
+          "name": "RoofSlopeWest_Course_05",
+          "material": "roof",
+          "size": [
+            4,
+            0.2,
+            1.2
+          ],
+          "offset": [
+            -1.6,
+            3.45,
+            1.8
+          ],
+          "rotation": [
+            0,
+            0,
+            -23
+          ],
+          "removable_part_id": "village/03/office/roof_slope_west/section_05"
+        },
+        {
+          "name": "RoofSlopeWest_Course_06",
+          "material": "roof",
+          "size": [
+            4,
+            0.2,
+            1.2
+          ],
+          "offset": [
+            -1.6,
+            3.45,
+            3
+          ],
+          "rotation": [
+            0,
+            0,
+            -23
+          ],
+          "removable_part_id": "village/03/office/roof_slope_west/section_06"
+        },
+        {
+          "name": "PaperworkDesk",
+          "material": "wood_dark",
+          "size": [
+            2.3,
+            0.85,
+            1
+          ],
+          "offset": [
+            0.5,
+            0.42,
+            -1.5
+          ],
+          "removable_part_id": "village/03/office/paperwork_desk"
+        }
+      ],
+      "has_removable_components": true
+    },
+    {
+      "id": "harbour/net_store",
+      "site_id": "brinewick/site_06",
+      "step": 29,
+      "kind": "scenery",
+      "geometry": [
+        {
+          "name": "StoreDeck",
+          "material": "wood_salt",
+          "size": [
+            7.2,
+            0.26,
+            6.5
+          ],
+          "offset": [
+            0,
+            0.15,
+            0
+          ]
+        },
+        {
+          "name": "NetDryingFrameLeft_Section_01",
+          "material": "wood_dark",
+          "size": [
+            0.24,
+            3.2,
+            1.525
+          ],
+          "offset": [
+            -3.3,
+            1.65,
+            -2.2875
+          ],
+          "removable_part_id": "village/06/net_store/net_drying_frame_left"
+        },
+        {
+          "name": "NetDryingFrameLeft_Section_02",
+          "material": "wood_dark",
+          "size": [
+            0.24,
+            3.2,
+            1.525
+          ],
+          "offset": [
+            -3.3,
+            1.65,
+            -0.7625
+          ],
+          "removable_part_id": "village/06/net_store/net_drying_frame_left/section_02"
+        },
+        {
+          "name": "NetDryingFrameLeft_Section_03",
+          "material": "wood_dark",
+          "size": [
+            0.24,
+            3.2,
+            1.525
+          ],
+          "offset": [
+            -3.3,
+            1.65,
+            0.7625
+          ],
+          "removable_part_id": "village/06/net_store/net_drying_frame_left/section_03"
+        },
+        {
+          "name": "NetDryingFrameLeft_Section_04",
+          "material": "wood_dark",
+          "size": [
+            0.24,
+            3.2,
+            1.525
+          ],
+          "offset": [
+            -3.3,
+            1.65,
+            2.2875
+          ],
+          "removable_part_id": "village/06/net_store/net_drying_frame_left/section_04"
+        },
+        {
+          "name": "NetDryingFrameRight_Section_01",
+          "material": "wood_dark",
+          "size": [
+            0.24,
+            3.2,
+            1.525
+          ],
+          "offset": [
+            3.3,
+            1.65,
+            -2.2875
+          ],
+          "removable_part_id": "village/06/net_store/net_drying_frame_right"
+        },
+        {
+          "name": "NetDryingFrameRight_Section_02",
+          "material": "wood_dark",
+          "size": [
+            0.24,
+            3.2,
+            1.525
+          ],
+          "offset": [
+            3.3,
+            1.65,
+            -0.7625
+          ],
+          "removable_part_id": "village/06/net_store/net_drying_frame_right/section_02"
+        },
+        {
+          "name": "NetDryingFrameRight_Section_03",
+          "material": "wood_dark",
+          "size": [
+            0.24,
+            3.2,
+            1.525
+          ],
+          "offset": [
+            3.3,
+            1.65,
+            0.7625
+          ],
+          "removable_part_id": "village/06/net_store/net_drying_frame_right/section_03"
+        },
+        {
+          "name": "NetDryingFrameRight_Section_04",
+          "material": "wood_dark",
+          "size": [
+            0.24,
+            3.2,
+            1.525
+          ],
+          "offset": [
+            3.3,
+            1.65,
+            2.2875
+          ],
+          "removable_part_id": "village/06/net_store/net_drying_frame_right/section_04"
+        },
+        {
+          "name": "BackWeatherboard_Section_01",
+          "material": "wood",
+          "size": [
+            1.34,
+            2.8,
+            0.2
+          ],
+          "offset": [
+            -2.68,
+            1.5,
+            -2.9
+          ],
+          "removable_part_id": "village/06/net_store/back_weatherboard"
+        },
+        {
+          "name": "BackWeatherboard_Section_02",
+          "material": "wood",
+          "size": [
+            1.34,
+            2.8,
+            0.2
+          ],
+          "offset": [
+            -1.34,
+            1.5,
+            -2.9
+          ],
+          "removable_part_id": "village/06/net_store/back_weatherboard/section_02"
+        },
+        {
+          "name": "BackWeatherboard_Section_03",
+          "material": "wood",
+          "size": [
+            1.34,
+            2.8,
+            0.2
+          ],
+          "offset": [
+            0,
+            1.5,
+            -2.9
+          ],
+          "removable_part_id": "village/06/net_store/back_weatherboard/section_03"
+        },
+        {
+          "name": "BackWeatherboard_Section_04",
+          "material": "wood",
+          "size": [
+            1.34,
+            2.8,
+            0.2
+          ],
+          "offset": [
+            1.34,
+            1.5,
+            -2.9
+          ],
+          "removable_part_id": "village/06/net_store/back_weatherboard/section_04"
+        },
+        {
+          "name": "BackWeatherboard_Section_05",
+          "material": "wood",
+          "size": [
+            1.34,
+            2.8,
+            0.2
+          ],
+          "offset": [
+            2.68,
+            1.5,
+            -2.9
+          ],
+          "removable_part_id": "village/06/net_store/back_weatherboard/section_05"
+        },
+        {
+          "name": "FrontRailLeft",
+          "material": "wood",
+          "size": [
+            2.4,
+            1.4,
+            0.2
+          ],
+          "offset": [
+            -2.2,
+            0.8,
+            3
+          ],
+          "removable_part_id": "village/06/net_store/front_rail_left"
+        },
+        {
+          "name": "FrontRailRight",
+          "material": "wood",
+          "size": [
+            2.4,
+            1.4,
+            0.2
+          ],
+          "offset": [
+            2.2,
+            0.8,
+            3
+          ],
+          "removable_part_id": "village/06/net_store/front_rail_right"
+        },
+        {
+          "name": "SaltedRoofWest_Course_01",
+          "material": "roof",
+          "size": [
+            3.8,
+            0.22,
+            1.1
+          ],
+          "offset": [
+            -1.6,
+            3.55,
+            -2.75
+          ],
+          "rotation": [
+            0,
+            0,
+            -18
+          ],
+          "removable_part_id": "village/06/net_store/salted_roof_west"
+        },
+        {
+          "name": "SaltedRoofWest_Course_02",
+          "material": "roof",
+          "size": [
+            3.8,
+            0.22,
+            1.1
+          ],
+          "offset": [
+            -1.6,
+            3.55,
+            -1.65
+          ],
+          "rotation": [
+            0,
+            0,
+            -18
+          ],
+          "removable_part_id": "village/06/net_store/salted_roof_west/section_02"
+        },
+        {
+          "name": "SaltedRoofWest_Course_03",
+          "material": "roof",
+          "size": [
+            3.8,
+            0.22,
+            1.1
+          ],
+          "offset": [
+            -1.6,
+            3.55,
+            -0.55
+          ],
+          "rotation": [
+            0,
+            0,
+            -18
+          ],
+          "removable_part_id": "village/06/net_store/salted_roof_west/section_03"
+        },
+        {
+          "name": "SaltedRoofWest_Course_04",
+          "material": "roof",
+          "size": [
+            3.8,
+            0.22,
+            1.1
+          ],
+          "offset": [
+            -1.6,
+            3.55,
+            0.55
+          ],
+          "rotation": [
+            0,
+            0,
+            -18
+          ],
+          "removable_part_id": "village/06/net_store/salted_roof_west/section_04"
+        },
+        {
+          "name": "SaltedRoofWest_Course_05",
+          "material": "roof",
+          "size": [
+            3.8,
+            0.22,
+            1.1
+          ],
+          "offset": [
+            -1.6,
+            3.55,
+            1.65
+          ],
+          "rotation": [
+            0,
+            0,
+            -18
+          ],
+          "removable_part_id": "village/06/net_store/salted_roof_west/section_05"
+        },
+        {
+          "name": "SaltedRoofWest_Course_06",
+          "material": "roof",
+          "size": [
+            3.8,
+            0.22,
+            1.1
+          ],
+          "offset": [
+            -1.6,
+            3.55,
+            2.75
+          ],
+          "rotation": [
+            0,
+            0,
+            -18
+          ],
+          "removable_part_id": "village/06/net_store/salted_roof_west/section_06"
+        },
+        {
+          "name": "SaltedRoofEast_Course_01",
+          "material": "roof",
+          "size": [
+            3.8,
+            0.22,
+            1.1
+          ],
+          "offset": [
+            1.6,
+            3.55,
+            -2.75
+          ],
+          "rotation": [
+            0,
+            0,
+            18
+          ],
+          "removable_part_id": "village/06/net_store/salted_roof_east"
+        },
+        {
+          "name": "SaltedRoofEast_Course_02",
+          "material": "roof",
+          "size": [
+            3.8,
+            0.22,
+            1.1
+          ],
+          "offset": [
+            1.6,
+            3.55,
+            -1.65
+          ],
+          "rotation": [
+            0,
+            0,
+            18
+          ],
+          "removable_part_id": "village/06/net_store/salted_roof_east/section_02"
+        },
+        {
+          "name": "SaltedRoofEast_Course_03",
+          "material": "roof",
+          "size": [
+            3.8,
+            0.22,
+            1.1
+          ],
+          "offset": [
+            1.6,
+            3.55,
+            -0.55
+          ],
+          "rotation": [
+            0,
+            0,
+            18
+          ],
+          "removable_part_id": "village/06/net_store/salted_roof_east/section_03"
+        },
+        {
+          "name": "SaltedRoofEast_Course_04",
+          "material": "roof",
+          "size": [
+            3.8,
+            0.22,
+            1.1
+          ],
+          "offset": [
+            1.6,
+            3.55,
+            0.55
+          ],
+          "rotation": [
+            0,
+            0,
+            18
+          ],
+          "removable_part_id": "village/06/net_store/salted_roof_east/section_04"
+        },
+        {
+          "name": "SaltedRoofEast_Course_05",
+          "material": "roof",
+          "size": [
+            3.8,
+            0.22,
+            1.1
+          ],
+          "offset": [
+            1.6,
+            3.55,
+            1.65
+          ],
+          "rotation": [
+            0,
+            0,
+            18
+          ],
+          "removable_part_id": "village/06/net_store/salted_roof_east/section_05"
+        },
+        {
+          "name": "SaltedRoofEast_Course_06",
+          "material": "roof",
+          "size": [
+            3.8,
+            0.22,
+            1.1
+          ],
+          "offset": [
+            1.6,
+            3.55,
+            2.75
+          ],
+          "rotation": [
+            0,
+            0,
+            18
+          ],
+          "removable_part_id": "village/06/net_store/salted_roof_east/section_06"
+        },
+        {
+          "name": "NetRack",
+          "material": "rope",
+          "size": [
+            3.5,
+            0.11,
+            0.22
+          ],
+          "offset": [
+            -0.4,
+            1.7,
+            0
+          ],
+          "removable_part_id": "village/06/net_store/net_rack"
+        }
+      ],
+      "has_removable_components": true
+    },
+    {
+      "id": "harbour/navigation_light",
+      "site_id": "brinewick/site_16",
+      "step": 29,
+      "kind": "navigation_light",
+      "geometry": [
+        {
+          "name": "OldLightStoneBase",
+          "material": "stone",
+          "size": [
+            6,
+            1.2,
+            6
+          ],
+          "offset": [
+            0,
+            0.6,
+            0
+          ]
+        },
+        {
+          "name": "WestLightPier",
+          "material": "stone",
+          "size": [
+            0.9,
+            8.3,
+            0.9
+          ],
+          "offset": [
+            -2,
+            5.1,
+            0
+          ]
+        },
+        {
+          "name": "EastLightPier",
+          "material": "stone",
+          "size": [
+            0.9,
+            8.3,
+            0.9
+          ],
+          "offset": [
+            2,
+            5.1,
+            0
+          ]
+        },
+        {
+          "name": "NorthLightPier",
+          "material": "stone",
+          "size": [
+            0.9,
+            8.3,
+            0.9
+          ],
+          "offset": [
+            0,
+            5.1,
+            -2
+          ]
+        },
+        {
+          "name": "SouthLightPier",
+          "material": "stone",
+          "size": [
+            0.9,
+            8.3,
+            0.9
+          ],
+          "offset": [
+            0,
+            5.1,
+            2
+          ]
+        },
+        {
+          "name": "UpperLanternGallery",
+          "material": "wood_salt",
+          "size": [
+            5.1,
+            0.4,
+            5.1
+          ],
+          "offset": [
+            0,
+            9.5,
+            0
+          ]
+        },
+        {
+          "name": "LanternPostW",
+          "material": "wood_dark",
+          "size": [
+            0.2,
+            2.1,
+            0.2
+          ],
+          "offset": [
+            -1.9,
+            10.7,
+            0
+          ]
+        },
+        {
+          "name": "LanternPostE",
+          "material": "wood_dark",
+          "size": [
+            0.2,
+            2.1,
+            0.2
+          ],
+          "offset": [
+            1.9,
+            10.7,
+            0
+          ]
+        },
+        {
+          "name": "LanternCowl",
+          "material": "roof",
+          "size": [
+            5.2,
+            0.25,
+            5.2
+          ],
+          "offset": [
+            0,
+            12,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapel/ordinary_hall",
+      "site_id": "brinewick/site_13",
+      "step": 30,
+      "kind": "scenery",
+      "protected_story": true,
+      "geometry": [
+        {
+          "name": "ChapelIrregularFooting",
+          "material": "stone",
+          "size": [
+            12.8,
+            0.55,
+            10.4
+          ],
+          "offset": [
+            0,
+            0.275,
+            0
+          ]
+        },
+        {
+          "name": "WestMasonrySpine",
+          "material": "stone",
+          "size": [
+            0.8,
+            5.6,
+            9.6
+          ],
+          "offset": [
+            -6.1,
+            3,
+            0
+          ]
+        },
+        {
+          "name": "EastMasonrySpine",
+          "material": "stone",
+          "size": [
+            0.8,
+            5.6,
+            9.6
+          ],
+          "offset": [
+            6.1,
+            3,
+            0
+          ]
+        },
+        {
+          "name": "NorthEndMasonry",
+          "material": "stone",
+          "size": [
+            12.5,
+            5.8,
+            0.8
+          ],
+          "offset": [
+            0,
+            3,
+            -4.75
+          ]
+        },
+        {
+          "name": "SouthEntranceWest",
+          "material": "stone",
+          "size": [
+            4.6,
+            5.6,
+            0.7
+          ],
+          "offset": [
+            -3.95,
+            3,
+            4.75
+          ]
+        },
+        {
+          "name": "SouthEntranceEast",
+          "material": "stone",
+          "size": [
+            4.6,
+            5.6,
+            0.7
+          ],
+          "offset": [
+            3.95,
+            3,
+            4.75
+          ]
+        },
+        {
+          "name": "FrontDoorLintel",
+          "material": "stone",
+          "size": [
+            3,
+            0.65,
+            0.7
+          ],
+          "offset": [
+            0,
+            5.5,
+            4.75
+          ]
+        },
+        {
+          "name": "SlateWest",
+          "material": "roof",
+          "size": [
+            7,
+            0.3,
+            10.9
+          ],
+          "offset": [
+            -3,
+            6.65,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            -24
+          ]
+        },
+        {
+          "name": "SlateEast",
+          "material": "roof",
+          "size": [
+            7,
+            0.3,
+            10.9
+          ],
+          "offset": [
+            3,
+            6.65,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            24
+          ]
+        },
+        {
+          "name": "SimpleTeachingBench",
+          "material": "wood_salt",
+          "size": [
+            3,
+            0.48,
+            0.65
+          ],
+          "offset": [
+            -2,
+            0.75,
+            0
+          ]
+        },
+        {
+          "name": "CommunalBench",
+          "material": "wood",
+          "size": [
+            3,
+            0.48,
+            0.65
+          ],
+          "offset": [
+            2,
+            0.75,
+            0
+          ]
+        },
+        {
+          "name": "SimpleAltarTable",
+          "material": "wood_dark",
+          "size": [
+            2,
+            1,
+            0.92
+          ],
+          "offset": [
+            0,
+            0.5,
+            -3.3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapel/schoolroom_wing",
+      "site_id": "brinewick/site_13",
+      "step": 30,
+      "kind": "scenery",
+      "protected_story": true,
+      "geometry": [
+        {
+          "name": "SchoolroomFooting",
+          "material": "stone",
+          "size": [
+            5.4,
+            0.36,
+            5
+          ],
+          "offset": [
+            8.8,
+            0.18,
+            7.9
+          ]
+        },
+        {
+          "name": "SchoolWallWest",
+          "material": "plaster",
+          "size": [
+            0.2,
+            2.9,
+            5
+          ],
+          "offset": [
+            6.2,
+            1.6,
+            7.9
+          ]
+        },
+        {
+          "name": "SchoolWallEast",
+          "material": "plaster",
+          "size": [
+            0.2,
+            2.9,
+            5
+          ],
+          "offset": [
+            11.4,
+            1.6,
+            7.9
+          ]
+        },
+        {
+          "name": "SchoolRear",
+          "material": "plaster",
+          "size": [
+            5.4,
+            2.9,
+            0.2
+          ],
+          "offset": [
+            8.8,
+            1.6,
+            5.4
+          ]
+        },
+        {
+          "name": "SchoolEntryLeft",
+          "material": "wood",
+          "size": [
+            1.8,
+            2.9,
+            0.2
+          ],
+          "offset": [
+            6.9,
+            1.6,
+            10.4
+          ]
+        },
+        {
+          "name": "SchoolEntryRight",
+          "material": "wood",
+          "size": [
+            1.8,
+            2.9,
+            0.2
+          ],
+          "offset": [
+            10.7,
+            1.6,
+            10.4
+          ]
+        },
+        {
+          "name": "SchoolRoof",
+          "material": "roof",
+          "size": [
+            6.3,
+            0.25,
+            5.7
+          ],
+          "offset": [
+            8.8,
+            3.4,
+            7.9
+          ]
+        },
+        {
+          "name": "CopyingDesk",
+          "material": "wood_salt",
+          "size": [
+            1.4,
+            0.8,
+            0.9
+          ],
+          "offset": [
+            8.4,
+            0.4,
+            7.1
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapel/aldren_study",
+      "site_id": "brinewick/site_14",
+      "step": 30,
+      "kind": "scenery",
+      "protected_story": true,
+      "geometry": [
+        {
+          "name": "ProtectedStudyFooting",
+          "material": "stone",
+          "size": [
+            6.2,
+            0.4,
+            5.8
+          ],
+          "offset": [
+            0,
+            0.2,
+            0
+          ]
+        },
+        {
+          "name": "StudyBack",
+          "material": "stone",
+          "size": [
+            6,
+            3.2,
+            0.3
+          ],
+          "offset": [
+            0,
+            1.8,
+            -2.7
+          ]
+        },
+        {
+          "name": "StudyWest",
+          "material": "plaster",
+          "size": [
+            0.25,
+            3.1,
+            5.4
+          ],
+          "offset": [
+            -2.9,
+            1.7,
+            0
+          ]
+        },
+        {
+          "name": "StudyEast",
+          "material": "plaster",
+          "size": [
+            0.25,
+            3.1,
+            5.4
+          ],
+          "offset": [
+            2.9,
+            1.7,
+            0
+          ]
+        },
+        {
+          "name": "StudyDoorLeft",
+          "material": "wood",
+          "size": [
+            2.1,
+            3.1,
+            0.24
+          ],
+          "offset": [
+            -1.95,
+            1.7,
+            2.7
+          ]
+        },
+        {
+          "name": "StudyDoorRight",
+          "material": "wood",
+          "size": [
+            0.9,
+            3.1,
+            0.24
+          ],
+          "offset": [
+            2.45,
+            1.7,
+            2.7
+          ]
+        },
+        {
+          "name": "StudySlate",
+          "material": "roof",
+          "size": [
+            6.6,
+            0.24,
+            6.2
+          ],
+          "offset": [
+            0,
+            3.5,
+            0
+          ]
+        },
+        {
+          "name": "RecordDesk",
+          "material": "wood_dark",
+          "size": [
+            1.8,
+            0.95,
+            0.8
+          ],
+          "offset": [
+            1.1,
+            0.48,
+            -1.1
+          ]
+        },
+        {
+          "name": "ShelvedDocuments",
+          "material": "wood_salt",
+          "size": [
+            0.4,
+            2.1,
+            2.4
+          ],
+          "offset": [
+            -2.3,
+            1.2,
+            -1
+          ]
+        },
+        {
+          "name": "UndercroftThresholdLintel",
+          "material": "stone",
+          "size": [
+            3.2,
+            0.3,
+            0.44
+          ],
+          "offset": [
+            1.06,
+            3.15,
+            2.72
+          ]
+        }
+      ]
+    }
+  ],
+  "world_discoveries": [
+    {
+      "tool_id": "crowbar",
+      "site_id": "brinewick/site_06",
+      "offset": [
+        0,
+        1.18,
+        2.38
+      ],
+      "minimum_act": 2,
+      "label": "Crowbar lodged behind net store"
+    },
+    {
+      "tool_id": "pickaxe",
+      "site_id": "brinewick/site_18",
+      "offset": [
+        0,
+        1.15,
+        4.3
+      ],
+      "minimum_act": 2,
+      "label": "Pickaxe at mine approach"
+    },
+    {
+      "tool_id": "saw",
+      "site_id": "brinewick/site_19",
+      "offset": [
+        0,
+        1.16,
+        4.2
+      ],
+      "minimum_act": 3,
+      "label": "Timber saw near mine office"
+    }
+  ],
+  "world_story_clues": [
+    {
+      "flag_id": "bell_first_strike",
+      "site_id": "brinewick/site_15",
+      "offset": [
+        0,
+        1.1,
+        3.2
+      ],
+      "minimum_act": 1,
+      "kind": "encounter",
+      "label": "Old bell strike lever",
+      "text": "The lever pulls farther than it should. A distant church bell gives one hollow answer across the empty roofs, although nobody stands at its ropes. Nothing appears on the lanes below. The silence after the note is longer than the sound itself."
+    },
+    {
+      "flag_id": "mine_voice_heard",
+      "site_id": "brinewick/site_18",
+      "offset": [
+        -2.1,
+        1.1,
+        4.3
+      ],
+      "minimum_act": 2,
+      "kind": "discover",
+      "label": "Listening fissure at mine entrance",
+      "text": "At the outer listening crack, a human voice can be heard through stone. Its words are almost recognizable, and its pauses suggest it is waiting for someone to answer. The inner threshold remains sealed. Nothing can be seen beyond it."
+    }
+  ]
+}

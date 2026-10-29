@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "status": "PROVISIONAL_BLOCKOUT_NOT_APPROVED_FOOTPRINTS",
+  "scale": "metres_Y_up",
+  "concept": "medium coastal village B / two harbour terraces / winding cart road",
+  "sites": [
+    {
+      "id": "brinewick/site_01",
+      "name": "Quay / landing",
+      "position": [
+        -33,
+        1.2,
+        10
+      ],
+      "zone": "quay",
+      "unapproved_footprint": true
+    },
+    {
+      "id": "brinewick/site_02",
+      "name": "Boatyard / contract base",
+      "position": [
+        -18,
+        2,
+        18
+      ],
+      "zone": "lower",
+      "unapproved_footprint": true
+    },
+    {
+      "id": "brinewick/site_03",
+      "name": "Harbour office",
+      "position": [
+        5,
+        2,
+        22
+      ],
+      "zone": "lower",
+      "unapproved_footprint": true
+    },
+    {
+      "id": "brinewick/site_04",
+      "name": "Old warehouse",
+      "position": [
+        18,
+        2,
+        30
+      ],
+      "zone": "lower",
+      "unapproved_footprint": true
+    },
+    {
+      "id": "brinewick/site_05",
+      "name": "Expanded warehouse",
+      "position": [
+        22,
+        2,
+        -30
+      ],
+      "zone": "lower",
+      "unapproved_footprint": true
+    },
+    {
+      "id": "brinewick/site_06",
+      "name": "Fishing net store",
+      "position": [
+        -12,
+        2,
+        -22
+      ],
+      "zone": "lower",
+      "unapproved_footprint": true
+    },
+    {
+      "id": "brinewick/site_07",
+      "name": "Lower terrace cottages",
+      "position": [
+        35,
+        2,
+        24
+      ],
+      "zone": "lower",
+      "unapproved_footprint": true
+    },
+    {
+      "id": "brinewick/site_08",
+      "name": "Mara home",
+      "position": [
+        35,
+        2,
+        -24
+      ],
+      "zone": "lower",
+      "unapproved_footprint": true
+    },
+    {
+      "id": "brinewick/site_09",
+      "name": "Well and square",
+      "position": [
+        79,
+        8,
+        -20
+      ],
+      "zone": "upper",
+      "unapproved_footprint": true
+    },
+    {
+      "id": "brinewick/site_10",
+      "name": "Inn / gathering house",
+      "position": [
+        70,
+        8,
+        24
+      ],
+      "zone": "upper",
+      "unapproved_footprint": true
+    },
+    {
+      "id": "brinewick/site_11",
+      "name": "Tomas workshop",
+      "position": [
+        90,
+        8,
+        24
+      ],
+      "zone": "upper",
+      "unapproved_footprint": true
+    },
+    {
+      "id": "brinewick/site_12",
+      "name": "Upper terrace cottages",
+      "position": [
+        100,
+        8,
+        -24
+      ],
+      "zone": "upper",
+      "unapproved_footprint": true
+    },
+    {
+      "id": "brinewick/site_13",
+      "name": "Headland chapel",
+      "position": [
+        139,
+        13,
+        -25
+      ],
+      "zone": "headland",
+      "unapproved_footprint": true
+    },
+    {
+      "id": "brinewick/site_14",
+      "name": "Aldren study / undercroft",
+      "position": [
+        127,
+        13,
+        -17
+      ],
+      "zone": "headland",
+      "unapproved_footprint": true
+    },
+    {
+      "id": "brinewick/site_15",
+      "name": "Harbour bell house",
+      "position": [
+        111,
+        8,
+        24
+      ],
+      "zone": "upper",
+      "unapproved_footprint": true
+    },
+    {
+      "id": "brinewick/site_16",
+      "name": "Navigation light",
+      "position": [
+        157,
+        13,
+        24
+      ],
+      "zone": "headland",
+      "unapproved_footprint": true
+    },
+    {
+      "id": "brinewick/site_17",
+      "name": "Tidal bell mechanism",
+      "position": [
+        153,
+        13,
+        34
+      ],
+      "zone": "headland",
+      "unapproved_footprint": true
+    },
+    {
+      "id": "brinewick/site_18",
+      "name": "Mine entrance / inner seal",
+      "position": [
+        161,
+        13,
+        -24
+      ],
+      "zone": "headland",
+      "unapproved_footprint": true
+    },
+    {
+      "id": "brinewick/site_19",
+      "name": "Mine office and gear",
+      "position": [
+        157,
+        13,
+        -9
+      ],
+      "zone": "headland",
+      "unapproved_footprint": true
+    },
+    {
+      "id": "brinewick/site_20",
+      "name": "Old drainage outlet",
+      "position": [
+        -29,
+        1.2,
+        -31
+      ],
+      "zone": "quay",
+      "unapproved_footprint": true
+    },
+    {
+      "id": "brinewick/site_21",
+      "name": "Escape berth",
+      "position": [
+        -36,
+        1.2,
+        32
+      ],
+      "zone": "quay",
+      "unapproved_footprint": true
+    }
+  ]
+}

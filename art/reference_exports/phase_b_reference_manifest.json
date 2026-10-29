@@ -1,0 +1,16 @@
+{
+  "format": "glTF 2.0 GLB",
+  "role": "Supplemental offline preview, not gameplay import",
+  "base_source_sha": "3f605237ee3d016c36689f5b58cafd4473203d08",
+  "node_count": 5,
+  "meshes": [
+    "IrregularFacetedFoundationStone",
+    "ChamferedHewnOakPost",
+    "ShapedOverlappedSlate_00",
+    "ShapedOverlappedSlate_01",
+    "ShapedOverlappedSlate_02"
+  ],
+  "unit": "metre",
+  "up": "Y",
+  "editable_generator": "tools/generate_phase_b_reference_glb.py"
+}
