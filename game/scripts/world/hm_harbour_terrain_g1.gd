@@ -254,6 +254,25 @@ static func _route_mesh() -> ArrayMesh:
 			var shade := Color("89806b") * (0.95+0.045*sin(float(i)*3.0+float(s)))
 			_tri(st,a,b,c,shade)
 			_tri(st,a,c,d,shade.darkened(0.035))
+			# Embedded gravel shoulders descend into the SAME sculpted soil
+			# mesh; the track is not an unsupported zero-thickness strip.
+			# Skirts are visual-only, since the separate route and terrain
+			# colliders already carry the walk and its adjacent embankment.
+			var foot_a := Vector3(a.x,lower_height(a.x,a.z)-0.022,a.z)
+			var foot_b := Vector3(b.x,lower_height(b.x,b.z)-0.022,b.z)
+			var foot_c := Vector3(c.x,lower_height(c.x,c.z)-0.022,c.z)
+			var foot_d := Vector3(d.x,lower_height(d.x,d.z)-0.022,d.z)
+			var grit := Color("756f5f")*(0.92+0.04*sin(float(i)*1.9+float(s)))
+			_tri(st,a,d,foot_d,grit)
+			_tri(st,a,foot_d,foot_a,grit.darkened(0.06))
+			_tri(st,b,foot_b,foot_c,grit.darkened(0.11))
+			_tri(st,b,foot_c,c,grit)
+			if i == 0 and s == 0:
+				_tri(st,a,foot_a,foot_b,grit.darkened(0.10))
+				_tri(st,a,foot_b,b,grit.darkened(0.04))
+			if i == points.size()-2 and s == 3:
+				_tri(st,d,c,foot_c,grit)
+				_tri(st,d,foot_c,foot_d,grit.darkened(0.08))
 	return st.commit()
 
 static func _route_collision() -> PackedVector3Array:
