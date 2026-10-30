@@ -182,6 +182,11 @@ def _slate_slope(builder, center_x, rotation):
     # Two independent matching roof slopes, owned by one existing roof ID.
     # The original parent collision still governs player interaction.
     cx, cy = center_x, 3.24
+    # An opaque, part-owned weathered timber sarking plane keeps rain/sky
+    # from showing between overlapped tiles. It is dismantled with the
+    # identical canonical slate_patch owner; never creates new collision.
+    builder.box((cx,cy-.075,0.0),(2.68,.095,4.98),
+                "dark_oak",angle=rotation,bevel=.008)
     for rz in range(12):
         for rx in range(8):
             u0 = -1.325 + (rx+.5)*2.65/8
