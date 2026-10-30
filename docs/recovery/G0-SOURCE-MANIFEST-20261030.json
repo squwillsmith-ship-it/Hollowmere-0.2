@@ -1,0 +1,1334 @@
+{
+  "format": "hollowmere-g0-source-manifest-v1",
+  "created_at": "2026-10-30",
+  "source_repository": "squwillsmith-ship-it/Hollowmere-0.2",
+  "source_commit": "eddeaef2f92edffc5954b41ccf46ba0847d6955f",
+  "source_tree_sha": "d63029396662b3029201dc289da15b16755f0d74",
+  "recovery_branch": "recovery/g0-art-candidate-eddeaef2-20261030",
+  "tested_parent_commit": "45bb1eabd4c6f189aaa08649a7e9a7810f6a57a9",
+  "exact_source_relationship": "direct child of tested source; only .github/workflows/hollowmere-art-oneshot-20261029.yml removed",
+  "acceptance": {
+    "source_structure": "G0 verified",
+    "godot": "inherited from tested parent identical game/test blobs",
+    "visual": "not accepted",
+    "windows_gui": "unverified"
+  },
+  "blob_count": 219,
+  "total_blob_bytes": 3716742,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "mode": "100644",
+      "blob": "a503a5d3d559736050b630c8ecd762c30006e039",
+      "size": 173
+    },
+    {
+      "path": ".github/workflows/hollowmere-manual-qa.yml",
+      "mode": "100644",
+      "blob": "f8b6e76ee833cceff3797b381415c63384995ce7",
+      "size": 4465
+    },
+    {
+      "path": ".github/workflows/hollowmere-manual-windows-export.yml",
+      "mode": "100644",
+      "blob": "4c6290c9ce069dd201a492efcb221039d57b56dd",
+      "size": 3270
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "blob": "ce99c4ab8c672ced4c680cc573b4cef506504ca2",
+      "size": 242
+    },
+    {
+      "path": "art/material_sources/phase_b_surfaces.json",
+      "mode": "100644",
+      "blob": "7029f1672d040a9f5dac704b487db813a64850d6",
+      "size": 610
+    },
+    {
+      "path": "art/material_sources/step21_materials.json",
+      "mode": "100644",
+      "blob": "82c6bc8310224731cb23b947267fe83a1d35e66e",
+      "size": 737
+    },
+    {
+      "path": "art/reference_exports/hollowmere_phase_b_surface_modules_reference.glb",
+      "mode": "100644",
+      "blob": "20ea2664fb74b4e346055780ec740d4b3237c4d1",
+      "size": 5096
+    },
+    {
+      "path": "art/reference_exports/phase_b_reference_manifest.json",
+      "mode": "100644",
+      "blob": "c97bf61f295b3e9d5427d4c8cac200515981d3c7",
+      "size": 458
+    },
+    {
+      "path": "docs/MANUAL-QA-GUIDE.md",
+      "mode": "100644",
+      "blob": "dceae1840a2b65d119fed6160f14d8f68eb1e293",
+      "size": 1504
+    },
+    {
+      "path": "docs/NONVISUAL-QA-20261029.md",
+      "mode": "100644",
+      "blob": "edfc5b4dc1694d43aef0b0596ff2e2a85230703d",
+      "size": 4074
+    },
+    {
+      "path": "docs/PLAYER-README.txt",
+      "mode": "100644",
+      "blob": "8e3c75eed9ce9e3899f5cfa41b41ffac212af019",
+      "size": 1998
+    },
+    {
+      "path": "docs/SOURCE-PROVENANCE.md",
+      "mode": "100644",
+      "blob": "e5cf8cf78213701fef0bf6a19918eb20d0e30e6a",
+      "size": 3119
+    },
+    {
+      "path": "docs/TEST-ENVIRONMENT.md",
+      "mode": "100644",
+      "blob": "2313c9ff2d40fab7d181817ee627affa30738eaf",
+      "size": 3172
+    },
+    {
+      "path": "docs/THIRD-PARTY-NOTICES.txt",
+      "mode": "100644",
+      "blob": "908078d490ecf0b6fdbeac1ad0362c8c6767d51f",
+      "size": 101351
+    },
+    {
+      "path": "docs/TOOLCHAIN-LOCK.json",
+      "mode": "100644",
+      "blob": "6cd43b1b1fc408cad0feba327a7d068548013aba",
+      "size": 749
+    },
+    {
+      "path": "docs/VISUAL-QA-20261029.md",
+      "mode": "100644",
+      "blob": "1af90ca8049da2e8f9d09c296274b4662edea841",
+      "size": 8368
+    },
+    {
+      "path": "engine-version.txt",
+      "mode": "100644",
+      "blob": "207d58144365080a454a2150b9a0fb480e6a6936",
+      "size": 13
+    },
+    {
+      "path": "game/assets/.gitkeep",
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "game/assets/materials/phase_b/deck_albedo.png",
+      "mode": "100644",
+      "blob": "f955ac01b7534016494262a032b3599eedab7532",
+      "size": 73245
+    },
+    {
+      "path": "game/assets/materials/phase_b/deck_roughness.png",
+      "mode": "100644",
+      "blob": "e31f01ab6acb472474098f348f6e77f1e2a20378",
+      "size": 21897
+    },
+    {
+      "path": "game/assets/materials/phase_b/lime_albedo.png",
+      "mode": "100644",
+      "blob": "883c1a5377fd523abb6fc4a0f4df37bf06a239d9",
+      "size": 55437
+    },
+    {
+      "path": "game/assets/materials/phase_b/lime_roughness.png",
+      "mode": "100644",
+      "blob": "6e456a201935a485d5fc5701b41ea841834644fd",
+      "size": 22014
+    },
+    {
+      "path": "game/assets/materials/phase_b/phase_b_surface_contact.png",
+      "mode": "100644",
+      "blob": "3fb2e8f46ffc5f2246da89bdec830e72edbd51bb",
+      "size": 362690
+    },
+    {
+      "path": "game/assets/materials/phase_b/slate_albedo.png",
+      "mode": "100644",
+      "blob": "059300d9e8bb05ee656706d27ca9e3e739c442ee",
+      "size": 71868
+    },
+    {
+      "path": "game/assets/materials/phase_b/slate_roughness.png",
+      "mode": "100644",
+      "blob": "b44808d8654346e7b7bd5dc14c37fc671dbd2f83",
+      "size": 22541
+    },
+    {
+      "path": "game/assets/materials/phase_b/stone_albedo.png",
+      "mode": "100644",
+      "blob": "331cb38e2ff4ef794acb4016bc61c3c55b608a39",
+      "size": 68680
+    },
+    {
+      "path": "game/assets/materials/phase_b/stone_roughness.png",
+      "mode": "100644",
+      "blob": "1662f61dc6532585d2d992843a12298c08f940bc",
+      "size": 21645
+    },
+    {
+      "path": "game/assets/materials/phase_b/timber_albedo.png",
+      "mode": "100644",
+      "blob": "e824aae890d219318cda0284c8da630105ac6d7a",
+      "size": 68936
+    },
+    {
+      "path": "game/assets/materials/phase_b/timber_roughness.png",
+      "mode": "100644",
+      "blob": "a270c83fd65b1a6d44005e4bb19abc8140c37c23",
+      "size": 21576
+    },
+    {
+      "path": "game/assets/materials/step21/aged_timber_albedo.png",
+      "mode": "100644",
+      "blob": "838820f2590f23bffd2348e65ec515201a7f610f",
+      "size": 61168
+    },
+    {
+      "path": "game/assets/materials/step21/aged_timber_roughness.png",
+      "mode": "100644",
+      "blob": "103446caec3ae31d332464b79bc521816e3bdf09",
+      "size": 38375
+    },
+    {
+      "path": "game/assets/materials/step21/cream_infill_albedo.png",
+      "mode": "100644",
+      "blob": "4f32ae48ca4aafd651e983e6a9b6d85631225d0b",
+      "size": 50812
+    },
+    {
+      "path": "game/assets/materials/step21/cream_infill_roughness.png",
+      "mode": "100644",
+      "blob": "fa10c35c83a75403fc853526e368546da4801ada",
+      "size": 15669
+    },
+    {
+      "path": "game/assets/materials/step21/dark_timber_albedo.png",
+      "mode": "100644",
+      "blob": "6d8c6c528a9682a547a6212f3c871f43d71ecb9a",
+      "size": 58062
+    },
+    {
+      "path": "game/assets/materials/step21/dark_timber_roughness.png",
+      "mode": "100644",
+      "blob": "b40de231f038beeae2b76768774aec466646cf05",
+      "size": 38114
+    },
+    {
+      "path": "game/assets/materials/step21/patched_infill_albedo.png",
+      "mode": "100644",
+      "blob": "8a99717d139dfbbc44ab13061fdb19a4a181844b",
+      "size": 51981
+    },
+    {
+      "path": "game/assets/materials/step21/patched_infill_roughness.png",
+      "mode": "100644",
+      "blob": "2d15ba5f3494202f4b76360d8e84cbc7758339e4",
+      "size": 15878
+    },
+    {
+      "path": "game/assets/materials/step21/salt_grey_timber_albedo.png",
+      "mode": "100644",
+      "blob": "2674af66bf51f45a7586ba35b5d1b69f3d80d558",
+      "size": 58997
+    },
+    {
+      "path": "game/assets/materials/step21/salt_grey_timber_roughness.png",
+      "mode": "100644",
+      "blob": "cd29451671fefc34bb70908400e0bd495c7090f9",
+      "size": 38235
+    },
+    {
+      "path": "game/assets/materials/step21/step21_contact_sheet.png",
+      "mode": "100644",
+      "blob": "cbb98f736a21d8e3ecd4bd7b7641b763bcd11f30",
+      "size": 355540
+    },
+    {
+      "path": "game/assets/materials/step21/step21_material_swatches.glb",
+      "mode": "100644",
+      "blob": "f4f8dc7d2528925e8ee56ffbeac36c0b13521cdb",
+      "size": 658972
+    },
+    {
+      "path": "game/assets/materials/step21/weathered_timber_albedo.png",
+      "mode": "100644",
+      "blob": "c21c5c1f9ac55604bcd5dac586c8ccb6b4dcec23",
+      "size": 62597
+    },
+    {
+      "path": "game/assets/materials/step21/weathered_timber_roughness.png",
+      "mode": "100644",
+      "blob": "ae59c076774faf9ec72f29cdde3fa9e7609d8395",
+      "size": 38617
+    },
+    {
+      "path": "game/data/v1/brinewick_district_builds.json",
+      "mode": "100644",
+      "blob": "e0ba57ac42683de503c92b48d758acb77c525ae8",
+      "size": 131941
+    },
+    {
+      "path": "game/data/v1/brinewick_step25_blockout.json",
+      "mode": "100644",
+      "blob": "9aa8e0a97de0ab02758c00ee0888bfc01c8d0571",
+      "size": 4520
+    },
+    {
+      "path": "game/data/v1/buildings/cottage_working_01.json",
+      "mode": "100644",
+      "blob": "ae039d939ee2a1b2a379ebc6bdfd5596eb87b387",
+      "size": 9901
+    },
+    {
+      "path": "game/data/v1/campaign_sites.json",
+      "mode": "100644",
+      "blob": "eb1f345c569f92d82e602e1954a49f1209bc83a4",
+      "size": 6413
+    },
+    {
+      "path": "game/data/v1/landmark_parts.json",
+      "mode": "100644",
+      "blob": "2f66a070205de42584c651e2e1485cfe20c0dfb7",
+      "size": 39804
+    },
+    {
+      "path": "game/data/v1/locations.json",
+      "mode": "100644",
+      "blob": "2a10397b40faf7d433da1ce9f2ad842980e3e18e",
+      "size": 4664
+    },
+    {
+      "path": "game/data/v1/materials.json",
+      "mode": "100644",
+      "blob": "1cac0cc23155ef35c42df3e9a4d3657fc583f724",
+      "size": 1552
+    },
+    {
+      "path": "game/data/v1/requisitions.json",
+      "mode": "100644",
+      "blob": "5ee181199f58d53c41ab3af9c42752cfd248dd2d",
+      "size": 1803
+    },
+    {
+      "path": "game/data/v1/sample_parts.json",
+      "mode": "100644",
+      "blob": "33c80fafa7b78b46e5eab06ac94d4f4814df7ace",
+      "size": 191361
+    },
+    {
+      "path": "game/data/v1/story.json",
+      "mode": "100644",
+      "blob": "d428a85ed3448e56d260fa4faf1f27d6ab9b3c76",
+      "size": 3150
+    },
+    {
+      "path": "game/data/v1/tools.json",
+      "mode": "100644",
+      "blob": "8931bb4e5fa5fb8ea7203e589b90f2715dcdf55c",
+      "size": 1592
+    },
+    {
+      "path": "game/data/v1/upgrades.json",
+      "mode": "100644",
+      "blob": "82e0aa69361676691f3d5790543f3010553e0cab",
+      "size": 2115
+    },
+    {
+      "path": "game/data/v1/visual_reference_index.json",
+      "mode": "100644",
+      "blob": "7407cd560cd29d9077a3514274eae612d618bd9d",
+      "size": 41549
+    },
+    {
+      "path": "game/export_presets.cfg",
+      "mode": "100644",
+      "blob": "2658a06f0e60226c78eb962e76bb012ab6ae365b",
+      "size": 831
+    },
+    {
+      "path": "game/project.godot",
+      "mode": "100644",
+      "blob": "cb0999d3702708438ab14f11a4c27b6d4ee4259a",
+      "size": 794
+    },
+    {
+      "path": "game/scenes/brinewick_blockout.tscn",
+      "mode": "100644",
+      "blob": "e8c30327edb3791df6d09763fbfbaf77b209fc55",
+      "size": 201
+    },
+    {
+      "path": "game/scenes/main.tscn",
+      "mode": "100644",
+      "blob": "a856e345a9100e895a90f88ca646d0f777554769",
+      "size": 163
+    },
+    {
+      "path": "game/scenes/player.tscn",
+      "mode": "100644",
+      "blob": "ea75d5a19eec1085ed4ffee4936eabd7845d1b34",
+      "size": 640
+    },
+    {
+      "path": "game/scripts/buildings/hm_architectural_detail.gd",
+      "mode": "100644",
+      "blob": "2539cb8f83acee0fd83fe132a20def54833d15e3",
+      "size": 14109
+    },
+    {
+      "path": "game/scripts/buildings/hm_building_prefab.gd",
+      "mode": "100644",
+      "blob": "abc53b08852375e8409d1b30140513980e4f9a2b",
+      "size": 9660
+    },
+    {
+      "path": "game/scripts/buildings/hm_masonry_roof_meshes.gd",
+      "mode": "100644",
+      "blob": "aad74c080958161a8dd5460c0043e36347056223",
+      "size": 3372
+    },
+    {
+      "path": "game/scripts/buildings/hm_material_library.gd",
+      "mode": "100644",
+      "blob": "0d95877401a783f795c4670d106085f07476902f",
+      "size": 1451
+    },
+    {
+      "path": "game/scripts/buildings/hm_phase_b_materials.gd",
+      "mode": "100644",
+      "blob": "0f9e138a9186d19867aa15487001115d9633c8e7",
+      "size": 1742
+    },
+    {
+      "path": "game/scripts/data/hm_campaign_rules.gd",
+      "mode": "100644",
+      "blob": "d914cf0dea5d72583d2e328bb0c880d3e47e6a68",
+      "size": 5357
+    },
+    {
+      "path": "game/scripts/data/hm_catalog.gd",
+      "mode": "100644",
+      "blob": "c88dd90505de58df25d7394a49ce3019465ff8bd",
+      "size": 2939
+    },
+    {
+      "path": "game/scripts/data/hm_contract_ledger.gd",
+      "mode": "100644",
+      "blob": "3ff122542555f6bd9f71daf78733b3562c660782",
+      "size": 3554
+    },
+    {
+      "path": "game/scripts/data/hm_ledger.gd",
+      "mode": "100644",
+      "blob": "a847c1d181dedd5505e21c2f177248b67c4d94af",
+      "size": 5103
+    },
+    {
+      "path": "game/scripts/data/hm_rules.gd",
+      "mode": "100644",
+      "blob": "419322f6a9a0c41bc973effc8d5ef5fc838abde9",
+      "size": 3941
+    },
+    {
+      "path": "game/scripts/data/hm_schema.gd",
+      "mode": "100644",
+      "blob": "29aa5afede4b7e33194cf2de2ba9ea6df0a7bf6c",
+      "size": 9718
+    },
+    {
+      "path": "game/scripts/data/hm_support_graph.gd",
+      "mode": "100644",
+      "blob": "0c5c4f142943671e84c13fe4185a80a816d715a6",
+      "size": 2782
+    },
+    {
+      "path": "game/scripts/interaction/hm_inspect_target.gd",
+      "mode": "100644",
+      "blob": "83799ddcab4cc80d5dae63a9344b0eed19f16abe",
+      "size": 294
+    },
+    {
+      "path": "game/scripts/interaction/hm_inspection_rules.gd",
+      "mode": "100644",
+      "blob": "eda4d354f322ffc2882545e059cfbdc10c851473",
+      "size": 4134
+    },
+    {
+      "path": "game/scripts/interaction/hm_inspector.gd",
+      "mode": "100644",
+      "blob": "bb0f526063c2dfbbe9a9f66fe6f964fb48560489",
+      "size": 7836
+    },
+    {
+      "path": "game/scripts/interaction/hm_part_lifecycle.gd",
+      "mode": "100644",
+      "blob": "d7b8279ef66fac38517585df3ae45cca5f74d378",
+      "size": 5863
+    },
+    {
+      "path": "game/scripts/interaction/hm_recovered_output.gd",
+      "mode": "100644",
+      "blob": "8e2c2a0d1a9e900809ed915805910c38283aa97a",
+      "size": 283
+    },
+    {
+      "path": "game/scripts/interaction/hm_salvage_logistics.gd",
+      "mode": "100644",
+      "blob": "c29536d36c043c33d41e2ff16320c0e9f6acd33d",
+      "size": 1294
+    },
+    {
+      "path": "game/scripts/interaction/hm_upgrade_effects.gd",
+      "mode": "100644",
+      "blob": "26c2272013c10b5b51e8ad986d5d5586537c9f1c",
+      "size": 1196
+    },
+    {
+      "path": "game/scripts/interaction/hm_yard_service.gd",
+      "mode": "100644",
+      "blob": "d738b22c1e65b97d4179e28da8213a49aea42191",
+      "size": 6058
+    },
+    {
+      "path": "game/scripts/main.gd",
+      "mode": "100644",
+      "blob": "b90702c3a0e812cde0aa7e484625e2525d13c830",
+      "size": 67092
+    },
+    {
+      "path": "game/scripts/main.gd.uid",
+      "mode": "100644",
+      "blob": "3ac733a7a7400568c98124cd50d560471fc3ebc2",
+      "size": 20
+    },
+    {
+      "path": "game/scripts/player/hm_first_person.gd",
+      "mode": "100644",
+      "blob": "d7eb56aa8ab1dcaa5f26e53948a2b4c4bbaf8a56",
+      "size": 4009
+    },
+    {
+      "path": "game/scripts/player/hm_player_input.gd",
+      "mode": "100644",
+      "blob": "8531705d34619d742fcbfcf0977bb26e94ea966a",
+      "size": 1810
+    },
+    {
+      "path": "game/scripts/player/hm_tool_view_model.gd",
+      "mode": "100644",
+      "blob": "86fe96076d2e3b007cc99d283659db7720de4747",
+      "size": 3937
+    },
+    {
+      "path": "game/scripts/save/hm_save_state.gd",
+      "mode": "100644",
+      "blob": "f233bf59581fbcac4919957e1d5f3b8cdc9fc238",
+      "size": 13577
+    },
+    {
+      "path": "game/scripts/save/hm_save_store.gd",
+      "mode": "100644",
+      "blob": "3e88de0131e42363c59ed6bdb7fc94759829f836",
+      "size": 10159
+    },
+    {
+      "path": "game/scripts/save/hm_transactions.gd",
+      "mode": "100644",
+      "blob": "350bc1781d4ab8bcbb0aee395a6a15b60d593e00",
+      "size": 11665
+    },
+    {
+      "path": "game/scripts/tools/hm_tool_pickup.gd",
+      "mode": "100644",
+      "blob": "98b768fb021a4ed6d77800e38a2fc362ccecf25b",
+      "size": 489
+    },
+    {
+      "path": "game/scripts/tools/hm_toolbelt.gd",
+      "mode": "100644",
+      "blob": "820ad55941dd1a66e3dc113563bdb9faaf7e0440",
+      "size": 2849
+    },
+    {
+      "path": "game/scripts/ui/hm_action_feedback.gd",
+      "mode": "100644",
+      "blob": "be5b4a41ca4804bfd310ac3bd9e776820de1cfa1",
+      "size": 3335
+    },
+    {
+      "path": "game/scripts/ui/hm_control_bindings.gd",
+      "mode": "100644",
+      "blob": "3cd19a61fb4ddfcbe05b485b6fff0e0dfa282e7e",
+      "size": 5430
+    },
+    {
+      "path": "game/scripts/ui/hm_interface_settings.gd",
+      "mode": "100644",
+      "blob": "1d2a81d3578ed218dc3797c6ad2fbd5ea000a0c2",
+      "size": 2320
+    },
+    {
+      "path": "game/scripts/work/hm_work_session.gd",
+      "mode": "100644",
+      "blob": "af987e99afb63dea60d6a2e19d64cd7ddaba5ded",
+      "size": 8167
+    },
+    {
+      "path": "game/scripts/world/hm_brinewick_blockout.gd",
+      "mode": "100644",
+      "blob": "eab9d713d1dfd869c612b4a00cfef568f0f66cf9",
+      "size": 10561
+    },
+    {
+      "path": "game/scripts/world/hm_brinewick_sites.gd",
+      "mode": "100644",
+      "blob": "b46a1054aaf07886a9f886268d92501c4210096e",
+      "size": 10003
+    },
+    {
+      "path": "game/scripts/world/hm_campaign_sites.gd",
+      "mode": "100644",
+      "blob": "7a2311bc570c9608b1f7d2b289ec8c6f84604b44",
+      "size": 8263
+    },
+    {
+      "path": "game/scripts/world/hm_coastal_foreshore_art.gd",
+      "mode": "100644",
+      "blob": "1e7931c26d6a3c4e5844f904f06aa519262203cd",
+      "size": 5177
+    },
+    {
+      "path": "game/scripts/world/hm_coastal_ground_art.gd",
+      "mode": "100644",
+      "blob": "d7e55a4614e4d769c78221325036944257e4ffc0",
+      "size": 4600
+    },
+    {
+      "path": "game/scripts/world/hm_coastal_presentation.gd",
+      "mode": "100644",
+      "blob": "921332e0cae0b81c870079ff481bacaa5e34526d",
+      "size": 1962
+    },
+    {
+      "path": "game/scripts/world/hm_coastal_production_surface.gd",
+      "mode": "100644",
+      "blob": "2ae351b77928ce55db33fc1e3bbed848efe23f74",
+      "size": 7306
+    },
+    {
+      "path": "game/scripts/world/hm_coastal_road_wear.gd",
+      "mode": "100644",
+      "blob": "df8e2f3c6d5d2856b1d1b561a71e7c0ac2722e63",
+      "size": 4686
+    },
+    {
+      "path": "game/scripts/world/hm_finale_cargo.gd",
+      "mode": "100644",
+      "blob": "2747a1d8ad812c1f552386990b53624882c898bb",
+      "size": 1543
+    },
+    {
+      "path": "game/scripts/world/hm_finale_choice.gd",
+      "mode": "100644",
+      "blob": "834b7fabf1861d8d37501670786003fbd538773e",
+      "size": 287
+    },
+    {
+      "path": "game/scripts/world/hm_finale_work_target.gd",
+      "mode": "100644",
+      "blob": "307139c220c732b3ccbef9d1f1802e6976082e14",
+      "size": 276
+    },
+    {
+      "path": "game/scripts/world/hm_phase_c_ground_detail.gd",
+      "mode": "100644",
+      "blob": "8dea3f42d4df2147ae78c7807af664cf1e7535e8",
+      "size": 4009
+    },
+    {
+      "path": "game/scripts/world/hm_phase_c_harbour_dressing.gd",
+      "mode": "100644",
+      "blob": "62dffc1b7db1b0e1179c86c492f53bb0ba91b7c8",
+      "size": 9782
+    },
+    {
+      "path": "game/scripts/world/hm_phase_c_surface_detail.gd",
+      "mode": "100644",
+      "blob": "20bff3c89b1f98cede5b97b5faab1eba9413e799",
+      "size": 5773
+    },
+    {
+      "path": "game/scripts/world/hm_phase_c_underground_detail.gd",
+      "mode": "100644",
+      "blob": "c1ae53a9c1a04e9ced7f458194aa6f25e325dfce",
+      "size": 3006
+    },
+    {
+      "path": "game/scripts/world/hm_phase_c_village_dressing.gd",
+      "mode": "100644",
+      "blob": "e67b00407db7400d78474811f4c6784f75aec7c2",
+      "size": 2755
+    },
+    {
+      "path": "game/scripts/world/hm_settlement_production_art.gd",
+      "mode": "100644",
+      "blob": "0d92ea89ac15f20b30e824e8b227335c155e8a0b",
+      "size": 16872
+    },
+    {
+      "path": "game/scripts/world/hm_story_clue.gd",
+      "mode": "100644",
+      "blob": "6b6d5ce6123951bb0cab57d68f9d46cd7aa492b3",
+      "size": 569
+    },
+    {
+      "path": "game/scripts/world/hm_underground_audio.gd",
+      "mode": "100644",
+      "blob": "7abe7788d1f8b381b825cb6f25ae213debb27446",
+      "size": 5933
+    },
+    {
+      "path": "game/scripts/world/hm_underground_dressing.gd",
+      "mode": "100644",
+      "blob": "9311ad990a08428fae6cb2cf5848b714152e1e48",
+      "size": 13196
+    },
+    {
+      "path": "game/scripts/world/hm_underground_masonry.gd",
+      "mode": "100644",
+      "blob": "eae4cc37f6f552433fba065a57dac2adf5281b6a",
+      "size": 5996
+    },
+    {
+      "path": "game/scripts/world/hm_underground_production_art.gd",
+      "mode": "100644",
+      "blob": "f836cbe27ba0c3e47854b61abaebc06dd814c6cd",
+      "size": 10004
+    },
+    {
+      "path": "game/scripts/world/hm_underground_sites.gd",
+      "mode": "100644",
+      "blob": "ac328851c9ef21981969ca614e649856e01f482c",
+      "size": 12699
+    },
+    {
+      "path": "game/scripts/world/hm_village_landmark_art.gd",
+      "mode": "100644",
+      "blob": "d395bb1668d6b49fde11360f723fef90213fd619",
+      "size": 12184
+    },
+    {
+      "path": "game/tests/export_reference_models.gd",
+      "mode": "100644",
+      "blob": "84cbb571510a0a3d3281a5cd98dbe4173af5b923",
+      "size": 4828
+    },
+    {
+      "path": "game/tests/test_audit_repairs.gd",
+      "mode": "100644",
+      "blob": "fc047d1812bc4f486d4990da67d428ab9c92dd06",
+      "size": 6700
+    },
+    {
+      "path": "game/tests/test_brinewick_integration.gd",
+      "mode": "100644",
+      "blob": "16b11243a08c307d75db0ea883725b3b126c7b54",
+      "size": 4460
+    },
+    {
+      "path": "game/tests/test_brinewick_priorities.gd",
+      "mode": "100644",
+      "blob": "3c596e3497ff25cfcf94ffe7c33000f2a1c4f12e",
+      "size": 4255
+    },
+    {
+      "path": "game/tests/test_brinewick_real_ray.gd",
+      "mode": "100644",
+      "blob": "68c5b35403055fab1d4cd0cec2a4bb07ada4c2a2",
+      "size": 3373
+    },
+    {
+      "path": "game/tests/test_brinewick_save_migration.gd",
+      "mode": "100644",
+      "blob": "009e6fc40d83b2ef1318a20228c5c4f7e8401c1f",
+      "size": 2097
+    },
+    {
+      "path": "game/tests/test_campaign_four_acts.gd",
+      "mode": "100644",
+      "blob": "96238e4ba81219975e60fdf99dd3a74ef688fc69",
+      "size": 6927
+    },
+    {
+      "path": "game/tests/test_landmark_components.gd",
+      "mode": "100644",
+      "blob": "df8ad638d1564aa6a871333cb162bb3c02069fab",
+      "size": 5761
+    },
+    {
+      "path": "game/tests/test_phase_b_visual.gd",
+      "mode": "100644",
+      "blob": "2f720a0af9cf0b1928d9c692b638c263a0cef2b4",
+      "size": 5988
+    },
+    {
+      "path": "game/tests/test_phase_c_visual.gd",
+      "mode": "100644",
+      "blob": "068f22fc789436e473bcbda8a96aaca5dbf6388a",
+      "size": 3741
+    },
+    {
+      "path": "game/tests/test_phase_e_capture.gd",
+      "mode": "100644",
+      "blob": "cc506e1020e3fc085f7af206707914c85a94fedc",
+      "size": 4033
+    },
+    {
+      "path": "game/tests/test_phase_e_f_path.gd",
+      "mode": "100644",
+      "blob": "c4b039770668c264438bff1f5dac344ca4ce17a8",
+      "size": 4712
+    },
+    {
+      "path": "game/tests/test_phase_e_f.gd",
+      "mode": "100644",
+      "blob": "03677a75b2f69029d84809dac48f29a7f9f9962f",
+      "size": 10296
+    },
+    {
+      "path": "game/tests/test_phase_ef_first_person.gd",
+      "mode": "100644",
+      "blob": "ce6e6d361363e52b7307a201ed6d09539088f62f",
+      "size": 2495
+    },
+    {
+      "path": "game/tests/test_phase_ef_player_motion.gd",
+      "mode": "100644",
+      "blob": "ec6c07b0b2082d1e1760a3e0b56a9a2ec235028e",
+      "size": 2792
+    },
+    {
+      "path": "game/tests/test_phase_g.gd",
+      "mode": "100644",
+      "blob": "cd83689ce6ed7c9dabdde2dccd1342ec27f07685",
+      "size": 4808
+    },
+    {
+      "path": "game/tests/test_production_world_art.gd",
+      "mode": "100644",
+      "blob": "d8bf1827a1f08b06c256b7ec2230181a3bae8dd6",
+      "size": 5783
+    },
+    {
+      "path": "game/tests/test_reference_access.gd",
+      "mode": "100644",
+      "blob": "52221d40404d41f57984e94e340a5aa808745c8d",
+      "size": 2916
+    },
+    {
+      "path": "game/tests/test_reference_buildings.gd",
+      "mode": "100644",
+      "blob": "486fe0cfebe678293ea0dd350ef19f920d38dd78",
+      "size": 4053
+    },
+    {
+      "path": "game/tests/test_reference_capture.gd",
+      "mode": "100644",
+      "blob": "ff826b00eb0fc87c5f19185d82cdaa58e74fb65d",
+      "size": 1853
+    },
+    {
+      "path": "game/tests/test_requisition_family_migration.gd",
+      "mode": "100644",
+      "blob": "e60bdf2894fc078f438c280680f770f1adbec1b9",
+      "size": 3778
+    },
+    {
+      "path": "game/tests/test_step04.gd",
+      "mode": "100644",
+      "blob": "1add6f4410049b6ddc07624217277e184b3cf031",
+      "size": 3500
+    },
+    {
+      "path": "game/tests/test_step05.gd",
+      "mode": "100644",
+      "blob": "0ffbc09a9790fa3cd0897f1eae218508e823eac1",
+      "size": 6186
+    },
+    {
+      "path": "game/tests/test_step06_capture.gd",
+      "mode": "100644",
+      "blob": "b993bd402a2410313ea5bc74049457530d2d1772",
+      "size": 1586
+    },
+    {
+      "path": "game/tests/test_step06_physics.gd",
+      "mode": "100644",
+      "blob": "1e97823704ee9980dca66de4be8e4a0cbe65e605",
+      "size": 2027
+    },
+    {
+      "path": "game/tests/test_step06.gd",
+      "mode": "100644",
+      "blob": "9aa7d01823fe349fb2cf2bbd84fd7b6fba29b55d",
+      "size": 3642
+    },
+    {
+      "path": "game/tests/test_step07.gd",
+      "mode": "100644",
+      "blob": "80efa24366eb60df88d26ca32b41dae825bb6b09",
+      "size": 4003
+    },
+    {
+      "path": "game/tests/test_step08.gd",
+      "mode": "100644",
+      "blob": "64a5095f7b826b5be36455b92d22ddac86e1ca1a",
+      "size": 5033
+    },
+    {
+      "path": "game/tests/test_step09.gd",
+      "mode": "100644",
+      "blob": "281317715cc1283f08a3fc04afc56b65058987eb",
+      "size": 6790
+    },
+    {
+      "path": "game/tests/test_step10.gd",
+      "mode": "100644",
+      "blob": "c3fb07b5c8b3554f24d1fb6ed826e91f93664a17",
+      "size": 6818
+    },
+    {
+      "path": "game/tests/test_step11.gd",
+      "mode": "100644",
+      "blob": "2f59ba32590f65d0a434464017673e76b9dd41a1",
+      "size": 2985
+    },
+    {
+      "path": "game/tests/test_step12.gd",
+      "mode": "100644",
+      "blob": "c04f67155585e8d4f6ce3b314a2ab006f53af8de",
+      "size": 6378
+    },
+    {
+      "path": "game/tests/test_step13.gd",
+      "mode": "100644",
+      "blob": "d3495ab41b011641a48767b25e73bdc3a72cd7a7",
+      "size": 1322
+    },
+    {
+      "path": "game/tests/test_step14.gd",
+      "mode": "100644",
+      "blob": "b80cef8e1f35afdcaa78f3a14275119a138d9b3e",
+      "size": 1982
+    },
+    {
+      "path": "game/tests/test_step15.gd",
+      "mode": "100644",
+      "blob": "151176d2a3441ce42fc8c3c37e9328188cb963e3",
+      "size": 2195
+    },
+    {
+      "path": "game/tests/test_step16.gd",
+      "mode": "100644",
+      "blob": "eac4ad59fc79cad02477bbd30287a2054788b255",
+      "size": 2604
+    },
+    {
+      "path": "game/tests/test_step17_integration.gd",
+      "mode": "100644",
+      "blob": "7917c400842c44e3ad5b58d112e3329740974835",
+      "size": 3451
+    },
+    {
+      "path": "game/tests/test_step17.gd",
+      "mode": "100644",
+      "blob": "04909ee1d12b83298efde6c09425b8f9aa97facb",
+      "size": 4421
+    },
+    {
+      "path": "game/tests/test_step18.gd",
+      "mode": "100644",
+      "blob": "3c0387d1fdc25ec66ab8dc1ce524a3cdf36aecb1",
+      "size": 1675
+    },
+    {
+      "path": "game/tests/test_step19.gd",
+      "mode": "100644",
+      "blob": "acb8f5c3a79640053b7d46c2e6316be30bec8780",
+      "size": 1325
+    },
+    {
+      "path": "game/tests/test_step20.gd",
+      "mode": "100644",
+      "blob": "c190b4f9a06164588fc73d9b163824bbe378bc9d",
+      "size": 2547
+    },
+    {
+      "path": "game/tests/test_step21_capture.gd",
+      "mode": "100644",
+      "blob": "212bf5134a86bf3b31d5d2bd6e7303c5b2a2bf4b",
+      "size": 2371
+    },
+    {
+      "path": "game/tests/test_step21.gd",
+      "mode": "100644",
+      "blob": "69c849440eae1f786a2605800414d2ff9b0b5d18",
+      "size": 3671
+    },
+    {
+      "path": "game/tests/test_step22.gd",
+      "mode": "100644",
+      "blob": "5d1bbd7ba004726a45ae5eab286273427bb4c93e",
+      "size": 1820
+    },
+    {
+      "path": "game/tests/test_step23.gd",
+      "mode": "100644",
+      "blob": "b9798a066a8253686e99585edf3bc38e5a96051c",
+      "size": 4409
+    },
+    {
+      "path": "game/tests/test_step24.gd",
+      "mode": "100644",
+      "blob": "744fb5ed89697c74a290e17575afe0e794ae73cf",
+      "size": 5983
+    },
+    {
+      "path": "game/tests/test_step25_capture.gd",
+      "mode": "100644",
+      "blob": "bd2cba4f5b0b41be03be9060f61ba96e7b7dd8a1",
+      "size": 2188
+    },
+    {
+      "path": "game/tests/test_step25.gd",
+      "mode": "100644",
+      "blob": "e5e7926a931f7edb5f01119d5df93a15c27ae362",
+      "size": 2451
+    },
+    {
+      "path": "game/tests/test_step26.gd",
+      "mode": "100644",
+      "blob": "520e8fc463b61a425e04f9151369bbf07dd2cb74",
+      "size": 2003
+    },
+    {
+      "path": "game/tests/test_step27.gd",
+      "mode": "100644",
+      "blob": "6577fd34e43b71da2efbbea5b09b950595252afd",
+      "size": 2710
+    },
+    {
+      "path": "game/tests/test_step28.gd",
+      "mode": "100644",
+      "blob": "a1ca65b5bfa1832f0c116e60f188b1c2558f2583",
+      "size": 1787
+    },
+    {
+      "path": "game/tests/test_step29.gd",
+      "mode": "100644",
+      "blob": "93593a212b8898c848047be224b1caf96146ed2e",
+      "size": 1503
+    },
+    {
+      "path": "game/tests/test_step30.gd",
+      "mode": "100644",
+      "blob": "fb6f77f3d9457be34882c4ed937f5d2d2beb0c42",
+      "size": 1681
+    },
+    {
+      "path": "game/tests/test_step44.gd",
+      "mode": "100644",
+      "blob": "164129ebd3ef7625e07024490a25114d8ff58b85",
+      "size": 7504
+    },
+    {
+      "path": "game/tests/test_step45_save_recovery.gd",
+      "mode": "100644",
+      "blob": "5611c2121ba1372d5d81a42a1deb32f3738d15a0",
+      "size": 6866
+    },
+    {
+      "path": "game/tests/test_visual_21_sites_capture.gd",
+      "mode": "100644",
+      "blob": "3c096859171c9ca2f4b4714aa41672c8615a5f8c",
+      "size": 3169
+    },
+    {
+      "path": "game/tests/test_visual_rebuild_batch03.gd",
+      "mode": "100644",
+      "blob": "f9ab02ba6d55ece561740bcffdde939ad600f54b",
+      "size": 2947
+    },
+    {
+      "path": "game/tests/test_visual_rebuild_cart_road.gd",
+      "mode": "100644",
+      "blob": "477ff6f956f11971bcfd9faf961f2579221307cb",
+      "size": 3847
+    },
+    {
+      "path": "game/tests/test_visual_rebuild_phase1_capture.gd",
+      "mode": "100644",
+      "blob": "e395a86d1aad7d5ba40275b6ac7a10440699cc43",
+      "size": 3114
+    },
+    {
+      "path": "game/tests/test_visual_rebuild_phase1.gd",
+      "mode": "100644",
+      "blob": "24e5bbd0bffd4ac5c137e6b6131819e47af084b5",
+      "size": 6710
+    },
+    {
+      "path": "game/tests/test_visual_rebuild_teardown_capture.gd",
+      "mode": "100644",
+      "blob": "23c194443ab6f3f06e6c4b0489eea288142fcb8a",
+      "size": 4623
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "blob": "1c2d206667a525134f7020d86d7b3bd89d171a0e",
+      "size": 1285
+    },
+    {
+      "path": "tests/.gitkeep",
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "tests/test_act3_requisition_fix.py",
+      "mode": "100644",
+      "blob": "5cef4f731b6ff56b1c65714a9dc497c526119fbf",
+      "size": 2068
+    },
+    {
+      "path": "tests/test_audit_repairs.py",
+      "mode": "100644",
+      "blob": "e5c5f38b9c83e7fbf70c442fb65844ba524cb457",
+      "size": 1241
+    },
+    {
+      "path": "tests/test_brinewick_integration.py",
+      "mode": "100644",
+      "blob": "898cc5ad0e12be71afbd4e8f21f1974fabf09551",
+      "size": 1558
+    },
+    {
+      "path": "tests/test_phase_b_visual.py",
+      "mode": "100644",
+      "blob": "c52ef741ddfe2d2a2402920449fee3c62023d6e8",
+      "size": 4171
+    },
+    {
+      "path": "tests/test_phase_c_visual.py",
+      "mode": "100644",
+      "blob": "db5a63f28dcec4766a4263c253eab8f39dd74d9c",
+      "size": 4011
+    },
+    {
+      "path": "tests/test_production_acceptance.py",
+      "mode": "100644",
+      "blob": "f127792c6bfcf44adeff21fbeb11f697517b2997",
+      "size": 2361
+    },
+    {
+      "path": "tests/test_reference_buildings.py",
+      "mode": "100644",
+      "blob": "e8d0aa752021d226eae912be53e0a5597a57e802",
+      "size": 2427
+    },
+    {
+      "path": "tests/test_step04_data.py",
+      "mode": "100644",
+      "blob": "8c6869d85f2b3f7ba262a5b787b72524a551e3e2",
+      "size": 11445
+    },
+    {
+      "path": "tests/test_step05_persistence.py",
+      "mode": "100644",
+      "blob": "d60ba6ec735ede20b9ef711c6bc6ad6fd0e084e1",
+      "size": 12352
+    },
+    {
+      "path": "tests/test_step06_controller.py",
+      "mode": "100644",
+      "blob": "ca988c4d191bcb51f2a187e2588344c410ccbc0e",
+      "size": 4951
+    },
+    {
+      "path": "tests/test_step06_qa.py",
+      "mode": "100644",
+      "blob": "977747a3cb8033dce2e892eb65b4cabc869f04d1",
+      "size": 4302
+    },
+    {
+      "path": "tests/test_step07_inspection.py",
+      "mode": "100644",
+      "blob": "98d3a1630655304ec701acd9e901092a0544b424",
+      "size": 2060
+    },
+    {
+      "path": "tests/test_step08_toolbelt.py",
+      "mode": "100644",
+      "blob": "50760cd57209e56a4d5b4346d61c1142b8bf66d1",
+      "size": 2021
+    },
+    {
+      "path": "tests/test_step09_manual.py",
+      "mode": "100644",
+      "blob": "d56a22959458867545530b340f9985348e67c37d",
+      "size": 1953
+    },
+    {
+      "path": "tests/test_step10_lifecycle.py",
+      "mode": "100644",
+      "blob": "e9f23cc43ddfb90a9d71e39a21aab4d5770b6689",
+      "size": 2147
+    },
+    {
+      "path": "tests/test_step11_support.py",
+      "mode": "100644",
+      "blob": "f329a5f7d3c840724a9278b3d08f5c27248583c6",
+      "size": 1271
+    },
+    {
+      "path": "tests/test_step12_damage.py",
+      "mode": "100644",
+      "blob": "0422339f675ab1fdefda72c884ad64118c0067cb",
+      "size": 1200
+    },
+    {
+      "path": "tests/test_step13_17.py",
+      "mode": "100644",
+      "blob": "5eb53c5dcbd37f0815a3fe44cc132a30e05724b9",
+      "size": 2663
+    },
+    {
+      "path": "tests/test_step18_20.py",
+      "mode": "100644",
+      "blob": "2f0d426f48024ef123ba7a8ed4c00a01ab996d0d",
+      "size": 2144
+    },
+    {
+      "path": "tests/test_step21_materials.py",
+      "mode": "100644",
+      "blob": "1739d2424546997dec5b0014f79f625915ef6b69",
+      "size": 2207
+    },
+    {
+      "path": "tests/test_step25_blockout.py",
+      "mode": "100644",
+      "blob": "7c9d3e8dc582a3563c9a60aac52fb9389e898f55",
+      "size": 1136
+    },
+    {
+      "path": "tests/test_step26_30_districts.py",
+      "mode": "100644",
+      "blob": "c2d6bcc7ff0fe17345ce297d2cfc7bb2ff0e2f0f",
+      "size": 1589
+    },
+    {
+      "path": "tests/test_step44_audit.py",
+      "mode": "100644",
+      "blob": "a56f427e9f42b11e0a0351ec343ab9c25dfafd78",
+      "size": 5095
+    },
+    {
+      "path": "tests/test_visual_rebuild_batch03.py",
+      "mode": "100644",
+      "blob": "6ba560ac7cba0dd4d2eaae6e060a3b4ac4d2b6ed",
+      "size": 1831
+    },
+    {
+      "path": "tests/test_visual_rebuild_static.py",
+      "mode": "100644",
+      "blob": "8e53f490c2282c6d6ade0dc82cec710845ba0768",
+      "size": 4074
+    },
+    {
+      "path": "tools/audit_step44.py",
+      "mode": "100644",
+      "blob": "f8c5d4e02091ef3fbf53ae182ea7d836e3d4f401",
+      "size": 16150
+    },
+    {
+      "path": "tools/build.py",
+      "mode": "100644",
+      "blob": "3472d10fd7dab5220e01a33741c6186fe66d2a38",
+      "size": 4914
+    },
+    {
+      "path": "tools/check_step04.py",
+      "mode": "100644",
+      "blob": "03467c5bba96dcf9a7797d3950644977e5b8942a",
+      "size": 1164
+    },
+    {
+      "path": "tools/check_step05.py",
+      "mode": "100644",
+      "blob": "0aaaeed8f45213b551f3a2a4bcd56fc03395b705",
+      "size": 431
+    },
+    {
+      "path": "tools/check_step06.py",
+      "mode": "100644",
+      "blob": "abfbda3a74286b96f7f38b5aea4de8dff5c06733",
+      "size": 405
+    },
+    {
+      "path": "tools/generate_phase_b_reference_glb.py",
+      "mode": "100644",
+      "blob": "8bf8480fde6a774ccda5492419f6c2e918087715",
+      "size": 3346
+    },
+    {
+      "path": "tools/generate_phase_b_surfaces.py",
+      "mode": "100644",
+      "blob": "a764a1aca6fdf0ffa0066b9a3d96fd7b4f9e148b",
+      "size": 3647
+    },
+    {
+      "path": "tools/generate_step21_glb.py",
+      "mode": "100644",
+      "blob": "ef3352c6a2f6b17dfbaa33910033fd710757be90",
+      "size": 2059
+    },
+    {
+      "path": "tools/generate_step21_materials.py",
+      "mode": "100644",
+      "blob": "cd37dcbd1239db48c25ebc5f6fa2ac90125262df",
+      "size": 3882
+    },
+    {
+      "path": "tools/production_acceptance.py",
+      "mode": "100644",
+      "blob": "c40da39e8666fa69183ebb3f478e997be53cb155",
+      "size": 9693
+    },
+    {
+      "path": "tools/test_environment.py",
+      "mode": "100644",
+      "blob": "ce9a457d639bc4ded86afc1f940dac695d51b699",
+      "size": 22347
+    },
+    {
+      "path": "tools/visual_capture_matrix.py",
+      "mode": "100644",
+      "blob": "99c17df37364ad337e2ce0eab6b6be49f71c2f60",
+      "size": 8739
+    }
+  ]
+}
