@@ -112,6 +112,15 @@ func build(sites: Dictionary) -> void:
 	extra.build(installation_nodes)
 	set_meta("phase_c_dressed_parts", extra.treated_parts)
 
+	# G2 production hero pass: distinctive low-poly, noncolliding detail
+	# owned by the original cottage and warehouse HMInspectTarget bodies.
+	# The original saved IDs and authoritative colliders remain untouched.
+	var hero := HMHeroBuildingArtG2.new()
+	hero.name = "G2PartOwnedHeroArchitecture"
+	add_child(hero)
+	hero.build(cottage,installation_nodes)
+	set_meta("g2_hero_owned_meshes",hero.batched_meshes)
+
 	# World discoveries and narrative cues reference existing site markers.
 	for data: Variant in parsed.get("world_discoveries", []):
 		if not (data is Dictionary) or not sites.has(String(data.get("site_id", ""))):
