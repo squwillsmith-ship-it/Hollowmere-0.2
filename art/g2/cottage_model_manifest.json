@@ -7,10 +7,10 @@
       "triangles": 264
     },
     "cladding": {
-      "members": 158,
+      "members": 242,
       "path": "game/assets/models/g2/cottage/part_cladding.glb",
-      "sha256": "dec30ec14cb29e52286b29bca179594f4896ed9b8cd91fe2ed1f79c4e45a2957",
-      "triangles": 1896
+      "sha256": "17cb83abaccb00f00d439d28e85e0b29ad9015607b41519449e006d31de94c6f",
+      "triangles": 2904
     },
     "curtain": {
       "members": 13,
