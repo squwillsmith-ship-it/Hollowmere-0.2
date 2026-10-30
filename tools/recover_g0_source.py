@@ -15,6 +15,9 @@ from pathlib import Path
 REPO = "https://github.com/squwillsmith-ship-it/Hollowmere-0.2.git"
 REF = "recovery/g0-art-candidate-eddeaef2-20261030"
 SHA = "eddeaef2f92edffc5954b41ccf46ba0847d6955f"
+PRIVATE_REPO = "https://github.com/squwillsmith-ship-it/Hollowmere.git"
+PRIVATE_REF = "recovery/g0-eddeaef2-exact-tree-20261030"
+PRIVATE_SHA = "0fa7a8c917606219c6591de4c4282b1e3ad34928"
 
 
 def git(cwd: Path, *args: str) -> bytes:
@@ -25,7 +28,8 @@ def git_blob_sha(data: bytes) -> str:
     return hashlib.sha1(b"blob " + str(len(data)).encode("ascii") + b"\0" + data).hexdigest()
 
 
-def recover(repo_url: str, manifest_path: Path, output: Path) -> dict:
+def recover(repo_url: str, manifest_path: Path, output: Path, *,
+            ref: str = REF, expected_commit: str = SHA) -> dict:
     m = json.loads(manifest_path.read_text(encoding="utf-8"))
     if m.get("format") != "hollowmere-g0-source-manifest-v1" or m.get("source_commit") != SHA:
         raise ValueError("Wrong recovery manifest or source SHA")
@@ -36,11 +40,11 @@ def recover(repo_url: str, manifest_path: Path, output: Path) -> dict:
     output.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="hollowmere-g0-") as td:
         dest = Path(td) / "repo"
-        subprocess.run(["git", "clone", "--quiet", "--single-branch", "--branch", REF,
+        subprocess.run(["git", "clone", "--quiet", "--single-branch", "--branch", ref,
                         "--depth", "1", "--no-checkout", repo_url, str(dest)], check=True)
         head = git(dest, "rev-parse", "HEAD").decode().strip()
         tree = git(dest, "rev-parse", "HEAD^{tree}").decode().strip()
-        if head != SHA or tree != m["source_tree_sha"]:
+        if head != expected_commit or tree != m["source_tree_sha"]:
             raise ValueError(f"Source ref mismatch: commit={head} tree={tree}")
         actual = {}
         for row in git(dest, "ls-tree", "-r", "-z", "--long", "HEAD").split(b"\0"):
@@ -73,6 +77,7 @@ def recover(repo_url: str, manifest_path: Path, output: Path) -> dict:
         f"{digest}  {output.name}\n", encoding="utf-8")
     return {"path": str(output), "files": len(expected), "sha256": digest,
             "source_commit": SHA, "tree_sha": m["source_tree_sha"],
+            "recovered_from_commit": head, "recovered_from_ref": ref,
             "size_bytes": output.stat().st_size}
 
 
@@ -80,9 +85,13 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--repo-url", default=REPO)
+    parser.add_argument("--private-backup", action="store_true", help="Reconstruct from independent private repo tree")
     parser.add_argument("--output", type=Path, default=Path("Hollowmere-G0-eddeaef2-Source.zip"))
     a = parser.parse_args()
-    print(json.dumps(recover(a.repo_url, a.manifest, a.output), indent=2))
+    repo_url = PRIVATE_REPO if a.private_backup else a.repo_url
+    ref = PRIVATE_REF if a.private_backup else REF
+    commit = PRIVATE_SHA if a.private_backup else SHA
+    print(json.dumps(recover(repo_url, a.manifest, a.output, ref=ref, expected_commit=commit), indent=2))
 
 
 if __name__ == "__main__":
