@@ -1,0 +1,51 @@
+name: G3 geology retest
+on:
+  push:
+    branches: [art/g3-final-structural-rebuild-20261030]
+    paths: [.github/workflows/g3-geology-retest.yml]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Prepare Godot render host
+        run: |
+          python -m pip install --quiet numpy Pillow trimesh scipy
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends xvfb mesa-vulkan-drivers libvulkan1 libasound2t64 libpulse0 libfontconfig1 unzip
+          python tools/generate_step21_materials.py
+          python tools/generate_step21_glb.py
+          python tools/generate_phase_b_surfaces.py
+          python tools/generate_phase_b_reference_glb.py
+          python tools/test_environment.py doctor --install
+      - name: Complete regression suite
+        run: python tools/test_environment.py check --godot .qa-tools/Godot_v4.7.2-stable_linux.x86_64
+      - name: G3 exact terrain and roof ownership
+        run: |
+          .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --headless --path game --script res://tests/test_g3_final_structural.gd 2>&1 | tee build/qa-g3-last-chance.log
+          grep -q HOLLOWMERE_G3_LAST_CHANCE_OK build/qa-g3-last-chance.log
+      - name: Render actual Forward+ references
+        run: python tools/test_environment.py render --godot .qa-tools/Godot_v4.7.2-stable_linux.x86_64
+      - name: All 21 site real Vulkan frames
+        env:
+          LIBGL_ALWAYS_SOFTWARE: '1'
+          GODOT_HEADLESS: 'false'
+        run: |
+          HOLLOWMERE_G3_21_RENDER_DIR="$PWD/build" xvfb-run -a -s '-screen 0 1280x720x24' .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --audio-driver Dummy --path game --script res://tests/test_g3_all_site_capture.gd | tee build/qa-g3-real-site-visuals.log
+          grep -q HOLLOWMERE_G3_TWENTY_ONE_SITES_VULKAN_OK build/qa-g3-real-site-visuals.log
+      - name: Preserve failure and visual evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g3-geology-retest-evidence
+          path: |
+            build/qa-*.log
+            build/qa-environment.json
+            build/*.png
+          if-no-files-found: warn
