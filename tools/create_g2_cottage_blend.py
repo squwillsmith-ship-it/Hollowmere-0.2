@@ -53,6 +53,7 @@ for name,folder,group in [
 # Set scene units for deliberate real-world metre scale, preserve geometry.
 bpy.context.scene.unit_settings.system="METRIC"
 bpy.context.scene.unit_settings.scale_length=1.0
+bpy.context.preferences.filepaths.save_version=0  # Never create competing .blend1 masters.
 bpy.ops.wm.save_as_mainfile(filepath=str(SOURCE/"Hollowmere_Cottage_G2_Master.blend"))
 (SOURCE/"blender_source_manifest.json").write_text(json.dumps({
     "version":1,"blender_version":bpy.app.version_string,
