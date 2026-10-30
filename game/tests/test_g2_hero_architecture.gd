@@ -22,9 +22,9 @@ func _run() -> void:
 	if hero == null:
 		quit(1)
 		return
-	demand(hero.cottage_owners == 2,"G2 front gable and joist details owned by two cottage targets")
+	demand(hero.cottage_owners == 0,"Standalone G2 cottage GLBs supersede doubled procedural joinery")
 	demand(hero.warehouse_owners >= 40,"G2 braces and roof ribs on original and expanded warehouses")
-	demand(hero.batched_meshes == hero.cottage_owners+hero.warehouse_owners,"Each detail is one batched owner mesh")
+	demand(hero.batched_meshes == hero.warehouse_owners,"Existing warehouse bracing stays individually part-owned")
 	var lifecycle := HMPartLifecycle.new()
 	stage.add_child(lifecycle)
 	lifecycle.bind_stage(stage)
@@ -37,11 +37,11 @@ func _run() -> void:
 		var part: HMInspectTarget = lifecycle.installed[expected_id]
 		var count: int = 0
 		for child: Node in part.get_children():
-			if child is MeshInstance3D and child.has_meta("g2_owner_part_id"):
+			if child.has_meta("g2_owner_part_id"):
 				count += 1
 				demand(String(child.get_meta("g2_owner_part_id")) == expected_id,
-					"Decorative facet sits inside authoritative owner "+expected_id)
-		demand(count == 1,"One batched G2 mesh for "+expected_id)
+					"Owned G2 visual is child of authoritative part "+expected_id)
+		demand(count == 1,"One production G2 visual for "+expected_id)
 	var state: Dictionary = HMSaveState.fresh(cat)
 	for tool: String in ["claw_hammer","crowbar","pickaxe","saw"]:
 		var found: Dictionary = HMTransactions.apply(cat,state,{"transaction_id":"g2/tool/"+tool,
