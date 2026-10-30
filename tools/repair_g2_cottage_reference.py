@@ -167,12 +167,61 @@ def patch(base:Path, dest:Path):
         stones.box('under-corner-cap',(side*2.275,.512,2.16),(.30,.075,.36),'fieldstone')
         stones.box('rear-corner-cap',(side*2.275,.512,-2.16),(.30,.075,.36),'fieldstone')
 
+    # Independent VTK/z-buffered visual review exposed defects not detectable
+    # by the prior painter-style orthographic renderer. Correct real GLB meshes.
+    # The rear lime panel was actually hidden by the original rear timber
+    # boarding; retire ONLY the rear boards (sides retain their wood cladding).
+    def remove_faces(scene: trimesh.Scene, key: str, predicate) -> int:
+        mesh=scene.geometry[key]
+        verts=mesh.vertices;faces=mesh.faces
+        keep=np.array([not predicate(verts[face]) for face in faces],dtype=bool)
+        removed=int(np.count_nonzero(~keep))
+        if removed:
+            result=trimesh.Trimesh(vertices=verts.copy(),faces=faces[keep].copy(),process=False)
+            result.visual=deepcopy(mesh.visual)
+            scene.geometry[key]=result
+        return removed
+    def rear_wood(face):
+        return np.max(face[:,2]) < -2.14 and np.max(np.abs(face[:,0])) < 2.35 and np.min(face[:,1]) > .48
+    assert remove_faces(scenes['cladding'],'cladding',rear_wood)==660
+    assert remove_faces(scenes['cladding'],'cladding_1',rear_wood)==36
+    def rear_inner_posts(face):
+        cx=float(np.mean(face[:,0]));cz=float(np.mean(face[:,2]));cy=float(np.mean(face[:,1]))
+        return abs(cx)<1.72 and cz<-2.26 and cy<2.68
+    assert remove_faces(scenes['rear_infill'],'rear_infill_1',rear_inner_posts)==32
+    # The original upper gable was assembled from short rectangular strips;
+    # they poke above the eaves despite correct underlying rafters. v1 adds
+    # properly triangular gable skins so retire only those old upper strips.
+    def upper_gable_face(face): return float(np.mean(face[:,1]))>2.83
+    assert remove_faces(scenes['front_infill'],'front_infill_2',upper_gable_face)==74
+    # The older rear mosaic still z-fights with new continuous rear plaster.
+    # All are part of the SAME rear_infill owner. Keep the one flush panel.
+    scenes['rear_infill'].delete_geometry('rear_infill_2')
+    # Lower door's seven original-revision planks by extending their bottoms,
+    # keeping lintel height fixed. Threshold gains a canonical owner step.
+    n_planks=0
+    for key,mesh in list(scenes['front_infill'].geometry.items()):
+        if '_door_plank_' in key:
+            v=mesh.vertices.copy();t=2.367;old=.477;new=.291
+            v[:,1]=t+(v[:,1]-t)*((t-new)/(t-old));mesh.vertices=v
+            n_planks+=1
+        elif '_door_base_rail_' in key:
+            v=mesh.vertices.copy();v[:,1]-=.17;mesh.vertices=v
+    assert n_planks==7
+    Patch(scenes['threshold'],'threshold').box('integrated-landing',(0,.235,2.42),(.99,.145,.41),'fieldstone')
+    Patch(scenes['rear_infill'],'rear_infill').box('top-wall-ledger',(0,2.725,-2.309),(4.20,.085,.095),'dark_oak')
+    for sign in (-1,1):
+        Patch(scenes['stone_block'],'stone_block').box('front-jamb-masonry',
+            (sign*.55,.315,2.202),(.215,.43,.245),'fieldstone')
+        Patch(scenes['front_infill'],'front_infill').box('front-jamb-toe',
+            (sign*.56,.47,2.327),(.13,.20,.145),'dark_oak')
+
     meta={"base":"Hollowmere G2 provisionally approved SHA 870cdb5c887c4bf8217aab6075a1ff4a668d15e3",
           "part_ids":OWNER_IDS,"modification":"G2 cottage reference-sheet target geometry corrections",
           "parts":{},"note":"Canonical 9 salvage owners and collision data are unchanged; cosmetic front door is owned by front_infill, existing curtain remains under curtain owner. Re-import these GLBs into Godot from the same source path; Blender master in base archive is superseded by these edited GLBs."}
     for p,scene in scenes.items():
         out=dest/f'part_{p}.glb'
-        if p in ('curtain','slate_patch','threshold'):
+        if p in ('curtain','slate_patch'):
             if (base/f'part_{p}.glb').resolve()!=out.resolve():
                 shutil.copy2(base/f'part_{p}.glb',out)
         else:
@@ -197,7 +246,7 @@ def patch(base:Path, dest:Path):
             record['triangles']=meta['parts'][p]['triangles']
             record['members']+=meta['parts'][p]['added_mesh_nodes']
         data['version']=2
-        data['visual_revision']='real G2 cottage reference repair 20261030; tested offline, engine gate open'
+        data['visual_revision']='independently z-buffer inspected G2 cottage V3 geometry 20261030; Godot gate open'
         master_manifest.write_text(json.dumps(data,indent=2)+'\n')
     print(json.dumps({p:[v['triangles'],v['added_mesh_nodes']] for p,v in meta['parts'].items()},indent=2))
 
