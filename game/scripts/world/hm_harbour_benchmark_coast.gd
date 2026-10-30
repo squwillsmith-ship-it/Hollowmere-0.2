@@ -37,6 +37,10 @@ static func ground_height(x: float, z: float) -> float:
 	var land: float = lerpf(-0.67,1.965,t)
 	var exposed: float = 1.0 - smoothstep(-28.0,-20.0,x)
 	land += exposed * 0.065 * sin(z*0.27+x*0.21)
+	# Stone-founded landing apron grades from the seawall down into the
+	# tidal bank without an unsupported floating access ramp.
+	var dock_shelf: float = exp(-pow((x+33.0)/7.0,2.0)-pow((z-10.0)/10.0,2.0))
+	land = lerpf(land,1.21,dock_shelf*0.98)
 	return land
 
 static func install_terrace(parent: Node3D) -> StaticBody3D:
@@ -117,8 +121,8 @@ static func _route(parent: Node3D, title: String,
 			var d := _route_vertex(p1+normal*half)
 			var tone: Color = Color("877d69").lerp(Color("726c5e"),
 				0.16+0.10*sin(float(i)*1.8+float(j)*0.4))
-			_triangle(st,a,b,d,tone)
-			_triangle(st,b,c,d,tone.darkened(0.055))
+			_triangle(st,a,d,b,tone)
+			_triangle(st,b,d,c,tone.darkened(0.055))
 	var mesh: ArrayMesh = st.commit()
 	_install_mesh_and_collision(body,mesh,"RuttedStoneAndPackedEarth")
 
