@@ -56,6 +56,17 @@ func _run() -> void:
 	var capsule := CapsuleShape3D.new()
 	capsule.radius = 0.32
 	capsule.height = 1.75
+	# Confirm that route geometry is supported by actual underlying soil,
+	# not a hovering ribbon over the old tidal bank.
+	for i: int in range(points.size()-1):
+		for step: int in range(9):
+			var fraction: float = float(step)/8.0
+			var check_at: Vector2 = points[i].lerp(points[i+1],fraction)
+			var expected_floor: float = lerpf(HMHarbourTerrainG1.route_height(points[i]),
+				HMHarbourTerrainG1.route_height(points[i+1]),fraction)
+			var terrain_floor: float = HMHarbourTerrainG1.lower_height(check_at.x,check_at.y)
+			_require(expected_floor-terrain_floor >= 0.085 and expected_floor-terrain_floor <= 0.25,
+				"Haul route has small visible, grounded soil thickness at "+str(check_at))
 	var last_y: float = -999.0
 	for i: int in range(points.size()-1):
 		for j: int in range(5):

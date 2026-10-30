@@ -18,7 +18,21 @@ static func lower_height(x: float, z: float) -> float:
 	var terrace_lip: float = -29.3 + 1.1 * sin(z * 0.047 + 1.1)
 	var t: float = clampf((x - tide_edge) / (terrace_lip - tide_edge), 0.0, 1.0)
 	t = t * t * (3.0 - 2.0 * t)
-	return lerpf(-0.85, 2.0, t)
+	var natural_bank: float = lerpf(-0.85, 2.0, t)
+	# G1: the quay-to-warehouse walk is CUT INTO and SUPPORTED BY the
+	# landform. Without this fill/cut the first path span hovered up to 2m
+	# above the tidal bank. The gently graded approach is part of terrain,
+	# not a decorative ribbon concealing a disconnected collision.
+	var apron_start := Vector2(-38.0, 19.5)
+	var apron_end := Vector2(-26.0, 27.0)
+	var axis: Vector2 = apron_end - apron_start
+	var point := Vector2(x,z)
+	var u: float = clampf((point - apron_start).dot(axis) / axis.length_squared(),0.0,1.0)
+	var nearest: Vector2 = apron_start + axis * u
+	var edge_distance: float = point.distance_to(nearest)
+	var mask: float = clampf(1.0 - edge_distance / 5.7,0.0,1.0)
+	mask = mask * mask * (3.0 - 2.0 * mask)
+	return lerpf(natural_bank,lerpf(1.29,2.0,u),mask)
 
 static func bluff_height(x: float) -> float:
 	var t: float = clampf((x - BLUFF_X0) / (BLUFF_X1 - BLUFF_X0), 0.0, 1.0)
@@ -42,7 +56,7 @@ static func create_lower_terrace() -> StaticBody3D:
 	collision.name = "CollisionShape3D"
 	var shape := ConcavePolygonShape3D.new()
 	shape.backface_collision = true
-	shape.data = _lower_collision(2.6)
+	shape.data = _lower_collision(2.0)
 	collision.shape = shape
 	body.add_child(collision)
 	return body
@@ -81,7 +95,7 @@ static func route_points() -> PackedVector2Array:
 static func route_height(at: Vector2) -> float:
 	# Pier walkway joins at 1.35m; inland stations retain the existing
 	# floor datum, with no raised kerb or path-only collision obstacle.
-	return maxf(1.43, lower_height(at.x,at.y) + 0.115)
+	return maxf(1.43, lower_height(at.x,at.y) + 0.16)
 
 static func create_haul_path() -> StaticBody3D:
 	var path := StaticBody3D.new()
