@@ -18,7 +18,7 @@ func _run() -> void:
     for i: int in range(6):
         await physics_frame
     var roads: Node3D = village.get_node("RoadsAndPaths") as Node3D
-    _assert(roads.get_child_count() == 10, "Eight original road segments and two turning aprons")
+    _assert(roads.get_child_count() == 12, "Historic ten-road network plus two linked lower-haul spurs")
     _assert(roads.get_node_or_null("UpperRampLowerTurn") != null, "Lower turn installed")
     _assert(roads.get_node_or_null("UpperRampHeadlandTurn") != null, "Headland return turn installed")
     var shelter: Node3D = village.district_sites.installation_nodes["service/boatyard_base"] as Node3D
