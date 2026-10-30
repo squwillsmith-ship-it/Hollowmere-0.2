@@ -32,6 +32,8 @@ func build(cottage: Node3D, installations: Dictionary) -> void:
 			if not (candidate is HMInspectTarget):
 				continue
 			var part := candidate as HMInspectTarget
+			if bool(part.get_meta("g2_assembled",false)):
+				continue
 			var collider := part.get_node_or_null("CollisionShape3D") as CollisionShape3D
 			if collider == null or not (collider.shape is BoxShape3D):
 				continue
