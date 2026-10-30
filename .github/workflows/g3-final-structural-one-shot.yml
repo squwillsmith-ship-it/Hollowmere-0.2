@@ -1,0 +1,88 @@
+name: G3 final structural attempt real engine and Vulkan gate
+on:
+  push:
+    branches:
+      - art/g3-final-structural-rebuild-20261030
+    paths:
+      - .github/workflows/g3-final-structural-one-shot.yml
+permissions:
+  contents: write
+jobs:
+  structural:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 70
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Prepare pinned engine and Mesa Vulkan
+        run: |
+          python -m pip install --quiet numpy Pillow trimesh scipy
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends xvfb mesa-vulkan-drivers libvulkan1 libasound2t64 libpulse0 libfontconfig1 unzip
+      - name: Regenerate existing reference-model dependencies
+        run: |
+          python tools/generate_step21_materials.py
+          python tools/generate_step21_glb.py
+          python tools/generate_phase_b_surfaces.py
+          python tools/generate_phase_b_reference_glb.py
+      - name: Verify original GLB content parity
+        run: python -m unittest discover -s tests -p 'test_g3_model_assets.py' -v
+      - name: Download pinned Godot 4.7.2
+        run: python tools/test_environment.py doctor --install
+      - name: Existing complete official regression
+        run: python tools/test_environment.py check --godot .qa-tools/Godot_v4.7.2-stable_linux.x86_64
+      - name: Verify new matching collision and 64 roof owners
+        run: |
+          .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --headless --path game --script res://tests/test_g3_final_structural.gd | tee build/qa-g3-last-chance.log
+          grep -q HOLLOWMERE_G3_LAST_CHANCE_OK build/qa-g3-last-chance.log
+      - name: Existing genuine Vulkan rendered frame suite
+        if: success()
+        run: python tools/test_environment.py render --godot .qa-tools/Godot_v4.7.2-stable_linux.x86_64
+      - name: Re-capture all 21 original village sites plus night and fog
+        if: success()
+        env:
+          LIBGL_ALWAYS_SOFTWARE: '1'
+          GODOT_HEADLESS: 'false'
+        run: |
+          mkdir -p build
+          HOLLOWMERE_G3_21_RENDER_DIR="$PWD/build" xvfb-run -a -s '-screen 0 1280x720x24' .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --audio-driver Dummy --path game --script res://tests/test_g3_all_site_capture.gd | tee build/qa-g3-real-site-visuals.log
+          grep -q HOLLOWMERE_G3_TWENTY_ONE_SITES_VULKAN_OK build/qa-g3-real-site-visuals.log
+          python - <<'PY'
+          from PIL import Image,ImageDraw,ImageOps
+          from pathlib import Path
+          files=sorted(Path('build').glob('g3-site-*.png'))
+          assert len(files)==23, f'Not all 23 frames generated: {len(files)}'
+          w,h=320,195
+          sheet=Image.new('RGB',(w*4,(h+23)*6),(28,32,35))
+          draw=ImageDraw.Draw(sheet)
+          for i,p in enumerate(files):
+              x,y=(i%4)*w,(i//4)*(h+23)
+              with Image.open(p) as im:
+                  sheet.paste(ImageOps.fit(im.convert('RGB'),(w-8,h-8)),(x+4,y+17))
+              draw.text((x+5,y+2),p.stem,fill=(229,230,220))
+          sheet.save('build/g3-last-chance-contact.jpg',quality=93,subsampling=0)
+          PY
+      - name: Persist screenshot contact in the isolated G3 source
+        if: success()
+        continue-on-error: true
+        run: |
+          mkdir -p art/g3/qa
+          cp build/g3-last-chance-contact.jpg art/g3/qa/g3-last-chance-contact-20261030.jpg
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add art/g3/qa/g3-last-chance-contact-20261030.jpg
+          git commit -m 'test(g3): actual final structural village render contact'
+          git push origin HEAD:refs/heads/art/g3-final-structural-rebuild-20261030
+      - name: Preserve all engine logs and genuine screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g3-final-structural-real-godot-qa
+          path: |
+            build/qa-*.log
+            build/qa-environment.json
+            build/*.png
+            build/g3-last-chance-contact.jpg
+          if-no-files-found: warn
