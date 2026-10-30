@@ -136,6 +136,14 @@ func build(sites: Dictionary) -> void:
 	roof_finish.build(installation_nodes)
 	set_meta("g3_64_roof_surfaces",roof_finish.owners)
 
+	# G3 model-first facade reconstruction: textured, imported GLB components
+	# are fitted to already-owned structure sections. No new targets/colliders.
+	var complete_facades := HMG3TexturedStructureAssembly.new()
+	complete_facades.name = "G3ModelTextureStructureAssembly"
+	add_child(complete_facades)
+	complete_facades.build(installation_nodes)
+	set_meta("g3_rebuilt_facade_owners", complete_facades.assembled_parts)
+
 	# World discoveries and narrative cues reference existing site markers.
 	for data: Variant in parsed.get("world_discoveries", []):
 		if not (data is Dictionary) or not sites.has(String(data.get("site_id", ""))):

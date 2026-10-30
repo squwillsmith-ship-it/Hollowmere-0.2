@@ -300,6 +300,9 @@ def main():
         suites.append(('godot-g3-all-sites-identity', [engine, '--headless', '--path',
             str(ROOT/'game'), '--script', 'res://tests/test_g3_all_site_identity.gd'],
             'HOLLOWMERE_G3_ALL_SITE_IDENTITY_OK'))
+        suites.append(('godot-g3-model-texture-structure', [engine, '--headless', '--path',
+            str(ROOT/'game'), '--script', 'res://tests/test_g3_model_texture_structure.gd'],
+            'HOLLOWMERE_G3_MODEL_TEXTURE_STRUCTURE_OK'))
         for name, command, marker in suites:
             ok, output = log_step(report, name, command, 60)
             if not ok or marker not in output:
