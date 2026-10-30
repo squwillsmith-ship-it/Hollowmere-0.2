@@ -144,7 +144,11 @@ static func _install_mesh_and_collision(body: StaticBody3D,
 	body.add_child(visual)
 	var collider := CollisionShape3D.new()
 	collider.name = "CollisionShape3D"
-	collider.shape = mesh.create_trimesh_shape()
+	var physical: ConcavePolygonShape3D = mesh.create_trimesh_shape()
+	# Godot's front/back winding must not create a phantom floor.
+	# Backface hit support is intentional for a two-sided walkable landform.
+	physical.backface_collision = true
+	collider.shape = physical
 	body.add_child(collider)
 
 static func _triangle(tool: SurfaceTool, a: Vector3, b: Vector3,
