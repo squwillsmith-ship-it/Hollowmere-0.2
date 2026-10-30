@@ -156,9 +156,15 @@ func _rim(body: StaticBody3D,dims: Vector3,key: String,side: int,
     var low: float = -dims.y*.5
     var along: float = (u-.5)*(dims.x if strip_x else dims.z)
     var index: int = roundi(u*float(nx if strip_x else nz))
-    var top: float = (heights[nz][index] if side==0 else
-        heights[0][index]) if strip_x else (
-        heights[index][nx] if side==2 else heights[index][0])
+    var top: float = dims.y*.5
+    if side == 0:
+        top = heights[nz][index]
+    elif side == 1:
+        top = heights[0][index]
+    elif side == 2:
+        top = heights[index][nx]
+    else:
+        top = heights[index][0]
     var y: float = lerpf(top,low,lower_fraction)
     var side_apron: float = _apron(key,side)
     var fan: float = pow(lower_fraction,1.4)
