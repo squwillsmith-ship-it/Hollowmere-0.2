@@ -48,34 +48,34 @@
     },
     {
       "path": "game/assets/models/g3/kit/stone_wall_x.glb",
-      "sha": "e9c9161a0d602d7b1481a6434b35d9d6e0135825",
-      "bytes": 164940
+      "sha": "a030c12b718dadb8e8ef601fc3e7f17471fdbdb5",
+      "bytes": 164948
     },
     {
       "path": "game/assets/models/g3/kit/stone_wall_z.glb",
-      "sha": "ad3eec12c4644136754302f7f531a99a0686aabd",
-      "bytes": 164940
+      "sha": "a781c74239bdde7679743edb0d3dfb5c56f3813a",
+      "bytes": 164948
     },
     {
       "path": "game/assets/models/g3/kit/timber_wall_x.glb",
-      "sha": "cc77ca63ecf5e2f7d595e53f875167298437dcdb",
-      "bytes": 121280
+      "sha": "22c17041e87421948b75abc12286bfca19231373",
+      "bytes": 121288
     },
     {
       "path": "game/assets/models/g3/kit/timber_wall_z.glb",
-      "sha": "3eeb8ed69bf8c2a14795c56f694b0f2929190852",
-      "bytes": 121280
+      "sha": "e1f49fbaebe96bb0a04b3045d7ef54a34aaed471",
+      "bytes": 121288
     },
     {
       "path": "game/assets/models/g3/kit/lime_wall_x.glb",
-      "sha": "8023538b837ba8cd1ff1d33108ec6fb7afa7c24e",
-      "bytes": 212760
+      "sha": "ace1cae2dfafbecb2d7a38d101fdce34ee79319b",
+      "bytes": 212768
     },
     {
       "path": "game/assets/models/g3/kit/lime_wall_z.glb",
-      "sha": "b34e2bc2459e569b6d7e67425ddac488b09622be",
-      "bytes": 212760
+      "sha": "9cbea2640db3954a896152e21469fc030855e125",
+      "bytes": 212768
     }
   ],
-  "source_note": "All models contain independently surfaced low-poly boxes, overlapped/offset stone courses, timber laths, hewn battens, patchy lime and diagonal bracing. Embedded 128x128 authored muted albedo and glTF ORM textures. Scale model's unit nominal envelope to original exact physical owner bounds; don't use as separate salvage bodies. GLB POSITION accessor AABBs recomputed from authored vertices for reliable frustum culling."
+  "source_note": "All models contain independently surfaced low-poly boxes, overlapped/offset stone courses, timber laths, hewn battens, patchy lime and diagonal bracing. Embedded 128x128 authored muted albedo and glTF ORM textures. Scale model's unit nominal envelope to original exact physical owner bounds; don't use as separate salvage bodies. Exact position bounds are calculated from the unmodified binary geometry to prevent culling errors."
 }
