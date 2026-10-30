@@ -98,6 +98,27 @@ class G3ModelAssets(unittest.TestCase):
                         blob = binary[view["byteOffset"]:view["byteOffset"] + view["byteLength"]]
                         self.assertEqual(png_info(blob)[:2], (128, 128))
 
+    def test_pbr_sources_match_embedded_gltf_images(self):
+        for profile in PROFILES:
+            for axis in ("x", "z"):
+                blob = (MODELS / f"{profile}_wall_{axis}.glb").read_bytes()
+                gltf, binary = glb_info(blob)
+                checked = 0
+                for img in gltf["images"]:
+                    name = img["name"]
+                    for kind in ("stone", "wood", "lime"):
+                        if not name.startswith("g3_" + kind + "_"):
+                            continue
+                        channel = "orm" if name.endswith("_orm") else "albedo"
+                        expected = (TEXTURES / f"{kind}_{channel}.png").read_bytes()
+                        view = gltf["bufferViews"][img["bufferView"]]
+                        start = view["byteOffset"]
+                        actual = binary[start:start + view["byteLength"]]
+                        self.assertEqual(actual, expected,
+                            f"Embedded GLB material diverges from G3 source: {name}")
+                        checked += 1
+                self.assertGreaterEqual(checked, 2)
+
     def test_six_editable_pbr_sources(self):
         for material in ("stone", "wood", "lime"):
             for channel in ("albedo", "orm"):

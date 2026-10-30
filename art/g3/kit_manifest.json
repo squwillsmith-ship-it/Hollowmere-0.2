@@ -18,7 +18,7 @@
   "assets": [
     {
       "path": "game/assets/materials/g3/stone_albedo.png",
-      "sha": "dc6452e684f47be159ae25822943ae6a7b162d07",
+      "sha": "fdd5c1b794a1192e467084151966ae16a30c2a04",
       "bytes": 49348
     },
     {
@@ -28,7 +28,7 @@
     },
     {
       "path": "game/assets/materials/g3/wood_albedo.png",
-      "sha": "0c15d7b4242b10946e65e6fc32f5fa3a84679b8a",
+      "sha": "844b02d163f6395df44808ba204d7677bf37d086",
       "bytes": 49348
     },
     {
@@ -38,7 +38,7 @@
     },
     {
       "path": "game/assets/materials/g3/lime_albedo.png",
-      "sha": "6f8b7774536b360fcc907a9d5906c00dec8378d2",
+      "sha": "db1c8a2468a7a137e113207a8b3a57d77ffacefd",
       "bytes": 49348
     },
     {
@@ -48,34 +48,34 @@
     },
     {
       "path": "game/assets/models/g3/kit/stone_wall_x.glb",
-      "sha": "a030c12b718dadb8e8ef601fc3e7f17471fdbdb5",
+      "sha": "d2210162cccdfa945f261ca913c156925a37c718",
       "bytes": 164948
     },
     {
       "path": "game/assets/models/g3/kit/stone_wall_z.glb",
-      "sha": "a781c74239bdde7679743edb0d3dfb5c56f3813a",
+      "sha": "108aaa8061888c767a3c3cde2280e03377d9c422",
       "bytes": 164948
     },
     {
       "path": "game/assets/models/g3/kit/timber_wall_x.glb",
-      "sha": "22c17041e87421948b75abc12286bfca19231373",
+      "sha": "80c4f15d3694fab821ecc32dfaef829deceba3f2",
       "bytes": 121288
     },
     {
       "path": "game/assets/models/g3/kit/timber_wall_z.glb",
-      "sha": "e1f49fbaebe96bb0a04b3045d7ef54a34aaed471",
+      "sha": "837e098835d0471e957d3be326f02ff95740b0fd",
       "bytes": 121288
     },
     {
       "path": "game/assets/models/g3/kit/lime_wall_x.glb",
-      "sha": "ace1cae2dfafbecb2d7a38d101fdce34ee79319b",
+      "sha": "47268a92f27919c30f609a922cfcfdbadc31df0d",
       "bytes": 212768
     },
     {
       "path": "game/assets/models/g3/kit/lime_wall_z.glb",
-      "sha": "9cbea2640db3954a896152e21469fc030855e125",
+      "sha": "02e1ef83b88cf88ac9467cb01142c6fb5d9cf9e5",
       "bytes": 212768
     }
   ],
-  "source_note": "All models contain independently surfaced low-poly boxes, overlapped/offset stone courses, timber laths, hewn battens, patchy lime and diagonal bracing. Embedded 128x128 authored muted albedo and glTF ORM textures. Scale model's unit nominal envelope to original exact physical owner bounds; don't use as separate salvage bodies. Exact position bounds are calculated from the unmodified binary geometry to prevent culling errors."
+  "source_note": "All models contain independently surfaced low-poly boxes, overlapped/offset stone courses, timber laths, hewn battens, patchy lime and diagonal bracing. Embedded 128x128 authored muted albedo and glTF ORM textures. Scale model's unit nominal envelope to original exact physical owner bounds; don't use as separate salvage bodies. Exact position bounds are calculated from the unmodified binary geometry to prevent culling errors. Materials albedo source and embedded glTF textures verified together during QA; G3 material finish revised from initial over-warm visual screenshots."
 }

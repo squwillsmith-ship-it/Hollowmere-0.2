@@ -1,4 +1,4 @@
-name: G3 one-shot model and real Godot QA
+name: G3 model and restrained materials final QA
 on:
   push:
     branches:
