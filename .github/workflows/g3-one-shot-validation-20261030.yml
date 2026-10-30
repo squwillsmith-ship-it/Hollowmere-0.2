@@ -7,7 +7,7 @@ on:
       - .github/workflows/g3-one-shot-validation-20261030.yml
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   linux-g3:
@@ -38,6 +38,45 @@ jobs:
       - name: Actual 21-location Vulkan and fog/night screenshots
         if: success()
         run: python tools/test_environment.py render --godot .qa-tools/Godot_v4.7.2-stable_linux.x86_64
+      - name: Genuine 21-site G3 Vulkan views and atmospheric captures
+        if: success()
+        env:
+          LIBGL_ALWAYS_SOFTWARE: '1'
+          GODOT_HEADLESS: 'false'
+        run: |
+          mkdir -p build
+          HOLLOWMERE_G3_21_RENDER_DIR="$PWD/build" xvfb-run -a -s '-screen 0 1280x720x24' \
+            .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --audio-driver Dummy \
+            --path game --script res://tests/test_g3_all_site_capture.gd | tee build/qa-g3-21-site-vulkan.log
+          grep -q HOLLOWMERE_G3_TWENTY_ONE_SITES_VULKAN_OK build/qa-g3-21-site-vulkan.log
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image, ImageOps, ImageDraw
+          files=sorted(Path("build").glob("g3-site-*.png"))
+          assert len(files)==23, f"Expected 21 site + 2 weather, got {len(files)}"
+          width,height=330,200
+          sheet=Image.new("RGB",(width*4,(height+22)*6),(30,35,39))
+          brush=ImageDraw.Draw(sheet)
+          for i,file in enumerate(files):
+              x,y=(i%4)*width,(i//4)*(height+22)
+              with Image.open(file) as im:
+                  im=ImageOps.fit(im.convert("RGB"),(width-8,height-8))
+                  sheet.paste(im,(x+4,y+18))
+              brush.text((x+5,y+2),file.stem,fill=(236,239,232))
+          sheet.save("build/g3-model-rebuild-contact.jpg",quality=92,subsampling=0)
+          print("G3_21_SITE_VISUAL_CONTACT_READY")
+          PY
+      - name: Publish visual contact sheet to the isolated draft branch
+        if: success()
+        continue-on-error: true
+        run: |
+          mkdir -p art/g3/qa
+          cp build/g3-model-rebuild-contact.jpg art/g3/qa/g3-model-rebuild-contact-20261030.jpg
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git config user.name 'github-actions[bot]'
+          git add art/g3/qa/g3-model-rebuild-contact-20261030.jpg
+          git commit -m 'test(g3): attach actual twenty-one-site Godot render contact sheet'
+          git push origin HEAD:refs/heads/art/g3-model-texture-structure-20261030
       - name: Upload all QA evidence even on failure
         if: always()
         uses: actions/upload-artifact@v4
@@ -50,4 +89,5 @@ jobs:
             build/phase-*.png
             build/step*-*.png
             build/*g3*.png
+            build/g3-model-rebuild-contact.jpg
           if-no-files-found: warn

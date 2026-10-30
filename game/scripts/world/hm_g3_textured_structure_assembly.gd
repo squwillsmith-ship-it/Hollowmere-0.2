@@ -62,7 +62,11 @@ func build(installations: Dictionary) -> void:
             var size := Vector3(float(size_values[0]), float(size_values[1]), float(size_values[2]))
             if size.x <= .05 or size.y <= .05 or size.z <= .05:
                 continue
-            var owner: StaticBody3D = group.get_node_or_null(title) as StaticBody3D
+            # Godot may normalize periods in Node names (for instance
+            # ShelterPost_-4.2_-2.7). Never assume a manifest title is a
+            # valid literal NodePath; resolve against direct children and
+            # verified original physical offset instead.
+            var owner: StaticBody3D = _original_owner(group, geometry)
             if owner == null:
                 push_error("G3 asset has no original physical owner: " + installation_id + "/" + title)
                 continue
@@ -134,3 +138,28 @@ func _is_structural_face(title: String, material: String) -> bool:
         if name.contains(token):
             return true
     return false
+
+func _original_owner(group: Node3D, geometry: Dictionary) -> StaticBody3D:
+    var title: String = String(geometry.get("name", ""))
+    var normalized: String = title.replace(".", "_")
+    for child: Node in group.get_children():
+        if not (child is StaticBody3D):
+            continue
+        if String(child.name) == title or String(child.name).replace(".", "_") == normalized:
+            return child as StaticBody3D
+    var offsets: Array = geometry.get("offset", [])
+    var sizes: Array = geometry.get("size", [])
+    if offsets.size() != 3 or sizes.size() != 3:
+        return null
+    var expected := Vector3(float(offsets[0]), float(offsets[1]), float(offsets[2]))
+    var expected_size := Vector3(float(sizes[0]), float(sizes[1]), float(sizes[2]))
+    for child: Node in group.get_children():
+        var candidate: StaticBody3D = child as StaticBody3D
+        if candidate == null or candidate.position.distance_to(expected) > .001:
+            continue
+        var shape: CollisionShape3D = candidate.get_node_or_null("CollisionShape3D") as CollisionShape3D
+        if shape == null or not (shape.shape is BoxShape3D):
+            continue
+        if ((shape.shape as BoxShape3D).size - expected_size).length() < .005:
+            return candidate
+    return null

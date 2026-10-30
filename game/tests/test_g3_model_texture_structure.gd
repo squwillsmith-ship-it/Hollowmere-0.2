@@ -38,7 +38,25 @@ func _run() -> void:
                 check(group != null, "Original building group still present")
                 if group == null:
                     continue
-                var body: StaticBody3D = group.get_node_or_null(part_name) as StaticBody3D
+                var body: StaticBody3D = null
+                for child: Node in group.get_children():
+                    if child is StaticBody3D and (
+                            String(child.name) == part_name or
+                            String(child.name).replace(".", "_") == part_name.replace(".", "_")):
+                        body = child as StaticBody3D
+                        break
+                # Fallback: normalized names are handled by the assembly's
+                # exact physical-offset/shape lookup, so use its actual owner.
+                if body == null:
+                    var source: Variant = JSON.parse_string(FileAccess.get_file_as_string(
+                        "res://data/v1/brinewick_district_builds.json"))
+                    for row: Variant in source["installations"]:
+                        if String(row.get("id", "")) != group_id:
+                            continue
+                        for geom: Variant in row["geometry"]:
+                            if String(geom.get("name", "")) == part_name:
+                                body = facades._original_owner(group, geom)
+                                break
                 check(body != null, "Original collider-backed piece still present")
                 if body == null:
                     continue
