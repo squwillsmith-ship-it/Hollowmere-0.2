@@ -19,6 +19,10 @@ func build(terraces: Node3D, roads: Node3D) -> void:
                     size = ((component as MeshInstance3D).mesh as BoxMesh).size
                     break
             if size == Vector3.ZERO:
+                # A newly authored route is already a physics-backed textured
+                # mesh and must not receive legacy block-slab decoration.
+                if holder == roads and bool(body.get_meta("authored_haul_route", false)):
+                    treated_roads += 1
                 continue
             var is_road: bool = holder == roads
             var mesh := SurfaceTool.new()
