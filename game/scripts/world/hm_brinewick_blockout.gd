@@ -188,6 +188,12 @@ func build_world() -> void:
 		_box(marker,"NonSalvageVolume",size,Vector3(0,size.y*0.5+0.15,0),hue)
 
 
+	var geology := HMG3GeologicalFoundation.new()
+	geology.name = "G3SculptedPlateauAndHeadland"
+	add_child(geology)
+	geology.build(terraces, site_nodes)
+	set_meta("g3_resculpted_original_terrain", geology.reshaped)
+
 	# The remaining two unpopulated architectural markers become physical,
 	# traversable inn and mine-office shells rather than giant solid cubes.
 	# Their story/salvage decompositions remain future authored work.

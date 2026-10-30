@@ -152,6 +152,12 @@ func build(sites: Dictionary) -> void:
 	signatures.build(installation_nodes,complete_facades)
 	set_meta("g3_owner_bound_signature_faces",signatures.decorated_faces)
 
+	var solid_roofs := HMG3RoofSectionRebuild.new()
+	solid_roofs.name = "G3FullOwnedRoofSections"
+	add_child(solid_roofs)
+	solid_roofs.build(installation_nodes,complete_facades)
+	set_meta("g3_rebuilt_original_roof_sections",solid_roofs.replaced)
+
 	# World discoveries and narrative cues reference existing site markers.
 	for data: Variant in parsed.get("world_discoveries", []):
 		if not (data is Dictionary) or not sites.has(String(data.get("site_id", ""))):
