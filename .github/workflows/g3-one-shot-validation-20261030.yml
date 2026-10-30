@@ -1,0 +1,53 @@
+name: G3 one-shot model and real Godot QA
+on:
+  push:
+    branches:
+      - art/g3-model-texture-structure-20261030
+    paths:
+      - .github/workflows/g3-one-shot-validation-20261030.yml
+
+permissions:
+  contents: read
+
+jobs:
+  linux-g3:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Linux software Vulkan dependencies
+        run: |
+          python -m pip install --quiet numpy Pillow trimesh scipy
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends xvfb mesa-vulkan-drivers libvulkan1 libasound2t64 libpulse0 libfontconfig1 unzip
+      - name: New G3 raw asset checks
+        run: python -m unittest discover -s tests -p 'test_g3_model_assets.py' -v
+      - name: Rebuild existing historical procedural reference assets
+        run: |
+          python tools/generate_step21_materials.py
+          python tools/generate_step21_glb.py
+          python tools/generate_phase_b_surfaces.py
+          python tools/generate_phase_b_reference_glb.py
+      - name: Install integrity-pinned Godot 4.7.2 editor
+        run: python tools/test_environment.py doctor --install
+      - name: Full official G3 test suite including GLB scene ownership
+        run: python tools/test_environment.py check --godot .qa-tools/Godot_v4.7.2-stable_linux.x86_64
+      - name: Actual 21-location Vulkan and fog/night screenshots
+        if: success()
+        run: python tools/test_environment.py render --godot .qa-tools/Godot_v4.7.2-stable_linux.x86_64
+      - name: Upload all QA evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g3-model-texture-structure-QA
+          path: |
+            build/qa-*.log
+            build/qa-environment.json
+            build/reference-*.png
+            build/phase-*.png
+            build/step*-*.png
+            build/*g3*.png
+          if-no-files-found: warn
