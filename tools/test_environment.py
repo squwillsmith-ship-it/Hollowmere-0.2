@@ -297,6 +297,9 @@ def main():
         suites.append(('godot-g3-roof-inward-pitch', [engine, '--headless', '--path',
             str(ROOT/'game'), '--script', 'res://tests/test_g3_roof_geometry.gd'],
             'HOLLOWMERE_G3_ROOFS_CORRECT_OK'))
+        suites.append(('godot-g4-protected-architecture', [engine, '--headless', '--path',
+            str(ROOT/'game'), '--script', 'res://tests/test_g4_protected_composition.gd'],
+            'HOLLOWMERE_G4_PROTECTED_COMPOSITION_OK'))
         for name, command, marker in suites:
             ok, output = log_step(report, name, command, 60)
             if not ok or marker not in output:
