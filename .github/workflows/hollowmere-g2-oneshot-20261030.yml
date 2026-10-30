@@ -1,0 +1,108 @@
+name: Hollowmere G2 one-shot pinned Godot hero validation
+on:
+  push:
+    branches:
+      - qa/g2-hero-20261030
+    paths:
+      - .github/workflows/hollowmere-g2-oneshot-20261030.yml
+permissions:
+  contents: read
+jobs:
+  g2-full-engine:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Godot runtime and generation dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends xvfb mesa-vulkan-drivers libvulkan1 libasound2t64 libpulse0 libfontconfig1 unzip
+          python -m pip install --quiet numpy Pillow trimesh scipy
+      - name: Generate existing authored materials
+        run: |
+          python tools/generate_step21_materials.py
+          python tools/generate_step21_glb.py
+          python tools/generate_phase_b_surfaces.py
+          python tools/generate_phase_b_reference_glb.py
+      - name: Install Godot 4.7.2 and run complete game suites including G2
+        run: |
+          python tools/test_environment.py doctor --install
+          python tools/test_environment.py check --godot .qa-tools/Godot_v4.7.2-stable_linux.x86_64
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g2-engine-log-${{ github.sha }}
+          path: |
+            build/qa-*.log
+            build/qa-environment.json
+          if-no-files-found: warn
+          retention-days: 14
+
+  g2-real-vulkan-hero-reference:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Vulkan software display
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends xvfb mesa-vulkan-drivers libvulkan1 libasound2t64 libpulse0 libfontconfig1 unzip
+          python -m pip install --quiet numpy Pillow trimesh scipy
+      - name: Rebuild materials and import real Godot project
+        run: |
+          python tools/generate_step21_materials.py
+          python tools/generate_step21_glb.py
+          python tools/generate_phase_b_surfaces.py
+          python tools/generate_phase_b_reference_glb.py
+          python tools/test_environment.py doctor --install
+          mkdir -p build/g2
+          .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --headless --path game --editor --quit > build/g2-import.log 2>&1 || { tail -100 build/g2-import.log; exit 1; }
+      - name: Render authentic 1280x720 cottage and warehouse frames
+        env:
+          LIBGL_ALWAYS_SOFTWARE: "1"
+        run: |
+          export HOLLOWMERE_REFERENCE_RENDER_DIR="$PWD/build/g2"
+          xvfb-run -a -s "-screen 0 1280x720x24" .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --rendering-method forward_plus --rendering-driver vulkan --audio-driver Dummy --path game --script res://tests/test_reference_capture.gd > build/g2-reference.log 2>&1 || { tail -100 build/g2-reference.log; exit 1; }
+          grep HOLLOWMERE_REFERENCE_RENDER_OK build/g2-reference.log
+      - name: Render labelled synthetic state visual diagnostics
+        env:
+          LIBGL_ALWAYS_SOFTWARE: "1"
+        run: |
+          export HOLLOWMERE_TEARDOWN_RENDER_DIR="$PWD/build/g2"
+          xvfb-run -a -s "-screen 0 1280x720x24" .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --rendering-method forward_plus --rendering-driver vulkan --audio-driver Dummy --path game --script res://tests/test_visual_rebuild_teardown_capture.gd > build/g2-teardown.log 2>&1 || { tail -100 build/g2-teardown.log; exit 1; }
+          grep HOLLOWMERE_VISUAL_TEARDOWN_RENDER_OK build/g2-teardown.log
+      - name: Verify all rendered files (not art acceptance)
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          files=sorted(Path("build/g2").glob("*.png"))
+          assert len(files)==8, (len(files),files)
+          for f in files:
+              with Image.open(f) as img:
+                  img.load()
+                  assert img.size==(1280,720)
+                  assert len(set(img.convert("RGB").resize((32,18)).getdata()))>12,f
+          print("G2_VULKAN_8_REAL_FRAMES_VALID")
+          PY
+      - name: Upload frames and renderer logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g2-vulkan-frames-${{ github.sha }}
+          path: |
+            build/g2/*
+            build/g2-*.log
+          if-no-files-found: warn
+          retention-days: 14
