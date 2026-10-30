@@ -62,6 +62,26 @@ func _run() -> void:
 	for id: String in selected:
 		unique_sites[selected[id]]=true
 	verify(unique_sites.size()==10,"G3 second pass covers ten unique original sites")
+	var village_context: HMG3VillageSiteContext = stage.get_node_or_null(
+		"G3TwentyOneSiteContext") as HMG3VillageSiteContext
+	verify(village_context!=null,"G3 complete 21-site village context attached")
+	if village_context!=null:
+		verify(village_context.covered_site_ids.size()==21,"All 21 site IDs have grounded context")
+		verify(village_context.individual_members>=130,"21 sites have substantial individual masonry/joinery geometry")
+		verify(village_context.district_totals.size()==4,"Four authored district types are distinct")
+		for site_id: String in stage.site_nodes:
+			var original: Node3D=stage.site_nodes[site_id]
+			var context: Node3D=original.get_node_or_null("G3NonSalvageSiteFootings") as Node3D
+			verify(context!=null,"Existing site marker retains unique G3 region "+site_id)
+			if context==null:
+				continue
+			verify(bool(context.get_meta("g3_only_permanent_cosmetic",false)),
+				"Architectural site context cannot be accidentally sold "+site_id)
+			verify(context.get_child_count()>=6,
+				"Each village site has individual architecture members "+site_id)
+			for member: Node in context.get_children():
+				verify(member is MeshInstance3D,
+					"No new physics owners or story triggers from G3")
 	var life:=HMPartLifecycle.new()
 	stage.add_child(life)
 	life.bind_stage(stage)
