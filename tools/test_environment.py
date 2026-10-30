@@ -285,6 +285,9 @@ def main():
         suites.append(('godot-g1-harbour-physics', [engine, '--headless', '--path',
             str(ROOT/'game'), '--script', 'res://tests/test_g1_harbour_route.gd'],
             'HOLLOWMERE_G1_HARBOUR_ROUTE_OK'))
+        suites.append(('godot-g2-cottage-assets', [engine, '--headless', '--path',
+            str(ROOT/'game'), '--script', 'res://tests/test_g2_cottage_assets.gd'],
+            'HOLLOWMERE_G2_COTTAGE_ASSET_OK'))
         suites.append(('godot-g2-hero-part-ownership', [engine, '--headless', '--path',
             str(ROOT/'game'), '--script', 'res://tests/test_g2_hero_architecture.gd'],
             'HOLLOWMERE_G2_HERO_OWNERSHIP_OK'))
