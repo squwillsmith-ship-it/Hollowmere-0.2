@@ -64,6 +64,22 @@ func _check() -> void:
         expect(int(counts.get(group,0))>=2,"Built roof courses checked "+group)
         seen+=int(counts.get(group,0))
     expect(seen==64,"64 original source/collider-backed roof bodies checked")
+    # Roof ridge requires protected end-masonry that closes the apex.
+    var chapel: Node3D=stage.district_sites.installation_nodes.get(
+        "chapel/ordinary_hall",null) as Node3D
+    if chapel != null:
+        for masonry_name: String in ["SouthEntranceWest","NorthEndMasonry"]:
+            var masonry: StaticBody3D=chapel.get_node_or_null(masonry_name) as StaticBody3D
+            expect(masonry!=null,"Existing protected gable owner "+masonry_name)
+            if masonry==null:
+                continue
+            var gable: MeshInstance3D=masonry.get_node_or_null(
+                "G3OwnedDistrictDetail/G3ProtectedChapelMasonryGable") as MeshInstance3D
+            expect(gable!=null and gable.mesh!=null,
+                "Finished chapel ridge gable closes original wall "+masonry_name)
+            if gable!=null:
+                expect(bool(gable.get_meta("g3_noncolliding",false)),
+                    "Chapel gable does not create extra collision or salvage")
     var saved:=HMPartLifecycle.new()
     stage.add_child(saved)
     saved.bind_stage(stage)
