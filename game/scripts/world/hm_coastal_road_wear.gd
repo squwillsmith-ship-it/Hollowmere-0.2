@@ -26,6 +26,10 @@ func build(roads: Node3D) -> void:
             push_error("Missing original cart route for visual wear: " + target_name)
             continue
         var shape_node: CollisionShape3D = solid.get_node_or_null("CollisionShape3D") as CollisionShape3D
+        if bool(solid.get_meta("authored_haul_route", false)):
+            # Grounded full-width mesh has its own authentic surface finish.
+            dressed_roads += 1
+            continue
         if shape_node == null or not (shape_node.shape is BoxShape3D):
             push_error("Visual wear requires the original physical road slab: " + target_name)
             continue
