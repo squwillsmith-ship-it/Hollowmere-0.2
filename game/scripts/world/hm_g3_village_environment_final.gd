@@ -79,15 +79,28 @@ func build(site_nodes: Dictionary) -> void:
 		if ordinal in [9,10,15]:
 			# Worn irregular flagging makes the well/square/inn civic cluster
 			# legible while preserving the existing well/bell puzzle access.
-			for ring: int in range(2):
+			for ring: int in range(3):
 				for tile: int in range(18+ring*9):
 					var count: int=18+ring*9
 					var angle: float=TAU*(float(tile)+.35*float(ring))/float(count)
-					var rr: float=4.7+float(ring)*2.65+float((tile*7+ordinal)%3)*.18
-					var at:=world+Vector3(cos(angle)*rr,.046,sin(angle)*rr)
+					var rr: float=4.65+float(ring)*2.25+float((tile*7+ordinal)%3)*.18
+					var at:=world+Vector3(cos(angle)*rr,.125,sin(angle)*rr)
 					_flag(square,at,rng.randf_range(.51,.86),
 						angle*.32+rng.randf_range(-.2,.2),
 						QUIET_STONE.lerp(LIMESTONE,rng.randf_range(.07,.52)))
+					civic_stones+=1
+		if ordinal in [9,10,11,15]:
+			# Readable worn approach from square to the existing colliding
+			# cart road; no pass-blocking physics or synthetic route teleport.
+			var road_side: float=1.0 if world.z<0.0 else -1.0
+			for step: int in range(12):
+				for side: int in [-1,1]:
+					var along: float=road_side*(6.4+float(step)*1.16)
+					var patch_at:=world+Vector3(float(side)*.77,
+						.125+float((step+side+2)%3)*.002,along)
+					_flag(square,patch_at,.54+rng.randf_range(-.09,.13),
+						rng.randf_range(-.11,.11),
+						QUIET_STONE.lerp(LIMESTONE,rng.randf_range(.08,.44)))
 					civic_stones+=1
 		if region=="harbour" and ordinal in [1,2,6,20,21]:
 			# Rope-haul staging and abandoned short dock timbers: small
