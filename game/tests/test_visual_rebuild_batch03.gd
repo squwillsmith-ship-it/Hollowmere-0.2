@@ -37,10 +37,10 @@ func _run() -> void:
             continue
         var physical: CollisionShape3D = body.get_node_or_null("CollisionShape3D") as CollisionShape3D
         var skin: MeshInstance3D = body.get_node_or_null("GroundedCartRutsAndAggregate") as MeshInstance3D
-        verify(physical != null and physical.shape is BoxShape3D,
-            "Original road box still carries collisions at "+title)
-        verify(skin != null and skin.mesh is ArrayMesh and skin.get_child_count() == 0,
-            "New road accents only use rendered triangles at "+title)
+        verify(physical != null and ((physical.shape is ConcavePolygonShape3D) if title == "LandingApproach" else (physical.shape is BoxShape3D)),
+            "Real road collision agrees with source geometry at "+title)
+        verify((skin == null) if title == "LandingApproach" else (skin != null and skin.mesh is ArrayMesh and skin.get_child_count() == 0),
+            "Legacy decal does not duplicate new colliding landing-road mesh "+title)
     var history: HMPhaseCHarbourDressing = village.get_node_or_null(
         "PhaseCHarbourHistory") as HMPhaseCHarbourDressing
     verify(history != null,"Existing harbour art layer still connected")
