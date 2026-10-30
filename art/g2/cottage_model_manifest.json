@@ -37,10 +37,10 @@
       "triangles": 216
     },
     "slate_patch": {
-      "members": 203,
+      "members": 205,
       "path": "game/assets/models/g2/cottage/part_slate_patch.glb",
-      "sha256": "0eb710880e66a0f786dcf432a3f525fc876821241a8f7458aae93af1b82637d8",
-      "triangles": 2436
+      "sha256": "49694b720c3cbf65e94ffa6360cdc81397919f60cdd719b244e7047796d43bba",
+      "triangles": 2460
     },
     "stone_block": {
       "members": 20,
