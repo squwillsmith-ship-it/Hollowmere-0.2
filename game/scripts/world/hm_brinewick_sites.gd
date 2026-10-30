@@ -202,6 +202,10 @@ func _solid(parent: Node3D, data: Dictionary) -> void:
 	if data.has("rotation"):
 		var angles: Array = data["rotation"]
 		body.rotation_degrees = Vector3(float(angles[0]), float(angles[1]), float(angles[2]))
+	# Preserve every stable warehouse salvage ID and rotate the existing
+	# structural collision with its physically authored pitched-roof module.
+	if String(parent.name) == "district_old_warehouse":
+		HMHeroBuildingSet.finish_warehouse_part(body, data)
 
 func _pickup_mesh(pickup: HMToolPickup) -> void:
 	pickup.collision_layer = 1
