@@ -291,6 +291,15 @@ def main():
         suites.append(('godot-g2-hero-part-ownership', [engine, '--headless', '--path',
             str(ROOT/'game'), '--script', 'res://tests/test_g2_hero_architecture.gd'],
             'HOLLOWMERE_G2_HERO_OWNERSHIP_OK'))
+        suites.append(('godot-g3-district-ownership', [engine, '--headless', '--path',
+            str(ROOT/'game'), '--script', 'res://tests/test_g3_district_pilot.gd'],
+            'HOLLOWMERE_G3_DISTRICT_PILOT_OK'))
+        suites.append(('godot-g3-roof-inward-pitch', [engine, '--headless', '--path',
+            str(ROOT/'game'), '--script', 'res://tests/test_g3_roof_geometry.gd'],
+            'HOLLOWMERE_G3_ROOFS_CORRECT_OK'))
+        suites.append(('godot-g3-all-sites-identity', [engine, '--headless', '--path',
+            str(ROOT/'game'), '--script', 'res://tests/test_g3_all_site_identity.gd'],
+            'HOLLOWMERE_G3_ALL_SITE_IDENTITY_OK'))
         for name, command, marker in suites:
             ok, output = log_step(report, name, command, 60)
             if not ok or marker not in output:

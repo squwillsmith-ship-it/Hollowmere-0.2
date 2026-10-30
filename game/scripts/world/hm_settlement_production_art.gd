@@ -283,10 +283,16 @@ func _landmark(site: Node3D, id: String) -> void:
                 _beam(site,"ChapelRakedButtress",
                     Vector3(x,0.32,z),Vector3(x*0.94,4.6,z),
                     0.38,STONE)
-        for x: float in [-6.2,6.2]:
+        # G3: fascia actually seats on the corrected OUTER eaves rather
+        # than floating across the formerly inverted V-shaped slate roof.
+        for x: float in [-6.12,6.12]:
             _beam(site,"ChapelWeatheredFascia",
-                Vector3(x,6.3,-5.45),Vector3(x,6.3,5.45),
-                0.18,TIMBER)
+                Vector3(x,5.42,-5.34),Vector3(x,5.42,5.34),
+                0.14,TIMBER)
+        # Low slate-capped ridge matches two correct inward-rising pitches.
+        _beam(site,"ChapelSlateRidgeCap",
+            Vector3(0.0,8.05,-5.26),Vector3(0.0,8.05,5.26),
+            0.17,SLATE)
     elif id == "service/landing_pier":
         for x: float in [-4.8,-2.4,0.0,2.4,4.8]:
             _beam(site,"LandingFender",Vector3(x,-1.1,-2.7),

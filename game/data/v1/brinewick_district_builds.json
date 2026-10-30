@@ -136,14 +136,42 @@
       "kind": "scenery",
       "geometry": [
         {
-          "name": "CompanyWorkShelterRoofLeft", "material": "roof",
-          "size": [9.65, 0.25, 3.40], "offset": [0, 3.95, -1.61],
-          "rotation": [-15.0, 0.0, 0.0]
+          "name": "CompanyWorkShelterRoofLeft",
+          "material": "roof",
+          "size": [
+            9.65,
+            0.25,
+            3.4
+          ],
+          "offset": [
+            0,
+            3.95,
+            -1.61
+          ],
+          "rotation": [
+            -15,
+            0,
+            0
+          ]
         },
         {
-          "name": "CompanyWorkShelterRoofRight", "material": "roof",
-          "size": [9.65, 0.25, 3.40], "offset": [0, 3.95, 1.61],
-          "rotation": [15.0, 0.0, 0.0]
+          "name": "CompanyWorkShelterRoofRight",
+          "material": "roof",
+          "size": [
+            9.65,
+            0.25,
+            3.4
+          ],
+          "offset": [
+            0,
+            3.95,
+            1.61
+          ],
+          "rotation": [
+            15,
+            0,
+            0
+          ]
         },
         {
           "name": "ShelterPost_-4.2_-2.7",
@@ -2533,7 +2561,7 @@
           "rotation": [
             0,
             0,
-            -23
+            23
           ],
           "removable_part_id": "village/08/mara_home/low_roof_west"
         },
@@ -2553,7 +2581,7 @@
           "rotation": [
             0,
             0,
-            -23
+            23
           ],
           "removable_part_id": "village/08/mara_home/low_roof_west/section_02"
         },
@@ -2573,7 +2601,7 @@
           "rotation": [
             0,
             0,
-            -23
+            23
           ],
           "removable_part_id": "village/08/mara_home/low_roof_west/section_03"
         },
@@ -2593,7 +2621,7 @@
           "rotation": [
             0,
             0,
-            -23
+            23
           ],
           "removable_part_id": "village/08/mara_home/low_roof_west/section_04"
         },
@@ -2613,7 +2641,7 @@
           "rotation": [
             0,
             0,
-            -23
+            23
           ],
           "removable_part_id": "village/08/mara_home/low_roof_west/section_05"
         },
@@ -2633,7 +2661,7 @@
           "rotation": [
             0,
             0,
-            -23
+            23
           ],
           "removable_part_id": "village/08/mara_home/low_roof_west/section_06"
         },
@@ -2653,7 +2681,7 @@
           "rotation": [
             0,
             0,
-            -23
+            23
           ],
           "removable_part_id": "village/08/mara_home/low_roof_west/section_07"
         },
@@ -2673,7 +2701,7 @@
           "rotation": [
             0,
             0,
-            23
+            -23
           ],
           "removable_part_id": "village/08/mara_home/low_roof_east"
         },
@@ -2693,7 +2721,7 @@
           "rotation": [
             0,
             0,
-            23
+            -23
           ],
           "removable_part_id": "village/08/mara_home/low_roof_east/section_02"
         },
@@ -2713,7 +2741,7 @@
           "rotation": [
             0,
             0,
-            23
+            -23
           ],
           "removable_part_id": "village/08/mara_home/low_roof_east/section_03"
         },
@@ -2733,7 +2761,7 @@
           "rotation": [
             0,
             0,
-            23
+            -23
           ],
           "removable_part_id": "village/08/mara_home/low_roof_east/section_04"
         },
@@ -2753,7 +2781,7 @@
           "rotation": [
             0,
             0,
-            23
+            -23
           ],
           "removable_part_id": "village/08/mara_home/low_roof_east/section_05"
         },
@@ -2773,7 +2801,7 @@
           "rotation": [
             0,
             0,
-            23
+            -23
           ],
           "removable_part_id": "village/08/mara_home/low_roof_east/section_06"
         },
@@ -2793,7 +2821,7 @@
           "rotation": [
             0,
             0,
-            23
+            -23
           ],
           "removable_part_id": "village/08/mara_home/low_roof_east/section_07"
         }
@@ -3226,7 +3254,7 @@
           "rotation": [
             0,
             0,
-            -23
+            23
           ],
           "removable_part_id": "village/12/upper_cottage_cluster_study/low_roof_west"
         },
@@ -3246,7 +3274,7 @@
           "rotation": [
             0,
             0,
-            -23
+            23
           ],
           "removable_part_id": "village/12/upper_cottage_cluster_study/low_roof_west/section_02"
         },
@@ -3266,7 +3294,7 @@
           "rotation": [
             0,
             0,
-            -23
+            23
           ],
           "removable_part_id": "village/12/upper_cottage_cluster_study/low_roof_west/section_03"
         },
@@ -3286,7 +3314,7 @@
           "rotation": [
             0,
             0,
-            -23
+            23
           ],
           "removable_part_id": "village/12/upper_cottage_cluster_study/low_roof_west/section_04"
         },
@@ -3306,7 +3334,7 @@
           "rotation": [
             0,
             0,
-            -23
+            23
           ],
           "removable_part_id": "village/12/upper_cottage_cluster_study/low_roof_west/section_05"
         },
@@ -3326,7 +3354,7 @@
           "rotation": [
             0,
             0,
-            23
+            -23
           ],
           "removable_part_id": "village/12/upper_cottage_cluster_study/low_roof_east"
         },
@@ -3346,7 +3374,7 @@
           "rotation": [
             0,
             0,
-            23
+            -23
           ],
           "removable_part_id": "village/12/upper_cottage_cluster_study/low_roof_east/section_02"
         },
@@ -3366,7 +3394,7 @@
           "rotation": [
             0,
             0,
-            23
+            -23
           ],
           "removable_part_id": "village/12/upper_cottage_cluster_study/low_roof_east/section_03"
         },
@@ -3386,7 +3414,7 @@
           "rotation": [
             0,
             0,
-            23
+            -23
           ],
           "removable_part_id": "village/12/upper_cottage_cluster_study/low_roof_east/section_04"
         },
@@ -3406,7 +3434,7 @@
           "rotation": [
             0,
             0,
-            23
+            -23
           ],
           "removable_part_id": "village/12/upper_cottage_cluster_study/low_roof_east/section_05"
         }
@@ -3764,7 +3792,7 @@
           "rotation": [
             0,
             0,
-            -22
+            22
           ],
           "removable_part_id": "village/11/tomas_workshop/rafters_west"
         },
@@ -3784,7 +3812,7 @@
           "rotation": [
             0,
             0,
-            -22
+            22
           ],
           "removable_part_id": "village/11/tomas_workshop/rafters_west/section_02"
         },
@@ -3804,7 +3832,7 @@
           "rotation": [
             0,
             0,
-            -22
+            22
           ],
           "removable_part_id": "village/11/tomas_workshop/rafters_west/section_03"
         },
@@ -3824,7 +3852,7 @@
           "rotation": [
             0,
             0,
-            -22
+            22
           ],
           "removable_part_id": "village/11/tomas_workshop/rafters_west/section_04"
         },
@@ -3844,7 +3872,7 @@
           "rotation": [
             0,
             0,
-            -22
+            22
           ],
           "removable_part_id": "village/11/tomas_workshop/rafters_west/section_05"
         },
@@ -3864,7 +3892,7 @@
           "rotation": [
             0,
             0,
-            -22
+            22
           ],
           "removable_part_id": "village/11/tomas_workshop/rafters_west/section_06"
         },
@@ -3884,7 +3912,7 @@
           "rotation": [
             0,
             0,
-            -22
+            22
           ],
           "removable_part_id": "village/11/tomas_workshop/rafters_west/section_07"
         },
@@ -3904,7 +3932,7 @@
           "rotation": [
             0,
             0,
-            22
+            -22
           ],
           "removable_part_id": "village/11/tomas_workshop/rafters_east"
         },
@@ -3924,7 +3952,7 @@
           "rotation": [
             0,
             0,
-            22
+            -22
           ],
           "removable_part_id": "village/11/tomas_workshop/rafters_east/section_02"
         },
@@ -3944,7 +3972,7 @@
           "rotation": [
             0,
             0,
-            22
+            -22
           ],
           "removable_part_id": "village/11/tomas_workshop/rafters_east/section_03"
         },
@@ -3964,7 +3992,7 @@
           "rotation": [
             0,
             0,
-            22
+            -22
           ],
           "removable_part_id": "village/11/tomas_workshop/rafters_east/section_04"
         },
@@ -3984,7 +4012,7 @@
           "rotation": [
             0,
             0,
-            22
+            -22
           ],
           "removable_part_id": "village/11/tomas_workshop/rafters_east/section_05"
         },
@@ -4004,7 +4032,7 @@
           "rotation": [
             0,
             0,
-            22
+            -22
           ],
           "removable_part_id": "village/11/tomas_workshop/rafters_east/section_06"
         },
@@ -4024,7 +4052,7 @@
           "rotation": [
             0,
             0,
-            22
+            -22
           ],
           "removable_part_id": "village/11/tomas_workshop/rafters_east/section_07"
         },
@@ -4470,7 +4498,7 @@
           "rotation": [
             0,
             0,
-            23
+            -23
           ],
           "removable_part_id": "village/03/office/roof_slope_east"
         },
@@ -4490,7 +4518,7 @@
           "rotation": [
             0,
             0,
-            23
+            -23
           ],
           "removable_part_id": "village/03/office/roof_slope_east/section_02"
         },
@@ -4510,7 +4538,7 @@
           "rotation": [
             0,
             0,
-            23
+            -23
           ],
           "removable_part_id": "village/03/office/roof_slope_east/section_03"
         },
@@ -4530,7 +4558,7 @@
           "rotation": [
             0,
             0,
-            23
+            -23
           ],
           "removable_part_id": "village/03/office/roof_slope_east/section_04"
         },
@@ -4550,7 +4578,7 @@
           "rotation": [
             0,
             0,
-            23
+            -23
           ],
           "removable_part_id": "village/03/office/roof_slope_east/section_05"
         },
@@ -4570,7 +4598,7 @@
           "rotation": [
             0,
             0,
-            23
+            -23
           ],
           "removable_part_id": "village/03/office/roof_slope_east/section_06"
         },
@@ -4590,7 +4618,7 @@
           "rotation": [
             0,
             0,
-            -23
+            23
           ],
           "removable_part_id": "village/03/office/roof_slope_west"
         },
@@ -4610,7 +4638,7 @@
           "rotation": [
             0,
             0,
-            -23
+            23
           ],
           "removable_part_id": "village/03/office/roof_slope_west/section_02"
         },
@@ -4630,7 +4658,7 @@
           "rotation": [
             0,
             0,
-            -23
+            23
           ],
           "removable_part_id": "village/03/office/roof_slope_west/section_03"
         },
@@ -4650,7 +4678,7 @@
           "rotation": [
             0,
             0,
-            -23
+            23
           ],
           "removable_part_id": "village/03/office/roof_slope_west/section_04"
         },
@@ -4670,7 +4698,7 @@
           "rotation": [
             0,
             0,
-            -23
+            23
           ],
           "removable_part_id": "village/03/office/roof_slope_west/section_05"
         },
@@ -4690,7 +4718,7 @@
           "rotation": [
             0,
             0,
-            -23
+            23
           ],
           "removable_part_id": "village/03/office/roof_slope_west/section_06"
         },
@@ -4973,7 +5001,7 @@
           "rotation": [
             0,
             0,
-            -18
+            18
           ],
           "removable_part_id": "village/06/net_store/salted_roof_west"
         },
@@ -4993,7 +5021,7 @@
           "rotation": [
             0,
             0,
-            -18
+            18
           ],
           "removable_part_id": "village/06/net_store/salted_roof_west/section_02"
         },
@@ -5013,7 +5041,7 @@
           "rotation": [
             0,
             0,
-            -18
+            18
           ],
           "removable_part_id": "village/06/net_store/salted_roof_west/section_03"
         },
@@ -5033,7 +5061,7 @@
           "rotation": [
             0,
             0,
-            -18
+            18
           ],
           "removable_part_id": "village/06/net_store/salted_roof_west/section_04"
         },
@@ -5053,7 +5081,7 @@
           "rotation": [
             0,
             0,
-            -18
+            18
           ],
           "removable_part_id": "village/06/net_store/salted_roof_west/section_05"
         },
@@ -5073,7 +5101,7 @@
           "rotation": [
             0,
             0,
-            -18
+            18
           ],
           "removable_part_id": "village/06/net_store/salted_roof_west/section_06"
         },
@@ -5093,7 +5121,7 @@
           "rotation": [
             0,
             0,
-            18
+            -18
           ],
           "removable_part_id": "village/06/net_store/salted_roof_east"
         },
@@ -5113,7 +5141,7 @@
           "rotation": [
             0,
             0,
-            18
+            -18
           ],
           "removable_part_id": "village/06/net_store/salted_roof_east/section_02"
         },
@@ -5133,7 +5161,7 @@
           "rotation": [
             0,
             0,
-            18
+            -18
           ],
           "removable_part_id": "village/06/net_store/salted_roof_east/section_03"
         },
@@ -5153,7 +5181,7 @@
           "rotation": [
             0,
             0,
-            18
+            -18
           ],
           "removable_part_id": "village/06/net_store/salted_roof_east/section_04"
         },
@@ -5173,7 +5201,7 @@
           "rotation": [
             0,
             0,
-            18
+            -18
           ],
           "removable_part_id": "village/06/net_store/salted_roof_east/section_05"
         },
@@ -5193,7 +5221,7 @@
           "rotation": [
             0,
             0,
-            18
+            -18
           ],
           "removable_part_id": "village/06/net_store/salted_roof_east/section_06"
         },
@@ -5470,7 +5498,7 @@
           "rotation": [
             0,
             0,
-            -24
+            24
           ]
         },
         {
@@ -5489,7 +5517,7 @@
           "rotation": [
             0,
             0,
-            24
+            -24
           ]
         },
         {
