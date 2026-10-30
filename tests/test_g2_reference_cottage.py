@@ -39,3 +39,26 @@ for p in PARTS:
 assert manifest['version']==2
 print('HOLLOWMERE_G2_COTTAGE_REFERENCE_GLB_OK')
 print('NOTE: does not replace Godot gameplay, collider or GPU testing')
+# Additional visual-revision invariants discovered from actual z-buffered 3D views.
+# Fail immediately if an older G2 production mesh reintroduces the hidden rear
+# timber facade, stepped plaster eaves or the floating front-door sill.
+cladding=trimesh.load(MODEL/'part_cladding.glb',force='scene')
+for key in ('cladding','cladding_1'):
+    mesh=cladding.geometry[key]
+    vertices=mesh.vertices[mesh.faces]
+    rear_wood=(np.max(vertices[:,:,2],axis=1)<-2.14)&(np.max(np.abs(vertices[:,:,0]),axis=1)<2.35)&(np.min(vertices[:,:,1],axis=1)>.48)
+    assert not rear_wood.any(),f'rear exterior timber facade still occludes plaster in {key}'
+front=trimesh.load(MODEL/'part_front_infill.glb',force='scene')
+planks=[g for n,g in front.geometry.items() if '_door_plank_' in n]
+assert len(planks)==7
+assert max(abs(float(m.bounds[0,1])-.291) for m in planks)<.005,'door still floats above threshold'
+back=trimesh.load(MODEL/'part_rear_infill.glb',force='scene')
+assert 'rear_infill_2' not in back.geometry,'old overlapping tiled rear lime remains'
+assert any('rear_real_gable' in n for n in back.geometry)
+roof=trimesh.load(MODEL/'part_slate_patch.glb',force='scene')
+assert max(m.bounds[1,1] for m in roof.geometry.values())>4.0
+under=trimesh.load(MODEL/'part_beam.glb',force='scene')
+assert max(m.bounds[1,1] for m in under.geometry.values())<3.93
+step=trimesh.load(MODEL/'part_threshold.glb',force='scene')
+assert any('integrated_landing' in n for n in step.geometry)
+print('G2_VISUAL_V3_REAR_PLASTER_ROOF_UNDERTILE_DOOR_JOIN_OK')
