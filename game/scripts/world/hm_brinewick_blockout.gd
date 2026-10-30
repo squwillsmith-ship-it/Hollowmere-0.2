@@ -86,7 +86,11 @@ func build_world() -> void:
 	# blocking the gradual cart route.
 	_box(terraces,"UpperNorth",Vector3(54.5,9,38),Vector3(92.75,3.5,-27),Color("706e5b"))
 	_box(terraces,"UpperSouth",Vector3(54.5,9,38),Vector3(92.75,3.5,27),Color("716e5b"))
-	# Join the upper plateau to the lower village on both sides of the\n\t# existing cart-road cutting, using walkable, independent rock colliders.\n\tterraces.add_child(HMHarbourTerrainG1.create_bluff("UpperNorthTransition",-46.0,-8.0))\n\tterraces.add_child(HMHarbourTerrainG1.create_bluff("UpperSouthTransition",8.0,46.0))\n\t# A narrow cut through the north headland provides a real, collision-open
+	# Join the upper plateau to the lower village on both sides of the
+	# existing cart-road cutting, using walkable, independent rock colliders.
+	terraces.add_child(HMHarbourTerrainG1.create_bluff("UpperNorthTransition",-46.0,-8.0))
+	terraces.add_child(HMHarbourTerrainG1.create_bluff("UpperSouthTransition",8.0,46.0))
+	# A narrow cut through the north headland provides a real, collision-open
 	# chapel undercroft approach. The retained three masses occupy exactly the
 	# original overall headland envelope outside that authored corridor.
 	_box(terraces,"HeadlandNorth",Vector3(6.8,14,40),Vector3(122.4,6,-27),Color("686b5c"))
@@ -122,7 +126,14 @@ func build_world() -> void:
 	_box(roads,"LandingApproach",Vector3(25,0.3,12),Vector3(-24,2.12,13),Color("8a7f6a"))
 	# Persistent boatyard/quay platforms are never mistaken for reclaimable buildings.
 	_box(roads,"PermanentQuayPad",Vector3(11,1.0,14),Vector3(-34,0.65,10),Color("858276"))
-	# G1 continuous walking grade meets the existing quay, warehouse and cottage.\n\t# This route does not create an interactive or salvageable component.\n\tvar harbour_route := Node3D.new()\n\tharbour_route.name = "HarbourG1Route"\n\tadd_child(harbour_route)\n\tharbour_route.add_child(HMHarbourTerrainG1.create_haul_path())\n\tharbour_route.add_child(HMHarbourTerrainG1.create_quay_revetment())\n\t# Remaining historical scene-art skins serve the untouched districts.
+	# G1 continuous walking grade meets the existing quay, warehouse and cottage.
+	# This route does not create an interactive or salvageable component.
+	var harbour_route := Node3D.new()
+	harbour_route.name = "HarbourG1Route"
+	add_child(harbour_route)
+	harbour_route.add_child(HMHarbourTerrainG1.create_haul_path())
+	harbour_route.add_child(HMHarbourTerrainG1.create_quay_revetment())
+	# Remaining historical scene-art skins serve the untouched districts.
 	# layout, roads, story targets or material registrations.
 	var ground_art := HMCoastalGroundArt.new()
 	ground_art.name = "BrinewickFacetedGroundArt"
