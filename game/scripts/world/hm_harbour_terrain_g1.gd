@@ -49,7 +49,7 @@ static func create_lower_terrace() -> StaticBody3D:
 	body.set_meta("g1_coastal_topology", "sculpted_shoreline_and_terrace")
 	var skin := MeshInstance3D.new()
 	skin.name = "ContinuousCoastalLandform"
-	skin.mesh = _lower_mesh(2.0)
+	skin.mesh = _lower_mesh(1.2)
 	skin.material_override = _surface_material()
 	body.add_child(skin)
 	var collision := CollisionShape3D.new()

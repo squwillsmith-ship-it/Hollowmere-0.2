@@ -4,8 +4,8 @@
 **Branch:** art/g1-harbour-terrain-20261030. Private original and public main must not be modified by this work.
 
 ## Implementation
-- The lower-terrain rectangular land block is replaced by a deterministic, continuous mesh from coastal seabed to the lower village's pre-existing 2m foundation datum.
-- Independent mesh-based collision follows the tidal slope instead of retaining an invisible land box; physics triangles are lower resolution than visual triangles.
+- The lower-terrain rectangular land block is replaced by a deterministic, continuous mesh from coastal seabed to the lower village's pre-existing 2m foundation datum. The quay-to-inland approach is a continuous graded terrain cut/fill (~5% nominal incline) that physically supports the first haul-path span, not a decorative bridge floating above the tidal bank.
+- Independent mesh-based collision follows the tidal slope instead of retaining an invisible land box; physics triangles are lower resolution than visual triangles (2.0m physics grid vs 1.2m render grid).
 - Upper north/south western plateau edges are moved inland and graded through separately colliding rock embankments, leaving the central cart-ramp cutting in place.
 - A connected physical earth-and-stone walking corridor leads from the existing quay boardwalk past the working base to the old warehouse and lower cottage. It has its own simplified collision, separate from render subdivisions.
 - Quay stone facing is visually supported below its existing permanent deck and remains open at the pier. Existing harbour installations and individually dismantlable building components retain their IDs and ownership.
