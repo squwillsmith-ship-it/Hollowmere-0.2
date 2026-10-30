@@ -252,12 +252,28 @@ def cottage_models():
                 z=-2.21+(col+.5)*length+jitter
                 b.box((x,y,z),(.125,.190,length*1.055),
                       "weathered_oak",bevel=.015+.005*(col%3))
+        # Short, irregular reveals break the slab-like appearance of the
+        # original flush boards. These lie just proud of the outer face.
+        for row in range(1,11):
+            seam_y=.625+(row-.5)*.186
+            for col in range(4):
+                z=-2.21+(col+.5)*4.42/4
+                shift=.009*((row+2*col)%3-1)
+                b.box((side*2.431,seam_y+shift,z),
+                      (.018,.018,4.42/4*1.01),"dark_oak",bevel=.02)
         for z in (-2.20,-.73,.73,2.20):
-            b.beam((side*2.34,.48,z),(side*2.34,2.73,z),
-                   .12,.14,"dark_oak")
+            # Front face of the timber sits proud of the board skin.
+            b.beam((side*2.445,.49,z),(side*2.445,2.73,z),
+                   .145,.15,"dark_oak")
         for z in (-2.205,2.205):
-            b.beam((side*2.29,.52,z),(side*2.29,2.78,z),
-                   .16,.17,"weathered_oak")
+            b.beam((side*2.41,.52,z),(side*2.41,2.78,z),
+                   .17,.18,"weathered_oak")
+        # Two long braces interrupt repetition without highly polished
+        # fantasy timber framing or unnecessary dense geometry.
+        b.beam((side*2.44,.93,-1.82),(side*2.44,2.17,-1.04),
+               .09,.095,"weathered_oak")
+        b.beam((side*2.44,.88,1.85),(side*2.44,2.19,1.08),
+               .09,.095,"weathered_oak")
     # Rear boarding reaches the lower sill and existing wall corners.
     for row in range(11):
         y=.63+row*.186
