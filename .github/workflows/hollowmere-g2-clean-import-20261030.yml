@@ -1,0 +1,59 @@
+name: Hollowmere G2 clean-source exact Godot import and regression
+on:
+  push:
+    branches:
+      - qa/g2-cottage-clean-import-20261030
+    paths:
+      - .github/workflows/hollowmere-g2-clean-import-20261030.yml
+permissions:
+  contents: read
+jobs:
+  source-import-regression:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends xvfb mesa-vulkan-drivers libvulkan1 libasound2t64 libpulse0 libfontconfig1 unzip
+          python -m pip install --quiet Pillow numpy scipy trimesh
+      - name: Confirm clean canonical G2 model source and no generated imports
+        run: |
+          test "$(find game/assets/models/g2 -name '*.glb' | wc -l)" -eq 19
+          test "$(find game/assets/materials/g2 -name '*.png' | wc -l)" -eq 16
+          test "$(find game/assets/models/g2 game/assets/materials/g2 -name '*.import' | wc -l)" -eq 0
+          test -s art/g2/source/Hollowmere_Cottage_G2_Master.blend
+          python tools/generate_step21_materials.py
+          python tools/generate_step21_glb.py
+          python tools/generate_phase_b_surfaces.py
+          python tools/generate_phase_b_reference_glb.py
+      - name: Import G2 kit and run official pinned Godot full regression
+        run: |
+          python tools/test_environment.py doctor --install
+          mkdir -p build/g2clean
+          .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --headless --path game --editor --quit > build/g2clean/import.log 2>&1 || { tail -140 build/g2clean/import.log; exit 1; }
+          python tools/test_environment.py check --godot .qa-tools/Godot_v4.7.2-stable_linux.x86_64
+      - name: Render actual clean-source close front/side/roof images
+        env:
+          LIBGL_ALWAYS_SOFTWARE: "1"
+        run: |
+          export HOLLOWMERE_G2_CLOSE_CAPTURE_DIR="$PWD/build/g2clean"
+          xvfb-run -a -s "-screen 0 1280x720x24" .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --rendering-method forward_plus --rendering-driver vulkan --audio-driver Dummy --path game --script res://tests/test_g2_cottage_close_capture.gd > build/g2clean/close.log 2>&1 || { tail -120 build/g2clean/close.log; exit 1; }
+          grep HOLLOWMERE_G2_COTTAGE_CLOSE_RENDER_OK build/g2clean/close.log
+      - name: Save exact clean-source test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hollowmere-g2-clean-source-verified
+          path: |
+            build/g2clean/
+            build/qa-*.log
+            build/qa-environment.json
+          if-no-files-found: warn
+          retention-days: 21
