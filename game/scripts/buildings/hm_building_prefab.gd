@@ -93,6 +93,7 @@ static func build(manifest: Dictionary, catalog: HMCatalog) -> Node3D:
 	building.name = String(manifest["id"]).replace("/", "_")
 	var origin: Array = manifest["origin"]
 	building.position = Vector3(float(origin[0]), float(origin[1]), float(origin[2]))
+	var use_g2_cottage: bool = String(manifest["id"]) == "working/cottage_01"
 	for row: Variant in manifest["parts"]:
 		var part: Dictionary = row
 		var body := HMInspectTarget.new()
@@ -103,6 +104,8 @@ static func build(manifest: Dictionary, catalog: HMCatalog) -> Node3D:
 		building.add_child(body)
 		for geom: Variant in part["geometry"]:
 			_add_piece(body, geom)
+		if use_g2_cottage:
+			_install_g2_owned_model(body)
 	# Scenery is deliberately not claimed as recoverable material. Remaining
 	# environmental infill and floors need their own IDs in Step21–24.
 	var scenery := Node3D.new()
@@ -116,6 +119,34 @@ static func build(manifest: Dictionary, catalog: HMCatalog) -> Node3D:
 		scenery.add_child(holder)
 		_add_piece(holder, geom)
 	return building
+
+static func _install_g2_owned_model(body: HMInspectTarget) -> void:
+	# Construct original nine dismantling targets and colliders first; use
+	# new real GLB meshes only for VISUAL rendering, never salvage ownership.
+	var suffix: String = body.part_id.get_file()
+	var path: String = "res://assets/models/g2/cottage/part_"+suffix+".glb"
+	if not ResourceLoader.exists(path):
+		push_error("G2 owner GLB missing; run tools/generate_g2_cottage_assets.py: "+path)
+		return
+	var packed: PackedScene = load(path) as PackedScene
+	if packed == null:
+		push_error("G2 owner GLB did not import as PackedScene: "+path)
+		return
+	var model: Node3D = packed.instantiate() as Node3D
+	if model == null:
+		push_error("G2 owner GLB root must be Node3D: "+path)
+		return
+	# Hide original provisional surfaces, NOT their physical colliders.
+	for existing: Node in body.get_children():
+		if existing is CollisionShape3D:
+			continue
+		if existing is Node3D:
+			(existing as Node3D).visible = false
+	model.name = "G2ProductionPart"
+	model.set_meta("g2_owner_part_id",body.part_id)
+	model.set_meta("g2_source_glb",path)
+	body.add_child(model)
+	body.set_meta("g2_assembled",true)
 
 static func _add_piece(body: StaticBody3D, geometry: Dictionary) -> void:
 	var at: Array = geometry["position"]

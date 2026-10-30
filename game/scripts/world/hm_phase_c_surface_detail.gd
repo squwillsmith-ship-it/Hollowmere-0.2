@@ -19,7 +19,7 @@ func build(installations: Dictionary) -> void:
         var group: Node3D = installations[key]
         for item: Node in group.get_children():
             var body: StaticBody3D = item as StaticBody3D
-            if body == null or body.has_node("PhaseCJoineryAndWear"):
+            if body == null or body.has_node("PhaseCJoineryAndWear") or bool(body.get_meta("g2_assembled",false)):
                 continue
             var dims: Vector3 = Vector3.ZERO
             for child: Node in body.get_children():

@@ -112,6 +112,15 @@ func build(sites: Dictionary) -> void:
 	extra.build(installation_nodes)
 	set_meta("phase_c_dressed_parts", extra.treated_parts)
 
+	# G2 production hero pass: distinctive low-poly, noncolliding detail
+	# owned by the original cottage and warehouse HMInspectTarget bodies.
+	# The original saved IDs and authoritative colliders remain untouched.
+	var hero := HMHeroBuildingArtG2.new()
+	hero.name = "G2PartOwnedHeroArchitecture"
+	add_child(hero)
+	hero.build(cottage,installation_nodes)
+	set_meta("g2_hero_owned_meshes",hero.batched_meshes)
+
 	# World discoveries and narrative cues reference existing site markers.
 	for data: Variant in parsed.get("world_discoveries", []):
 		if not (data is Dictionary) or not sites.has(String(data.get("site_id", ""))):
@@ -202,6 +211,36 @@ func _solid(parent: Node3D, data: Dictionary) -> void:
 	if data.has("rotation"):
 		var angles: Array = data["rotation"]
 		body.rotation_degrees = Vector3(float(angles[0]), float(angles[1]), float(angles[2]))
+	if not removable.is_empty() and (
+		removable.begins_with("village/04/old_warehouse/") or
+		removable.begins_with("village/05/expanded_warehouse/")):
+		_install_g2_warehouse_model(body as HMInspectTarget,removable)
+
+func _install_g2_warehouse_model(body: HMInspectTarget,owner: String) -> void:
+	# 93 individually saved part IDs, original geometry/colliders/transforms.
+	# Authored GLB only takes over the visual, not gameplay ownership.
+	var glb: String = "res://assets/models/g2/warehouse/" + owner.replace("/","__") + ".glb"
+	if not ResourceLoader.exists(glb):
+		push_error("G2 missing independently owned warehouse GLB: " + glb)
+		return
+	var resource: PackedScene = load(glb) as PackedScene
+	if resource == null:
+		push_error("G2 bad warehouse GLB: " + glb)
+		return
+	var visual: Node3D = resource.instantiate() as Node3D
+	if visual == null:
+		push_error("G2 invalid warehouse GLB scene root: " + glb)
+		return
+	for old: Node in body.get_children():
+		if old is CollisionShape3D:
+			continue
+		if old is Node3D:
+			(old as Node3D).visible = false
+	visual.name = "G2WarehousePart"
+	visual.set_meta("g2_owner_part_id",owner)
+	visual.set_meta("g2_source_glb",glb)
+	body.add_child(visual)
+	body.set_meta("g2_assembled",true)
 
 func _pickup_mesh(pickup: HMToolPickup) -> void:
 	pickup.collision_layer = 1

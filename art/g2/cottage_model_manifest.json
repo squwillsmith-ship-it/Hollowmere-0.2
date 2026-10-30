@@ -1,0 +1,216 @@
+{
+  "g2_part_owner_assets": {
+    "beam": {
+      "members": 22,
+      "path": "game/assets/models/g2/cottage/part_beam.glb",
+      "sha256": "fe35fd4b76058fb09922d1e78da9a75e96097c7417d0471df66c47253850713a",
+      "triangles": 264
+    },
+    "cladding": {
+      "members": 242,
+      "path": "game/assets/models/g2/cottage/part_cladding.glb",
+      "sha256": "17cb83abaccb00f00d439d28e85e0b29ad9015607b41519449e006d31de94c6f",
+      "triangles": 2904
+    },
+    "curtain": {
+      "members": 13,
+      "path": "game/assets/models/g2/cottage/part_curtain.glb",
+      "sha256": "1a0c98cf60e38bffe344a8e085c581d01afae9809b19951e19b1ed854785e1f5",
+      "triangles": 156
+    },
+    "front_infill": {
+      "members": 28,
+      "path": "game/assets/models/g2/cottage/part_front_infill.glb",
+      "sha256": "34f6936f995d8ce5a6cbc3dfb8e65ec31073209689b26504c70adbdc1e1a4060",
+      "triangles": 336
+    },
+    "rear_infill": {
+      "members": 77,
+      "path": "game/assets/models/g2/cottage/part_rear_infill.glb",
+      "sha256": "0b51334dbfaca387d22c31ab80e966243492b6652067d37173f821d2cb5f70b9",
+      "triangles": 924
+    },
+    "shutters": {
+      "members": 18,
+      "path": "game/assets/models/g2/cottage/part_shutters.glb",
+      "sha256": "4bbd0316299b822d0ad683448648bbbf91c66fecd7404dd8d9864a795a0ff4ff",
+      "triangles": 216
+    },
+    "slate_patch": {
+      "members": 216,
+      "path": "game/assets/models/g2/cottage/part_slate_patch.glb",
+      "sha256": "38ecf64e2b4bab08ef03ad8aa4ce08849265318d08e5ba24d8d80decc9ee165f",
+      "triangles": 2592
+    },
+    "stone_block": {
+      "members": 72,
+      "path": "game/assets/models/g2/cottage/part_stone_block.glb",
+      "sha256": "7c60bd0844401784440360e92f61042cdacf9d0cf8d9c02b174262043312f4f0",
+      "triangles": 864
+    },
+    "threshold": {
+      "members": 5,
+      "path": "game/assets/models/g2/cottage/part_threshold.glb",
+      "sha256": "eea767b880b23ad4e329d3056ecbc23208e22cba7100c7ae006b282c9ed1581a",
+      "triangles": 60
+    }
+  },
+  "materials": {
+    "black_iron": {
+      "albedo": {
+        "path": "game/assets/materials/g2/black_iron_albedo.png",
+        "sha256": "719874b067f653ef138bf9863e55624ffc160f27ccd3d7171770a8da121d1907"
+      },
+      "orm": {
+        "path": "game/assets/materials/g2/black_iron_orm.png",
+        "sha256": "7b10488a83cf4a4656c635c54f00904d95ea07dd163e520975e5c9658d86fc32"
+      }
+    },
+    "dark_oak": {
+      "albedo": {
+        "path": "game/assets/materials/g2/dark_oak_albedo.png",
+        "sha256": "cad5e136a72d01d004bef0a803d8e67a812474a79d7403a2ba3e8c60197f6fdf"
+      },
+      "orm": {
+        "path": "game/assets/materials/g2/dark_oak_orm.png",
+        "sha256": "8ee3ed3ae557cefa3a92a9b4e6b0ccd747d8eeb426691e09f668826e0ed7585f"
+      }
+    },
+    "fieldstone": {
+      "albedo": {
+        "path": "game/assets/materials/g2/fieldstone_albedo.png",
+        "sha256": "10d6c5cd28b1ee4dca7aaab858f3d0d0b18cd7f8e60e98bdf5216ee8ecd9e574"
+      },
+      "orm": {
+        "path": "game/assets/materials/g2/fieldstone_orm.png",
+        "sha256": "8ac5a1b44aacbf76b27c844dc80bf8191cabdd404597ce218dd3287a22a0ed7e"
+      }
+    },
+    "lime_infill": {
+      "albedo": {
+        "path": "game/assets/materials/g2/lime_infill_albedo.png",
+        "sha256": "4d7cf7b990f0d357891efb9e030cd6b701e587a2281d45c99e7565a8d8774b12"
+      },
+      "orm": {
+        "path": "game/assets/materials/g2/lime_infill_orm.png",
+        "sha256": "5b209adb263034c6f3639ea63059337785b5e33945566cb93ed9dabffb5e003c"
+      }
+    },
+    "packed_earth": {
+      "albedo": {
+        "path": "game/assets/materials/g2/packed_earth_albedo.png",
+        "sha256": "9f7f78a33a0df554723988445c1d6d3a01413606f3684472f833716576a22751"
+      },
+      "orm": {
+        "path": "game/assets/materials/g2/packed_earth_orm.png",
+        "sha256": "1715b88887cebfcae4dd7a8ef1e67b5ae8ea481058b76e37dcb45514dd3c07af"
+      }
+    },
+    "slate": {
+      "albedo": {
+        "path": "game/assets/materials/g2/slate_albedo.png",
+        "sha256": "a2b49eb0436cb805a244f47e14289813d029797d313576f478cb6b8e200507dc"
+      },
+      "orm": {
+        "path": "game/assets/materials/g2/slate_orm.png",
+        "sha256": "de4235ba8bcaf9e0c61ee66502ccde7f9417ba049fc18607f35d894f2a40b3bb"
+      }
+    },
+    "unbleached_linen": {
+      "albedo": {
+        "path": "game/assets/materials/g2/unbleached_linen_albedo.png",
+        "sha256": "9d8f420d002bfdc0fcdcded4b34bad569df04d71faf33fde818229057fa892f5"
+      },
+      "orm": {
+        "path": "game/assets/materials/g2/unbleached_linen_orm.png",
+        "sha256": "5b7abab73aa244353f6ee75d044a914c95e05f02f31de908639388bce9ee4a01"
+      }
+    },
+    "weathered_oak": {
+      "albedo": {
+        "path": "game/assets/materials/g2/weathered_oak_albedo.png",
+        "sha256": "ed25474fbbbf7b6c7698f03d539bcae04e0943b9fe384e771d7e31b83e08c22a"
+      },
+      "orm": {
+        "path": "game/assets/materials/g2/weathered_oak_orm.png",
+        "sha256": "6dd20c6ecd6c1d054bb02172d4a3cd4c3b7b61d2293de444b752364668132326"
+      }
+    }
+  },
+  "original_cottage_part_ids": {
+    "beam": "fixture/house/beam",
+    "cladding": "fixture/house/cladding",
+    "curtain": "fixture/house/curtain",
+    "front_infill": "fixture/house/front_infill",
+    "rear_infill": "fixture/house/rear_infill",
+    "shutters": "fixture/house/shutters",
+    "slate_patch": "fixture/house/slate_patch",
+    "stone_block": "fixture/house/stone_block",
+    "threshold": "fixture/house/threshold"
+  },
+  "palette": "1B Balanced Facets + selective 1C weathering",
+  "reusable_components": {
+    "cladding_board": {
+      "members": 1,
+      "path": "game/assets/models/g2/kit/cladding_board.glb",
+      "sha256": "363c3b3c4b04bf5619bbffe6dfcf7ff5a5a5b7240449f8c8be02114103df2e64",
+      "triangles": 12
+    },
+    "iron_strap": {
+      "members": 1,
+      "path": "game/assets/models/g2/kit/iron_strap.glb",
+      "sha256": "84125bdf488052a3e77328c85001b567cd438e63036f27d02931421f02c38472",
+      "triangles": 12
+    },
+    "lime_panel": {
+      "members": 1,
+      "path": "game/assets/models/g2/kit/lime_panel.glb",
+      "sha256": "79eb55a39a96cc92dbdcb1b1c1e6ea6ec1d95c6873ed0544b05fd2ce9120841f",
+      "triangles": 12
+    },
+    "linen_curtain": {
+      "members": 1,
+      "path": "game/assets/models/g2/kit/linen_curtain.glb",
+      "sha256": "862cfbbfa21e5f0b5647391cce3aacaa582f19325be8a59233dbcc50220cf4a3",
+      "triangles": 12
+    },
+    "oak_crossbeam": {
+      "members": 1,
+      "path": "game/assets/models/g2/kit/oak_crossbeam.glb",
+      "sha256": "58e7d1c6a6ae92579daae1dc57fdf7529f35c027b8d160cf04ed239baeaf6c49",
+      "triangles": 12
+    },
+    "oak_knee_brace": {
+      "members": 1,
+      "path": "game/assets/models/g2/kit/oak_knee_brace.glb",
+      "sha256": "518602f1aaa56afea20256460fe55b78569427669da83d44b643e82940bb9788",
+      "triangles": 12
+    },
+    "oak_post": {
+      "members": 1,
+      "path": "game/assets/models/g2/kit/oak_post.glb",
+      "sha256": "1c33c1690fe4c9222e9f56ad7f937758cf058f16115ec8e90292b313da88c86b",
+      "triangles": 12
+    },
+    "rough_stone": {
+      "members": 1,
+      "path": "game/assets/models/g2/kit/rough_stone.glb",
+      "sha256": "b8f4f9ef906ed421a2b1350357c9387218de2e06c9f53aa0121b02a376d1b5c5",
+      "triangles": 12
+    },
+    "shutter": {
+      "members": 4,
+      "path": "game/assets/models/g2/kit/shutter.glb",
+      "sha256": "342d82e81154b66eb269c4fa399a73af4385236fdecec50d4e699702010b98e0",
+      "triangles": 48
+    },
+    "slate_tile": {
+      "members": 1,
+      "path": "game/assets/models/g2/kit/slate_tile.glb",
+      "sha256": "ac830771f6c13e68bd18b40a1c5b4afb945442bea6c4a89e0c34413fe0cf8aa2",
+      "triangles": 12
+    }
+  },
+  "source": "tools/generate_g2_cottage_assets.py",
+  "version": 1
+}

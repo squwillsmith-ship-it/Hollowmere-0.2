@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "blender_version": "4.0.2",
+  "editable_source": "art/g2/source/Hollowmere_Cottage_G2_Master.blend",
+  "source_models": [
+    {
+      "asset": "part_beam",
+      "mesh_objects": 1,
+      "owner": "fixture/house/beam"
+    },
+    {
+      "asset": "part_cladding",
+      "mesh_objects": 1,
+      "owner": "fixture/house/cladding"
+    },
+    {
+      "asset": "part_curtain",
+      "mesh_objects": 1,
+      "owner": "fixture/house/curtain"
+    },
+    {
+      "asset": "part_front_infill",
+      "mesh_objects": 1,
+      "owner": "fixture/house/front_infill"
+    },
+    {
+      "asset": "part_rear_infill",
+      "mesh_objects": 1,
+      "owner": "fixture/house/rear_infill"
+    },
+    {
+      "asset": "part_shutters",
+      "mesh_objects": 1,
+      "owner": "fixture/house/shutters"
+    },
+    {
+      "asset": "part_slate_patch",
+      "mesh_objects": 1,
+      "owner": "fixture/house/slate_patch"
+    },
+    {
+      "asset": "part_stone_block",
+      "mesh_objects": 1,
+      "owner": "fixture/house/stone_block"
+    },
+    {
+      "asset": "part_threshold",
+      "mesh_objects": 1,
+      "owner": "fixture/house/threshold"
+    },
+    {
+      "asset": "cladding_board",
+      "mesh_objects": 1,
+      "owner": ""
+    },
+    {
+      "asset": "iron_strap",
+      "mesh_objects": 1,
+      "owner": ""
+    },
+    {
+      "asset": "lime_panel",
+      "mesh_objects": 1,
+      "owner": ""
+    },
+    {
+      "asset": "linen_curtain",
+      "mesh_objects": 1,
+      "owner": ""
+    },
+    {
+      "asset": "oak_crossbeam",
+      "mesh_objects": 1,
+      "owner": ""
+    },
+    {
+      "asset": "oak_knee_brace",
+      "mesh_objects": 1,
+      "owner": ""
+    },
+    {
+      "asset": "oak_post",
+      "mesh_objects": 1,
+      "owner": ""
+    },
+    {
+      "asset": "rough_stone",
+      "mesh_objects": 1,
+      "owner": ""
+    },
+    {
+      "asset": "shutter",
+      "mesh_objects": 1,
+      "owner": ""
+    },
+    {
+      "asset": "slate_tile",
+      "mesh_objects": 1,
+      "owner": ""
+    }
+  ],
+  "asset_owner_authority": "game/data/v1/buildings/cottage_working_01.json",
+  "geometry_authoring": "tools/generate_g2_cottage_assets.py"
+}
