@@ -1,0 +1,81 @@
+{
+  "rev": 1,
+  "scope": "G3 reusable actual glTF mesh kit, 1B/1C. Non-colliding authored visual replacements, not saved part additions.",
+  "profiles": [
+    "stone",
+    "timber",
+    "lime"
+  ],
+  "axes": [
+    "x",
+    "z"
+  ],
+  "nominal_bounds_m": [
+    1,
+    1,
+    1
+  ],
+  "assets": [
+    {
+      "path": "game/assets/materials/g3/stone_albedo.png",
+      "sha": "fdd5c1b794a1192e467084151966ae16a30c2a04",
+      "bytes": 49348
+    },
+    {
+      "path": "game/assets/materials/g3/stone_orm.png",
+      "sha": "b2e7a5d514ae58f158bdd3d6ee760f1645dd2176",
+      "bytes": 49348
+    },
+    {
+      "path": "game/assets/materials/g3/wood_albedo.png",
+      "sha": "844b02d163f6395df44808ba204d7677bf37d086",
+      "bytes": 49348
+    },
+    {
+      "path": "game/assets/materials/g3/wood_orm.png",
+      "sha": "6d09867792cd961605feec39c4109e163faeb839",
+      "bytes": 49348
+    },
+    {
+      "path": "game/assets/materials/g3/lime_albedo.png",
+      "sha": "db1c8a2468a7a137e113207a8b3a57d77ffacefd",
+      "bytes": 49348
+    },
+    {
+      "path": "game/assets/materials/g3/lime_orm.png",
+      "sha": "f30c2761b34f5303ed9d02e7d00986b28887ae55",
+      "bytes": 49348
+    },
+    {
+      "path": "game/assets/models/g3/kit/stone_wall_x.glb",
+      "sha": "d2210162cccdfa945f261ca913c156925a37c718",
+      "bytes": 164948
+    },
+    {
+      "path": "game/assets/models/g3/kit/stone_wall_z.glb",
+      "sha": "108aaa8061888c767a3c3cde2280e03377d9c422",
+      "bytes": 164948
+    },
+    {
+      "path": "game/assets/models/g3/kit/timber_wall_x.glb",
+      "sha": "80c4f15d3694fab821ecc32dfaef829deceba3f2",
+      "bytes": 121288
+    },
+    {
+      "path": "game/assets/models/g3/kit/timber_wall_z.glb",
+      "sha": "837e098835d0471e957d3be326f02ff95740b0fd",
+      "bytes": 121288
+    },
+    {
+      "path": "game/assets/models/g3/kit/lime_wall_x.glb",
+      "sha": "47268a92f27919c30f609a922cfcfdbadc31df0d",
+      "bytes": 212768
+    },
+    {
+      "path": "game/assets/models/g3/kit/lime_wall_z.glb",
+      "sha": "02e1ef83b88cf88ac9467cb01142c6fb5d9cf9e5",
+      "bytes": 212768
+    }
+  ],
+  "source_note": "All models contain independently surfaced low-poly boxes, overlapped/offset stone courses, timber laths, hewn battens, patchy lime and diagonal bracing. Embedded 128x128 authored muted albedo and glTF ORM textures. Scale model's unit nominal envelope to original exact physical owner bounds; don't use as separate salvage bodies. Exact position bounds are calculated from the unmodified binary geometry to prevent culling errors. Materials albedo source and embedded glTF textures verified together during QA; G3 material finish revised from initial over-warm visual screenshots."
+}

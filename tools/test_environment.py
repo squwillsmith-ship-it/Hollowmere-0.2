@@ -113,6 +113,17 @@ def main():
     report = {'pin': VERSION, 'os': platform.platform(), 'python': sys.version.split()[0],
               'source': os.environ.get('GITHUB_SHA', 'local-unverified-working-tree'), 'engine_installed': False,
               'engine_tested': False, 'render_tested': False, 'steps': {}}
+    # A render invocation follows a successful separate 'check' command in
+    # CI. Keep checked engine/test evidence rather than overwriting it with a
+    # misleading 'engine_tested: false' from the render-only invocation.
+    if args.action == 'render' and REPORT.is_file():
+        try:
+            prior = json.loads(REPORT.read_text(encoding='utf-8'))
+            if prior.get('source') == report['source'] and prior.get('pin') == VERSION:
+                report['engine_tested'] = bool(prior.get('engine_tested', False))
+                report['steps'].update(prior.get('steps', {}))
+        except (OSError, ValueError, TypeError):
+            pass
     engine = find_godot(args.godot)
     if engine is None and args.install:
         try:
@@ -300,6 +311,9 @@ def main():
         suites.append(('godot-g3-all-sites-identity', [engine, '--headless', '--path',
             str(ROOT/'game'), '--script', 'res://tests/test_g3_all_site_identity.gd'],
             'HOLLOWMERE_G3_ALL_SITE_IDENTITY_OK'))
+        suites.append(('godot-g3-model-texture-structure', [engine, '--headless', '--path',
+            str(ROOT/'game'), '--script', 'res://tests/test_g3_model_texture_structure.gd'],
+            'HOLLOWMERE_G3_MODEL_TEXTURE_STRUCTURE_OK'))
         for name, command, marker in suites:
             ok, output = log_step(report, name, command, 60)
             if not ok or marker not in output:
