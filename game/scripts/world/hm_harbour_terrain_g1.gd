@@ -7,7 +7,7 @@ const LOW_X0: float = -54.0
 const LOW_X1: float = 50.0
 const LOW_Z0: float = -47.0
 const LOW_Z1: float = 47.0
-const BLUFF_X0: float = 47.0
+const BLUFF_X0: float = 50.0
 const BLUFF_X1: float = 65.5
 const PATH_HALF_WIDTH: float = 1.8
 
@@ -32,7 +32,14 @@ static func lower_height(x: float, z: float) -> float:
 	var edge_distance: float = point.distance_to(nearest)
 	var mask: float = clampf(1.0 - edge_distance / 5.7,0.0,1.0)
 	mask = mask * mask * (3.0 - 2.0 * mask)
-	return lerpf(natural_bank,lerpf(1.29,2.0,u),mask)
+	var result: float = lerpf(natural_bank,lerpf(1.29,2.0,u),mask)
+	# Grade an actual bank below the already-existing raised cart ramp.
+	# At x=50 this soil exactly meets the new central cut and bluffs.
+	if x > 33.0:
+		var approach: float = _smooth01((x-33.0)/17.0)
+		var cut: float = _road_cut_weight(z)
+		result = lerpf(result,lerpf(2.0,_ramp_support_height(x),cut),approach)
+	return result
 
 static func bluff_height(x: float) -> float:
 	var t: float = clampf((x - BLUFF_X0) / (BLUFF_X1 - BLUFF_X0), 0.0, 1.0)
@@ -40,6 +47,119 @@ static func bluff_height(x: float) -> float:
 	# the existing central cart cutting, not a vertical rectangular wall.
 	t = t * t * (3.0 - 2.0 * t)
 	return lerpf(2.0, 8.0, t)
+
+static func _smooth01(t: float) -> float:
+	t = clampf(t,0.0,1.0)
+	return t*t*(3.0-2.0*t)
+
+static func _road_cut_weight(z: float) -> float:
+	return 1.0-_smooth01((absf(z)-8.0)/8.2)
+
+static func _ramp_support_height(x: float) -> float:
+	return lerpf(2.0,8.0,clampf((x-35.0)/35.0,0.0,1.0))
+
+static func bluff_height_at(x: float,z: float) -> float:
+	# Bend both graded bluffs towards the road cutting. The influence
+	# fades at the upper plateau; adjoining terrain shares exact samples.
+	var influence: float = _road_cut_weight(z)*(1.0-_smooth01((x-59.0)/6.5))
+	return lerpf(bluff_height(x),_ramp_support_height(x),influence)
+
+static func ramp_cut_height(x: float,z: float) -> float:
+	# Ground beneath the raised cart ramp, from old lower village to upper.
+	# Cross-banks meet the bluffs at the inner z=+/-8 boundaries.
+	var side: float = bluff_height_at(x,8.0)
+	return lerpf(_ramp_support_height(x),side,_smooth01((absf(z)-5.2)/2.8))
+
+static func edge_height(x: float,z: float,upper: bool) -> float:
+	# Taper exposed straight-sided terrain grids to an irregular shore.
+	var start_z: float = 46.0 if upper else 47.0
+	var length: float = 16.0 if upper else 14.0
+	var t: float = _smooth01((absf(z)-start_z)/length)
+	var inner: float = (bluff_height_at(x,46.0) if x <= BLUFF_X1 else 8.0) if upper else lower_height(x,47.0 if z >= 0.0 else -47.0)
+	var erosion: float = 0.12*sin(x*0.17+z*0.061)*sin(t*PI)
+	return lerpf(inner,-0.9,t)+erosion
+
+static func create_ramp_cut_fill() -> StaticBody3D:
+	return _gridded_body("UpperCartRampEarthworks",50.0,70.0,-8.0,8.0,1.0,2.0,0)
+
+static func create_coastal_edge(name: String,upper: bool,south: bool) -> StaticBody3D:
+	var x0: float = 50.0 if upper else LOW_X0
+	var x1: float = 120.0 if upper else LOW_X1
+	var z0: float = 46.0 if upper else 47.0
+	var z1: float = 62.0 if upper else 61.0
+	if not south:
+		var swap: float = z0
+		z0 = -z1
+		z1 = -swap
+	return _gridded_body(name,x0,x1,z0,z1,1.5,3.0,2 if upper else 1)
+
+static func _gridded_body(name: String,x0: float,x1: float,z0: float,z1: float,
+		visual_step: float,physics_step: float,kind: int) -> StaticBody3D:
+	var body := StaticBody3D.new()
+	body.name = name
+	body.collision_layer = 1
+	body.collision_mask = 2
+	body.set_meta("g1_foundation_earthworks",true)
+	var skin := MeshInstance3D.new()
+	skin.name = "FacetedFoundation"
+	skin.mesh = _patch_mesh(x0,x1,z0,z1,visual_step,kind)
+	skin.material_override = _surface_material()
+	body.add_child(skin)
+	var collision := CollisionShape3D.new()
+	collision.name = "CollisionShape3D"
+	var shape := ConcavePolygonShape3D.new()
+	shape.backface_collision = true
+	shape.data = _patch_collision(x0,x1,z0,z1,physics_step,kind)
+	collision.shape = shape
+	body.add_child(collision)
+	return body
+
+static func _patch_height(x: float,z: float,kind: int) -> float:
+	if kind == 0:
+		return ramp_cut_height(x,z)
+	return edge_height(x,z,kind == 2)
+
+static func _patch_mesh(x0: float,x1: float,z0: float,z1: float,
+		step: float,kind: int) -> ArrayMesh:
+	var st := SurfaceTool.new()
+	st.begin(Mesh.PRIMITIVE_TRIANGLES)
+	var nx: int = ceili((x1-x0)/step)
+	var nz: int = ceili((z1-z0)/step)
+	for j: int in range(nz):
+		for i: int in range(nx):
+			var xa: float = lerpf(x0,x1,float(i)/float(nx))
+			var xb: float = lerpf(x0,x1,float(i+1)/float(nx))
+			var za: float = lerpf(z0,z1,float(j)/float(nz))
+			var zb: float = lerpf(z0,z1,float(j+1)/float(nz))
+			var a := Vector3(xa,_patch_height(xa,za,kind),za)
+			var b := Vector3(xb,_patch_height(xb,za,kind),za)
+			var c := Vector3(xb,_patch_height(xb,zb,kind),zb)
+			var d := Vector3(xa,_patch_height(xa,zb,kind),zb)
+			var shade: Color = Color("717665") if kind == 0 else Color("626a5d")
+			if kind == 2:
+				shade = Color("626658")
+			shade *= (0.95+0.045*sin(float(i)*0.67+float(j)*0.43))
+			_tri(st,a,d,b,shade)
+			_tri(st,b,d,c,shade.darkened(0.045))
+	return st.commit()
+
+static func _patch_collision(x0: float,x1: float,z0: float,z1: float,
+		step: float,kind: int) -> PackedVector3Array:
+	var faces := PackedVector3Array()
+	var nx: int = ceili((x1-x0)/step)
+	var nz: int = ceili((z1-z0)/step)
+	for j: int in range(nz):
+		for i: int in range(nx):
+			var xa: float = lerpf(x0,x1,float(i)/float(nx))
+			var xb: float = lerpf(x0,x1,float(i+1)/float(nx))
+			var za: float = lerpf(z0,z1,float(j)/float(nz))
+			var zb: float = lerpf(z0,z1,float(j+1)/float(nz))
+			var a := Vector3(xa,_patch_height(xa,za,kind),za)
+			var b := Vector3(xb,_patch_height(xb,za,kind),za)
+			var c := Vector3(xb,_patch_height(xb,zb,kind),zb)
+			var d := Vector3(xa,_patch_height(xa,zb,kind),zb)
+			faces.append_array(PackedVector3Array([a,d,b,b,d,c]))
+	return faces
 
 static func create_lower_terrace() -> StaticBody3D:
 	var body := StaticBody3D.new()
@@ -95,7 +215,7 @@ static func route_points() -> PackedVector2Array:
 static func route_height(at: Vector2) -> float:
 	# Pier walkway joins at 1.35m; inland stations retain the existing
 	# floor datum, with no raised kerb or path-only collision obstacle.
-	return maxf(1.43, lower_height(at.x,at.y) + 0.16)
+	return maxf(1.37, lower_height(at.x,at.y) + 0.10)
 
 static func create_haul_path() -> StaticBody3D:
 	var path := StaticBody3D.new()
@@ -195,10 +315,10 @@ static func _bluff_mesh(z0: float,z1: float, step: float) -> ArrayMesh:
 			var x1: float = lerpf(BLUFF_X0,BLUFF_X1,float(i+1)/float(nx))
 			var a_z: float = lerpf(z0,z1,float(j)/float(nz))
 			var b_z: float = lerpf(z0,z1,float(j+1)/float(nz))
-			var a := Vector3(x0,bluff_height(x0)+0.012,a_z)
-			var b := Vector3(x1,bluff_height(x1)+0.012,a_z)
-			var c := Vector3(x1,bluff_height(x1)+0.012,b_z)
-			var d := Vector3(x0,bluff_height(x0)+0.012,b_z)
+			var a := Vector3(x0,bluff_height_at(x0,a_z)+0.012,a_z)
+			var b := Vector3(x1,bluff_height_at(x1,a_z)+0.012,a_z)
+			var c := Vector3(x1,bluff_height_at(x1,b_z)+0.012,b_z)
+			var d := Vector3(x0,bluff_height_at(x0,b_z)+0.012,b_z)
 			var shade := Color("6c705e")*(0.92+0.09*sin(float(i)*0.84+float(j)*0.35))
 			_tri(st,a,d,b,shade)
 			_tri(st,b,d,c,shade.darkened(0.07))
@@ -214,10 +334,10 @@ static func _bluff_collision(z0: float,z1: float,step: float) -> PackedVector3Ar
 			var x1: float = lerpf(BLUFF_X0,BLUFF_X1,float(i+1)/float(nx))
 			var az: float = lerpf(z0,z1,float(j)/float(nz))
 			var bz: float = lerpf(z0,z1,float(j+1)/float(nz))
-			var a := Vector3(x0,bluff_height(x0),az)
-			var b := Vector3(x1,bluff_height(x1),az)
-			var c := Vector3(x1,bluff_height(x1),bz)
-			var d := Vector3(x0,bluff_height(x0),bz)
+			var a := Vector3(x0,bluff_height_at(x0,az),az)
+			var b := Vector3(x1,bluff_height_at(x1,az),az)
+			var c := Vector3(x1,bluff_height_at(x1,bz),bz)
+			var d := Vector3(x0,bluff_height_at(x0,bz),bz)
 			faces.append_array(PackedVector3Array([a,d,b,b,d,c]))
 	return faces
 
@@ -267,9 +387,6 @@ static func _route_mesh() -> ArrayMesh:
 			_tri(st,a,foot_d,foot_a,grit.darkened(0.06))
 			_tri(st,b,foot_b,foot_c,grit.darkened(0.11))
 			_tri(st,b,foot_c,c,grit)
-			if i == 0 and s == 0:
-				_tri(st,a,foot_a,foot_b,grit.darkened(0.10))
-				_tri(st,a,foot_b,b,grit.darkened(0.04))
 			if i == points.size()-2 and s == 3:
 				_tri(st,d,c,foot_c,grit)
 				_tri(st,d,foot_c,foot_d,grit.darkened(0.08))

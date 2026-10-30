@@ -21,3 +21,7 @@
 - New concave static terrain and colliding route must be parser/engine/physics checked before merge. No new Godot run was made in the authoring session unless evidence is attached separately.
 - Mitered joins and coast-road transitions are deterministic authored geometry rather than final Blender/GLB art; refine based on real first-person frames.
 - This is the harbour hero district, not 21-site G3 expansion, G2 cottage/warehouse asset production or Windows G7 acceptance.
+
+## G1 structural terrain-fixing pass — 30 October 2026
+After direct inspection of five authentic pinned Godot screenshots, the owner confirmed that environmental items and trees should remain deferred; G1 must first establish a sound landform foundation. This focused source pass grounds the old elevated cart ramp with a separately colliding cut/fill surface; joins road, lower bank and upper north/south graded embankments at matching height samples; extends both outer lower beaches and upper coast with slope-backed colliders; reduces the harsh exposed raise of the manual haul path and removes its prominent open-end fascia. New tests check topology edges numerically.
+Run genuine pinned Godot regression and same-camera Vulkan capture before calling this verified. No automated test replaces human carrying traversal or owner visual signoff.

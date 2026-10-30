@@ -90,6 +90,12 @@ func build_world() -> void:
 	# existing cart-road cutting, using walkable, independent rock colliders.
 	terraces.add_child(HMHarbourTerrainG1.create_bluff("UpperNorthTransition",-46.0,-8.0))
 	terraces.add_child(HMHarbourTerrainG1.create_bluff("UpperSouthTransition",8.0,46.0))
+	# Physical earthwork support and joined outer shores, not decorative filler.
+	terraces.add_child(HMHarbourTerrainG1.create_ramp_cut_fill())
+	terraces.add_child(HMHarbourTerrainG1.create_coastal_edge("LowerNorthShore",false,false))
+	terraces.add_child(HMHarbourTerrainG1.create_coastal_edge("LowerSouthShore",false,true))
+	terraces.add_child(HMHarbourTerrainG1.create_coastal_edge("UpperNorthScarp",true,false))
+	terraces.add_child(HMHarbourTerrainG1.create_coastal_edge("UpperSouthScarp",true,true))
 	# A narrow cut through the north headland provides a real, collision-open
 	# chapel undercroft approach. The retained three masses occupy exactly the
 	# original overall headland envelope outside that authored corridor.

@@ -39,6 +39,32 @@ func _run() -> void:
 	_require(haul != null,"Actual physical route beside older road network")
 	_require(village.get_node_or_null("HarbourG1Route/QuayDryStoneRevetment") is MeshInstance3D,
 		"Quay edge has deliberate stone facing and an open pier slot")
+	for name: String in ["UpperCartRampEarthworks","LowerNorthShore","LowerSouthShore",
+		"UpperNorthScarp","UpperSouthScarp"]:
+		var foundation: StaticBody3D = village.get_node_or_null("Terraces/"+name) as StaticBody3D
+		_require(foundation != null,"Physical continuous terrain repair: "+name)
+		if foundation != null:
+			var geometry: CollisionShape3D = foundation.get_node_or_null("CollisionShape3D") as CollisionShape3D
+			_require(geometry != null and geometry.shape is ConcavePolygonShape3D,
+				"Lower resolution collision on seam repair: "+name)
+	for sample_z: float in [-38.0,-16.2,-12.0,-8.0,8.0,12.0,16.2,38.0]:
+		var low: float = HMHarbourTerrainG1.lower_height(50.0,sample_z)
+		var upper: float = HMHarbourTerrainG1.bluff_height_at(50.0,sample_z)
+		_require(absf(low-upper)<0.01,"No lower/upper ground gap z="+str(sample_z))
+	for sample_z: float in [-8.0,-5.0,0.0,5.0,8.0]:
+		_require(absf(HMHarbourTerrainG1.lower_height(50.0,sample_z)-
+			HMHarbourTerrainG1.ramp_cut_height(50.0,sample_z))<0.01,
+			"No unsupported road cutting at z="+str(sample_z))
+	for sample_x: float in [-40.0,-10.0,25.0,50.0]:
+		for side: float in [-1.0,1.0]:
+			_require(absf(HMHarbourTerrainG1.edge_height(sample_x,47.0*side,false)-
+				HMHarbourTerrainG1.lower_height(sample_x,47.0*side))<0.01,
+				"Lower outer shoreline has closed seam")
+	for sample_x: float in [50.0,57.0,65.5,95.0,120.0]:
+		for side: float in [-1.0,1.0]:
+			var inner: float = HMHarbourTerrainG1.bluff_height_at(sample_x,46.0) if sample_x<=65.5 else 8.0
+			_require(absf(HMHarbourTerrainG1.edge_height(sample_x,46.0*side,true)-
+				inner)<0.01,"Upper coastal scarp closes old cliff edge")
 	_require(village.get_node_or_null("RoadsAndPaths/QuayWalk") != null,
 		"Original quay boardwalk retains permanent collision")
 	_require(village.get_node_or_null("RoadsAndPaths/LowerToUpperRamp") != null,
