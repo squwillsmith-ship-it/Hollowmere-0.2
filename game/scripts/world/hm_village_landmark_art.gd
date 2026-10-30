@@ -259,6 +259,27 @@ func _block(parent: Node3D, title: String, size: Vector3,
         for edge: int in [-1,1]:
             _trim(solid,"WattleOuterLath",Vector3(0.085,size.y*0.87,0.13),
                 Vector3(size.x*0.54,0,float(edge)*size.z*0.39),OAK)
+    elif title == "InnCantedSlateRoof" or title == "OfficeUnevenSlateSlope":
+        # G3 site-quality closure: uneven slate overlaps remain children
+        # of the original roof-owner ID and disappear with manual release.
+        for index: int in range(7):
+            var z: float = -size.z*0.44 + float(index)*size.z*0.145
+            var waviness: float = float((index*3+title.length())%5)*0.003
+            _trim(solid,"PitchedSlateLap_%02d" % index,
+                Vector3(size.x*0.92,0.030,size.z*0.125),
+                Vector3(0,size.y*0.56+waviness,z),SLATE.darkened(0.06))
+        for side: int in [-1,1]:
+            _trim(solid,"SaltedSlateEdge",
+                Vector3(0.13,0.048,size.z*0.94),
+                Vector3(float(side)*size.x*.45,size.y*.58,0),OAK.darkened(.25))
+    elif title == "InnLimeInfill" or title == "OfficeFrontHalf":
+        # Partial disassembly exposes staggered repair laths, not a plain
+        # indestructible rendered wall sheet.
+        for row: int in range(4):
+            _trim(solid,"G3OriginalOwnerWearBatten_%02d" % row,
+                Vector3(size.x*.83,.035,.075),
+                Vector3(0,-size.y*.35+float(row)*size.y*.23,size.z*.53),
+                OAK.darkened(.08+float(row%2)*.07))
     created_bodies += 1
 
 static func _trim(owner: Node3D, title: String, size: Vector3,
