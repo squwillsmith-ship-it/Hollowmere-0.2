@@ -7,6 +7,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: hollowmere-public-windows-export-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   windows-export:
     runs-on: windows-2022
@@ -60,6 +64,7 @@ jobs:
             build/windows/build-manifest.json
             build/export-windows.log
           if-no-files-found: error
+          retention-days: 14
       - name: Preserve failure logs
         if: failure()
         uses: actions/upload-artifact@v4
@@ -67,3 +72,4 @@ jobs:
           name: hollowmere-windows-export-error-${{ github.sha }}
           path: build/*.log
           if-no-files-found: warn
+          retention-days: 7

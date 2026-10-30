@@ -5,10 +5,10 @@ on:
   workflow_dispatch:
     inputs:
       capture_frames:
-        description: 'Attempt real Godot render/capture after QA (additional runtime)'
+        description: 'Full real screenshots; opt in for art or integration review'
         required: true
         type: boolean
-        default: true
+        default: false
       windows_headless:
         description: 'Run separate Windows headless validation (additional runtime)'
         required: true
@@ -69,6 +69,7 @@ jobs:
             build/phase-*.png
             build/step*-*.png
           if-no-files-found: warn
+          retention-days: 14
 
   windows-headless:
     if: ${{ inputs.windows_headless }}
@@ -112,3 +113,4 @@ jobs:
             build/qa-*.log
             build/qa-environment.json
           if-no-files-found: warn
+          retention-days: 14
