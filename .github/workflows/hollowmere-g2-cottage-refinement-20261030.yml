@@ -1,0 +1,130 @@
+name: Hollowmere G2 cottage foundation, roof, door visual refinement QA
+on:
+  push:
+    branches:
+      - qa/g2-cottage-refine-20261030
+    paths:
+      - .github/workflows/hollowmere-g2-cottage-refinement-20261030.yml
+permissions:
+  contents: write
+jobs:
+  build-test-commit-kit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Dependencies for asset generator and Godot software Vulkan
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends blender python3-numpy xvfb mesa-vulkan-drivers libvulkan1 libasound2t64 libpulse0 libfontconfig1 unzip
+          python -m pip install --quiet numpy Pillow trimesh scipy
+      - name: Generate nine cottage owner GLBs, ten kit GLBs and sixteen PBR textures
+        run: |
+          python tools/generate_g2_cottage_assets.py
+          python tools/check_g2_cottage_visual_geometry.py
+          python - <<'PY'
+          import json,struct
+          from pathlib import Path
+          a=json.loads(Path('art/g2/cottage_model_manifest.json').read_text())
+          assert len(a['g2_part_owner_assets'])==9
+          assert len(a['reusable_components'])==10
+          assert len(a['materials'])==8
+          for x in [*a['g2_part_owner_assets'].values(),*a['reusable_components'].values()]:
+              f=Path(x['path']);data=f.read_bytes()
+              magic,v,length=struct.unpack_from('<III',data)
+              assert (magic,v,length)==(0x46546C67,2,len(data)),x['path']
+              jsz,typ=struct.unpack_from('<II',data,12)
+              doc=json.loads(data[20:20+jsz])
+              assert doc['meshes'][0]['primitives']
+              assert len(doc['images'])>=2
+              assert f.stat().st_size>1000
+          print("G2_NINETEEN_REAL_GLB_MODELS_VALID")
+          PY
+      - name: Build editable Blender source from actual textured meshes
+        run: |
+          mkdir -p art/g2/source
+          blender --background --factory-startup --python tools/create_g2_cottage_blend.py > build-blender.log 2>&1 || { tail -130 build-blender.log; exit 1; }
+          grep G2_COTTAGE_BLENDER_EDITABLE_OK build-blender.log
+          test -s art/g2/source/Hollowmere_Cottage_G2_Master.blend
+      - name: Install pinned official Godot and import new asset scenes
+        run: |
+          python tools/test_environment.py doctor --install
+          mkdir -p build/g2kit
+          .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --headless --path game --editor --quit > build/g2kit/import.log 2>&1 || { tail -130 build/g2kit/import.log; exit 1; }
+      - name: Run all original and new G2 tests
+        run: python tools/test_environment.py check --godot .qa-tools/Godot_v4.7.2-stable_linux.x86_64
+      - name: Capture actual manually initiated removal states in Vulkan
+        env:
+          LIBGL_ALWAYS_SOFTWARE: "1"
+        run: |
+          export HOLLOWMERE_G2_TRANSACTION_DIR="$PWD/build/g2kit"
+          xvfb-run -a -s "-screen 0 1280x720x24" .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --rendering-method forward_plus --rendering-driver vulkan --audio-driver Dummy --path game --script res://tests/test_g2_transaction_capture.gd > build/g2kit/transactions.log 2>&1 || { tail -100 build/g2kit/transactions.log; exit 1; }
+          grep HOLLOWMERE_G2_REAL_TRANSACTIONS_RENDER_OK build/g2kit/transactions.log
+      - name: Render three close player-level cottage facade, side and roof views
+        env:
+          LIBGL_ALWAYS_SOFTWARE: "1"
+        run: |
+          export HOLLOWMERE_G2_CLOSE_CAPTURE_DIR="$PWD/build/g2kit"
+          xvfb-run -a -s "-screen 0 1280x720x24" .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --rendering-method forward_plus --rendering-driver vulkan --audio-driver Dummy --path game --script res://tests/test_g2_cottage_close_capture.gd > build/g2kit/close.log 2>&1 || { tail -120 build/g2kit/close.log; exit 1; }
+          grep HOLLOWMERE_G2_COTTAGE_CLOSE_RENDER_OK build/g2kit/close.log
+      - name: Validate six intact/half/heavy real images
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          p=Path('build/g2kit')
+          for b in ('cottage','warehouse'):
+              for s in ('intact','half','heavy'):
+                  f=p/('g2-transaction-'+b+'-'+s+'.png')
+                  with Image.open(f) as im:
+                      im.load()
+                      assert im.size==(1280,720)
+                      assert len(set(im.convert('RGB').resize((32,18)).getdata()))>12
+          for n in ("front_eye","west_wall","roof_assembly"):
+              with Image.open(p/("g2-cottage-"+n+".png")) as im:
+                  im.load()
+                  assert im.size==(1280,720),n
+          print("G2_COTTAGE_SIX_RENDER_STATES_OK")
+          print("G2_COTTAGE_THREE_CLOSE_VIEWS_OK")
+          PY
+      - name: Archive exact assets, editable sources, screenshots and test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hollowmere-g2-cottage-assets-and-qa
+          path: |
+            art/g2/cottage_model_manifest.json
+            art/g2/source/
+            game/assets/models/g2/
+            game/assets/materials/g2/
+            build/g2kit/
+            build/qa-*.log
+            build/qa-environment.json
+            build-blender.log
+          if-no-files-found: warn
+          retention-days: 21
+      - name: Publish verified binary assets ONLY to isolated G2 development branch
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "hollowmere-g2-ci"
+          git config user.email "hollowmere-g2-ci@users.noreply.github.com"
+          git fetch origin art/g2-hero-buildings-20261030
+          test "$(git rev-parse origin/art/g2-hero-buildings-20261030)" = "f953a3694ac6bb295eb052cba697a55c1ec4b1ec"
+          git worktree add -b publish-g2 ../publish origin/art/g2-hero-buildings-20261030
+          mkdir -p ../publish/game/assets/models/g2 ../publish/game/assets/materials/g2 ../publish/art/g2/source
+          cp -a game/assets/models/g2/. ../publish/game/assets/models/g2/
+          cp -a game/assets/materials/g2/. ../publish/game/assets/materials/g2/
+          cp art/g2/cottage_model_manifest.json ../publish/art/g2/
+          cp -a art/g2/source/. ../publish/art/g2/source/
+          cd ../publish
+          git add -f game/assets/models/g2 game/assets/materials/g2 art/g2/source art/g2/cottage_model_manifest.json
+          git commit -m "assets(g2): verified nine cottage GLBs, reusable kit, PBR surfaces and Blender master"
+          git push origin HEAD:art/g2-hero-buildings-20261030
+          echo G2_VERIFIED_ASSETS_PUBLISHED
