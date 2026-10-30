@@ -117,6 +117,44 @@ func _run() -> void:
 		"No passive salvage, goods or credits introduced by architecture")
 	stage.queue_free()
 	await process_frame
+	# Physical player-operated component release inside this exact hero area:
+	# independent of synthetic staging and compatible with original inputs.
+	var app: Node = load("res://scenes/main.tscn").instantiate()
+	app.force_brinewick_for_tests = true
+	root.add_child(app)
+	await process_frame
+	app.show_stage()
+	var actor: HMFirstPerson = app.player
+	var cloth_owner: HMInspectTarget = app.lifecycle.installed.get("fixture/house/curtain") as HMInspectTarget
+	expect(cloth_owner != null,"Actual hero cottage door cloth is a player target")
+	if cloth_owner != null:
+		var original_cloth: MeshInstance3D = cloth_owner.get_node_or_null("DoorCloth") as MeshInstance3D
+		expect(original_cloth != null,"Old physical curtain collider and stable ID retained")
+		if original_cloth != null:
+			var point: Vector3 = original_cloth.global_position
+			actor.global_position = point + Vector3(0,0.12,2.10)
+			actor.rotation.y = 0.0
+			actor.velocity = Vector3.ZERO
+			var eye: Vector3 = actor.view_camera.global_position
+			actor.head.rotation.x = -atan2(eye.y-point.y,eye.z-point.z)
+			for sample: int in range(7):
+				await physics_frame
+			var contact: Dictionary = app.inspector.probe()
+			var physical_id: String = String(contact.get("part_id",""))
+			expect(physical_id == "fixture/house/curtain",
+				"First-person first-hit ray selects hero cottage textile")
+			if physical_id == "fixture/house/curtain":
+				expect(bool(app.perform_work_once().get("ok",false)),
+					"Manual hands tool applies actual work at cottage")
+				expect(bool(app.perform_release_once().get("ok",false)),
+					"Manual player release removes cottage component")
+				expect(not cloth_owner.visible and cloth_owner.collision_layer == 0,
+					"Player removal eliminates whole authored cloth visual and its collider")
+				expect(app.lifecycle.recovered.has("fixture/house/curtain/out/cloth"),
+					"Original salvage lot produced only after manual action")
+	app.show_menu()
+	app.queue_free()
+	await process_frame
 	if problems.is_empty():
 		print("HOLLOWMERE_HARBOUR_HERO_BENCHMARK_OK")
 		quit(0)
