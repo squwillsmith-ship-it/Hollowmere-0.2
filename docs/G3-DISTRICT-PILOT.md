@@ -1,3 +1,24 @@
+# G3 corrective finishing pass — 30 October 2026
+
+**Source and custody:** G3 visual corrective branch `art/g3-final-environment-20261030` is a recoverable child of original G3 branch `art/g3-district-pilot-20261030`; development draft PR #13 https://github.com/squwillsmith-ship-it/Hollowmere-0.2/pull/13 targets original G3 PR #10. All verified gameplay files in Git SHA `e9fd1c954c1d65965d59f193ca36d3359ff46333`; the CI branch had exactly **378/378 identical non-workflow blobs**. Existing original G4 draft PR #12 branches from the earlier G3 source and **has NOT been rebased** with these new G3 changes. Never overwrite public/private protected main.
+
+**Implemented on the actual live world, not concept art:**
+- `HMG3VillageEnvironmentFinal`: only four batched, non-colliding faceted ground meshes over 21 original site locations; weathered stones, low windblown scrub, muted discarded dock timber ends, varied hand-set limestone flagstones around civic sites 09/10/15 and visual approach runs between sites 09/10/11/15 and their original cart road. No new salvage, autonomous harvesting, progression, protected-story triggers or physical route obstacles.
+- `HMCoastalProductionSurface.create` now modulates top-soil colours smoothly in world space rather than independently tinting each square, suppressing the large visibly alternating checkerboard in eye-level shots.
+- `HMG3RoofWeatherFinish`: actual 5,204 triangular slate faces built onto the original 64 physically pitched roof-body children in six owner groups; each slate surface naturally disappears when its original roof owner is manually released. No changes to original roof collision, 345 saved salvage IDs, binary intact/damaged condition or 4-act/two-ending narrative.
+- New regression assertions in G3 existing tests covering 21 original site IDs, four batched environmental meshes, 339 civic flagstones, all 64 original roof tile owners and existing original physically colliding roof slopes.
+
+**Verification:** Official pinned Godot 4.7.2 Standard Linux Mesa software Forward+/Vulkan CI [run 41026092453](https://github.com/squwillsmith-ship-it/Hollowmere-0.2/actions/runs/41026092453) **SUCCESS** with 75/75 QA stages and 23 genuinely rendered 1280×720 PNGs covering all 21 original sites plus night/fog. All non-workflow Git files in isolated run matched the source 378/378. A native Windows GPU build, 20+ minute actual human first-person play session and controller-operated hauling has not occurred in this check.
+
+Evidence in restricted Drive:
+- [G3 full engine QA and all site image archive](https://drive.google.com/file/d/1wHuw9-dEiR6fC-7wb8uR9wZPFU9uanEl/view)
+- [Actual 21-site render contact sheet](https://drive.google.com/file/d/1OrH0YA9wDQSsX_Z9ZtBCAnR8-QjjSEcG/view)
+- [Identical camera before/after comparison](https://drive.google.com/file/d/177Do6zXzIiQeI_j9d9YB1oBLyqEWURyY/view)
+
+**Art verdict — NOT owner-final accepted.** Engine-test status and nontrivial geometry improvements are real, but the contact sheets still reveal substantially open art defects: sparse distant settlement density; overly simple unweathered façades away from the G2 heroes; straight, minimally articulated terraces/cliff edges; flat environmental contrast; civic paving reads too regularly spaced from a distant angle; plus some inspection viewpoints still occlude the corresponding site. This does NOT merit claiming final G3 production polish complete. The next *real* G3 art review needs bespoke architectural context/varied silhouettes for 21 locations, artist-shaped stone walls/vegetation/terrain transitions, first-person route/salvage UX and Windows physical GPU acceptance. Record G3 as implementation extended, **ART-OPEN**, not user-approved. The owner requested finishing G3 and the corrective pass should remain reviewable and recoverable for further refinement rather than being mislabeled green.
+
+---
+
 # G3 third pass — full 21-site coverage and art gate, 30 October 2026
 
 **Verified game-source SHA:** `d91ce1ca1ef71e781ba9114870d17d62e52eefac`. **QA run:** [#41020819075](https://github.com/squwillsmith-ship-it/Hollowmere-0.2/actions/runs/41020819075), **SUCCESS 74/74 suites** including canonical 21 site markers and 345 salvaging component regression, 11 already distinct district installations, 64 inward-pitched original roof colliders and all previous G2 systems. 21 genuine 1280×720 software Forward+/Vulkan daytime frames plus 2 actual night/fog study frames independently pixel-checked. Source archive: [restricted Drive G3 all 21 + 23 real Vulkan frames](https://drive.google.com/file/d/1FfhqhH5pCYYuYZdhcVP5it06EkS6qO27/view).
