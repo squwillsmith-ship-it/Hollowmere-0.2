@@ -40,7 +40,7 @@ func _run() -> void:
     check(terrain != null,"Road and cliff refinements attached")
     if terrain != null:
         check(terrain.treated_roads == 10,"All eight original road segments plus two undercroft-safe turning aprons dressed")
-        check(terrain.treated_cliffs == 7,"All seven existing terrace masses dressed")
+        check(terrain.treated_cliffs == 6,"Six upper rock masses retain legacy art; the real lower coast needs no box dressing")
         check(_count_type(terrain,"static") == 0,"Ground detail is visual-only")
     var harbour: HMPhaseCHarbourDressing = world.get_node_or_null("PhaseCHarbourHistory") as HMPhaseCHarbourDressing
     check(harbour != null,"Harbour details attached")
