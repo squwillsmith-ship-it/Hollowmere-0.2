@@ -1,5 +1,5 @@
 name: Hollowmere G1 one-shot Godot 4.7.2 validation
-# Temporary branch-specific G1 QA: DO NOT merge or retain as main workflow.
+# Temporary branch-specific G1 QA: retry 2 after fixing escaped comment blocks; DO NOT merge.
 on:
   push:
     branches:
