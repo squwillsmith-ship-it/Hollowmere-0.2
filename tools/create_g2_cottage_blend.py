@@ -53,9 +53,6 @@ for name,folder,group in [
 # Set scene units for deliberate real-world metre scale, preserve geometry.
 bpy.context.scene.unit_settings.system="METRIC"
 bpy.context.scene.unit_settings.scale_length=1.0
-bpy.context.scene.render.engine="BLENDER_EEVEE_NEXT" if "BLENDER_EEVEE_NEXT" in \
-    {entry.identifier for entry in bpy.context.scene.render.bl_rna.properties["engine"].enum_items} \
-    else "BLENDER_EEVEE"
 bpy.ops.wm.save_as_mainfile(filepath=str(SOURCE/"Hollowmere_Cottage_G2_Master.blend"))
 (SOURCE/"blender_source_manifest.json").write_text(json.dumps({
     "version":1,"blender_version":bpy.app.version_string,
