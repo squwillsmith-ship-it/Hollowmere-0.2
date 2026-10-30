@@ -60,13 +60,18 @@ def textures() -> None:
             field = 4.0 * np.sin(x * 0.15 + y * 0.012) + 2.5 * np.sin(x * 0.67 + y * 0.013)
             seams = np.where((y.astype(int) % 53) >= 51, -9.0, 0.0)
         elif kind == "stone":
-            field = 3.5 * np.sin(x * .057) * np.cos(y * .066)
-            seams = np.where((y.astype(int) % 82) >= 80, -5.5, 0.0)
+            # Low contrast granular flecks, with broken rather than evenly
+            # spaced mortar traces. Keep the 1B silhouette readable.
+            field = 3.5*np.sin(x*.057)*np.cos(y*.066) + 1.6*np.cos(x*.18+y*.09)
+            seams = np.where(((y.astype(int)+
+                        (x.astype(int)//91)*7) % 82)>=81,-5.5,0.0)
         elif kind == "slate":
-            field = 3.8 * np.sin(x * .061 + y * .037)
-            seams = np.where((y.astype(int) % 66) >= 64, -3.5, 0.0)
+            field = 3.0*np.sin(x*.061+y*.037)+1.7*np.sin(x*.19-y*.05)
+            seams = np.where((y.astype(int)%66)>=65,-3.0,0.0)
         elif kind == "lime":
-            field = 1.9 * np.sin(x * .049) + 2.0 * np.cos(y * .061)
+            field = 1.9*np.sin(x*.049)+2.0*np.cos(y*.061)
+            # Wind/salt aging towards wall edges, not grunge noise.
+            field += -3.0*np.exp(-np.minimum(x,255-x)/26.0)
             seams = 0.0
         elif kind == "cloth":
             field = 2.8 * np.sin(x * .37) + 1.0 * np.cos(y * .51)
@@ -189,28 +194,41 @@ def _slate_slope(builder, center_x, rotation):
                 "dark_oak",angle=rotation,bevel=.008)
     for rz in range(12):
         for rx in range(8):
-            u0 = -1.325 + (rx+.5)*2.65/8
+            # Slightly staggered courses with a handful of worn corners,
+            # not the uniform grid of pristine identical rectangular tiles.
+            u0 = -1.325 + (rx+.5)*2.65/8 + (.012 if rz%2 else -.012)
             v0 = -2.48 + (rz+.5)*4.96/12
-            yj = 0.012*((rx+2*rz)%4)
+            yj = 0.004*((rx+2*rz)%5) - .006
             local = _rotate_z((u0, yj, v0), rotation)
             b = (cx+local[0], cy+local[1], local[2])
-            builder.box(b, (2.65/8*.97,.08,4.96/12*1.07),
-                        "slate", angle=rotation, bevel=.016)
-    # Ridge underlay and visible rafter ends remain part of roof-owner.
-    for z in (-2.28,-1.14,0,1.14,2.28):
-        a = _rotate_z((-1.19,-.19,z),rotation)
-        b = _rotate_z((1.16,-.19,z),rotation)
+            wear = ((rx*17+rz*11)%7)
+            builder.box(b, (2.65/8*(.98-.008*(wear%3)),.075,
+                            4.96/12*(1.045+.012*(wear%2))),
+                        "slate", angle=rotation, bevel=.014+.005*(wear%3))
+    # Thin battens are on the underside of the sarking; no exposed
+    # roof-spanning timbers should cross the weatherproof slate faces.
+    for z in (-2.21,-1.04,.15,1.32,2.21):
+        a = _rotate_z((-1.14,-.215,z),rotation)
+        b = _rotate_z((1.13,-.215,z),rotation)
         builder.beam((cx+a[0],cy+a[1],a[2]),(cx+b[0],cy+b[1],b[2]),
-                     .11,.12,"dark_oak")
+                     .075,.09,"dark_oak")
 
 
 def cottage_models():
     m = {part: Builder(part) for part in PARTS}
     b=m["curtain"]
-    b.panel((0,1.31,2.215),(.89,1.55,.052),"unbleached_linen")
-    for x in (-.31,-.08,.14,.36):
-        b.beam((x,.58,2.253),(x,2.03,2.253),.018,.012,"unbleached_linen")
-    b.beam((-.52,2.12,2.28),(.52,2.12,2.28),.065,.070,"dark_oak")
+    # A shallow uneven hanging textile with vertical folds and soft lower
+    # hem; it fills the opening up to the horizontal timber lintel.
+    for col in range(7):
+        x=-.45+(col+.5)*.90/7
+        offset=.024*math.sin((col+.3)*1.73)
+        bottom=.40+.025*((col*3)%4)
+        top=2.36-.014*(col%3)
+        b.panel((x,(top+bottom)*.5,2.19+offset),
+                (.90/7*1.06,top-bottom,.042),"unbleached_linen")
+    for x in (-.45,-.23,.01,.25,.45):
+        b.beam((x,.47,2.23),(x,2.29,2.23),.011,.014,"unbleached_linen")
+    b.beam((-.51,2.40,2.28),(.51,2.40,2.28),.068,.070,"dark_oak")
     b=m["shutters"]
     for x in (-1.14,1.14):
         for c in range(4):
@@ -222,38 +240,80 @@ def cottage_models():
         for y in (1.31,2.01):
             b.box((x-.20,y,2.39),(.090,.065,.024),"black_iron")
     b=m["cladding"]
-    for x in (-2.39,2.39):
-        for row in range(9):
-            y=.82+row*.205
-            for col in range(3):
-                zz=-1.76+(col+.5)*3.52/3 + (.12 if row%2 else 0)
-                zz=max(-1.89,min(1.89,zz))
-                b.box((x,y,zz),(.115,.202,1.24),"weathered_oak",bevel=.035)
-        for zz in (-1.85,0,1.85):
-            b.beam((x, .72,zz),(x,2.63,zz),.13,.14,"dark_oak")
-    for row in range(4):
-        for col in range(4):
-            x=-2.12+(col+.5)*4.24/4 + (.19 if row%2 else 0)
-            x=max(-2.16,min(2.16,x))
-            b.box((x,1.77+row*.17,-2.23),(1.13,.165,.105),"weathered_oak")
+    # Low boards overlap the stone plinth instead of hovering 20cm above it.
+    # Slender cover battens seal all four corners but are fully removable.
+    for side in (-1.0,1.0):
+        x=side*2.355
+        for row in range(11):
+            y=.625+row*.186
+            for col in range(4):
+                length=4.42/4
+                jitter=.014*((row+2*col)%3-1)
+                z=-2.21+(col+.5)*length+jitter
+                b.box((x,y,z),(.125,.190,length*1.055),
+                      "weathered_oak",bevel=.015+.005*(col%3))
+        for z in (-2.20,-.73,.73,2.20):
+            b.beam((side*2.34,.48,z),(side*2.34,2.73,z),
+                   .12,.14,"dark_oak")
+        for z in (-2.205,2.205):
+            b.beam((side*2.29,.52,z),(side*2.29,2.78,z),
+                   .16,.17,"weathered_oak")
+    # Rear boarding reaches the lower sill and existing wall corners.
+    for row in range(11):
+        y=.63+row*.186
+        for col in range(5):
+            width=4.56/5
+            x=-2.28+(col+.5)*width+(.012 if row%2 else -.012)
+            b.box((x,y,-2.235),(width*1.06,.19,.105),
+                  "weathered_oak",bevel=.02)
+    for x in (-2.22,0,2.22):
+        b.beam((x,.53,-2.31),(x,2.79,-2.31),.14,.15,"dark_oak")
     b=m["slate_patch"]
     _slate_slope(b,-1.25,28.0)
     _slate_slope(b, 1.25,-28.0)
-    b.beam((0,4.10,-2.46),(0,4.10,2.46),.19,.18,"dark_oak")
+    # A low slate ridge cap, segmented to avoid a huge exposed timber bar.
+    for i in range(12):
+        z = -2.30+(i+.5)*(4.60/12)
+        b.box((0,3.982+((i*7)%3)*.002,z),
+              (.33,.095,4.60/12*1.12),"slate",bevel=.025)
     b=m["beam"]
-    b.beam((0,4.01,-2.45),(0,4.01,2.45),.34,.35,"dark_oak")
-    b.beam((-2.34,2.75,2.20),(2.34,2.75,2.20),.24,.24,"weathered_oak")
-    for zz in (-2.07,-.9,.28,1.46,2.08):
-        b.beam((-2.29,2.79,zz),(2.29,2.79,zz),.17,.17,"weathered_oak")
-        b.beam((-2.22,2.82,zz),(0,4.00,zz),.13,.13,"dark_oak")
-        b.beam((0,4.00,zz),(2.22,2.82,zz),.13,.13,"dark_oak")
+    # Structural ridge and rafters now correctly UNDER slate / sarking.
+    # The central tie retains its original saved/removable beam owner.
+    b.beam((0,3.81,-2.36),(0,3.81,2.36),.19,.17,"dark_oak")
+    b.beam((-2.29,2.66,2.17),(2.29,2.66,2.17),.22,.21,"weathered_oak")
+    for zz in (-2.02,-.91,.19,1.32,2.03):
+        b.beam((-2.24,2.67,zz),(2.24,2.67,zz),.155,.15,"weathered_oak")
+        b.beam((-2.23,2.60,zz),(0,3.77,zz),.12,.12,"dark_oak")
+        b.beam((0,3.77,zz),(2.23,2.60,zz),.12,.12,"dark_oak")
+        # Visible below-roof collar ties communicate physical construction
+        # when slate courses are removed, without piercing finished roofing.
+        b.beam((-.69,3.44,zz),(.69,3.44,zz),.11,.12,"weathered_oak")
     b=m["stone_block"]
-    for x,w,zz in ((-1.65,1.20,2.25),(1.55,1.30,2.25),(0,2.10,-2.2)):
+    # The plinth must actually run under the timber sides and between
+    # the corners. Each block remains within the original stone-block
+    # salvage owner; there is no persistent undismantlable floating shell.
+    for side in (-1.0,1.0):
         for row in range(2):
-            for col in range(3 if abs(x)>0 else 4):
-                localx=x-w/2+(col+.5)*w/(3 if abs(x)>0 else 4)
-                b.stone((localx,.15+row*.29,zz),
-                        (w/(3 if abs(x)>0 else 4),.29,.69),row,col)
+            for col in range(9):
+                span=4.36/9
+                z=-2.18+(col+.5)*span + (span*.13 if row%2 else 0)
+                z=min(2.12,max(-2.12,z))
+                b.stone((side*2.28,.15+row*.265,z),
+                        (.32,.28,span*(.96 if row%2 else .99)),row,col)
+    # Break and stagger front foundation at the doorway opening.
+    for xmin,xmax in ((-2.43,-.57),(.57,2.43)):
+        for row in range(2):
+            for col in range(4):
+                width=(xmax-xmin)/4
+                x=xmin+(col+.5)*width+(width*.08 if row%2 and col<3 else 0)
+                b.stone((x,.15+row*.265,2.20),
+                        (width*(.93 if col%3 else .98),.28,.36),row,col)
+    for row in range(2):
+        for col in range(10):
+            span=4.65/10
+            x=-2.325+(col+.5)*span+(span*.08 if row%2 and col<9 else 0)
+            b.stone((x,.15+row*.265,-2.20),
+                    (span*.95,.28,.36),row,col)
     b=m["front_infill"]
     for x in (-1.14,1.14):
         b.panel((x,.77,2.202),(1.19,.66,.105),"lime_infill")
@@ -270,8 +330,13 @@ def cottage_models():
         b.beam((x,.42,2.325),(x,2.78,2.325),.16,.16,"dark_oak")
     b.beam((-2.32,2.82,2.34),(0,4.06,2.34),.18,.16,"weathered_oak")
     b.beam((0,4.06,2.34),(2.32,2.82,2.34),.18,.16,"weathered_oak")
-    b.beam((-2.34,2.76,2.33),(2.34,2.76,2.33),.17,.14,"dark_oak")
-    b.beam((0,2.80,2.35),(0,3.89,2.35),.12,.12,"weathered_oak")
+    b.beam((-2.34,2.76,2.33),(2.34,2.76,2.33),.16,.14,"dark_oak")
+    # Tight framed door-lintel at 2.42m closes the bare void above fabric.
+    b.beam((-.57,2.43,2.36),(.57,2.43,2.36),.15,.15,"weathered_oak")
+    for sign in (-1.0,1.0):
+        b.beam((sign*.55,.47,2.34),(sign*.55,2.48,2.34),
+               .12,.13,"dark_oak")
+    b.beam((0,2.80,2.35),(0,3.89,2.35),.105,.10,"weathered_oak")
     for x in (-1.14,1.14):
         b.box((x,1.08,2.32),(1.24,.11,.18),"weathered_oak")
     b=m["rear_infill"]
