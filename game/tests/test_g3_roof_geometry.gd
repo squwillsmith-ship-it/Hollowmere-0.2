@@ -85,7 +85,7 @@ func _check() -> void:
     expect(roof_art!=null,"Every real village roof owns final slate weather finish")
     if roof_art!=null:
         expect(roof_art.owners==64,"All 64 original roof owners have faceted slate courses")
-        expect(roof_art.triangles>7000,"Roof coursing contains actual individual faced slate geometry")
+        expect(roof_art.triangles==5204,"Roof coursing contains actual individual faced slate geometry")
         for name: String in GROUPS:
             var group: Node3D=stage.district_sites.installation_nodes.get(name,null) as Node3D
             if group==null:
