@@ -230,6 +230,13 @@ func build_world() -> void:
 	protected_detail.name = "PhaseCProtectedStonesAndTimber"
 	underground_sites.add_child(protected_detail)
 	protected_detail.build(underground_sites)
+	# G4 protected auditory-first environmental composition: visual fitting
+	# belongs to already-collidable narrative architecture, never an entity.
+	var story_architecture := HMG4ProtectedStoryVisuals.new()
+	story_architecture.name = "G4ProtectedStoryArchitecture"
+	underground_sites.add_child(story_architecture)
+	story_architecture.build(underground_sites)
+	set_meta("g4_protected_art_owners",story_architecture.owners_dressed)
 	var village_plants := HMPhaseCVillageDressing.new()
 	village_plants.name = "PhaseCSettlementVegetation"
 	add_child(village_plants)
