@@ -108,6 +108,18 @@ static func create(size: Vector3, name: String, base: Color, path: bool) -> Arra
                     else:
                         _tri(tool,p0,p1,p2,bedded)
                         _tri(tool,p0,p2,p3,bedded.darkened(0.055))
+                    # Jagged mineral outcrops disrupt rectangular,
+                    # repetitive cliff layers. All mesh-only and fitted to
+                    # the previous volume, never a new collision shape.
+                    if row_index < rows-1 and (col+3*face+2*row_index)%7 == 0:
+                        var mid_u: float=(u0+u1)*.5
+                        var lift: float=minf(size.y*.13,.56)
+                        var tooth: float=.18+.13*sin(mid_u*.37+float(face))
+                        var ridge: Vector3=_cliff(face,size,mid_u,
+                            (height0+height1)*.5+lift,
+                            edge[row_index][col]+maxf(.06,tooth))
+                        _tri(tool,p0,ridge,p3,bedded.lightened(.045))
+                        _tri(tool,ridge,p2,p3,bedded.darkened(.12))
     else:
         # Road-edge aggregate is flush with physics and visually softens the
         # original perfectly straight paved slab. Keep no shoulder colliders.

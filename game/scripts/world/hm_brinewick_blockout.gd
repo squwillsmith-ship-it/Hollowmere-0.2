@@ -43,7 +43,7 @@ func build_world() -> void:
 	sky.background_color = HMCoastalPresentation.OVERCAST_SKY
 	sky.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
 	sky.ambient_light_color = HMCoastalPresentation.AMBIENCE
-	sky.ambient_light_energy = 0.33
+	sky.ambient_light_energy = 0.27
 	sky.tonemap_mode = Environment.TONE_MAPPER_FILMIC
 	# Overcast sea mist: sparse enough to keep working distance and road
 	# silhouettes readable; occult horror remains primarily auditory.
@@ -57,7 +57,7 @@ func build_world() -> void:
 	sun.name = "OvercastCoastalSun"
 	sun.rotation_degrees = Vector3(-48, -28, 0)
 	sun.light_color = HMCoastalPresentation.LIGHT
-	sun.light_energy = 1.02
+	sun.light_energy = 1.12
 	sun.shadow_enabled = true
 	add_child(sun)
 	var water := MeshInstance3D.new()

@@ -144,6 +144,14 @@ func build(sites: Dictionary) -> void:
 	complete_facades.build(installation_nodes)
 	set_meta("g3_rebuilt_facade_owners", complete_facades.assembled_parts)
 
+	# G3 repaired facades and raked rooflines stay attached to the exact
+	# previous physical owners. Never create new salvage or physics nodes.
+	var signatures := HMG3ArchitecturalSignature.new()
+	signatures.name = "G3OwnedSilhouetteSignatures"
+	add_child(signatures)
+	signatures.build(installation_nodes,complete_facades)
+	set_meta("g3_owner_bound_signature_faces",signatures.decorated_faces)
+
 	# World discoveries and narrative cues reference existing site markers.
 	for data: Variant in parsed.get("world_discoveries", []):
 		if not (data is Dictionary) or not sites.has(String(data.get("site_id", ""))):
