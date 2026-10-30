@@ -17,8 +17,25 @@ func _run() -> void:
     var failures: int=0
     for key: String in IDS:
         var p: Vector3=world.underground_sites.locations[key]
-        camera.global_position=p+Vector3(5,3.2,8)
-        camera.look_at(p+Vector3(0,1.3,0),Vector3.UP)
+        var camera_offset: Vector3=Vector3(0,1.4,0)
+        var look_offset: Vector3=Vector3(2,1.6,2)
+        match key:
+            "well_listening":
+                camera_offset=Vector3(-2.1,1.3,-2.0)
+                look_offset=Vector3(2.0,1.4,3.0)
+            "mine_seal":
+                # The corridor approaches the barrier from smaller X,
+                # not beyond the closed permanent seal.
+                camera_offset=Vector3(-8.5,1.1,0)
+                look_offset=Vector3(0,1.5,0)
+            "undercroft":
+                camera_offset=Vector3(-1.8,1.1,-1.5)
+                look_offset=Vector3(2.0,1.6,2.0)
+            "bell_house":
+                camera_offset=Vector3(7.0,5.1,9.5)
+                look_offset=Vector3(0,2.8,0)
+        camera.global_position=p+camera_offset
+        camera.look_at(p+look_offset,Vector3.UP)
         for tick: int in range(16):
             await process_frame
         await RenderingServer.frame_post_draw
