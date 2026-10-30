@@ -1,0 +1,109 @@
+name: Hollowmere G3 all 21 sites actual Godot QA and weather review
+on:
+  push:
+    branches:
+      - qa/g3-21-site-integration-20261030
+    paths:
+      - .github/workflows/hollowmere-g3-21-site-20261030.yml
+permissions:
+  contents: read
+jobs:
+  g3-godot:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Vulkan Mesa and core test dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends xvfb mesa-vulkan-drivers libvulkan1 libasound2t64 libpulse0 libfontconfig1 unzip
+          python -m pip install --quiet numpy Pillow trimesh scipy
+      - name: Generate required original 1B source reference assets
+        run: |
+          python tools/generate_step21_materials.py
+          python tools/generate_step21_glb.py
+          python tools/generate_phase_b_surfaces.py
+          python tools/generate_phase_b_reference_glb.py
+      - name: Install pinned official Godot and import full game
+        run: |
+          python tools/test_environment.py doctor --install
+          mkdir -p build/g3
+          .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --headless --path game --editor --quit > build/g3-import.log 2>&1 || { tail -100 build/g3-import.log; exit 1; }
+      - name: Run full Godot regression suite including G3 second pass and 64 real roof colliders
+        run: python tools/test_environment.py check --godot .qa-tools/Godot_v4.7.2-stable_linux.x86_64
+      - name: Render eleven genuine Forward+ Vulkan architectural district frames
+        env:
+          LIBGL_ALWAYS_SOFTWARE: "1"
+        run: |
+          export HOLLOWMERE_G3_PILOT_RENDER_DIR="$PWD/build/g3"
+          xvfb-run -a -s "-screen 0 1280x720x24" .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --rendering-method forward_plus --rendering-driver vulkan --audio-driver Dummy --path game --script res://tests/test_g3_pilot_capture.gd > build/g3-pilot-capture.log 2>&1 || { tail -160 build/g3-pilot-capture.log; exit 1; }
+          grep HOLLOWMERE_G3_ELEVEN_VULKAN_INSTALLATIONS_OK build/g3-pilot-capture.log
+      - name: Render all 21 original village sites plus night and thick coastal fog
+        env:
+          LIBGL_ALWAYS_SOFTWARE: "1"
+        run: |
+          mkdir -p build/g3-all
+          export HOLLOWMERE_G3_21_RENDER_DIR="$PWD/build/g3-all"
+          xvfb-run -a -s "-screen 0 1280x720x24" .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --rendering-method forward_plus --rendering-driver vulkan --audio-driver Dummy --path game --script res://tests/test_g3_all_site_capture.gd > build/g3-all-sites.log 2>&1 || { tail -180 build/g3-all-sites.log; exit 1; }
+          grep HOLLOWMERE_G3_TWENTY_ONE_SITES_VULKAN_OK build/g3-all-sites.log
+      - name: Validate 23 real world frames and make visual review sheet
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image,ImageOps,ImageDraw
+          folder=Path('build/g3-all')
+          labels=[f'{i:02d}' for i in range(1,22)]+['13-night-study','03-heavy-fog']
+          pages=[]
+          for i in range(0,len(labels),12):
+              page=Image.new('RGB',(1280,1050),(23,26,28))
+              draw=ImageDraw.Draw(page)
+              for j,label in enumerate(labels[i:i+12]):
+                  p=folder/f'g3-site-{label}.png'
+                  with Image.open(p) as im:
+                      im.load()
+                      assert im.size==(1280,720),p
+                      assert len(set(im.convert('RGB').resize((32,18)).getdata()))>18,p
+                      tile=im.convert('RGB').resize((306,172))
+                  x=12+(j%4)*318;y=14+(j//4)*345
+                  page.paste(tile,(x,y))
+                  draw.text((x,y+180),'SITE '+label,fill=(226,223,210))
+              out=folder/f'g3-21site-review-page-{i//12+1}.jpg'
+              page.save(out,quality=87)
+              pages.append(str(out))
+          assert len(labels)==23
+          print('G3_23_ACTUAL_VULKAN_PNGS_VALID',len(pages))
+          PY
+      - name: Validate all eleven actual district frames
+        run: |
+          python - <<'PY'
+          from PIL import Image
+          from pathlib import Path
+          folder=Path('build/g3')
+          names=['office','net_store','workshop','chapel','mara_home','landing_pier','boatyard','upper_house','schoolroom','aldren_study','navigation_light']
+          for n in names:
+              with Image.open(folder/f'g3-pilot-{n}.png') as im:
+                  im.load()
+                  assert im.size==(1280,720)
+                  assert len(set(im.convert('RGB').resize((40,22)).getdata()))>16
+          print('G3_SECOND_PASS_ELEVEN_REAL_FRAMES_OK')
+          PY
+      - name: Save Godot suite reports and real frames
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hollowmere-g3-21-site-QA
+          path: |
+            build/g3/
+            build/g3-all/
+            build/g3-all-sites.log
+            build/g3-import.log
+            build/g3-pilot-capture.log
+            build/qa-*.log
+            build/qa-environment.json
+          if-no-files-found: warn
+          retention-days: 21
