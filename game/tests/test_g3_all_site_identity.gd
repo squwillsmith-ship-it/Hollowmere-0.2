@@ -29,6 +29,20 @@ func _run() -> void:
                     "Site identity stored against existing site ID")
                 for part: Node in cue.get_children():
                     demand(part is MeshInstance3D,"Site approach has real geometry")
+    var land: HMG3VillageEnvironmentFinal=scene.get_node_or_null(
+        "G3VillageEnvironmentalContinuity") as HMG3VillageEnvironmentFinal
+    demand(land!=null,"G3 final authored environmental mesh exists in actual world")
+    if land!=null:
+        demand(land.finished,"Twenty-one site scene assembly finished")
+        demand(land.covered_sites.size()==21,"Original sites all have environmental treatment")
+        demand(land.batched_meshes==4,"Four batched, low draw-call geological/civic/vegetation meshes")
+        demand(land.boulders>=170,"Faceted coastal/terrace erosion across whole village")
+        demand(land.vegetation_clumps>=50,"Selective low coastal scrub clumps")
+        demand(land.civic_stones==3*(18+27),"Worn hand-laid square/inn/bell stonework")
+        for child: Node in land.get_children():
+            demand(child is MeshInstance3D,"Environment contains visual geometry only")
+            demand(bool(child.get_meta("g3_noncolliding",false)),
+                "Every landscape visual must be noncolliding")
     var inn: HMVillageLandmarkArt=scene.get_node_or_null("InnAndMineOfficeArchitecture") as HMVillageLandmarkArt
     demand(inn!=null,"Preserved original inn and mine office authoring")
     if inn!=null:
