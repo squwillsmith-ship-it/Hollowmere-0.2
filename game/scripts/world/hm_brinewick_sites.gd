@@ -128,6 +128,13 @@ func build(sites: Dictionary) -> void:
 	add_child(district_art)
 	district_art.build(installation_nodes)
 	set_meta("g3_pilot_architectural_owners",district_art.attached_visuals)
+	# Final G3 roof surface: individual worn slate courses remain children
+	# of the 64 ORIGINAL pitched roof bodies/colliders, never own gameplay.
+	var roof_finish := HMG3RoofWeatherFinish.new()
+	roof_finish.name = "G3OriginalRoofWeatherFinish"
+	add_child(roof_finish)
+	roof_finish.build(installation_nodes)
+	set_meta("g3_64_roof_surfaces",roof_finish.owners)
 
 	# World discoveries and narrative cues reference existing site markers.
 	for data: Variant in parsed.get("world_discoveries", []):
