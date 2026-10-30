@@ -1,3 +1,22 @@
+# G3 third pass — full 21-site coverage and art gate, 30 October 2026
+
+**Verified game-source SHA:** `d91ce1ca1ef71e781ba9114870d17d62e52eefac`. **QA run:** [#41020819075](https://github.com/squwillsmith-ship-it/Hollowmere-0.2/actions/runs/41020819075), **SUCCESS 74/74 suites** including canonical 21 site markers and 345 salvaging component regression, 11 already distinct district installations, 64 inward-pitched original roof colliders and all previous G2 systems. 21 genuine 1280×720 software Forward+/Vulkan daytime frames plus 2 actual night/fog study frames independently pixel-checked. Source archive: [restricted Drive G3 all 21 + 23 real Vulkan frames](https://drive.google.com/file/d/1FfhqhH5pCYYuYZdhcVP5it06EkS6qO27/view).
+
+## Actual added gameplay-adjacent scene art
+
+- `game/scripts/world/hm_g3_village_site_context.gd` creates distinct, physically grounded, muted stone / timber edge features around **all 21 existing original Brinewick site markers**, with district palette profiles for waterfront, civic, upland and headland. No new collidable StaticBody3D, no story clues, no automatic salvage, no new HMInspectTarget IDs. Permanent visual context is explicitly separate from manual disassembly parts.
+- `hm_brinewick_blockout.gd` integrates these only after the canonical physical and story landmarks have been created.
+- `game/tests/test_g3_district_pilot.gd` checks all 21 visual context nodes, noncolliding mesh children, earlier 11 site-specific owner details, the authoritative 345 saved IDs and original story site IDs.
+- `game/tests/test_g3_all_site_capture.gd` renders 21 fixed site camera views plus 2 actual coastal weather/lighting variants.
+
+## Visual inspection — cannot falsely declare quality completion
+
+The pixel test and Godot suite succeed but **aesthetic acceptance is OPEN**: a full montage review shows several intentionally provisional buildings, repetitive roof/wall assemblies, exposed coarse slab topography and weak distant landscape silhouettes. The camera at the quay/site01 overemphasizes shoreline and undershows the landing, and mine approach/site18 is partially obscured by neighbouring roof. One 21-site kit pass improves regional coherence, but neither this geometry nor the 1B/1C visuals are production-final. Need site-by-site directed bespoke models, close player-eye/day/fog/night comparison, strict route/clearance first-person carried haul and native Windows GPU before owner final G3 art signoff. The owner requested finishing G3 and starting G4; the code now has 21/21 technically verified site treatment, but no unjustified final signoff should be inferred.
+
+**Next milestone:** isolated G4 child branch `art/g4-protected-landmarks-20261030`, focussed on protected underground/4-act story composition, not revealing the entity or modifying approved narrative. G1 & G2 owner-provisionally approved. G3 has verified village-wide coverage, **final art gate still open**.
+
+---
+
 # G3 second pass — roof geometry, protected chapel gables, expanded architectural site kit
 
 **Owner G2 gate, 30 October 2026:** G2 is now **provisionally approved as a build-on architectural foundation**, not final Windows/human/manual-carry/art signoff. Its tested baseline remains `870cdb5c887c4bf8217aab6075a1ff4a668d15e3`, draft PR9. G3 is explicitly authorised and remains unfinished.
