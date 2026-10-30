@@ -28,8 +28,27 @@ func _run() -> void:
 	for i: int in range(IDS.size()):
 		var group: Node3D=stage.district_sites.installation_nodes[IDS[i]]
 		var target: Vector3=group.global_position
-		cam.global_position=target+Vector3(9.2,5.3,12.8)
-		cam.look_at(target+Vector3(0,2.2,0),Vector3.UP)
+		var camera_offset: Vector3=Vector3(9.2,5.3,12.8)
+		var view_focus: Vector3=target+Vector3(0,2.2,0)
+		# Keep most of the proven original QA camera positions, but do not
+		# shoot the office from inside the old warehouse or aim at the chapel
+		# instead of the separate schoolroom wing.
+		match IDS[i]:
+			"harbour/office":
+				camera_offset=Vector3(-10.0,5.3,11.3)
+			"chapel/ordinary_hall":
+				camera_offset=Vector3(-11.0,7.0,15.0)
+				view_focus=target+Vector3(0,3.6,0)
+			"chapel/schoolroom_wing":
+				camera_offset=Vector3(18.4,5.5,20.2)
+				view_focus=target+Vector3(8.8,2.0,7.9)
+			"chapel/aldren_study":
+				camera_offset=Vector3(-9.0,5.3,10.7)
+			"harbour/navigation_light":
+				camera_offset=Vector3(14.0,12.0,19.0)
+				view_focus=target+Vector3(0,7.0,0)
+		cam.global_position=target+camera_offset
+		cam.look_at(view_focus,Vector3.UP)
 		for frame: int in range(22):
 			await process_frame
 		await RenderingServer.frame_post_draw
