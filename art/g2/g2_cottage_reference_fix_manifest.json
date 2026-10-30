@@ -1,0 +1,180 @@
+{
+  "base": "Hollowmere G2 provisionally approved SHA 870cdb5c887c4bf8217aab6075a1ff4a668d15e3",
+  "part_ids": {
+    "beam": "fixture/house/beam",
+    "cladding": "fixture/house/cladding",
+    "curtain": "fixture/house/curtain",
+    "front_infill": "fixture/house/front_infill",
+    "rear_infill": "fixture/house/rear_infill",
+    "shutters": "fixture/house/shutters",
+    "slate_patch": "fixture/house/slate_patch",
+    "stone_block": "fixture/house/stone_block",
+    "threshold": "fixture/house/threshold"
+  },
+  "modification": "G2 cottage reference-sheet target geometry corrections",
+  "parts": {
+    "beam": {
+      "sha256": "65a4b7dd51060e5676286e68f56fff52e918c6ae4dff73b1ce8eec4ffdeb023c",
+      "triangles": 408,
+      "previous_triangles": 264,
+      "bounds": [
+        [
+          -2.395,
+          2.3975,
+          -2.41
+        ],
+        [
+          2.395,
+          3.905,
+          2.41
+        ]
+      ],
+      "added_mesh_nodes": 12
+    },
+    "cladding": {
+      "sha256": "0f523775f9bcbffc081bf4022bf0a6416f4d9b04ea7a1842386fd9878a81c202",
+      "triangles": 3000,
+      "previous_triangles": 2904,
+      "bounds": [
+        [
+          -2.5175,
+          0.49,
+          -2.385
+        ],
+        [
+          2.5175,
+          2.79,
+          2.295
+        ]
+      ],
+      "added_mesh_nodes": 8
+    },
+    "curtain": {
+      "sha256": "1a0c98cf60e38bffe344a8e085c581d01afae9809b19951e19b1ed854785e1f5",
+      "triangles": 156,
+      "previous_triangles": 156,
+      "bounds": [
+        [
+          -0.51,
+          0.4,
+          2.1451
+        ],
+        [
+          0.51,
+          2.434,
+          2.315
+        ]
+      ],
+      "added_mesh_nodes": 0
+    },
+    "front_infill": {
+      "sha256": "17fbc8b4a91d70e172a9c1d9f4694be7b080d5bbd471452947c14b51cd27cbe0",
+      "triangles": 644,
+      "previous_triangles": 336,
+      "bounds": [
+        [
+          -2.3624,
+          0.42,
+          2.1235
+        ],
+        [
+          2.3624,
+          4.0094,
+          2.435
+        ]
+      ],
+      "added_mesh_nodes": 26
+    },
+    "rear_infill": {
+      "sha256": "cb16de64a57fa1643c08e0b749af357f9da491ac5d637176c4f29490f8b97149",
+      "triangles": 1004,
+      "previous_triangles": 924,
+      "bounds": [
+        [
+          -2.3483,
+          0.49,
+          -2.39
+        ],
+        [
+          2.3483,
+          4.0002,
+          -2.135
+        ]
+      ],
+      "added_mesh_nodes": 7
+    },
+    "shutters": {
+      "sha256": "2e6b207e98ab95a0707d824e465815a4f4212916d356887be60ee776e50dc443",
+      "triangles": 240,
+      "previous_triangles": 216,
+      "bounds": [
+        [
+          -1.385,
+          1.19,
+          2.2175
+        ],
+        [
+          1.38,
+          2.13,
+          2.418
+        ]
+      ],
+      "added_mesh_nodes": 2
+    },
+    "slate_patch": {
+      "sha256": "38ecf64e2b4bab08ef03ad8aa4ce08849265318d08e5ba24d8d80decc9ee165f",
+      "triangles": 2592,
+      "previous_triangles": 2592,
+      "bounds": [
+        [
+          -2.446,
+          2.4819,
+          -2.4918
+        ],
+        [
+          2.446,
+          4.0335,
+          2.4918
+        ]
+      ],
+      "added_mesh_nodes": 0
+    },
+    "stone_block": {
+      "sha256": "cf03a318dc258df3a1d2ad4721154a434f85dbd26727e8d70cdab03d7df89f94",
+      "triangles": 972,
+      "previous_triangles": 864,
+      "bounds": [
+        [
+          -2.4606,
+          0.0134,
+          -2.3944
+        ],
+        [
+          2.4722,
+          0.5516,
+          2.3944
+        ]
+      ],
+      "added_mesh_nodes": 9
+    },
+    "threshold": {
+      "sha256": "eea767b880b23ad4e329d3056ecbc23208e22cba7100c7ae006b282c9ed1581a",
+      "triangles": 60,
+      "previous_triangles": 60,
+      "bounds": [
+        [
+          -0.6,
+          0.0022,
+          2.0946
+        ],
+        [
+          0.6,
+          0.25,
+          2.6508
+        ]
+      ],
+      "added_mesh_nodes": 0
+    }
+  },
+  "note": "Canonical 9 salvage owners and collision data are unchanged; cosmetic front door is owned by front_infill, existing curtain remains under curtain owner. Re-import these GLBs into Godot from the same source path; Blender master in base archive is superseded by these edited GLBs."
+}
