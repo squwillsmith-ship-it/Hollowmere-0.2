@@ -60,6 +60,8 @@ func build(installations: Dictionary) -> void:
 				continue
 			attached_visuals+=1
 			completed+=1
+		if id == "chapel/ordinary_hall":
+			completed += _close_protected_chapel_gables(group,id)
 		district_counts[id]=completed
 		site_variant_ids[id]=String(group.get_meta("site_id",""))
 	set_meta("g3_pilot_not_final_21_site_art",true)
@@ -89,6 +91,65 @@ func _is_matching(profile: String,title: String) -> bool:
 		"navigation_masonry":
 			return title.ends_with("lightpier") or title.begins_with("lanternpost")
 	return false
+
+func _close_protected_chapel_gables(group: Node3D,id: String) -> int:
+	# The corrected roof has a real ridge above the original flat topped
+	# masonry. Add two thick triangular stone sections to those EXISTING
+	# protected wall owners, never a freestanding collidable/player part.
+	var added: int = 0
+	for wall: String in ["SouthEntranceWest","NorthEndMasonry"]:
+		var owner: StaticBody3D = group.get_node_or_null(wall) as StaticBody3D
+		if owner == null:
+			push_error("G3 chapel missing original gable support "+wall)
+			continue
+		var detail: Node3D = owner.get_node_or_null("G3OwnedDistrictDetail") as Node3D
+		if detail == null:
+			detail = Node3D.new()
+			detail.name = "G3OwnedDistrictDetail"
+			detail.set_meta("g3_district_id",id)
+			detail.set_meta("g3_static_architecture",true)
+			owner.add_child(detail)
+			attached_visuals += 1
+			added += 1
+		var face_z: float = 4.76 if wall == "SouthEntranceWest" else -4.76
+		var st := SurfaceTool.new()
+		st.begin(Mesh.PRIMITIVE_TRIANGLES)
+		var positions: Array[Vector3] = [
+			Vector3(-5.27,5.73,face_z-.12),
+			Vector3(5.27,5.73,face_z-.12),
+			Vector3(0.0,7.88,face_z-.12),
+			Vector3(-5.27,5.73,face_z+.12),
+			Vector3(5.27,5.73,face_z+.12),
+			Vector3(0.0,7.88,face_z+.12)
+		]
+		var points: Array[Vector3] = []
+		for p: Vector3 in positions:
+			points.append(owner.to_local(group.to_global(p)))
+		_gable_tri(st,points[0],points[1],points[2])
+		_gable_tri(st,points[3],points[5],points[4])
+		_gable_tri(st,points[0],points[3],points[4])
+		_gable_tri(st,points[0],points[4],points[1])
+		_gable_tri(st,points[1],points[4],points[5])
+		_gable_tri(st,points[1],points[5],points[2])
+		_gable_tri(st,points[2],points[5],points[3])
+		_gable_tri(st,points[2],points[3],points[0])
+		var mesh := MeshInstance3D.new()
+		mesh.name = "G3ProtectedChapelMasonryGable"
+		mesh.mesh = st.commit()
+		var finish := StandardMaterial3D.new()
+		finish.albedo_color = Color("969082")
+		finish.roughness = .97
+		finish.cull_mode = BaseMaterial3D.CULL_DISABLED
+		mesh.material_override = finish
+		mesh.set_meta("g3_noncolliding",true)
+		detail.add_child(mesh)
+	return added
+
+func _gable_tri(surface: SurfaceTool,a: Vector3,b: Vector3,c: Vector3) -> void:
+	var normal: Vector3 = (b-a).cross(c-a).normalized()
+	for point: Vector3 in [a,b,c]:
+		surface.set_normal(normal)
+		surface.add_vertex(point)
 
 func _bounds(body: StaticBody3D) -> Vector3:
 	for child: Node in body.get_children():
