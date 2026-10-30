@@ -196,6 +196,16 @@ func build_world() -> void:
 	add_child(landmarks)
 	landmarks.build(site_nodes)
 
+	# G3 district-wide structural identity uses the exact twenty-one site
+	# anchors, outside the central manual haul and protected story paths.
+	# The inn and mine office have their original 54 removable components;
+	# they must never be rebuilt as independent non-salvageable proxies.
+	var village_identity := HMG3SiteIdentity.new()
+	village_identity.name = "G3VillageWideSiteIdentity"
+	add_child(village_identity)
+	village_identity.build(site_nodes)
+	set_meta("g3_covered_original_sites",village_identity.site_profiles.size())
+
 	# New built-world pieces remain separate from permanent terrain and old yard.
 	district_sites = HMBrinewickSites.new()
 	district_sites.name = "ProductionDistrictStudies"
