@@ -1,16 +1,16 @@
 {
   "g2_part_owner_assets": {
     "beam": {
-      "members": 22,
+      "members": 34,
       "path": "game/assets/models/g2/cottage/part_beam.glb",
-      "sha256": "fe35fd4b76058fb09922d1e78da9a75e96097c7417d0471df66c47253850713a",
-      "triangles": 264
+      "sha256": "65a4b7dd51060e5676286e68f56fff52e918c6ae4dff73b1ce8eec4ffdeb023c",
+      "triangles": 408
     },
     "cladding": {
-      "members": 242,
+      "members": 250,
       "path": "game/assets/models/g2/cottage/part_cladding.glb",
-      "sha256": "17cb83abaccb00f00d439d28e85e0b29ad9015607b41519449e006d31de94c6f",
-      "triangles": 2904
+      "sha256": "0f523775f9bcbffc081bf4022bf0a6416f4d9b04ea7a1842386fd9878a81c202",
+      "triangles": 3000
     },
     "curtain": {
       "members": 13,
@@ -19,22 +19,22 @@
       "triangles": 156
     },
     "front_infill": {
-      "members": 28,
+      "members": 54,
       "path": "game/assets/models/g2/cottage/part_front_infill.glb",
-      "sha256": "34f6936f995d8ce5a6cbc3dfb8e65ec31073209689b26504c70adbdc1e1a4060",
-      "triangles": 336
+      "sha256": "17fbc8b4a91d70e172a9c1d9f4694be7b080d5bbd471452947c14b51cd27cbe0",
+      "triangles": 644
     },
     "rear_infill": {
-      "members": 77,
+      "members": 84,
       "path": "game/assets/models/g2/cottage/part_rear_infill.glb",
-      "sha256": "0b51334dbfaca387d22c31ab80e966243492b6652067d37173f821d2cb5f70b9",
-      "triangles": 924
+      "sha256": "cb16de64a57fa1643c08e0b749af357f9da491ac5d637176c4f29490f8b97149",
+      "triangles": 1004
     },
     "shutters": {
-      "members": 18,
+      "members": 20,
       "path": "game/assets/models/g2/cottage/part_shutters.glb",
-      "sha256": "4bbd0316299b822d0ad683448648bbbf91c66fecd7404dd8d9864a795a0ff4ff",
-      "triangles": 216
+      "sha256": "2e6b207e98ab95a0707d824e465815a4f4212916d356887be60ee776e50dc443",
+      "triangles": 240
     },
     "slate_patch": {
       "members": 216,
@@ -43,10 +43,10 @@
       "triangles": 2592
     },
     "stone_block": {
-      "members": 72,
+      "members": 81,
       "path": "game/assets/models/g2/cottage/part_stone_block.glb",
-      "sha256": "7c60bd0844401784440360e92f61042cdacf9d0cf8d9c02b174262043312f4f0",
-      "triangles": 864
+      "sha256": "cf03a318dc258df3a1d2ad4721154a434f85dbd26727e8d70cdab03d7df89f94",
+      "triangles": 972
     },
     "threshold": {
       "members": 5,
@@ -212,5 +212,6 @@
     }
   },
   "source": "tools/generate_g2_cottage_assets.py",
-  "version": 1
+  "version": 2,
+  "visual_revision": "real G2 cottage reference repair 20261030; tested offline, engine gate open"
 }
