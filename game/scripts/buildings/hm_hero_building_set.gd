@@ -69,6 +69,10 @@ static func finish_warehouse_part(body: StaticBody3D,
 		for sign: int in [-1,1]:
 			_box(body,"PierFrameStile",Vector3(0.13,dims.y*0.98,0.31),
 				Vector3(float(sign)*(dims.x*0.5-0.09),0,0),OAK)
+		# Two individually removable lime-washed triangular upper panels
+		# close the front gable without sealing the loading doorway.
+		if title.ends_with("_Section_03"):
+			_add_warehouse_gable(body,title.begins_with("PierDoorLeft"))
 
 static func finish_cottage_part(body: HMInspectTarget, part_id: String) -> void:
 	if part_id == "fixture/house/front_infill":
@@ -82,9 +86,38 @@ static func finish_cottage_part(body: HMInspectTarget, part_id: String) -> void:
 	elif part_id == "fixture/house/slate_patch":
 		# Removable barge/drip edges keep the two actual roof sections
 		# legible in the intact, half-stripped and empty states.
-		for x: float in [-2.48,2.48]:
-			_box(body,"RoofCourseDripBatten",Vector3(0.11,0.10,4.85),
-				Vector3(x,2.88,0),OAK.darkened(0.15))
+		for x: float in [-2.36,2.36]:
+			_box(body,"RoofCourseDripBatten",Vector3(0.10,0.09,4.85),
+				Vector3(x,2.67,0),OAK.darkened(0.15))
+	elif part_id == "fixture/house/curtain":
+		# The original single beige rectangle becomes a salt-stiff cloth with
+		# uneven hanging folds. Its original ray collision and hands-only salvage
+		# identity remain exactly the same.
+		var old_cloth: MeshInstance3D = body.get_node_or_null("DoorCloth") as MeshInstance3D
+		if old_cloth != null:
+			old_cloth.visible = false
+		var fabric := SurfaceTool.new()
+		fabric.begin(Mesh.PRIMITIVE_TRIANGLES)
+		for i: int in range(10):
+			var x0: float = -0.45+0.9*float(i)/10.0
+			var x1: float = -0.45+0.9*float(i+1)/10.0
+			var hem0: float = 0.45+0.046*sin(float(i)*2.7)
+			var hem1: float = 0.45+0.046*sin(float(i+1)*2.7)
+			var fold0: float = 2.20+0.047*sin(float(i)*1.65)
+			var fold1: float = 2.20+0.047*sin(float(i+1)*1.65)
+			var shade: Color = Color("aaa08b")*(0.90+0.07*float(i%3))
+			_tri(fabric,Vector3(x0,2.05,2.19),Vector3(x0,hem0,fold0),
+				Vector3(x1,2.05,2.19),shade)
+			_tri(fabric,Vector3(x1,2.05,2.19),Vector3(x0,hem0,fold0),
+				Vector3(x1,hem1,fold1),shade.darkened(0.06))
+		var cloth_mesh := MeshInstance3D.new()
+		cloth_mesh.name = "SaltStiffHangingDoorTextile"
+		cloth_mesh.mesh = fabric.commit()
+		var cloth_finish := _mat(Color.WHITE)
+		cloth_finish.vertex_color_use_as_albedo = true
+		cloth_finish.cull_mode = BaseMaterial3D.CULL_DISABLED
+		cloth_mesh.material_override = cloth_finish
+		body.add_child(cloth_mesh)
 	elif part_id == "fixture/house/beam":
 		# Adds historically plausible pegged joints without changing the
 		# original saw tier, support relationships, or load distribution.
@@ -111,3 +144,62 @@ static func _box(parent: Node3D, title: String, size: Vector3,
 	detail.position = at
 	detail.material_override = _mat(tint)
 	parent.add_child(detail)
+
+static func _add_warehouse_gable(body: StaticBody3D,left: bool) -> void:
+	# Front wall section centre is (+/-3.125, 4.0667, 4.0).
+	# Local triangular halves span from upper 4.8m wall to the 27-degree
+	# ridge at approximately 6.42m; shared centre seam is intentionally open
+	# only when its owning panel is manually dismantled.
+	var low: float = 0.73
+	var high: float = 2.35
+	var begin_x: float = -0.05 if left else -3.125
+	var end_x: float = 3.125 if left else 0.05
+	var peak_x: float = 3.125 if left else -3.125
+	var a := Vector3(begin_x,low,0.09)
+	var b := Vector3(end_x,low,0.09)
+	var c := Vector3(peak_x,high,0.09)
+	var depth := Vector3(0,0,0.17)
+	var st := SurfaceTool.new()
+	st.begin(Mesh.PRIMITIVE_TRIANGLES)
+	var infill := Color("b8ac91")
+	_tri(st,a,b,c,infill)
+	_tri(st,c+depth,b+depth,a+depth,infill.darkened(0.15))
+	_tri(st,a,a+depth,b,infill.darkened(0.08))
+	_tri(st,b,a+depth,b+depth,infill.darkened(0.10))
+	_tri(st,b,b+depth,c,infill.darkened(0.12))
+	_tri(st,c,b+depth,c+depth,infill.darkened(0.11))
+	_tri(st,c,c+depth,a,infill.darkened(0.08))
+	_tri(st,a,c+depth,a+depth,infill.darkened(0.08))
+	var face := MeshInstance3D.new()
+	face.name = "OwnedLimeWashedFrontGableHalf"
+	face.mesh = st.commit()
+	var plaster := _mat(Color.WHITE)
+	plaster.vertex_color_use_as_albedo = true
+	plaster.cull_mode = BaseMaterial3D.CULL_DISABLED
+	face.material_override = plaster
+	body.add_child(face)
+	var solid := CollisionShape3D.new()
+	solid.name = "OwnedFrontGablePanelCollision"
+	var prism := ConvexPolygonShape3D.new()
+	prism.points = PackedVector3Array([a,b,c,a+depth,b+depth,c+depth])
+	solid.shape = prism
+	body.add_child(solid)
+	# Continuous bargeboard follows the rake; it is not an orphaned extra
+	# salvage component after the enclosing wall section disappears.
+	var trim := MeshInstance3D.new()
+	trim.name = "OakRakingGableTrim"
+	var timber := BoxMesh.new()
+	timber.size = Vector3(3.55,0.13,0.21)
+	trim.mesh = timber
+	trim.position = Vector3((begin_x+end_x)*0.5,1.52,0.21)
+	trim.rotation_degrees.z = 27.0 if left else -27.0
+	trim.material_override = _mat(OAK.darkened(0.09))
+	body.add_child(trim)
+
+static func _tri(st: SurfaceTool, a: Vector3,b: Vector3,c: Vector3,
+		shade: Color) -> void:
+	var normal: Vector3 = (b-a).cross(c-a).normalized()
+	for p: Vector3 in [a,b,c]:
+		st.set_normal(normal)
+		st.set_color(shade)
+		st.add_vertex(p)
