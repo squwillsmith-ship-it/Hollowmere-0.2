@@ -124,7 +124,7 @@ func _run() -> void:
 	# graded transition zones. No invisible old lower terrace box is allowed.
 	for sample: Vector3 in [Vector3(-47,-0.85,-18),Vector3(-24,2.0,5),
 		Vector3(41,2.0,42),Vector3(51,2.2,-38),
-		Vector3(56,4.9,38),Vector3(69,8.0,-30)]:
+		Vector3(56,4.0,38),Vector3(69,8.0,-30)]:
 		var from: Vector3 = Vector3(sample.x,sample.y+2.4,sample.z)
 		var hit: Dictionary = space.intersect_ray(PhysicsRayQueryParameters3D.create(
 			from,Vector3(sample.x,sample.y-2.2,sample.z),1))

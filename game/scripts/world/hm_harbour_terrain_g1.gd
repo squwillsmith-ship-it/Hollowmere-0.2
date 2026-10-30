@@ -141,6 +141,8 @@ static func _patch_mesh(x0: float,x1: float,z0: float,z1: float,
 			shade *= (0.95+0.045*sin(float(i)*0.67+float(j)*0.43))
 			_tri(st,a,d,b,shade)
 			_tri(st,b,d,c,shade.darkened(0.045))
+	if kind == 2:
+		_scarp_join_skirt(st,x0,x1,z0,z1)
 	return st.commit()
 
 static func _patch_collision(x0: float,x1: float,z0: float,z1: float,
@@ -322,6 +324,7 @@ static func _bluff_mesh(z0: float,z1: float, step: float) -> ArrayMesh:
 			var shade := Color("6c705e")*(0.92+0.09*sin(float(i)*0.84+float(j)*0.35))
 			_tri(st,a,d,b,shade)
 			_tri(st,b,d,c,shade.darkened(0.07))
+	_bluff_join_skirt(st,z0,z1)
 	return st.commit()
 
 static func _bluff_collision(z0: float,z1: float,step: float) -> PackedVector3Array:
@@ -404,6 +407,40 @@ static func _route_collision() -> PackedVector3Array:
 		var d := _route_vertex(points,i,1.0,-1.0,false)
 		faces.append_array(PackedVector3Array([a,b,c,a,c,d]))
 	return faces
+
+static func _bluff_join_skirt(st: SurfaceTool,z0: float,z1: float) -> void:
+	# Close subpixel T-junctions between differently tessellated shore and
+	# bluffs. This dark earth fascia sits BELOW their collision-matched top.
+	var n: int = ceili((z1-z0)/0.55)
+	for i: int in range(n):
+		var a: float = lerpf(z0,z1,float(i)/float(n))
+		var b: float = lerpf(z0,z1,float(i+1)/float(n))
+		var y0: float = bluff_height_at(BLUFF_X0,a)+0.013
+		var y1: float = bluff_height_at(BLUFF_X0,b)+0.013
+		var top0 := Vector3(BLUFF_X0,y0,a)
+		var top1 := Vector3(BLUFF_X0,y1,b)
+		var foot0 := Vector3(BLUFF_X0,y0-0.30,a)
+		var foot1 := Vector3(BLUFF_X0,y1-0.30,b)
+		_tri(st,top0,foot0,foot1,Color("575e51"))
+		_tri(st,top0,foot1,top1,Color("595f52"))
+
+static func _scarp_join_skirt(st: SurfaceTool,x0: float,x1: float,
+		z0: float,z1: float) -> void:
+	# A sealed face below the exact edge of the old upper terrace. This
+	# removes see-through specks at the rim without placing decor assets.
+	var z: float = 46.0 if z0 > 0.0 else -46.0
+	var n: int = ceili((x1-x0)/0.55)
+	for i: int in range(n):
+		var a: float = lerpf(x0,x1,float(i)/float(n))
+		var b: float = lerpf(x0,x1,float(i+1)/float(n))
+		var y0: float = edge_height(a,z,true)+0.012
+		var y1: float = edge_height(b,z,true)+0.012
+		var top0 := Vector3(a,y0,z)
+		var top1 := Vector3(b,y1,z)
+		var foot0 := Vector3(a,y0-0.34,z)
+		var foot1 := Vector3(b,y1-0.34,z)
+		_tri(st,top0,foot0,foot1,Color("595e52"))
+		_tri(st,top0,foot1,top1,Color("5a6152"))
 
 static func _surface_material() -> StandardMaterial3D:
 	var material := StandardMaterial3D.new()
