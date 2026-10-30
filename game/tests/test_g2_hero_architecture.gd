@@ -23,8 +23,8 @@ func _run() -> void:
 		quit(1)
 		return
 	demand(hero.cottage_owners == 0,"Standalone G2 cottage GLBs supersede doubled procedural joinery")
-	demand(hero.warehouse_owners >= 40,"G2 braces and roof ribs on original and expanded warehouses")
-	demand(hero.batched_meshes == hero.warehouse_owners,"Existing warehouse bracing stays individually part-owned")
+	demand(hero.warehouse_owners == 0,"Standalone G2 GLBs supersede legacy warehouse procedural braces")
+	demand(hero.batched_meshes == 0,"No duplicate procedural G2 decoration over production GLBs")
 	var lifecycle := HMPartLifecycle.new()
 	stage.add_child(lifecycle)
 	lifecycle.bind_stage(stage)
@@ -42,6 +42,16 @@ func _run() -> void:
 				demand(String(child.get_meta("g2_owner_part_id")) == expected_id,
 					"Owned G2 visual is child of authoritative part "+expected_id)
 		demand(count == 1,"One production G2 visual for "+expected_id)
+	var warehouse_parts: int = 0
+	for id: String in lifecycle.installed:
+		if not (id.begins_with("village/04/old_warehouse/") or
+			id.begins_with("village/05/expanded_warehouse/")):
+			continue
+		var part: HMInspectTarget = lifecycle.installed[id]
+		demand(bool(part.get_meta("g2_assembled",false)),"Warehouse G2 owner GLB present "+id)
+		demand(part.get_node_or_null("G2WarehousePart") != null,"Warehouse GLB child visible "+id)
+		warehouse_parts+=1
+	demand(warehouse_parts == 93,"All 93 unchanged warehouse salvage targets have independent GLBs")
 	var state: Dictionary = HMSaveState.fresh(cat)
 	for tool: String in ["claw_hammer","crowbar","pickaxe","saw"]:
 		var found: Dictionary = HMTransactions.apply(cat,state,{"transaction_id":"g2/tool/"+tool,
