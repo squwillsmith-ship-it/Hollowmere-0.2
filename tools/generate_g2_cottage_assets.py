@@ -356,15 +356,30 @@ def cottage_models():
     for x in (-1.14,1.14):
         b.box((x,1.08,2.32),(1.24,.11,.18),"weathered_oak")
     b=m["rear_infill"]
-    b.panel((0,1.42,-2.20),(4.31,1.88,.10),"lime_infill")
+    # Distinct hand-laid lime/wattle panels interrupt the old monolithic
+    # rear slab. Each patch is still owned by the EXISTING rear_infill part.
+    # The frame underneath belongs to the independent removable beam owner.
+    for row in range(5):
+        for col in range(7):
+            x=-2.10+(col+.5)*4.20/7
+            y=.61+(row+.5)*2.03/5
+            phase=(row*7+col*11)%7
+            w=(4.20/7)*(.98-.012*(phase%3))
+            h=(2.03/5)*(.98-.009*(phase%2))
+            b.panel((x,y,-2.213-.003*(phase%3)),(w,h,.112),"lime_infill")
     for row in range(7):
-        y=2.80+row*.16
-        width=max(.10,4.49*(1-(y-2.80)/1.28))
-        b.panel((0,y,-2.20),(width,.17,.12),"lime_infill")
-    for x in (-2.25,0,2.25):
-        b.beam((x,.43,-2.31),(x,2.78,-2.31),.16,.15,"dark_oak")
+        y=2.78+row*.172
+        width=max(.15,4.39*(1-(y-2.78)/1.32))
+        columns=max(1,int(math.ceil(width/.63)))
+        for col in range(columns):
+            x=-width/2+(col+.5)*width/columns
+            b.panel((x,y,-2.211),
+                    ((width/columns)*.987,.171,.108),"lime_infill")
+    for x in (-2.25,-1.46,0.08,1.53,2.25):
+        b.beam((x,.49,-2.322),(x,2.78,-2.322),.135,.12,"dark_oak")
     for sign in (-1,1):
-        b.beam((sign*2.31,2.80,-2.32),(0,4.06,-2.32),.17,.16,"weathered_oak")
+        b.beam((sign*2.31,2.80,-2.32),(0,4.06,-2.32),.16,.14,"weathered_oak")
+    b.beam((-2.27,2.73,-2.324),(2.27,2.73,-2.324),.15,.11,"dark_oak")
     b=m["threshold"]
     for i in range(4):
         b.stone((-.42+(i+.5)*.21,.09,2.37),(.22,.18,.54),0,i)
