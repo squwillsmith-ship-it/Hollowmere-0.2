@@ -81,7 +81,7 @@ func build_world() -> void:
 	var terraces := Node3D.new()
 	terraces.name = "Terraces"
 	add_child(terraces)
-	_box(terraces,"LowerTerrace",Vector3(86,3,94),Vector3(7,0.5,0),Color("66675a"))
+	HMHarbourBenchmarkCoast.install_terrace(terraces)
 	# High district is split at its road cutting to prevent a solid cliff
 	# blocking the gradual cart route.
 	_box(terraces,"UpperNorth",Vector3(70,9,38),Vector3(85,3.5,-27),Color("706e5b"))
@@ -119,7 +119,7 @@ func build_world() -> void:
 		Vector3(139.7,13.0,5.5),Color("948672"))
 	_box(roads,"HeadlandTrack",Vector3(48,0.4,10),Vector3(149,12.99,0),Color("938875"))
 	_box(roads,"QuayWalk",Vector3(22,0.34,77),Vector3(-31,1.18,0),Color("777567"))
-	_box(roads,"LandingApproach",Vector3(25,0.3,12),Vector3(-24,2.12,13),Color("8a7f6a"))
+	HMHarbourBenchmarkCoast.install_haul_routes(roads)
 	# Persistent boatyard/quay platforms are never mistaken for reclaimable buildings.
 	_box(roads,"PermanentQuayPad",Vector3(11,1.0,14),Vector3(-34,0.65,10),Color("858276"))
 	# These scene art skins do not change the original collision-backed coastal
