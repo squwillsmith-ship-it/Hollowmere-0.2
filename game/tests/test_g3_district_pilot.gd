@@ -15,6 +15,24 @@ func _run() -> void:
 	for tick: int in range(4):
 		await physics_frame
 	verify(stage.site_nodes.size()==21,"All 21 original site markers remain placed")
+	var identity: HMG3SiteIdentity=stage.get_node_or_null("G3VillageWideSiteIdentity") as HMG3SiteIdentity
+	verify(identity!=null,"G3 identity attached to actual Brinewick settlement")
+	if identity!=null:
+		verify(identity.site_profiles.size()==21,"Every original 21 site has distinct regional identity")
+		verify(identity.visual_members>=84,"Four individual site-visible low poly approach details per site")
+		for site_id: String in stage.site_nodes:
+			var marker: Node3D=stage.site_nodes[site_id]
+			var cue: Node3D=marker.get_node_or_null("G3SiteApproachIdentity") as Node3D
+			verify(cue!=null,"21 original sites have site-tied architecture "+site_id)
+			if cue!=null:
+				verify(String(cue.get_meta("site_id",""))==site_id,
+					"G3 identifies existing site, never a new location")
+				verify(cue.get_child_count()>=4,"Approach details are present "+site_id)
+	var existing_hero: HMVillageLandmarkArt=stage.get_node_or_null("InnAndMineOfficeArchitecture") as HMVillageLandmarkArt
+	verify(existing_hero!=null,"Inn and mine office retain original authoring")
+	if existing_hero!=null:
+		verify(existing_hero.created_bodies==54,
+			"Inn and mine office retain 54 individually recoverable original parts")
 	var district: HMBrinewickSites=stage.district_sites
 	var pilot: HMVillageDistrictArtG3=district.get_node_or_null(
 		"G3DistrictArchitecturalPilots") as HMVillageDistrictArtG3
@@ -94,7 +112,7 @@ func _run() -> void:
 	stage.queue_free()
 	await process_frame
 	if problems.is_empty():
-		print("HOLLOWMERE_G3_DISTRICT_PILOT_OK sites=21 architecture=11")
+		print("HOLLOWMERE_G3_DISTRICT_PILOT_OK sites=21 architecture=11 distinct_cues=21")
 		quit(0)
 	else:
 		quit(1)
