@@ -47,6 +47,7 @@ jobs:
       - name: Build editable Blender source from actual textured meshes
         run: |
           mkdir -p art/g2/source
+          export PYTHONPATH="$(python -c 'import site; print(site.getsitepackages()[0])')${PYTHONPATH:+:$PYTHONPATH}"
           blender --background --factory-startup --python tools/create_g2_cottage_blend.py > build-blender.log 2>&1 || { tail -130 build-blender.log; exit 1; }
           grep G2_COTTAGE_BLENDER_EDITABLE_OK build-blender.log
           test -s art/g2/source/Hollowmere_Cottage_G2_Master.blend
