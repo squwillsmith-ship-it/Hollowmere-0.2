@@ -25,10 +25,10 @@
       "triangles": 336
     },
     "rear_infill": {
-      "members": 13,
+      "members": 77,
       "path": "game/assets/models/g2/cottage/part_rear_infill.glb",
-      "sha256": "f57e5d648cc38c60db3c3ab9eaeb6bb0d8d61c72338ca7164327e0648dbea05f",
-      "triangles": 156
+      "sha256": "0b51334dbfaca387d22c31ab80e966243492b6652067d37173f821d2cb5f70b9",
+      "triangles": 924
     },
     "shutters": {
       "members": 18,
