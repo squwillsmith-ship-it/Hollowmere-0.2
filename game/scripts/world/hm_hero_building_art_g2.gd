@@ -18,6 +18,8 @@ func build(cottage: Node3D, installations: Dictionary) -> void:
 			if not (candidate is HMInspectTarget):
 				continue
 			var part := candidate as HMInspectTarget
+			if bool(part.get_meta("g2_assembled",false)):
+				continue
 			if part.part_id == "fixture/house/front_infill":
 				_facade(part)
 			elif part.part_id == "fixture/house/beam":
