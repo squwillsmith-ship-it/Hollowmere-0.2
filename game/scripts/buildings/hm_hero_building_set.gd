@@ -14,10 +14,9 @@ static func finish_warehouse_part(body: StaticBody3D,
 		return
 	var title: String = String(data.get("name",""))
 	if title.begins_with("RoofLeft_Course") or title.begins_with("RoofRight_Course"):
-		# Each previously flat warehouse half-course now climbs toward a
-		# common ridge. Rotate BOTH its art AND original physical collision.
+		# Existing roof courses already have their 27-degree pitch and
+		# matching colliders. Preserve verified geometry and salvage IDs.
 		var left: bool = title.begins_with("RoofLeft_")
-		body.rotation_degrees.z = 20.0 if left else -20.0
 		var span: Vector3 = _vec(data["size"])
 		var rafter := MeshInstance3D.new()
 		rafter.name = "RafterUnderSalvagedRoofCourse"
