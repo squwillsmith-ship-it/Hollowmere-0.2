@@ -31,6 +31,27 @@ func _run() -> void:
 			var collision: CollisionShape3D = segment.get_node_or_null("CollisionShape3D") as CollisionShape3D
 			expect(collision != null and collision.shape is ConcavePolygonShape3D,
 				route+" collision must agree with visible route")
+	# Actual downward physics rays along all three road centrelines: not
+	# enough for a visual route to have a collider somewhere in its parent.
+	var space: PhysicsDirectSpaceState3D = stage.get_world_3d().direct_space_state
+	var supported_samples: int = 0
+	for route: Array[Vector2] in [HMHarbourBenchmarkCoast.QUAY_TO_YARD,
+			HMHarbourBenchmarkCoast.YARD_TO_COTTAGE,
+			HMHarbourBenchmarkCoast.WAREHOUSE_SPUR]:
+		for i: int in range(route.size()-1):
+			var from: Vector2 = route[i]
+			var to: Vector2 = route[i+1]
+			var segments: int = maxi(2,ceili((to-from).length()/1.5))
+			for n: int in range(segments+1):
+				var point: Vector2 = from.lerp(to,float(n)/float(segments))
+				var hit: Dictionary = space.intersect_ray(
+					PhysicsRayQueryParameters3D.create(
+						Vector3(point.x,15.0,point.y),
+						Vector3(point.x,-2.0,point.y),1))
+				expect(not hit.is_empty(),"Continuous physical ground at "+str(point))
+				if not hit.is_empty():
+					supported_samples += 1
+	expect(supported_samples >= 35,"Entire linked harbour-warehouse-cottage route is physically supported")
 	expect(absf(HMHarbourBenchmarkCoast.ground_height(-35,10)-1.1) < 0.65,
 		"Dock ramp meets sculpted landing shelf")
 	expect(absf(HMHarbourBenchmarkCoast.ground_height(18,30)-1.965) < 0.20,
