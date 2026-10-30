@@ -42,7 +42,7 @@ static func create_lower_terrace() -> StaticBody3D:
 	collision.name = "CollisionShape3D"
 	var shape := ConcavePolygonShape3D.new()
 	shape.backface_collision = true
-	shape.data = _lower_collision(4.0)
+	shape.data = _lower_collision(2.6)
 	collision.shape = shape
 	body.add_child(collision)
 	return body
