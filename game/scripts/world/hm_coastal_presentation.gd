@@ -2,11 +2,11 @@ class_name HMCoastalPresentation
 extends RefCounted
 ## Step 43 visual unification: conservative climate and readability parameters.
 ## Geometry, physics, salvage IDs, story and building materials are untouched.
-const NORMAL_FOG: float = 0.0031
+const NORMAL_FOG: float = 0.0025
 const CLEARER_FOG: float = 0.0014
-const OVERCAST_SKY: Color = Color("7a8889")
-const COASTAL_HAZE: Color = Color("87928b")
-const AMBIENCE: Color = Color("aeb3a7")
+const OVERCAST_SKY: Color = Color("74817f")
+const COASTAL_HAZE: Color = Color("848e87")
+const AMBIENCE: Color = Color("a6afa4")
 const LIGHT: Color = Color("ede0c9")
 
 static func apply(world: Node3D, clearer_fog: bool = false) -> bool:
@@ -19,12 +19,12 @@ static func apply(world: Node3D, clearer_fog: bool = false) -> bool:
 	sky.background_color = OVERCAST_SKY
 	sky.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
 	sky.ambient_light_color = AMBIENCE
-	sky.ambient_light_energy = 0.33
+	sky.ambient_light_energy = 0.27
 	sky.fog_enabled = true
 	sky.fog_density = CLEARER_FOG if clearer_fog else NORMAL_FOG
 	sky.fog_light_color = COASTAL_HAZE
 	sun.light_color = LIGHT
-	sun.light_energy = 1.02
+	sun.light_energy = 1.12
 	sun.shadow_enabled = true
 	return true
 
