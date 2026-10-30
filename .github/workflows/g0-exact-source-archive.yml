@@ -1,0 +1,68 @@
+name: G0 exact-source archive custody
+on:
+  push:
+    branches:
+      - ops/g0-source-artifact-20261030
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Rebuild exact approved-source ZIP and verify all blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p recovery-output
+          python3 - <<'PY'
+          import hashlib, json, pathlib, subprocess, zipfile
+          base = "eddeaef2f92edffc5954b41ccf46ba0847d6955f"
+          expected_tree = "d63029396662b3029201dc289da15b16755f0d74"
+          def git(*args, input=None):
+              return subprocess.run(["git", *args], input=input, stdout=subprocess.PIPE, check=True).stdout
+          tree = git("rev-parse", f"{base}^{{tree}}").decode().strip()
+          assert tree == expected_tree, (tree, expected_tree)
+          entries = []
+          for line in git("ls-tree", "-r", "-z", base).split(b"\0"):
+              if not line:
+                  continue
+              meta, path = line.split(b"\t", 1)
+              mode, typ, oid = meta.decode().split()
+              assert typ == "blob", (typ, path)
+              source = git("cat-file", "blob", oid)
+              entries.append((path.decode(), mode, oid, len(source)))
+          assert len(entries) == 219, len(entries)
+          assert sum(item[3] for item in entries) == 3716742
+          output = pathlib.Path("recovery-output/Hollowmere-G0-eddeaef2-Source.zip")
+          output.write_bytes(git("archive", "--format=zip", base))
+          with zipfile.ZipFile(output) as z:
+              assert z.testzip() is None
+              for path, mode, oid, size in entries:
+                  data = z.read(path)
+                  assert len(data) == size, path
+                  assert git("hash-object", "--stdin", input=data).decode().strip() == oid, path
+              actual = {n for n in z.namelist() if not n.endswith("/")}
+              assert actual == {p for p, _, _, _ in entries}
+          sha = hashlib.sha256(output.read_bytes()).hexdigest()
+          (output.with_suffix(output.suffix + ".sha256")).write_text(f"{sha}  {output.name}\n")
+          (output.parent / "G0-SOURCE-VERIFICATION.json").write_text(json.dumps({
+              "commit": base, "tree": tree, "tracked_blobs": len(entries),
+              "blob_bytes": sum(x[3] for x in entries), "zip_sha256": sha,
+              "zip_size": output.stat().st_size, "all_blobs_matched": True
+          }, indent=2) + "\n")
+          print(f"PASS: {len(entries)} Git blobs, exact tree, ZIP CRC and SHA256 {sha}")
+          PY
+      - name: Upload G0 archive evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: Hollowmere-G0-eddeaef2-verified-source
+          path: recovery-output/
+          retention-days: 7
+          if-no-files-found: error
