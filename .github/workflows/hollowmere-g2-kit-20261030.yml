@@ -21,7 +21,7 @@ jobs:
       - name: Dependencies for asset generator and Godot software Vulkan
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends blender xvfb mesa-vulkan-drivers libvulkan1 libasound2t64 libpulse0 libfontconfig1 unzip
+          sudo apt-get install -y --no-install-recommends blender python3-numpy xvfb mesa-vulkan-drivers libvulkan1 libasound2t64 libpulse0 libfontconfig1 unzip
           python -m pip install --quiet numpy Pillow trimesh scipy
       - name: Generate nine cottage owner GLBs, ten kit GLBs and sixteen PBR textures
         run: |
@@ -47,7 +47,6 @@ jobs:
       - name: Build editable Blender source from actual textured meshes
         run: |
           mkdir -p art/g2/source
-          export PYTHONPATH="$(python -c 'import site; print(site.getsitepackages()[0])')${PYTHONPATH:+:$PYTHONPATH}"
           blender --background --factory-startup --python tools/create_g2_cottage_blend.py > build-blender.log 2>&1 || { tail -130 build-blender.log; exit 1; }
           grep G2_COTTAGE_BLENDER_EDITABLE_OK build-blender.log
           test -s art/g2/source/Hollowmere_Cottage_G2_Master.blend
