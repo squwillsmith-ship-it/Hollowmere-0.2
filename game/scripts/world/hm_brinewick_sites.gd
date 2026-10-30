@@ -121,6 +121,14 @@ func build(sites: Dictionary) -> void:
 	hero.build(cottage,installation_nodes)
 	set_meta("g2_hero_owned_meshes",hero.batched_meshes)
 
+	# G3 pilot: give five different districts distinctive architecture using
+	# only existing static/removable scene owners, keeping all 21 sites fixed.
+	var district_art := HMVillageDistrictArtG3.new()
+	district_art.name = "G3DistrictArchitecturalPilots"
+	add_child(district_art)
+	district_art.build(installation_nodes)
+	set_meta("g3_pilot_architectural_owners",district_art.attached_visuals)
+
 	# World discoveries and narrative cues reference existing site markers.
 	for data: Variant in parsed.get("world_discoveries", []):
 		if not (data is Dictionary) or not sites.has(String(data.get("site_id", ""))):
