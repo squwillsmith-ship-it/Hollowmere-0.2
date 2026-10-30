@@ -2,8 +2,12 @@ extends SceneTree
 ## Real software-Vulkan district architectural pilot screenshots.
 const IDS: Array[String]=[
 	"harbour/office","harbour/net_store","craft/tomas_workshop",
-	"chapel/ordinary_hall","district/mara_home"]
-const SHORT: Array[String]=["office","net_store","workshop","chapel","mara_home"]
+	"chapel/ordinary_hall","district/mara_home","service/landing_pier",
+	"service/boatyard_base","district/upper_cottage_cluster_study",
+	"chapel/schoolroom_wing","chapel/aldren_study",
+	"harbour/navigation_light"]
+const SHORT: Array[String]=["office","net_store","workshop","chapel","mara_home",
+	"landing_pier","boatyard","upper_house","schoolroom","aldren_study","navigation_light"]
 func _initialize() -> void:
 	call_deferred("_run")
 func _run() -> void:
@@ -39,7 +43,7 @@ func _run() -> void:
 	stage.queue_free()
 	await process_frame
 	if errors==0:
-		print("HOLLOWMERE_G3_FIVE_VULKAN_SITES_OK")
+		print("HOLLOWMERE_G3_ELEVEN_VULKAN_INSTALLATIONS_OK")
 		quit(0)
 	else:
 		quit(1)
