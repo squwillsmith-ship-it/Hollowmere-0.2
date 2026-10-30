@@ -49,3 +49,5 @@ jobs:
             build/qa-environment.json
             build/*.png
           if-no-files-found: warn
+
+# Revised G3 terrain rerun
