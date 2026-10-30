@@ -282,6 +282,9 @@ def main():
         suites.append(('godot-step45-save-recovery', [engine, '--headless', '--path',
             str(ROOT/'game'), '--script', 'res://tests/test_step45_save_recovery.gd'],
             'HOLLOWMERE_STEP45_RECOVERY_OK'))
+        suites.append(('godot-g1-harbour-physics', [engine, '--headless', '--path',
+            str(ROOT/'game'), '--script', 'res://tests/test_g1_harbour_route.gd'],
+            'HOLLOWMERE_G1_HARBOUR_ROUTE_OK'))
         for name, command, marker in suites:
             ok, output = log_step(report, name, command, 60)
             if not ok or marker not in output:
@@ -370,8 +373,25 @@ def main():
             if not ok:
                 write(report)
                 return 1
+        if report['phase_e_render_tested']:
+            env['HOLLOWMERE_G1_CAPTURE_DIR'] = str(BUILD.resolve())
+            g1_command = ['xvfb-run', '-a', '-s', '-screen 0 1280x720x24',
+                engine, '--audio-driver', 'Dummy', '--path', str(ROOT/'game'),
+                '--script', 'res://tests/test_g1_harbour_capture.gd']
+            ok, g1_output = log_step(report, 'godot-g1-fixed-camera', g1_command, 180, env)
+            g1_views = ('01_quay_eye','02_warehouse_eye','03_cottage_eye',
+                '04_embankment_eye','05_coastal_wide')
+            g1_frames = [BUILD / ('g1-' + name + '.png') for name in g1_views]
+            report['g1_render_tested'] = (ok and 'HOLLOWMERE_G1_CAPTURE_OK' in g1_output
+                and all(f.is_file() and f.stat().st_size > 10000 for f in g1_frames))
+            if report['g1_render_tested']:
+                report['g1_frame_sha256'] = {
+                    f.name: hashlib.sha256(f.read_bytes()).hexdigest() for f in g1_frames}
+            if not report['g1_render_tested']:
+                write(report)
+                return 1
         write(report)
-        return 0 if report['phase_e_render_tested'] else 1
+        return 0 if report['phase_e_render_tested'] and report.get('g1_render_tested') else 1
 
 
 if __name__ == '__main__':

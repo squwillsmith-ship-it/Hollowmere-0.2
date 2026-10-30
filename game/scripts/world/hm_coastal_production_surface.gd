@@ -47,6 +47,9 @@ static func create(size: Vector3, name: String, base: Color, path: bool) -> Arra
         # The entire vertical profile is sculpted into broad strata. The
         # collision remains protected behind this noninteractive art skin.
         for face: int in range(4):
+            # G1 upper-level western faces now join actual sculpted embankments.
+            if name.begins_with("Upper") and face == 3:
+                continue
             var along_x: bool = face < 2
             var count: int = nx if along_x else nz
             var span: float = size.x if along_x else size.z
