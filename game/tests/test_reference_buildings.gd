@@ -68,7 +68,8 @@ func _check() -> void:
 				var members: int = 0
 				for element: Node in child.get_children():
 					if element is CollisionShape3D and element != source: members += 1
-				demand(members == 4, "structural frame colliders match visible posts and rails")
+				demand(members == (5 if group_id == "district/old_warehouse" else 4),
+					"Structural frames retain four colliders, and restored warehouse adds one owned physical boarded panel")
 				break
 	# A new material detail node may not create extra salvageable IDs or outputs.
 	var lifecycle := HMPartLifecycle.new()
