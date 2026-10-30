@@ -27,7 +27,13 @@ func _run() -> void:
 		"harbour/net_store":"brinewick/site_06",
 		"craft/tomas_workshop":"brinewick/site_11",
 		"chapel/ordinary_hall":"brinewick/site_13",
-		"district/mara_home":"brinewick/site_08"}
+		"district/mara_home":"brinewick/site_08",
+		"service/landing_pier":"brinewick/site_01",
+		"service/boatyard_base":"brinewick/site_02",
+		"district/upper_cottage_cluster_study":"brinewick/site_12",
+		"chapel/schoolroom_wing":"brinewick/site_13",
+		"chapel/aldren_study":"brinewick/site_14",
+		"harbour/navigation_light":"brinewick/site_16"}
 	var instances: int=0
 	for id: String in selected:
 		verify(pilot.site_variant_ids.get(id,"")==selected[id],
@@ -50,7 +56,12 @@ func _run() -> void:
 					"G3 components belong to original saved part, not a new ID")
 			instances+=1
 	verify(instances==pilot.attached_visuals,"All G3 visuals owned and counted")
-	verify(instances>=12,"Five districts have coherent structural details")
+	verify(instances>=35,"Eleven installations have distinct owned structural details")
+	verify(selected.size()==11,"G3 second pass covers eleven installation profiles")
+	var unique_sites: Dictionary={}
+	for id: String in selected:
+		unique_sites[selected[id]]=true
+	verify(unique_sites.size()==10,"G3 second pass covers ten unique original sites")
 	var life:=HMPartLifecycle.new()
 	stage.add_child(life)
 	life.bind_stage(stage)
@@ -63,7 +74,7 @@ func _run() -> void:
 	stage.queue_free()
 	await process_frame
 	if problems.is_empty():
-		print("HOLLOWMERE_G3_DISTRICT_PILOT_OK sites=21 architecture=5")
+		print("HOLLOWMERE_G3_DISTRICT_PILOT_OK sites=21 architecture=11")
 		quit(0)
 	else:
 		quit(1)
