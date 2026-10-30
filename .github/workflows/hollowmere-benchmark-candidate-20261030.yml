@@ -1,0 +1,72 @@
+name: Hollowmere — isolated harbour benchmark candidate QA
+# Temporary and deliberately restricted to this one unmerged art branch.
+# Does not change normal manual-only QA workflows or protected source.
+on:
+  push:
+    branches:
+      - art/harbour-warehouse-cottage-benchmark-20261030
+
+permissions:
+  contents: read
+concurrency:
+  group: hollowmere-harbour-hero-candidate
+  cancel-in-progress: true
+
+jobs:
+  focused-engine-regression-capture:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install reproducible assets and software Vulkan
+        run: |
+          set -euo pipefail
+          python -m pip install --quiet numpy Pillow trimesh scipy
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends xvfb mesa-vulkan-drivers libvulkan1 libasound2t64 libpulse0 libfontconfig1 unzip
+          python tools/generate_step21_materials.py
+          python tools/generate_step21_glb.py
+          python tools/generate_phase_b_surfaces.py
+          python tools/generate_phase_b_reference_glb.py
+      - name: Verify official pinned engine
+        run: python tools/test_environment.py doctor --install
+      - name: Import and compile art source
+        run: |
+          mkdir -p build
+          .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --headless --path game --editor --quit 2>&1 | tee build/benchmark-import.log
+      - name: Focused physical terrain, part ownership and saved state
+        run: |
+          set -o pipefail
+          .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --headless --path game --script res://tests/test_harbour_hero_benchmark.gd 2>&1 | tee build/benchmark-engine.log
+          grep -q HOLLOWMERE_HARBOUR_HERO_BENCHMARK_OK build/benchmark-engine.log
+      - name: Complete 4.7.2 engine and Python regression
+        run: |
+          set -o pipefail
+          python tools/test_environment.py check --godot .qa-tools/Godot_v4.7.2-stable_linux.x86_64 2>&1 | tee build/benchmark-fullqa.log
+      - name: Capture five actual Forward+/Vulkan hero views
+        env:
+          HOLLOWMERE_BENCHMARK_RENDER_DIR: ${{ github.workspace }}/build
+          LIBGL_ALWAYS_SOFTWARE: '1'
+          GODOT_HEADLESS: 'false'
+        run: |
+          set -o pipefail
+          xvfb-run -a -s '-screen 0 1280x720x24' .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --audio-driver Dummy --path game --script res://tests/capture_harbour_hero_benchmark.gd 2>&1 | tee build/benchmark-render.log
+          grep -q HOLLOWMERE_HARBOUR_BENCHMARK_RENDER_OK build/benchmark-render.log
+          test "$(find build -maxdepth 1 -name 'benchmark-*.png' | wc -l)" -eq 5
+      - name: Preserve all diagnostics and true-render frames
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hollowmere-harbour-benchmark-${{ github.sha }}
+          path: |
+            build/benchmark-*.log
+            build/benchmark-*.png
+            build/qa-*.log
+            build/qa-environment.json
+          if-no-files-found: warn
+          retention-days: 7
