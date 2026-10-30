@@ -230,6 +230,13 @@ func build_world() -> void:
 	campaign_sites.name = "PhysicalVillageEvidence"
 	add_child(campaign_sites)
 	campaign_sites.build(site_nodes, catalogue)
+	# G3 coherent 21-site surface composition: noncolliding stone and joinery
+	# fitted outside gameplay routes. Does not replace protected G4 landmarks.
+	var g3_context := HMG3VillageSiteContext.new()
+	g3_context.name = "G3TwentyOneSiteContext"
+	add_child(g3_context)
+	g3_context.build(site_nodes)
+	set_meta("g3_21_sites_covered",g3_context.covered_site_ids.size())
 	underground_audio = HMUndergroundAudio.new()
 	underground_audio.name = "SpatialUndergroundAudio"
 	add_child(underground_audio)
