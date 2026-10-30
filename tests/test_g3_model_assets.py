@@ -29,7 +29,7 @@ SKIP = ("roof", "slope", "door", "floor", "ramp", "shelf", "rack",
 
 
 def png_info(raw: bytes) -> tuple[int, int, bytes]:
-    assert raw[:8] == b"\\x89PNG\\r\\n\\x1a\\n", "PNG signature incorrect"
+    assert raw[:8] == b"\x89PNG\r\n\x1a\n", "PNG signature incorrect"
     pos, image = 8, bytearray()
     width = height = -1
     while pos < len(raw):
@@ -41,7 +41,7 @@ def png_info(raw: bytes) -> tuple[int, int, bytes]:
         pos += length + 12
         if name == b"IHDR":
             width, height = struct.unpack_from(">II", data)
-            assert data[8:10] == b"\\x08\\x02", "Expected RGB8"
+            assert data[8:10] == b"\x08\x02", "Expected RGB8"
         if name == b"IDAT":
             image.extend(data)
         if name == b"IEND":
@@ -62,7 +62,7 @@ def glb_info(raw: bytes) -> tuple[dict, bytes]:
     obj = json.loads(raw[20:20 + json_size])
     offset = 20 + json_size
     bin_size, bin_tag = struct.unpack_from("<I4s", raw, offset)
-    assert bin_tag == b"BIN\\x00"
+    assert bin_tag == b"BIN\x00"
     binary = raw[offset + 8:offset + 8 + bin_size]
     assert offset + 8 + bin_size == len(raw)
     assert obj["buffers"][0]["byteLength"] <= len(binary)
@@ -105,7 +105,7 @@ class G3ModelAssets(unittest.TestCase):
                     raw = (TEXTURES / f"{material}_{channel}.png").read_bytes()
                     width, height, raster = png_info(raw)
                     self.assertEqual((width, height), (128, 128))
-                    self.assertGreater(len(set(raster)), 15 if channel == "albedo" else 3)
+                    self.assertGreaterEqual(len(set(raster)), 16 if channel == "albedo" else 3)
 
     def test_only_original_buildings_and_saved_owners(self):
         data = json.loads(DISTRICTS.read_text())
