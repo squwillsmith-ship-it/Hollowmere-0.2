@@ -119,7 +119,7 @@ static func _route(parent: Node3D, title: String,
 			var b := _route_vertex(p0-normal*half)
 			var c := _route_vertex(p1-normal*half)
 			var d := _route_vertex(p1+normal*half)
-			var tone: Color = Color("877d69").lerp(Color("726c5e"),
+			var tone: Color = Color("a0937c").lerp(Color("786f60"),
 				0.16+0.10*sin(float(i)*1.8+float(j)*0.4))
 			_triangle(st,a,d,b,tone)
 			_triangle(st,b,d,c,tone.darkened(0.055))
