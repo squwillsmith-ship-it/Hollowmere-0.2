@@ -48,34 +48,34 @@
     },
     {
       "path": "game/assets/models/g3/kit/stone_wall_x.glb",
-      "sha": "f496f80f7827b6648b16da002a98e1dd36aeb634",
-      "bytes": 164888
+      "sha": "e9c9161a0d602d7b1481a6434b35d9d6e0135825",
+      "bytes": 164940
     },
     {
       "path": "game/assets/models/g3/kit/stone_wall_z.glb",
-      "sha": "769008e87d96a870799a00e9c424ba96f252f47c",
-      "bytes": 164888
+      "sha": "ad3eec12c4644136754302f7f531a99a0686aabd",
+      "bytes": 164940
     },
     {
       "path": "game/assets/models/g3/kit/timber_wall_x.glb",
-      "sha": "4f390e68422160c06afc95d85a4c129441754576",
-      "bytes": 121200
+      "sha": "cc77ca63ecf5e2f7d595e53f875167298437dcdb",
+      "bytes": 121280
     },
     {
       "path": "game/assets/models/g3/kit/timber_wall_z.glb",
-      "sha": "664b290ef8655292b5452e8844a15f734c804635",
-      "bytes": 121200
+      "sha": "3eeb8ed69bf8c2a14795c56f694b0f2929190852",
+      "bytes": 121280
     },
     {
       "path": "game/assets/models/g3/kit/lime_wall_x.glb",
-      "sha": "ee69386fed58954dba5ca032c902ef10a8a7dc6e",
-      "bytes": 212584
+      "sha": "8023538b837ba8cd1ff1d33108ec6fb7afa7c24e",
+      "bytes": 212760
     },
     {
       "path": "game/assets/models/g3/kit/lime_wall_z.glb",
-      "sha": "170bdfc78b99d4a189c97fca45242a029a838743",
-      "bytes": 212584
+      "sha": "b34e2bc2459e569b6d7e67425ddac488b09622be",
+      "bytes": 212760
     }
   ],
-  "source_note": "All models contain independently surfaced low-poly boxes, overlapped/offset stone courses, timber laths, hewn battens, patchy lime and diagonal bracing. Embedded 128x128 authored muted albedo and glTF ORM textures. Scale model's unit nominal envelope to original exact physical owner bounds; don't use as separate salvage bodies."
+  "source_note": "All models contain independently surfaced low-poly boxes, overlapped/offset stone courses, timber laths, hewn battens, patchy lime and diagonal bracing. Embedded 128x128 authored muted albedo and glTF ORM textures. Scale model's unit nominal envelope to original exact physical owner bounds; don't use as separate salvage bodies. GLB POSITION accessor AABBs recomputed from authored vertices for reliable frustum culling."
 }
