@@ -103,6 +103,7 @@ static func build(manifest: Dictionary, catalog: HMCatalog) -> Node3D:
 		building.add_child(body)
 		for geom: Variant in part["geometry"]:
 			_add_piece(body, geom)
+		HMHeroBuildingSet.finish_cottage_part(body,body.part_id)
 	# Scenery is deliberately not claimed as recoverable material. Remaining
 	# environmental infill and floors need their own IDs in Step21–24.
 	var scenery := Node3D.new()
