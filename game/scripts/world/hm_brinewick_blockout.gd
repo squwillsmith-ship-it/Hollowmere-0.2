@@ -205,6 +205,13 @@ func build_world() -> void:
 	add_child(village_identity)
 	village_identity.build(site_nodes)
 	set_meta("g3_covered_original_sites",village_identity.site_profiles.size())
+	# G3 final visual grounding, batched faceted geology and small historic
+	# civic/harbour surfaces. All 21 canonical site transforms remain intact.
+	var complete_ground := HMG3VillageEnvironmentFinal.new()
+	complete_ground.name = "G3VillageEnvironmentalContinuity"
+	add_child(complete_ground)
+	complete_ground.build(site_nodes)
+	set_meta("g3_landscape_visual_sites",complete_ground.covered_sites.size())
 
 	# New built-world pieces remain separate from permanent terrain and old yard.
 	district_sites = HMBrinewickSites.new()
