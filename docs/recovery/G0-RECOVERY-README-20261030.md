@@ -43,3 +43,11 @@ git -C Hollowmere-G0 rev-parse HEAD^{tree}
 - Never force-push or reuse this recovery branch for active art; branch protection cannot be guaranteed by this recovery marker alone.
 - Before fully closing the independent Drive mirror task: run the script on a networked host, compare the resulting ZIP against the 219-file manifest, upload ZIP + SHA256 to the existing restricted Drive `04 - Source Code` folder, fetch it back and re-check digest, then update Index/Status/Handoff.
 - G1 may proceed from an isolated **new** branch on the pinned commit without treating pending art acceptance as passed.
+
+## Independently verified private recovery snapshot — 30 October 2026
+
+The full 219-file Git tree was reconstructed in the original private repository on **isolated branch** `recovery/g0-eddeaef2-exact-tree-20261030` at private recovery commit `0fa7a8c917606219c6591de4c4282b1e3ad34928`. Its root tree is **exactly** `d63029396662b3029201dc289da15b16755f0d74` — the same tree object ID as the public candidate; an independent API read compared all 219 paths, blob SHA-1 hashes, sizes and modes with **zero differences**. Representative binary PNG, GDScript and project-file reads on the private branch matched original source hashes. Original private `main` remains `4b8c02cc3aa9b3a8258d9633ac1f961fa1f27d27`; public `main` remains `4f657810c6c663989f1657e7c69bbaef416479e4`.
+
+The recovery script now accepts `--private-backup` (requires GitHub authorization to the private repo). Both public and private recovery paths verify the **same original 219-file Git tree** and per-file hash inventory; the commit IDs legitimately differ because the private snapshot is committed on the private historical base. The script's private branch path has NOT been run against live remote Git from this container because GitHub DNS remains unavailable.
+
+A second copy of the complete **file-level manifest and recovery certificate**, independently read back and verified 219/219, is stored in restricted Drive 04 Source Code: https://docs.google.com/document/d/1M2Mf6ixgdTYZW2hN-XjCGi_GukFN2K8hIPEU_nZEiRs/edit . This is a **manifest**, not a raw ZIP. Source recovery now has two independent complete Git repositories; a downloadable Drive ZIP and readback checksum remain a separate outstanding off-Git archival requirement.
