@@ -241,6 +241,13 @@ func build_world() -> void:
 	underground_audio.name = "SpatialUndergroundAudio"
 	add_child(underground_audio)
 	underground_audio.build(underground_sites, site_nodes)
+	# G4 initial seven protected visual compositions. Never replaces audio
+	# sources, discovers a clue, opens a seal or performs manual salvage.
+	var g4_art := HMG4ProtectedComposition.new()
+	g4_art.name = "G4ProtectedLandmarkComposition"
+	add_child(g4_art)
+	g4_art.build(underground_sites)
+	set_meta("g4_story_visual_sites",g4_art.location_nodes.size())
 
 
 static func _box(parent: Node3D, name: String, size: Vector3, at: Vector3,
