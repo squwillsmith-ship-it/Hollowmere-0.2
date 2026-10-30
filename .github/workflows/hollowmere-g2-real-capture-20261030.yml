@@ -1,0 +1,101 @@
+name: Hollowmere G2 real-transactions Godot verification
+on:
+  push:
+    branches:
+      - qa/g2-real-capture-20261030
+    paths:
+      - .github/workflows/hollowmere-g2-real-capture-20261030.yml
+permissions:
+  contents: read
+jobs:
+  g2-full-engine:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Godot runtime and generation dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends xvfb mesa-vulkan-drivers libvulkan1 libasound2t64 libpulse0 libfontconfig1 unzip
+          python -m pip install --quiet numpy Pillow trimesh scipy
+      - name: Generate existing authored materials
+        run: |
+          python tools/generate_step21_materials.py
+          python tools/generate_step21_glb.py
+          python tools/generate_phase_b_surfaces.py
+          python tools/generate_phase_b_reference_glb.py
+      - name: Install Godot 4.7.2 and run complete game suites including G2
+        run: |
+          python tools/test_environment.py doctor --install
+          python tools/test_environment.py check --godot .qa-tools/Godot_v4.7.2-stable_linux.x86_64
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g2-engine-log-${{ github.sha }}
+          path: |
+            build/qa-*.log
+            build/qa-environment.json
+          if-no-files-found: warn
+          retention-days: 14
+
+  g2-real-vulkan-hero-reference:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Vulkan software display
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends xvfb mesa-vulkan-drivers libvulkan1 libasound2t64 libpulse0 libfontconfig1 unzip
+          python -m pip install --quiet numpy Pillow trimesh scipy
+      - name: Rebuild materials and import real Godot project
+        run: |
+          python tools/generate_step21_materials.py
+          python tools/generate_step21_glb.py
+          python tools/generate_phase_b_surfaces.py
+          python tools/generate_phase_b_reference_glb.py
+          python tools/test_environment.py doctor --install
+          mkdir -p build/g2
+          .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --headless --path game --editor --quit > build/g2-import.log 2>&1 || { tail -100 build/g2-import.log; exit 1; }
+      - name: Render real user-initiated part-transaction frames and reload tests
+        env:
+          LIBGL_ALWAYS_SOFTWARE: "1"
+        run: |
+          export HOLLOWMERE_G2_TRANSACTION_DIR="$PWD/build/g2"
+          xvfb-run -a -s "-screen 0 1280x720x24" .qa-tools/Godot_v4.7.2-stable_linux.x86_64 --rendering-method forward_plus --rendering-driver vulkan --audio-driver Dummy --path game --script res://tests/test_g2_transaction_capture.gd > build/g2-real-transactions.log 2>&1 || { tail -140 build/g2-real-transactions.log; exit 1; }
+          grep HOLLOWMERE_G2_REAL_TRANSACTIONS_RENDER_OK build/g2-real-transactions.log
+      - name: Verify actual 6 saved-state images
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          p=Path("build/g2")
+          names=["g2-transaction-"+b+"-"+s+".png" for b in ("cottage","warehouse") for s in ("intact","half","heavy")]
+          for n in names:
+              with Image.open(p/n) as im:
+                  im.load()
+                  assert im.size==(1280,720),(n,im.size)
+                  assert len(set(im.convert("RGB").resize((32,18)).getdata()))>12,n
+          print("G2_REAL_TRANSACTIONS_SIX_VULKAN_FRAMES_OK")
+          PY
+      - name: Upload frames and renderer logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g2-vulkan-frames-${{ github.sha }}
+          path: |
+            build/g2/*
+            build/g2-*.log
+          if-no-files-found: warn
+          retention-days: 14
