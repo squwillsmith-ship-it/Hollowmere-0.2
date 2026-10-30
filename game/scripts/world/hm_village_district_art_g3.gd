@@ -19,7 +19,13 @@ func build(installations: Dictionary) -> void:
 		"harbour/net_store":"net_drying",
 		"craft/tomas_workshop":"working_framed",
 		"chapel/ordinary_hall":"chapel_masonry",
-		"district/mara_home":"upland_dwelling"
+		"district/mara_home":"upland_dwelling",
+		"service/landing_pier":"weathered_pier",
+		"service/boatyard_base":"boatyard_joinery",
+		"district/upper_cottage_cluster_study":"upland_frame",
+		"chapel/schoolroom_wing":"schoolroom_hierarchy",
+		"chapel/aldren_study":"protected_study",
+		"harbour/navigation_light":"navigation_masonry"
 	}
 	for id: String in profiles:
 		if not installations.has(id):
@@ -70,6 +76,18 @@ func _is_matching(profile: String,title: String) -> bool:
 			return title.contains("southentrance") or title.contains("frontdoorlintel")
 		"upland_dwelling":
 			return title.contains("frontleftpanel") or title.contains("frontrightpanel")
+		"weathered_pier":
+			return title.begins_with("landingpost") or title == "mooringrail"
+		"boatyard_joinery":
+			return title.begins_with("shelterpost") or title.begins_with("companyworkshelterroof")
+		"upland_frame":
+			return title.begins_with("leftwallstud") or title.begins_with("frontleftpanel")
+		"schoolroom_hierarchy":
+			return title.begins_with("schoolentry") or title == "schoolroof"
+		"protected_study":
+			return title.begins_with("studydoor") or title == "studyslate"
+		"navigation_masonry":
+			return title.ends_with("lightpier") or title.begins_with("lanternpost")
 	return false
 
 func _bounds(body: StaticBody3D) -> Vector3:
@@ -131,6 +149,63 @@ func _decorate(detail: Node3D,size: Vector3,profile: String,title: String) -> vo
 				Vector3(hx*.64,hy*.51,face),.085,WOOD)
 			_bar(detail,Vector3(-hx*.85,hy*.80,face),
 				Vector3(hx*.85,hy*.80,face),.096,SALT)
+		"weathered_pier":
+			# Braced landing mooring fixtures. Never turned into salvageable
+			# targets: original fenders, piers and ferry routes are preserved.
+			if title == "mooringrail":
+				_bar(detail,Vector3(-hx*.92,-hy*.24,hz+.065),
+					Vector3(hx*.92,-hy*.24,hz+.065),.095,WOOD)
+			else:
+				_bar(detail,Vector3(-hx*.42,hy*.20,hz+.043),
+					Vector3(hx*.42,-hy*.35,hz+.043),.11,SALT)
+				_bar(detail,Vector3(-hx*.40,-hy*.31,-hz-.043),
+					Vector3(hx*.40,hy*.27,-hz-.043),.075,WOOD)
+		"boatyard_joinery":
+			if title.begins_with("companyworkshelterroof"):
+				# Shallow fascia runs with the TWO original roof strips.
+				_bar(detail,Vector3(-hx*.96,-hy*.15,hz+.028),
+					Vector3(hx*.96,-hy*.15,hz+.028),.12,SALT)
+			else:
+				_bar(detail,Vector3(-hx*.37,-hy*.43,hz+.052),
+					Vector3(hx*.35,hy*.37,hz+.052),.098,WOOD)
+				_bar(detail,Vector3(-hx*.39,hy*.36,-hz-.044),
+					Vector3(hx*.39,-hy*.40,-hz-.044),.065,SALT)
+		"upland_frame":
+			# Timber outriggers follow EXISTING removable upper-house studs.
+			var side: float = hx+.052
+			_bar(detail,Vector3(side,-hy*.78,-hz*.71),
+				Vector3(side,hy*.68,hz*.59),.095,WOOD)
+			_bar(detail,Vector3(side,-hy*.76,hz*.62),
+				Vector3(side,hy*.72,-hz*.58),.071,SALT)
+		"schoolroom_hierarchy":
+			if title == "schoolroof":
+				_bar(detail,Vector3(-hx*.91,hy*.52,hz*.82),
+					Vector3(hx*.91,hy*.52,hz*.82),.12,WOOD)
+			else:
+				var edge: float = hz+.052
+				_bar(detail,Vector3(-hx*.91,hy*.78,edge),
+					Vector3(hx*.91,hy*.78,edge),.135,STONE)
+				_bar(detail,Vector3(-hx*.88,-hy*.75,edge),
+					Vector3(-hx*.88,hy*.77,edge),.12,WOOD)
+		"protected_study":
+			# Non-occult restrained record house stone and roof edge details,
+			# leaving original undercroft threshold/doors fully accessible.
+			var edge: float = hz+.065
+			if title == "studyslate":
+				_bar(detail,Vector3(-hx*.90,hy*.50,edge),
+					Vector3(hx*.90,hy*.50,edge),.13,STONE)
+			else:
+				_bar(detail,Vector3(-hx*.88,hy*.78,edge),
+					Vector3(hx*.88,hy*.78,edge),.12,STONE)
+				_bar(detail,Vector3(-hx*.81,-hy*.70,edge),
+					Vector3(-hx*.81,hy*.74,edge),.12,WOOD)
+		"navigation_masonry":
+			# Pointed piers and simple lantern stanchions: no direct horror
+			# imagery and no change to the lamp/illumination logic.
+			_bar(detail,Vector3(-hx*.68,-hy*.83,hz+.052),
+				Vector3(hx*.62,hy*.81,hz+.052),.14,STONE)
+			_bar(detail,Vector3(-hx*.71,hy*.79,-hz-.043),
+				Vector3(hx*.69,-hy*.77,-hz-.043),.085,WOOD)
 
 func _bar(parent: Node3D,a: Vector3,b: Vector3,thick: float,color: Color) -> void:
 	var mesh := MeshInstance3D.new()
