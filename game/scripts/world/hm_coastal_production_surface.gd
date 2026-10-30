@@ -33,16 +33,22 @@ static func create(size: Vector3, name: String, base: Color, path: bool) -> Arra
             var b := Vector3(x1,height[z][x+1],z0)
             var c := Vector3(x1,height[z+1][x+1],z1)
             var d := Vector3(x0,height[z+1][x],z1)
-            var richness: float = rng.randf_range(0.93,1.065)
+            # G3 art QA: formerly independent 0.93..1.065 random hues
+            # per grid cell created obvious square checkerboarding in the
+            # civic square and lower terrace wide camera views. Modulate
+            # soil in broad, coherent world-space bands instead.
+            var wx: float = (x0+x1)*0.5
+            var wz: float = (z0+z1)*0.5
+            var large: float = sin(wx*.071+wz*.052+float(name.hash()%19))
+            var secondary: float = cos(wx*.163-wz*.079)
+            var richness: float = 1.0 + large*.021 + secondary*.010
             var tint: Color = base * richness
-            # Silt/gravel and grassy basalt vary in larger patches without
-            # high-frequency small noise overpowering the faceted style.
             if not path:
-                tint = tint.lerp(Color("6b7160"),0.11+0.10*sin(float(x)*0.51+float(z)*0.37))
+                tint = tint.lerp(Color("6b7160"),.10+.035*large)
             else:
-                tint = tint.lerp(Color("716b5b"),0.10+0.06*sin(float(x)*0.4+float(z)*0.25))
+                tint = tint.lerp(Color("716b5b"),.08+.025*secondary)
             _tri(tool,a,c,b,tint)
-            _tri(tool,a,d,c,tint.darkened(rng.randf_range(0.0,0.045)))
+            _tri(tool,a,d,c,tint.darkened(.007))
     if not path:
         # The entire vertical profile is sculpted into broad strata. The
         # collision remains protected behind this noninteractive art skin.
