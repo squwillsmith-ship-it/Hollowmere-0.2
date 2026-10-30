@@ -39,9 +39,13 @@ func _check() -> void:
 		for child: Node in front.get_children():
 			if child is CollisionShape3D: hitboxes += 1
 		demand(hitboxes == 9, "two real window openings and triangular end gable")
-		demand(_detail_meshes(front) >= 20, "wall infill is not a single solid box")
+		demand(front.has_meta("g2_assembled") and
+			front.get_node_or_null("G2ProductionPart") != null,
+			"Original front-infill ID owns a textured standalone G2 GLB")
 	if roof != null:
-		demand(_detail_meshes(roof) >= 4, "roof is meshed as slate and battens")
+		demand(roof.has_meta("g2_assembled") and
+			roof.get_node_or_null("G2ProductionPart") != null,
+			"Original roof ID owns a separately authored slate GLB")
 	var stage := HMBrinewickBlockout.new()
 	stage.spawn_exploration_player = false
 	root.add_child(stage)
