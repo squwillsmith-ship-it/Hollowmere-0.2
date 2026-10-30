@@ -189,6 +189,10 @@ func build_world() -> void:
 	harbour_dressing.name = "PhaseCHarbourHistory"
 	add_child(harbour_dressing)
 	harbour_dressing.build(site_nodes)
+	var hero_coast_dressing := HMHarbourHeroDressing.new()
+	hero_coast_dressing.name = "BatchedGroundedHarbourBenchmarkDetail"
+	add_child(hero_coast_dressing)
+	hero_coast_dressing.build()
 	# The ordinary building and yard systems remain the only salvage catalogue.
 	# Protected Phase E locations share the same physical Brinewick stage.
 	underground_sites = HMUndergroundSites.new()
