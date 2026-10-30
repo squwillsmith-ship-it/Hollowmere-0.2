@@ -80,6 +80,24 @@ func _check() -> void:
             if gable!=null:
                 expect(bool(gable.get_meta("g3_noncolliding",false)),
                     "Chapel gable does not create extra collision or salvage")
+    var roof_art: HMG3RoofWeatherFinish=stage.district_sites.get_node_or_null(
+        "G3OriginalRoofWeatherFinish") as HMG3RoofWeatherFinish
+    expect(roof_art!=null,"Every real village roof owns final slate weather finish")
+    if roof_art!=null:
+        expect(roof_art.owners==64,"All 64 original roof owners have faceted slate courses")
+        expect(roof_art.triangles>7000,"Roof coursing contains actual individual faced slate geometry")
+        for name: String in GROUPS:
+            var group: Node3D=stage.district_sites.installation_nodes.get(name,null) as Node3D
+            if group==null:
+                continue
+            for owner: Node in group.get_children():
+                var roof: StaticBody3D=owner as StaticBody3D
+                if roof==null or roof.get_node_or_null("G3SlateWeatherCourses")==null:
+                    continue
+                var tiles: MeshInstance3D=roof.get_node_or_null("G3SlateWeatherCourses") as MeshInstance3D
+                expect(tiles!=null and tiles.mesh!=null,"A roof skin is actual geometry")
+                expect(bool(tiles.get_meta("g3_noncolliding",false)),
+                    "Roof courses add no invisible collision")
     var saved:=HMPartLifecycle.new()
     stage.add_child(saved)
     saved.bind_stage(stage)
