@@ -1,33 +1,33 @@
 {
   "g2_part_owner_assets": {
     "beam": {
-      "members": 17,
+      "members": 22,
       "path": "game/assets/models/g2/cottage/part_beam.glb",
-      "sha256": "89caa1216c25bb4e5051bc4954ee558ed504aba52dff61dec1670076e44e413b",
-      "triangles": 204
+      "sha256": "fe35fd4b76058fb09922d1e78da9a75e96097c7417d0471df66c47253850713a",
+      "triangles": 264
     },
     "cladding": {
-      "members": 76,
+      "members": 158,
       "path": "game/assets/models/g2/cottage/part_cladding.glb",
-      "sha256": "d5dac7db1d0c9e56f176b2a21425cf1c5f4baa7a6bb2e90058df8d7a97829d38",
-      "triangles": 912
+      "sha256": "dec30ec14cb29e52286b29bca179594f4896ed9b8cd91fe2ed1f79c4e45a2957",
+      "triangles": 1896
     },
     "curtain": {
-      "members": 6,
+      "members": 13,
       "path": "game/assets/models/g2/cottage/part_curtain.glb",
-      "sha256": "ad6885c356b127dd000168c015df7c382295853a5e91f23a9643eafab6e35cab",
-      "triangles": 72
+      "sha256": "1a0c98cf60e38bffe344a8e085c581d01afae9809b19951e19b1ed854785e1f5",
+      "triangles": 156
     },
     "front_infill": {
-      "members": 25,
+      "members": 28,
       "path": "game/assets/models/g2/cottage/part_front_infill.glb",
-      "sha256": "ab858c434f5cd3d9b2e53d6b09cd13e28125b4a365eab6ddd691c595113c91c3",
-      "triangles": 300
+      "sha256": "34f6936f995d8ce5a6cbc3dfb8e65ec31073209689b26504c70adbdc1e1a4060",
+      "triangles": 336
     },
     "rear_infill": {
       "members": 13,
       "path": "game/assets/models/g2/cottage/part_rear_infill.glb",
-      "sha256": "d2b477ff047a016739cf65c9ad3e2fbb8a0638e7469b4a608e1bfa4166b75aab",
+      "sha256": "f57e5d648cc38c60db3c3ab9eaeb6bb0d8d61c72338ca7164327e0648dbea05f",
       "triangles": 156
     },
     "shutters": {
@@ -37,21 +37,21 @@
       "triangles": 216
     },
     "slate_patch": {
-      "members": 205,
+      "members": 216,
       "path": "game/assets/models/g2/cottage/part_slate_patch.glb",
-      "sha256": "49694b720c3cbf65e94ffa6360cdc81397919f60cdd719b244e7047796d43bba",
-      "triangles": 2460
+      "sha256": "38ecf64e2b4bab08ef03ad8aa4ce08849265318d08e5ba24d8d80decc9ee165f",
+      "triangles": 2592
     },
     "stone_block": {
-      "members": 20,
+      "members": 72,
       "path": "game/assets/models/g2/cottage/part_stone_block.glb",
-      "sha256": "5a9b34ba36c4889b7d9037bac4669b432b8819679dee4d5c7601edf6db7cfcc2",
-      "triangles": 240
+      "sha256": "7c60bd0844401784440360e92f61042cdacf9d0cf8d9c02b174262043312f4f0",
+      "triangles": 864
     },
     "threshold": {
       "members": 5,
       "path": "game/assets/models/g2/cottage/part_threshold.glb",
-      "sha256": "ee150abdd6dd16192014c3ebbc396a63df3c8b56998381c44a89f06ae92f38b1",
+      "sha256": "eea767b880b23ad4e329d3056ecbc23208e22cba7100c7ae006b282c9ed1581a",
       "triangles": 60
     }
   },
@@ -79,7 +79,7 @@
     "fieldstone": {
       "albedo": {
         "path": "game/assets/materials/g2/fieldstone_albedo.png",
-        "sha256": "b6f8054c03df99350510ed4a6cd2f67d6bbb5644250faeb926c94646a79dca35"
+        "sha256": "10d6c5cd28b1ee4dca7aaab858f3d0d0b18cd7f8e60e98bdf5216ee8ecd9e574"
       },
       "orm": {
         "path": "game/assets/materials/g2/fieldstone_orm.png",
@@ -89,7 +89,7 @@
     "lime_infill": {
       "albedo": {
         "path": "game/assets/materials/g2/lime_infill_albedo.png",
-        "sha256": "d6c3e35c33ce3d541ab1b1ee2abb74105b7b40354e606e6a96dc965ae8f3e09d"
+        "sha256": "4d7cf7b990f0d357891efb9e030cd6b701e587a2281d45c99e7565a8d8774b12"
       },
       "orm": {
         "path": "game/assets/materials/g2/lime_infill_orm.png",
@@ -109,7 +109,7 @@
     "slate": {
       "albedo": {
         "path": "game/assets/materials/g2/slate_albedo.png",
-        "sha256": "d1bc1f9833b0a3131c0f7414276407927809d6b512d84d99abd3a95bdd3988b5"
+        "sha256": "a2b49eb0436cb805a244f47e14289813d029797d313576f478cb6b8e200507dc"
       },
       "orm": {
         "path": "game/assets/materials/g2/slate_orm.png",
@@ -165,7 +165,7 @@
     "lime_panel": {
       "members": 1,
       "path": "game/assets/models/g2/kit/lime_panel.glb",
-      "sha256": "9824a4379a1b6302037e07fa845a97245f04263fa2398c794fa924bbd73be890",
+      "sha256": "79eb55a39a96cc92dbdcb1b1c1e6ea6ec1d95c6873ed0544b05fd2ce9120841f",
       "triangles": 12
     },
     "linen_curtain": {
@@ -195,7 +195,7 @@
     "rough_stone": {
       "members": 1,
       "path": "game/assets/models/g2/kit/rough_stone.glb",
-      "sha256": "d2652612b32257aad0f08874abba39eb7e54a3336282d0fc1c9283941aee9c90",
+      "sha256": "b8f4f9ef906ed421a2b1350357c9387218de2e06c9f53aa0121b02a376d1b5c5",
       "triangles": 12
     },
     "shutter": {
@@ -207,7 +207,7 @@
     "slate_tile": {
       "members": 1,
       "path": "game/assets/models/g2/kit/slate_tile.glb",
-      "sha256": "036237b642567cd8597675235fc0139352b3d956fb549560797a4d48264b58f5",
+      "sha256": "ac830771f6c13e68bd18b40a1c5b4afb945442bea6c4a89e0c34413fe0cf8aa2",
       "triangles": 12
     }
   },
