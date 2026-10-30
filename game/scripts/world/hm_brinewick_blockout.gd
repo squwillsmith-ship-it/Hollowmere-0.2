@@ -81,12 +81,12 @@ func build_world() -> void:
 	var terraces := Node3D.new()
 	terraces.name = "Terraces"
 	add_child(terraces)
-	_box(terraces,"LowerTerrace",Vector3(86,3,94),Vector3(7,0.5,0),Color("66675a"))
+	terraces.add_child(HMHarbourTerrainG1.create_lower_terrace())
 	# High district is split at its road cutting to prevent a solid cliff
 	# blocking the gradual cart route.
-	_box(terraces,"UpperNorth",Vector3(70,9,38),Vector3(85,3.5,-27),Color("706e5b"))
-	_box(terraces,"UpperSouth",Vector3(70,9,38),Vector3(85,3.5,27),Color("716e5b"))
-	# A narrow cut through the north headland provides a real, collision-open
+	_box(terraces,"UpperNorth",Vector3(54.5,9,38),Vector3(92.75,3.5,-27),Color("706e5b"))
+	_box(terraces,"UpperSouth",Vector3(54.5,9,38),Vector3(92.75,3.5,27),Color("716e5b"))
+	# Join the upper plateau to the lower village on both sides of the\n\t# existing cart-road cutting, using walkable, independent rock colliders.\n\tterraces.add_child(HMHarbourTerrainG1.create_bluff("UpperNorthTransition",-46.0,-8.0))\n\tterraces.add_child(HMHarbourTerrainG1.create_bluff("UpperSouthTransition",8.0,46.0))\n\t# A narrow cut through the north headland provides a real, collision-open
 	# chapel undercroft approach. The retained three masses occupy exactly the
 	# original overall headland envelope outside that authored corridor.
 	_box(terraces,"HeadlandNorth",Vector3(6.8,14,40),Vector3(122.4,6,-27),Color("686b5c"))
@@ -118,11 +118,11 @@ func build_world() -> void:
 	_box(roads,"UpperRampHeadlandTurn",Vector3(10.0,0.34,15.0),
 		Vector3(139.7,13.0,5.5),Color("948672"))
 	_box(roads,"HeadlandTrack",Vector3(48,0.4,10),Vector3(149,12.99,0),Color("938875"))
-	_box(roads,"QuayWalk",Vector3(22,0.34,77),Vector3(-31,1.18,0),Color("777567"))
+	_box(roads,"QuayWalk",Vector3(6,0.34,77),Vector3(-39,1.18,0),Color("777567"))
 	_box(roads,"LandingApproach",Vector3(25,0.3,12),Vector3(-24,2.12,13),Color("8a7f6a"))
 	# Persistent boatyard/quay platforms are never mistaken for reclaimable buildings.
 	_box(roads,"PermanentQuayPad",Vector3(11,1.0,14),Vector3(-34,0.65,10),Color("858276"))
-	# These scene art skins do not change the original collision-backed coastal
+	# G1 continuous walking grade meets the existing quay, warehouse and cottage.\n\t# This route does not create an interactive or salvageable component.\n\tvar harbour_route := Node3D.new()\n\tharbour_route.name = "HarbourG1Route"\n\tadd_child(harbour_route)\n\tharbour_route.add_child(HMHarbourTerrainG1.create_haul_path())\n\tharbour_route.add_child(HMHarbourTerrainG1.create_quay_revetment())\n\t# Remaining historical scene-art skins serve the untouched districts.
 	# layout, roads, story targets or material registrations.
 	var ground_art := HMCoastalGroundArt.new()
 	ground_art.name = "BrinewickFacetedGroundArt"
